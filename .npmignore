@@ -1,0 +1,5 @@
+tests/
+scripts/
+analysis/
+src/
+vitest.config.ts

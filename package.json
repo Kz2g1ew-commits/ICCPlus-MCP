@@ -1,0 +1,53 @@
+{
+  "name": "iccplus-mcp",
+  "version": "0.1.0",
+  "description": "Schema-aware MCP server for creating, inspecting, validating, and packaging ICC Plus projects.",
+  "type": "module",
+  "bin": {
+    "iccplus-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "THIRD_PARTY_NOTICES.md"
+  ],
+  "scripts": {
+    "analyze:upstream": "node scripts/analyze-upstream.mjs",
+    "build": "tsc -p tsconfig.json",
+    "check": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
+    "test:stdio": "npm run build && node scripts/smoke-stdio.mjs",
+    "test:watch": "vitest",
+    "verify:upstream": "npm run build && node scripts/verify-upstream.mjs",
+    "inspect": "npx @modelcontextprotocol/inspector node dist/index.js",
+    "prepack": "npm run build"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "iccplus",
+    "cyoa"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.29.0",
+    "ajv": "8.20.0",
+    "jszip": "3.10.1",
+    "mime-types": "3.0.1",
+    "zod": "4.4.3"
+  },
+  "devDependencies": {
+    "@types/mime-types": "3.0.1",
+    "@types/node": "26.1.1",
+    "ts-json-schema-generator": "2.9.0",
+    "typescript": "5.9.3",
+    "vitest": "4.1.10"
+  },
+  "overrides": {
+    "@hono/node-server": "2.0.11"
+  }
+}

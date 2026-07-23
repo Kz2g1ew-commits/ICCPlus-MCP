@@ -1,0 +1,4217 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$ref": "#/definitions/App",
+  "definitions": {
+    "App": {
+      "type": "object",
+      "properties": {
+        "defaultRowTitle": {
+          "type": "string"
+        },
+        "defaultRowText": {
+          "type": "string"
+        },
+        "defaultChoiceTitle": {
+          "type": "string"
+        },
+        "defaultChoiceText": {
+          "type": "string"
+        },
+        "defaultBeforePoint": {
+          "type": "string"
+        },
+        "defaultAfterPoint": {
+          "type": "string"
+        },
+        "defaultBeforeReq": {
+          "type": "string"
+        },
+        "defaultAfterReq": {
+          "type": "string"
+        },
+        "defaultAddonTitle": {
+          "type": "string"
+        },
+        "defaultAddonText": {
+          "type": "string"
+        },
+        "orderOrReqText": {
+          "type": "string"
+        },
+        "defaultOrReq": {
+          "type": "string"
+        },
+        "orderSelReqText": {
+          "type": "string"
+        },
+        "defaultSelReq": {
+          "type": "string"
+        },
+        "defaultRowTemplate": {
+          "type": "number"
+        },
+        "defaultRowWidth": {
+          "type": "string"
+        },
+        "defaultRowJustify": {
+          "type": "string"
+        },
+        "defaultRowAllowedChoices": {
+          "type": "number"
+        },
+        "defaultChoiceTemplate": {
+          "type": "number"
+        },
+        "defaultChoiceWidth": {
+          "type": "string"
+        },
+        "defaultChoiceMaxNum": {
+          "type": "number"
+        },
+        "defaultAddonJustify": {
+          "type": "string"
+        },
+        "defaultAddonTemplate": {
+          "type": "number"
+        },
+        "defaultAddonWidth": {
+          "type": "string"
+        },
+        "defaultUseSeperateAddon": {
+          "type": "boolean"
+        },
+        "defaultUseShowAddon": {
+          "type": "boolean"
+        },
+        "defaultUseHideAddon": {
+          "type": "boolean"
+        },
+        "defaultUseShowScore": {
+          "type": "boolean"
+        },
+        "defaultUseHideValue": {
+          "type": "boolean"
+        },
+        "defaultUseShowReq": {
+          "type": "boolean"
+        },
+        "version": {
+          "type": "string"
+        },
+        "isEditModeOnAll": {
+          "type": "boolean"
+        },
+        "isPointerCursor": {
+          "type": "boolean"
+        },
+        "importedChoicesIsOpen": {
+          "type": "boolean"
+        },
+        "curVolume": {
+          "type": "number"
+        },
+        "isMute": {
+          "type": "boolean"
+        },
+        "showMusicPlayer": {
+          "type": "boolean"
+        },
+        "fadeTransitionColor": {
+          "type": "string"
+        },
+        "fadeTransitionTime": {
+          "type": "number"
+        },
+        "fadeTransitionIsOn": {
+          "type": "boolean"
+        },
+        "hideBackpackBtn": {
+          "type": "number"
+        },
+        "btnBackpackIsOn": {
+          "type": "number"
+        },
+        "showAllAddons": {
+          "type": "number"
+        },
+        "tmpRow": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Row"
+          }
+        },
+        "tmpChoice": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Choice"
+          }
+        },
+        "tmpRequired": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Requireds"
+          }
+        },
+        "tmpScore": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Score"
+          }
+        },
+        "tmpAddon": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Addon"
+          }
+        },
+        "tmpGroup": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "tmpDesignGroup": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "rowIdLength": {
+          "type": "number"
+        },
+        "objectIdLength": {
+          "type": "number"
+        },
+        "words": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Word"
+          }
+        },
+        "groups": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Group"
+          }
+        },
+        "rowDesignGroups": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/RowDesignGroup"
+          }
+        },
+        "objectDesignGroups": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ObjectDesignGroup"
+          }
+        },
+        "objectsPerRow": {
+          "type": "string"
+        },
+        "globalRequirements": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/GlobalRequirement"
+          }
+        },
+        "soundEffects": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SoundEffect"
+          }
+        },
+        "googleFonts": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "customFonts": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "compressImageAuto": {
+          "type": "boolean"
+        },
+        "useTextEditor": {
+          "type": "boolean"
+        },
+        "useToolbarBtn": {
+          "type": "boolean"
+        },
+        "useChoiceEditBtn": {
+          "type": "boolean"
+        },
+        "hideScoresUpdated": {
+          "type": "boolean"
+        },
+        "hideChoiceDT": {
+          "type": "boolean"
+        },
+        "hideImages": {
+          "type": "boolean"
+        },
+        "preloadImages": {
+          "type": "boolean"
+        },
+        "preloadExternalImages": {
+          "type": "boolean"
+        },
+        "useVW": {
+          "type": "boolean"
+        },
+        "addPrefix": {
+          "type": "boolean"
+        },
+        "mdObjects": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "printThis": {
+          "type": "boolean"
+        },
+        "autoSaveIsOn": {
+          "type": "boolean"
+        },
+        "autoSaveInterval": {
+          "type": "number"
+        },
+        "buildAutoSaveIsOn": {
+          "type": "boolean"
+        },
+        "buildAutoSaveInterval": {
+          "type": "number"
+        },
+        "tooltipDelay": {
+          "type": "number"
+        },
+        "checkDeleteRow": {
+          "type": "boolean"
+        },
+        "checkDeleteObject": {
+          "type": "boolean"
+        },
+        "checkSelectAll": {
+          "type": "boolean"
+        },
+        "enableShortcut": {
+          "type": "boolean"
+        },
+        "defaultBgColor": {
+          "type": "string"
+        },
+        "defaultBgImage": {
+          "type": "string"
+        },
+        "defaultBarBgColor": {
+          "type": "string"
+        },
+        "defaultBarTextColor": {
+          "type": "string"
+        },
+        "defaultBarIconColor": {
+          "type": "string"
+        },
+        "bgColorStack": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "data": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "id",
+              "data"
+            ]
+          }
+        },
+        "bgImageStack": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "data": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "id",
+              "data"
+            ]
+          }
+        },
+        "barBgColorStack": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "data": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "id",
+              "data"
+            ]
+          }
+        },
+        "barTextColorStack": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "data": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "id",
+              "data"
+            ]
+          }
+        },
+        "barIconColorStack": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "data": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "id",
+              "data"
+            ]
+          }
+        },
+        "customCSS": {
+          "type": "string"
+        },
+        "variables": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Variable"
+          }
+        },
+        "pointTypes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PointType"
+          }
+        },
+        "activated": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "rows": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Row"
+          }
+        },
+        "backpack": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Row"
+          }
+        },
+        "styling": {
+          "$ref": "#/definitions/Styling"
+        },
+        "categories": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Category"
+          }
+        },
+        "cropperPosition": {
+          "type": "number"
+        },
+        "enableSearch": {
+          "type": "boolean"
+        },
+        "useDesignGroupBtn": {
+          "type": "boolean"
+        },
+        "smallerScreenPx": {
+          "type": "number"
+        },
+        "enableHalfRow": {
+          "type": "boolean"
+        },
+        "minimizeTemplate": {
+          "type": "boolean"
+        },
+        "viewerConfig": {
+          "$ref": "#/definitions/ViewerConfig"
+        }
+      },
+      "required": [
+        "activated",
+        "autoSaveInterval",
+        "autoSaveIsOn",
+        "backpack",
+        "btnBackpackIsOn",
+        "buildAutoSaveInterval",
+        "buildAutoSaveIsOn",
+        "categories",
+        "checkDeleteObject",
+        "checkDeleteRow",
+        "checkSelectAll",
+        "compressImageAuto",
+        "cropperPosition",
+        "curVolume",
+        "customFonts",
+        "defaultAddonJustify",
+        "defaultAddonTemplate",
+        "defaultAddonText",
+        "defaultAddonTitle",
+        "defaultAddonWidth",
+        "defaultAfterPoint",
+        "defaultAfterReq",
+        "defaultBeforePoint",
+        "defaultBeforeReq",
+        "defaultChoiceMaxNum",
+        "defaultChoiceTemplate",
+        "defaultChoiceText",
+        "defaultChoiceTitle",
+        "defaultChoiceWidth",
+        "defaultOrReq",
+        "defaultRowAllowedChoices",
+        "defaultRowJustify",
+        "defaultRowTemplate",
+        "defaultRowText",
+        "defaultRowTitle",
+        "defaultRowWidth",
+        "defaultSelReq",
+        "defaultUseHideAddon",
+        "defaultUseHideValue",
+        "defaultUseSeperateAddon",
+        "defaultUseShowAddon",
+        "defaultUseShowReq",
+        "defaultUseShowScore",
+        "enableHalfRow",
+        "enableSearch",
+        "enableShortcut",
+        "fadeTransitionColor",
+        "fadeTransitionIsOn",
+        "fadeTransitionTime",
+        "googleFonts",
+        "groups",
+        "hideBackpackBtn",
+        "hideChoiceDT",
+        "hideImages",
+        "hideScoresUpdated",
+        "importedChoicesIsOpen",
+        "isEditModeOnAll",
+        "isMute",
+        "isPointerCursor",
+        "mdObjects",
+        "minimizeTemplate",
+        "objectDesignGroups",
+        "objectIdLength",
+        "objectsPerRow",
+        "orderOrReqText",
+        "orderSelReqText",
+        "pointTypes",
+        "preloadExternalImages",
+        "preloadImages",
+        "printThis",
+        "rowIdLength",
+        "rows",
+        "showAllAddons",
+        "showMusicPlayer",
+        "smallerScreenPx",
+        "soundEffects",
+        "styling",
+        "tmpAddon",
+        "tmpChoice",
+        "tmpDesignGroup",
+        "tmpGroup",
+        "tmpRequired",
+        "tmpRow",
+        "tmpScore",
+        "useChoiceEditBtn",
+        "useDesignGroupBtn",
+        "useTextEditor",
+        "useToolbarBtn",
+        "useVW",
+        "variables",
+        "viewerConfig",
+        "words"
+      ]
+    },
+    "Row": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "index": {
+          "type": "number"
+        },
+        "isBackpack": {
+          "type": "boolean"
+        },
+        "title": {
+          "type": "string"
+        },
+        "titleText": {
+          "type": "string"
+        },
+        "debugTitle": {
+          "type": "string"
+        },
+        "objectWidth": {
+          "type": "string"
+        },
+        "image": {
+          "type": "string"
+        },
+        "template": {
+          "type": "number"
+        },
+        "isButtonRow": {
+          "type": "boolean"
+        },
+        "buttonType": {
+          "type": "boolean"
+        },
+        "buttonId": {
+          "type": "string"
+        },
+        "buttonText": {
+          "type": "string"
+        },
+        "buttonRandom": {
+          "type": "boolean"
+        },
+        "buttonRandomNumber": {
+          "type": "number"
+        },
+        "isWeightedRandom": {
+          "type": "boolean"
+        },
+        "allowActivateUnselectable": {
+          "type": "boolean"
+        },
+        "isResultRow": {
+          "type": "boolean"
+        },
+        "resultGroupId": {
+          "type": "string"
+        },
+        "isInfoRow": {
+          "type": "boolean"
+        },
+        "isGroupRow": {
+          "type": "boolean"
+        },
+        "defaultAspectWidth": {
+          "type": "number"
+        },
+        "defaultAspectHeight": {
+          "type": "number"
+        },
+        "allowedChoices": {
+          "type": "number"
+        },
+        "currentChoices": {
+          "type": "number"
+        },
+        "requireds": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Requireds"
+          }
+        },
+        "isEditModeOn": {
+          "type": "boolean"
+        },
+        "isSimpleEditMode": {
+          "type": "boolean"
+        },
+        "isRequirementOpen": {
+          "type": "boolean"
+        },
+        "objects": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Choice"
+          }
+        },
+        "rowDesignGroups": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "imageIsUrl": {
+          "type": "boolean"
+        },
+        "width": {
+          "type": "boolean"
+        },
+        "deselectChoices": {
+          "type": "boolean"
+        },
+        "rowJustify": {
+          "type": "string"
+        },
+        "groups": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "imageSourceTooltip": {
+          "type": "string"
+        },
+        "isPrivateStyling": {
+          "type": "boolean"
+        },
+        "privateFilterIsOn": {
+          "type": "boolean"
+        },
+        "privateTextIsOn": {
+          "type": "boolean"
+        },
+        "privateObjectImageIsOn": {
+          "type": "boolean"
+        },
+        "privateObjectIsOn": {
+          "type": "boolean"
+        },
+        "privateRowImageIsOn": {
+          "type": "boolean"
+        },
+        "privateRowIsOn": {
+          "type": "boolean"
+        },
+        "privateAddonImageIsOn": {
+          "type": "boolean"
+        },
+        "privateAddonIsOn": {
+          "type": "boolean"
+        },
+        "privateBackgroundIsOn": {
+          "type": "boolean"
+        },
+        "privateMultiChoiceIsOn": {
+          "type": "boolean"
+        },
+        "styling": {
+          "$ref": "#/definitions/Styling"
+        },
+        "objectImgObjectFillHeight": {
+          "type": "number"
+        },
+        "resultShowRowTitle": {
+          "type": "boolean"
+        },
+        "textIsRemoved": {
+          "type": "boolean"
+        },
+        "objectTitleRemoved": {
+          "type": "boolean"
+        },
+        "objectImageRemoved": {
+          "type": "boolean"
+        },
+        "objectTextRemoved": {
+          "type": "boolean"
+        },
+        "objectScoreRemoved": {
+          "type": "boolean"
+        },
+        "objectRequirementRemoved": {
+          "type": "boolean"
+        },
+        "addonTitleRemoved": {
+          "type": "boolean"
+        },
+        "addonImageRemoved": {
+          "type": "boolean"
+        },
+        "addonTextRemoved": {
+          "type": "boolean"
+        },
+        "unselAddonRemoved": {
+          "type": "boolean"
+        },
+        "unmetAddonRemoved": {
+          "type": "boolean"
+        },
+        "buttonTypeRadio": {
+          "type": "string"
+        },
+        "btnPointAddon": {
+          "type": "boolean"
+        },
+        "pointTypeRandom": {
+          "type": "string"
+        },
+        "randomMin": {
+          "type": "number"
+        },
+        "randomMax": {
+          "type": "number"
+        },
+        "onlyUnselectedChoices": {
+          "type": "boolean"
+        },
+        "onlyIfNoChoices": {
+          "type": "boolean"
+        },
+        "choicesShareTemplate": {
+          "type": "boolean"
+        },
+        "defaultTemplate": {
+          "type": "number"
+        },
+        "defaultWidth": {
+          "type": "string"
+        },
+        "overrideWidth": {
+          "type": "boolean"
+        },
+        "templateStack": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "data": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "id",
+              "data"
+            ]
+          }
+        },
+        "widthStack": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "data": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "id",
+              "data"
+            ]
+          }
+        }
+      },
+      "required": [
+        "id",
+        "index",
+        "title",
+        "titleText",
+        "objectWidth",
+        "image",
+        "template",
+        "defaultAspectWidth",
+        "defaultAspectHeight",
+        "allowedChoices",
+        "currentChoices",
+        "requireds",
+        "objects"
+      ]
+    },
+    "Requireds": {
+      "type": "object",
+      "properties": {
+        "required": {
+          "type": "boolean"
+        },
+        "requireds": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Requireds"
+          }
+        },
+        "orRequired": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "req": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "orRequireds": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Requireds"
+          }
+        },
+        "id": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "reqId": {
+          "type": "string"
+        },
+        "reqId1": {
+          "type": "string"
+        },
+        "reqId2": {
+          "type": "string"
+        },
+        "reqId3": {
+          "type": "string"
+        },
+        "reqPoints": {
+          "type": "number"
+        },
+        "showRequired": {
+          "type": "boolean"
+        },
+        "hideRequired": {
+          "type": "boolean"
+        },
+        "hideRequired2": {
+          "type": "boolean"
+        },
+        "operator": {
+          "type": "string"
+        },
+        "afterText": {
+          "type": "string"
+        },
+        "beforeText": {
+          "type": "string"
+        },
+        "orNum": {
+          "type": "number"
+        },
+        "selNum": {
+          "type": "number"
+        },
+        "selFromOperators": {
+          "type": "string"
+        },
+        "selGroups": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "selRows": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "more": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MoreReq"
+          }
+        },
+        "customTextIsOn": {
+          "type": "boolean"
+        },
+        "customText": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "required",
+        "requireds",
+        "orRequired",
+        "id",
+        "type",
+        "reqId",
+        "reqId1",
+        "reqId2",
+        "reqId3",
+        "reqPoints",
+        "showRequired",
+        "afterText",
+        "beforeText"
+      ]
+    },
+    "MoreReq": {
+      "type": "object",
+      "properties": {
+        "operator": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "points": {
+          "type": "number"
+        },
+        "priority": {
+          "type": "number"
+        }
+      }
+    },
+    "Choice": {
+      "type": "object",
+      "properties": {
+        "hideMultipleCounter": {
+          "type": "boolean"
+        },
+        "allowSelectByClick": {
+          "type": "boolean"
+        },
+        "hideCounterUntilSelect": {
+          "type": "boolean"
+        },
+        "isSelectableMultiple": {
+          "type": "boolean"
+        },
+        "isMultipleUseVariable": {
+          "type": "boolean"
+        },
+        "multipleScoreId": {
+          "type": "string"
+        },
+        "numMultipleTimesMinus": {
+          "type": "number"
+        },
+        "numMultipleTimesPluss": {
+          "type": "number"
+        },
+        "isNotSelectable": {
+          "type": "boolean"
+        },
+        "selectOnce": {
+          "type": "boolean"
+        },
+        "notDeselectedByClean": {
+          "type": "boolean"
+        },
+        "isNotResult": {
+          "type": "boolean"
+        },
+        "isImageUpload": {
+          "type": "boolean"
+        },
+        "cleanACtivatedOnSelect": {
+          "type": "boolean"
+        },
+        "activateOtherChoice": {
+          "type": "boolean"
+        },
+        "isNotDeactivate": {
+          "type": "boolean"
+        },
+        "isAllowDeselect": {
+          "type": "boolean"
+        },
+        "activateAfterReset": {
+          "type": "boolean"
+        },
+        "isActivateRandom": {
+          "type": "boolean"
+        },
+        "numActivateRandom": {
+          "type": "number"
+        },
+        "activateThisChoice": {
+          "type": "string"
+        },
+        "isNotActiveUnselectable": {
+          "type": "boolean"
+        },
+        "deactivateOtherChoice": {
+          "type": "boolean"
+        },
+        "deactivateThisChoice": {
+          "type": "string"
+        },
+        "discountOther": {
+          "type": "boolean"
+        },
+        "discountLowLimitIsOn": {
+          "type": "boolean"
+        },
+        "discountLowLimit": {
+          "type": "number"
+        },
+        "discountShow": {
+          "type": "boolean"
+        },
+        "replaceScoreText": {
+          "type": "boolean"
+        },
+        "hideScoreValue": {
+          "type": "boolean"
+        },
+        "hideScoreIcon": {
+          "type": "boolean"
+        },
+        "discountBeforeText": {
+          "type": "string"
+        },
+        "discountAfterText": {
+          "type": "string"
+        },
+        "isDisChoices": {
+          "type": "boolean"
+        },
+        "discountRows": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "discountChoices": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "discountGroups": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "discountPointTypes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "discountOperator": {
+          "type": "string"
+        },
+        "discountValue": {
+          "type": "number"
+        },
+        "stackableDiscount": {
+          "type": "boolean"
+        },
+        "useDiscountCount": {
+          "type": "boolean"
+        },
+        "discountCount": {
+          "type": "number"
+        },
+        "countPerSelection": {
+          "type": "boolean"
+        },
+        "numDiscountChoices": {
+          "type": "number"
+        },
+        "appliedDisChoices": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "duplicateRow": {
+          "type": "boolean"
+        },
+        "dRowAddSufReq": {
+          "type": "boolean"
+        },
+        "dRowAddSufFunc": {
+          "type": "boolean"
+        },
+        "duplicateRowId": {
+          "type": "string"
+        },
+        "duplicateRowPlace": {
+          "type": "string"
+        },
+        "isContentHidden": {
+          "type": "boolean"
+        },
+        "hiddenContentsRow": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "hiddenContentsType": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "addToAllowChoice": {
+          "type": "boolean"
+        },
+        "idOfAllowChoice": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "numbAddToAllowChoice": {
+          "type": "number"
+        },
+        "showAllAddons": {
+          "type": "boolean"
+        },
+        "changeTemplates": {
+          "type": "boolean"
+        },
+        "changeAddonTemplate": {
+          "type": "boolean"
+        },
+        "changeWidth": {
+          "type": "boolean"
+        },
+        "changeTemplatesList": {
+          "type": "string"
+        },
+        "changeToThisTemplate": {
+          "type": "number"
+        },
+        "changeWidthList": {
+          "type": "string"
+        },
+        "changeToThisWidth": {
+          "type": "string"
+        },
+        "defaultTemplate": {
+          "type": "number"
+        },
+        "defaultWidth": {
+          "type": "string"
+        },
+        "scrollToRow": {
+          "type": "boolean"
+        },
+        "scrollToObject": {
+          "type": "boolean"
+        },
+        "scrollObjectId": {
+          "type": "string"
+        },
+        "scrollRowId": {
+          "type": "string"
+        },
+        "changePointBar": {
+          "type": "boolean"
+        },
+        "changeBarBgColorIsOn": {
+          "type": "boolean"
+        },
+        "changeBarTextColorIsOn": {
+          "type": "boolean"
+        },
+        "changeBarIconColorIsOn": {
+          "type": "boolean"
+        },
+        "changedBarBgColor": {
+          "type": "string"
+        },
+        "changedBarTextColor": {
+          "type": "string"
+        },
+        "changedBarIconColor": {
+          "type": "string"
+        },
+        "changeBackground": {
+          "type": "boolean"
+        },
+        "changeBgImage": {
+          "type": "boolean"
+        },
+        "changedBgColorCode": {
+          "type": "string"
+        },
+        "bgImage": {
+          "type": "string"
+        },
+        "setBgmIsOn": {
+          "type": "boolean"
+        },
+        "bgmId": {
+          "type": "string"
+        },
+        "bgmFadeIn": {
+          "type": "boolean"
+        },
+        "bgmFadeOut": {
+          "type": "boolean"
+        },
+        "bgmFadeInSec": {
+          "type": "number"
+        },
+        "bgmFadeOutSec": {
+          "type": "number"
+        },
+        "bgmNoLoop": {
+          "type": "boolean"
+        },
+        "muteBgm": {
+          "type": "boolean"
+        },
+        "useAudioURL": {
+          "type": "boolean"
+        },
+        "isFadeTransition": {
+          "type": "boolean"
+        },
+        "fadeTransitionColor": {
+          "type": "string"
+        },
+        "fadeTransitionTime": {
+          "type": "number"
+        },
+        "fadeInTransitionTime": {
+          "type": "number"
+        },
+        "fadeOutTransitionTime": {
+          "type": "number"
+        },
+        "multiplyPointtypeIsOn": {
+          "type": "boolean"
+        },
+        "pointTypeToMultiply": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "multiplyWithThis": {
+          "type": [
+            "number",
+            "string"
+          ]
+        },
+        "multiplyPointtypeIsId": {
+          "type": "boolean"
+        },
+        "dividePointtypeIsOn": {
+          "type": "boolean"
+        },
+        "pointTypeToDivide": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "divideWithThis": {
+          "type": "number"
+        },
+        "startingSumAtMultiply": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "value": {
+                "type": "number"
+              },
+              "calcVal": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "value",
+              "calcVal"
+            ]
+          }
+        },
+        "startingSumAtDivide": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "value": {
+                "type": "number"
+              },
+              "calcVal": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "value",
+              "calcVal"
+            ]
+          }
+        },
+        "startingSumAtSet": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "value": {
+                "type": "number"
+              },
+              "calcVal": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "value",
+              "calcVal"
+            ]
+          }
+        },
+        "multiplyPointtypeIsOnCheck": {
+          "type": "boolean"
+        },
+        "dividePointtypeIsOnCheck": {
+          "type": "boolean"
+        },
+        "setPointtypeIsOnCheck": {
+          "type": "boolean"
+        },
+        "isChangeVariables": {
+          "type": "boolean"
+        },
+        "changedVariables": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "changeType": {
+          "type": "string"
+        },
+        "textfieldIsOn": {
+          "type": "boolean"
+        },
+        "customTextfieldIsOn": {
+          "type": "boolean"
+        },
+        "idOfTheTextfieldWord": {
+          "type": "string"
+        },
+        "wordPromptText": {
+          "type": "string"
+        },
+        "wordChangeSelect": {
+          "type": "string"
+        },
+        "wordChangeDeselect": {
+          "type": "string"
+        },
+        "confirmIsOn": {
+          "type": "boolean"
+        },
+        "backpackBtnRequirement": {
+          "type": "boolean"
+        },
+        "forcedActivated": {
+          "type": "boolean"
+        },
+        "activatedFrom": {
+          "type": "number"
+        },
+        "activatedRandom": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "activatedRandomMul": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "defaultImage": {
+          "type": "string"
+        },
+        "tempMultipleValue": {
+          "type": "number"
+        },
+        "randomWeight": {
+          "type": "number"
+        },
+        "useSeperateAddon": {
+          "type": "boolean"
+        },
+        "useSlider": {
+          "type": "boolean"
+        },
+        "hideCounter": {
+          "type": "boolean"
+        },
+        "templateStack": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "data": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "id",
+              "data"
+            ]
+          }
+        },
+        "widthStack": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "data": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "id",
+              "data"
+            ]
+          }
+        },
+        "isEditModeOn": {
+          "type": "boolean"
+        },
+        "isSelectDelayed": {
+          "type": "boolean"
+        },
+        "selectDelayTime": {
+          "type": "number"
+        },
+        "selectDelayTimer": {
+          "type": "boolean"
+        },
+        "isDeselectDelayed": {
+          "type": "boolean"
+        },
+        "deselectDelayTime": {
+          "type": "number"
+        },
+        "deselectDelayTimer": {
+          "type": "boolean"
+        },
+        "showScoreInAddon": {
+          "type": "boolean"
+        },
+        "showReqInAddon": {
+          "type": "boolean"
+        },
+        "showMulInAddon": {
+          "type": "boolean"
+        },
+        "setPointtypeIsOn": {
+          "type": "boolean"
+        },
+        "pointTypeToSet": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "setWithThis": {
+          "type": "string"
+        },
+        "isNotSearchable": {
+          "type": "boolean"
+        },
+        "isAutoActive": {
+          "type": "boolean"
+        },
+        "useSfx": {
+          "type": "boolean"
+        },
+        "sfxIdOnSelect": {
+          "type": "string"
+        },
+        "sfxIdOnDeselect": {
+          "type": "string"
+        },
+        "sfxOnSelect": {
+          "type": "boolean"
+        },
+        "sfxOnDeselect": {
+          "type": "boolean"
+        },
+        "isCountDisabled": {
+          "type": "boolean"
+        },
+        "deselectWhenNoAddon": {
+          "type": "boolean"
+        },
+        "id": {
+          "type": "string"
+        },
+        "index": {
+          "type": "number"
+        },
+        "title": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string"
+        },
+        "debugTitle": {
+          "type": "string"
+        },
+        "image": {
+          "type": "string"
+        },
+        "template": {
+          "type": "number"
+        },
+        "objectWidth": {
+          "type": "string"
+        },
+        "isActive": {
+          "type": "boolean"
+        },
+        "multipleUseVariable": {
+          "type": "number"
+        },
+        "initMultipleTimesMinus": {
+          "type": "number"
+        },
+        "selectedThisManyTimesProp": {
+          "type": "number"
+        },
+        "requireds": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Requireds"
+          }
+        },
+        "addons": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Addon"
+          }
+        },
+        "scores": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Score"
+          }
+        },
+        "groups": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "objectDesignGroups": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "isPrivateStyling": {
+          "type": "boolean"
+        },
+        "privateFilterIsOn": {
+          "type": "boolean"
+        },
+        "privateTextIsOn": {
+          "type": "boolean"
+        },
+        "privateObjectImageIsOn": {
+          "type": "boolean"
+        },
+        "privateObjectIsOn": {
+          "type": "boolean"
+        },
+        "privateAddonImageIsOn": {
+          "type": "boolean"
+        },
+        "privateAddonIsOn": {
+          "type": "boolean"
+        },
+        "privateBackgroundIsOn": {
+          "type": "boolean"
+        },
+        "privateMultiChoiceIsOn": {
+          "type": "boolean"
+        },
+        "styling": {
+          "$ref": "#/definitions/Styling"
+        },
+        "addonJustify": {
+          "type": "string"
+        },
+        "linkedObjects": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "addons",
+        "debugTitle",
+        "groups",
+        "id",
+        "image",
+        "index",
+        "isActive",
+        "multipleUseVariable",
+        "objectWidth",
+        "requireds",
+        "scores",
+        "selectedThisManyTimesProp",
+        "template",
+        "text",
+        "title"
+      ]
+    },
+    "Addon": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/NonSelectableAddon"
+        },
+        {
+          "$ref": "#/definitions/SelectableAddon"
+        }
+      ]
+    },
+    "NonSelectableAddon": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string"
+        },
+        "template": {
+          "type": "number"
+        },
+        "image": {
+          "type": "string"
+        },
+        "requireds": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Requireds"
+          }
+        },
+        "parentId": {
+          "type": "string"
+        },
+        "showAddon": {
+          "type": "boolean"
+        },
+        "hideAddon": {
+          "type": "boolean"
+        },
+        "skipIndex": {
+          "type": "boolean"
+        },
+        "defaultTemplate": {
+          "type": "number"
+        },
+        "templateStack": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "data": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "id",
+              "data"
+            ]
+          }
+        },
+        "addonWidth": {
+          "type": "string"
+        },
+        "isSelectable": {
+          "type": "boolean",
+          "const": false
+        }
+      },
+      "required": [
+        "id",
+        "image",
+        "requireds",
+        "template",
+        "text",
+        "title"
+      ]
+    },
+    "SelectableAddon": {
+      "type": "object",
+      "properties": {
+        "hideMultipleCounter": {
+          "type": "boolean"
+        },
+        "allowSelectByClick": {
+          "type": "boolean"
+        },
+        "hideCounterUntilSelect": {
+          "type": "boolean"
+        },
+        "isSelectableMultiple": {
+          "type": "boolean"
+        },
+        "isMultipleUseVariable": {
+          "type": "boolean"
+        },
+        "multipleScoreId": {
+          "type": "string"
+        },
+        "numMultipleTimesMinus": {
+          "type": "number"
+        },
+        "numMultipleTimesPluss": {
+          "type": "number"
+        },
+        "isNotSelectable": {
+          "type": "boolean"
+        },
+        "selectOnce": {
+          "type": "boolean"
+        },
+        "notDeselectedByClean": {
+          "type": "boolean"
+        },
+        "isNotResult": {
+          "type": "boolean"
+        },
+        "isImageUpload": {
+          "type": "boolean"
+        },
+        "cleanACtivatedOnSelect": {
+          "type": "boolean"
+        },
+        "activateOtherChoice": {
+          "type": "boolean"
+        },
+        "isNotDeactivate": {
+          "type": "boolean"
+        },
+        "isAllowDeselect": {
+          "type": "boolean"
+        },
+        "activateAfterReset": {
+          "type": "boolean"
+        },
+        "isActivateRandom": {
+          "type": "boolean"
+        },
+        "numActivateRandom": {
+          "type": "number"
+        },
+        "activateThisChoice": {
+          "type": "string"
+        },
+        "isNotActiveUnselectable": {
+          "type": "boolean"
+        },
+        "deactivateOtherChoice": {
+          "type": "boolean"
+        },
+        "deactivateThisChoice": {
+          "type": "string"
+        },
+        "discountOther": {
+          "type": "boolean"
+        },
+        "discountLowLimitIsOn": {
+          "type": "boolean"
+        },
+        "discountLowLimit": {
+          "type": "number"
+        },
+        "discountShow": {
+          "type": "boolean"
+        },
+        "replaceScoreText": {
+          "type": "boolean"
+        },
+        "hideScoreValue": {
+          "type": "boolean"
+        },
+        "hideScoreIcon": {
+          "type": "boolean"
+        },
+        "discountBeforeText": {
+          "type": "string"
+        },
+        "discountAfterText": {
+          "type": "string"
+        },
+        "isDisChoices": {
+          "type": "boolean"
+        },
+        "discountRows": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "discountChoices": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "discountGroups": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "discountPointTypes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "discountOperator": {
+          "type": "string"
+        },
+        "discountValue": {
+          "type": "number"
+        },
+        "stackableDiscount": {
+          "type": "boolean"
+        },
+        "useDiscountCount": {
+          "type": "boolean"
+        },
+        "discountCount": {
+          "type": "number"
+        },
+        "countPerSelection": {
+          "type": "boolean"
+        },
+        "numDiscountChoices": {
+          "type": "number"
+        },
+        "appliedDisChoices": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "duplicateRow": {
+          "type": "boolean"
+        },
+        "dRowAddSufReq": {
+          "type": "boolean"
+        },
+        "dRowAddSufFunc": {
+          "type": "boolean"
+        },
+        "duplicateRowId": {
+          "type": "string"
+        },
+        "duplicateRowPlace": {
+          "type": "string"
+        },
+        "isContentHidden": {
+          "type": "boolean"
+        },
+        "hiddenContentsRow": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "hiddenContentsType": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "addToAllowChoice": {
+          "type": "boolean"
+        },
+        "idOfAllowChoice": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "numbAddToAllowChoice": {
+          "type": "number"
+        },
+        "showAllAddons": {
+          "type": "boolean"
+        },
+        "changeTemplates": {
+          "type": "boolean"
+        },
+        "changeAddonTemplate": {
+          "type": "boolean"
+        },
+        "changeWidth": {
+          "type": "boolean"
+        },
+        "changeTemplatesList": {
+          "type": "string"
+        },
+        "changeToThisTemplate": {
+          "type": "number"
+        },
+        "changeWidthList": {
+          "type": "string"
+        },
+        "changeToThisWidth": {
+          "type": "string"
+        },
+        "defaultTemplate": {
+          "type": "number"
+        },
+        "defaultWidth": {
+          "type": "string"
+        },
+        "scrollToRow": {
+          "type": "boolean"
+        },
+        "scrollToObject": {
+          "type": "boolean"
+        },
+        "scrollObjectId": {
+          "type": "string"
+        },
+        "scrollRowId": {
+          "type": "string"
+        },
+        "changePointBar": {
+          "type": "boolean"
+        },
+        "changeBarBgColorIsOn": {
+          "type": "boolean"
+        },
+        "changeBarTextColorIsOn": {
+          "type": "boolean"
+        },
+        "changeBarIconColorIsOn": {
+          "type": "boolean"
+        },
+        "changedBarBgColor": {
+          "type": "string"
+        },
+        "changedBarTextColor": {
+          "type": "string"
+        },
+        "changedBarIconColor": {
+          "type": "string"
+        },
+        "changeBackground": {
+          "type": "boolean"
+        },
+        "changeBgImage": {
+          "type": "boolean"
+        },
+        "changedBgColorCode": {
+          "type": "string"
+        },
+        "bgImage": {
+          "type": "string"
+        },
+        "setBgmIsOn": {
+          "type": "boolean"
+        },
+        "bgmId": {
+          "type": "string"
+        },
+        "bgmFadeIn": {
+          "type": "boolean"
+        },
+        "bgmFadeOut": {
+          "type": "boolean"
+        },
+        "bgmFadeInSec": {
+          "type": "number"
+        },
+        "bgmFadeOutSec": {
+          "type": "number"
+        },
+        "bgmNoLoop": {
+          "type": "boolean"
+        },
+        "muteBgm": {
+          "type": "boolean"
+        },
+        "useAudioURL": {
+          "type": "boolean"
+        },
+        "isFadeTransition": {
+          "type": "boolean"
+        },
+        "fadeTransitionColor": {
+          "type": "string"
+        },
+        "fadeTransitionTime": {
+          "type": "number"
+        },
+        "fadeInTransitionTime": {
+          "type": "number"
+        },
+        "fadeOutTransitionTime": {
+          "type": "number"
+        },
+        "multiplyPointtypeIsOn": {
+          "type": "boolean"
+        },
+        "pointTypeToMultiply": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "multiplyWithThis": {
+          "type": [
+            "number",
+            "string"
+          ]
+        },
+        "multiplyPointtypeIsId": {
+          "type": "boolean"
+        },
+        "dividePointtypeIsOn": {
+          "type": "boolean"
+        },
+        "pointTypeToDivide": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "divideWithThis": {
+          "type": "number"
+        },
+        "startingSumAtMultiply": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "value": {
+                "type": "number"
+              },
+              "calcVal": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "value",
+              "calcVal"
+            ]
+          }
+        },
+        "startingSumAtDivide": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "value": {
+                "type": "number"
+              },
+              "calcVal": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "value",
+              "calcVal"
+            ]
+          }
+        },
+        "startingSumAtSet": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "value": {
+                "type": "number"
+              },
+              "calcVal": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "value",
+              "calcVal"
+            ]
+          }
+        },
+        "multiplyPointtypeIsOnCheck": {
+          "type": "boolean"
+        },
+        "dividePointtypeIsOnCheck": {
+          "type": "boolean"
+        },
+        "setPointtypeIsOnCheck": {
+          "type": "boolean"
+        },
+        "isChangeVariables": {
+          "type": "boolean"
+        },
+        "changedVariables": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "changeType": {
+          "type": "string"
+        },
+        "textfieldIsOn": {
+          "type": "boolean"
+        },
+        "customTextfieldIsOn": {
+          "type": "boolean"
+        },
+        "idOfTheTextfieldWord": {
+          "type": "string"
+        },
+        "wordPromptText": {
+          "type": "string"
+        },
+        "wordChangeSelect": {
+          "type": "string"
+        },
+        "wordChangeDeselect": {
+          "type": "string"
+        },
+        "confirmIsOn": {
+          "type": "boolean"
+        },
+        "backpackBtnRequirement": {
+          "type": "boolean"
+        },
+        "forcedActivated": {
+          "type": "boolean"
+        },
+        "activatedFrom": {
+          "type": "number"
+        },
+        "activatedRandom": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "activatedRandomMul": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "defaultImage": {
+          "type": "string"
+        },
+        "tempMultipleValue": {
+          "type": "number"
+        },
+        "randomWeight": {
+          "type": "number"
+        },
+        "useSeperateAddon": {
+          "type": "boolean"
+        },
+        "useSlider": {
+          "type": "boolean"
+        },
+        "hideCounter": {
+          "type": "boolean"
+        },
+        "templateStack": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "data": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "id",
+              "data"
+            ]
+          }
+        },
+        "widthStack": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "data": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "id",
+              "data"
+            ]
+          }
+        },
+        "isEditModeOn": {
+          "type": "boolean"
+        },
+        "isSelectDelayed": {
+          "type": "boolean"
+        },
+        "selectDelayTime": {
+          "type": "number"
+        },
+        "selectDelayTimer": {
+          "type": "boolean"
+        },
+        "isDeselectDelayed": {
+          "type": "boolean"
+        },
+        "deselectDelayTime": {
+          "type": "number"
+        },
+        "deselectDelayTimer": {
+          "type": "boolean"
+        },
+        "showScoreInAddon": {
+          "type": "boolean"
+        },
+        "showReqInAddon": {
+          "type": "boolean"
+        },
+        "showMulInAddon": {
+          "type": "boolean"
+        },
+        "setPointtypeIsOn": {
+          "type": "boolean"
+        },
+        "pointTypeToSet": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "setWithThis": {
+          "type": "string"
+        },
+        "isNotSearchable": {
+          "type": "boolean"
+        },
+        "isAutoActive": {
+          "type": "boolean"
+        },
+        "useSfx": {
+          "type": "boolean"
+        },
+        "sfxIdOnSelect": {
+          "type": "string"
+        },
+        "sfxIdOnDeselect": {
+          "type": "string"
+        },
+        "sfxOnSelect": {
+          "type": "boolean"
+        },
+        "sfxOnDeselect": {
+          "type": "boolean"
+        },
+        "isCountDisabled": {
+          "type": "boolean"
+        },
+        "deselectWhenNoAddon": {
+          "type": "boolean"
+        },
+        "id": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string"
+        },
+        "template": {
+          "type": "number"
+        },
+        "image": {
+          "type": "string"
+        },
+        "requireds": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Requireds"
+          }
+        },
+        "parentId": {
+          "type": "string"
+        },
+        "showAddon": {
+          "type": "boolean"
+        },
+        "hideAddon": {
+          "type": "boolean"
+        },
+        "skipIndex": {
+          "type": "boolean"
+        },
+        "addonWidth": {
+          "type": "string"
+        },
+        "isSelectable": {
+          "type": "boolean",
+          "const": true
+        },
+        "scores": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Score"
+          }
+        },
+        "groups": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "multipleUseVariable": {
+          "type": "number"
+        },
+        "isActive": {
+          "type": "boolean"
+        },
+        "deselectParent": {
+          "type": "boolean"
+        },
+        "countAsChoice": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "groups",
+        "id",
+        "image",
+        "isActive",
+        "isSelectable",
+        "multipleUseVariable",
+        "requireds",
+        "scores",
+        "template",
+        "text",
+        "title"
+      ]
+    },
+    "Score": {
+      "type": "object",
+      "properties": {
+        "idx": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "value": {
+          "type": "number"
+        },
+        "type": {
+          "type": "string"
+        },
+        "beforeText": {
+          "type": "string"
+        },
+        "afterText": {
+          "type": "string"
+        },
+        "requireds": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Requireds"
+          }
+        },
+        "showScore": {
+          "type": "boolean"
+        },
+        "isActive": {
+          "type": "boolean"
+        },
+        "isActiveMul": {
+          "type": "array",
+          "items": {
+            "type": "boolean"
+          }
+        },
+        "isActiveMulMinus": {
+          "type": "array",
+          "items": {
+            "type": "boolean"
+          }
+        },
+        "hideValue": {
+          "type": "boolean"
+        },
+        "isNotRecalculatable": {
+          "type": "boolean"
+        },
+        "isNotDiscountable": {
+          "type": "boolean"
+        },
+        "isRandom": {
+          "type": "boolean"
+        },
+        "minValue": {
+          "type": "number"
+        },
+        "maxValue": {
+          "type": "number"
+        },
+        "setValue": {
+          "type": "boolean"
+        },
+        "discounts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Discount"
+          }
+        },
+        "discountIsOn": {
+          "type": "boolean"
+        },
+        "discountShow": {
+          "type": "boolean"
+        },
+        "discountBeforeText": {
+          "type": "string"
+        },
+        "discountAfterText": {
+          "type": "string"
+        },
+        "discountScore": {
+          "type": "number"
+        },
+        "discountScoreCal": {
+          "type": "number"
+        },
+        "isChangeDiscount": {
+          "type": "boolean"
+        },
+        "discountNum": {
+          "type": "number"
+        },
+        "tmpDisScore": {
+          "type": "number"
+        },
+        "tmpDiscount": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Discount"
+          }
+        },
+        "discountedFrom": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "dupTextA": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "number"
+          }
+        },
+        "dupTextB": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "number"
+          }
+        },
+        "discountTextA": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "discountTextB": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "notStackableDiscount": {
+          "type": "boolean"
+        },
+        "multiplyByTimes": {
+          "type": "boolean"
+        },
+        "displayMulScore": {
+          "type": "boolean"
+        },
+        "appliedDiscount": {
+          "type": "boolean"
+        },
+        "replaceText": {
+          "type": "boolean"
+        },
+        "hideDisValue": {
+          "type": "boolean"
+        },
+        "hideDisIcon": {
+          "type": "boolean"
+        },
+        "useExpression": {
+          "type": "boolean"
+        },
+        "expValue": {
+          "type": "string"
+        },
+        "expMinValue": {
+          "type": "string"
+        },
+        "expMaxValue": {
+          "type": "string"
+        },
+        "mulValue": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          }
+        }
+      },
+      "required": [
+        "idx",
+        "id",
+        "value",
+        "type",
+        "beforeText",
+        "afterText",
+        "requireds",
+        "showScore"
+      ]
+    },
+    "Discount": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "state": {
+          "type": "number"
+        },
+        "stackable": {
+          "type": "boolean"
+        },
+        "stack": {
+          "type": "number"
+        },
+        "operator": {
+          "type": "string"
+        },
+        "value": {
+          "type": "number"
+        },
+        "count": {
+          "type": "number"
+        },
+        "useLowLimit": {
+          "type": "boolean"
+        },
+        "lowLimit": {
+          "type": "number"
+        },
+        "showDiscount": {
+          "type": "boolean"
+        },
+        "afterText": {
+          "type": "string"
+        },
+        "beforeText": {
+          "type": "string"
+        },
+        "replaceText": {
+          "type": "boolean"
+        },
+        "consolidate": {
+          "type": "boolean"
+        },
+        "hideValue": {
+          "type": "boolean"
+        },
+        "hideIcon": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "state",
+        "stackable",
+        "stack",
+        "operator",
+        "value",
+        "count",
+        "useLowLimit",
+        "lowLimit",
+        "showDiscount",
+        "afterText",
+        "beforeText",
+        "replaceText",
+        "consolidate",
+        "hideValue",
+        "hideIcon"
+      ]
+    },
+    "Styling": {
+      "type": "object",
+      "properties": {
+        "useBackpackDesign": {
+          "type": "boolean"
+        },
+        "backpackBgColor": {
+          "type": "string"
+        },
+        "isBackpackBgRepeat": {
+          "type": "boolean"
+        },
+        "isBackpackBgFitIn": {
+          "type": "boolean"
+        },
+        "backpackBgImage": {
+          "type": "string"
+        },
+        "backPackWidth": {
+          "type": "number"
+        },
+        "barTextPadding": {
+          "type": "number"
+        },
+        "barTextMargin": {
+          "type": "number"
+        },
+        "customBarTextFont": {
+          "type": "boolean"
+        },
+        "barTextFont": {
+          "type": "string"
+        },
+        "barPadding": {
+          "type": "number"
+        },
+        "barMargin": {
+          "type": "number"
+        },
+        "barTextSize": {
+          "type": "number"
+        },
+        "barTextColor": {
+          "type": "string"
+        },
+        "barPointPos": {
+          "type": "string"
+        },
+        "barPointNeg": {
+          "type": "string"
+        },
+        "barIconColor": {
+          "type": "string"
+        },
+        "barBackgroundColor": {
+          "type": "string"
+        },
+        "customMultiTextFont": {
+          "type": "boolean"
+        },
+        "multiChoiceCounterPosition": {
+          "type": "number"
+        },
+        "multiChoiceCounterSize": {
+          "type": "number"
+        },
+        "multiChoiceTextFont": {
+          "type": "string"
+        },
+        "multiChoiceTextSize": {
+          "type": "number"
+        },
+        "useAddonDesign": {
+          "type": "boolean"
+        },
+        "addonDesignIsAdvanced": {
+          "type": "boolean"
+        },
+        "addonMargin": {
+          "type": "number"
+        },
+        "addonTextPadding": {
+          "type": "number"
+        },
+        "addonBorderStyle": {
+          "type": "string"
+        },
+        "addonBorderWidth": {
+          "type": "number"
+        },
+        "addonBorderIsOn": {
+          "type": "boolean"
+        },
+        "addonDropShadowH": {
+          "type": "number"
+        },
+        "addonDropShadowV": {
+          "type": "number"
+        },
+        "addonDropShadowBlur": {
+          "type": "number"
+        },
+        "addonDropShadowSpread": {
+          "type": "number"
+        },
+        "addonDropShadowIsOn": {
+          "type": "boolean"
+        },
+        "addonUseBoxShadowIsOn": {
+          "type": "boolean"
+        },
+        "addonBorderRadiusTopLeft": {
+          "type": "number"
+        },
+        "addonBorderRadiusTopRight": {
+          "type": "number"
+        },
+        "addonBorderRadiusBottomRight": {
+          "type": "number"
+        },
+        "addonBorderRadiusBottomLeft": {
+          "type": "number"
+        },
+        "addonBorderRadiusIsPixels": {
+          "type": "boolean"
+        },
+        "addonOverflowIsOn": {
+          "type": "boolean"
+        },
+        "addonDropShadowColor": {
+          "type": "string"
+        },
+        "addonGradientIsOn": {
+          "type": "boolean"
+        },
+        "addonGradient": {
+          "type": "string"
+        },
+        "addonGradientOnSelect": {
+          "type": "string"
+        },
+        "addonGradientOnReq": {
+          "type": "string"
+        },
+        "addonBorderColor": {
+          "type": "string"
+        },
+        "addonBorderImage": {
+          "type": "string"
+        },
+        "addonBorderImageRepeat": {
+          "type": "string"
+        },
+        "addonBorderImageWidth": {
+          "type": "number"
+        },
+        "addonBorderImageSliceTop": {
+          "type": "number"
+        },
+        "addonBorderImageSliceBottom": {
+          "type": "number"
+        },
+        "addonBorderImageSliceLeft": {
+          "type": "number"
+        },
+        "addonBorderImageSliceRight": {
+          "type": "number"
+        },
+        "useAddonBackgroundImage": {
+          "type": "boolean"
+        },
+        "addonBackgroundImage": {
+          "type": "string"
+        },
+        "isAddonBackgroundFitIn": {
+          "type": "boolean"
+        },
+        "isAddonBackgroundRepeat": {
+          "type": "boolean"
+        },
+        "isAddonBackgroundOverlay": {
+          "type": "boolean"
+        },
+        "addonBgColorIsOn": {
+          "type": "boolean"
+        },
+        "addonBgColor": {
+          "type": "string"
+        },
+        "addonTitlePaddingIsOn": {
+          "type": "boolean"
+        },
+        "rowDesignIsAdvanced": {
+          "type": "boolean"
+        },
+        "rowMargin": {
+          "type": "number"
+        },
+        "rowBodyMarginSides": {
+          "type": "number"
+        },
+        "rowBodyMarginTop": {
+          "type": "number"
+        },
+        "rowBodyMarginBottom": {
+          "type": "number"
+        },
+        "rowHeaderMarginBottom": {
+          "type": "number"
+        },
+        "rowTextPaddingY": {
+          "type": "number"
+        },
+        "rowTextPaddingX": {
+          "type": "number"
+        },
+        "rowOverflowIsOn": {
+          "type": "boolean"
+        },
+        "rowDropShadowH": {
+          "type": "number"
+        },
+        "rowDropShadowV": {
+          "type": "number"
+        },
+        "rowDropShadowBlur": {
+          "type": "number"
+        },
+        "rowDropShadowSpread": {
+          "type": "number"
+        },
+        "rowDropShadowColor": {
+          "type": "string"
+        },
+        "rowButtonXPadding": {
+          "type": "number"
+        },
+        "rowButtonYPadding": {
+          "type": "number"
+        },
+        "rowDropShadowIsOn": {
+          "type": "boolean"
+        },
+        "rowUseBoxShadowIsOn": {
+          "type": "boolean"
+        },
+        "rowBorderRadiusTopLeft": {
+          "type": "number"
+        },
+        "rowBorderRadiusTopRight": {
+          "type": "number"
+        },
+        "rowBorderRadiusBottomRight": {
+          "type": "number"
+        },
+        "rowBorderRadiusBottomLeft": {
+          "type": "number"
+        },
+        "rowBorderRadiusIsPixels": {
+          "type": "boolean"
+        },
+        "rowBorderStyle": {
+          "type": "string"
+        },
+        "rowBorderWidth": {
+          "type": "number"
+        },
+        "rowBorderIsOn": {
+          "type": "boolean"
+        },
+        "rowBorderColor": {
+          "type": "string"
+        },
+        "rowGradientIsOn": {
+          "type": "boolean"
+        },
+        "rowGradient": {
+          "type": "string"
+        },
+        "rowBorderImage": {
+          "type": "string"
+        },
+        "rowBorderImageRepeat": {
+          "type": "string"
+        },
+        "rowBorderImageWidth": {
+          "type": "number"
+        },
+        "rowBorderImageSliceTop": {
+          "type": "number"
+        },
+        "rowBorderImageSliceBottom": {
+          "type": "number"
+        },
+        "rowBorderImageSliceLeft": {
+          "type": "number"
+        },
+        "rowBorderImageSliceRight": {
+          "type": "number"
+        },
+        "borderRadiusSuffix": {
+          "type": "string"
+        },
+        "objectHeight": {
+          "type": "boolean"
+        },
+        "objectDesignIsAdvanced": {
+          "type": "boolean"
+        },
+        "objectMargin": {
+          "type": "number"
+        },
+        "objectTextPadding": {
+          "type": "number"
+        },
+        "objectBorderStyle": {
+          "type": "string"
+        },
+        "objectBorderWidth": {
+          "type": "number"
+        },
+        "objectBorderIsOn": {
+          "type": "boolean"
+        },
+        "objectDropShadowH": {
+          "type": "number"
+        },
+        "objectDropShadowV": {
+          "type": "number"
+        },
+        "objectDropShadowBlur": {
+          "type": "number"
+        },
+        "objectDropShadowSpread": {
+          "type": "number"
+        },
+        "objectDropShadowIsOn": {
+          "type": "boolean"
+        },
+        "objectUseBoxShadowIsOn": {
+          "type": "boolean"
+        },
+        "objectBorderRadiusTopLeft": {
+          "type": "number"
+        },
+        "objectBorderRadiusTopRight": {
+          "type": "number"
+        },
+        "objectBorderRadiusBottomRight": {
+          "type": "number"
+        },
+        "objectBorderRadiusBottomLeft": {
+          "type": "number"
+        },
+        "objectBorderRadiusIsPixels": {
+          "type": "boolean"
+        },
+        "objectOverflowIsOn": {
+          "type": "boolean"
+        },
+        "objectDropShadowColor": {
+          "type": "string"
+        },
+        "objectGradientIsOn": {
+          "type": "boolean"
+        },
+        "objectGradient": {
+          "type": "string"
+        },
+        "objectGradientOnSelect": {
+          "type": "string"
+        },
+        "objectGradientOnReq": {
+          "type": "string"
+        },
+        "objectBorderColor": {
+          "type": "string"
+        },
+        "objectBorderImage": {
+          "type": "string"
+        },
+        "objectBorderImageRepeat": {
+          "type": "string"
+        },
+        "objectBorderImageWidth": {
+          "type": "number"
+        },
+        "objectBorderImageSliceTop": {
+          "type": "number"
+        },
+        "objectBorderImageSliceBottom": {
+          "type": "number"
+        },
+        "objectBorderImageSliceLeft": {
+          "type": "number"
+        },
+        "objectBorderImageSliceRight": {
+          "type": "number"
+        },
+        "removeSpaceAddonIsOn": {
+          "type": "boolean"
+        },
+        "titlePaddingIsOn": {
+          "type": "boolean"
+        },
+        "bgColorIsOn": {
+          "type": "boolean"
+        },
+        "backgroundColor": {
+          "type": "string"
+        },
+        "rowBgColorIsOn": {
+          "type": "boolean"
+        },
+        "rowBgColor": {
+          "type": "string"
+        },
+        "objectBgColorIsOn": {
+          "type": "boolean"
+        },
+        "objectBgColor": {
+          "type": "string"
+        },
+        "isBackgroundRepeat": {
+          "type": "boolean"
+        },
+        "isBackgroundFitIn": {
+          "type": "boolean"
+        },
+        "isBackgroundOverlay": {
+          "type": "boolean"
+        },
+        "backgroundImage": {
+          "type": "string"
+        },
+        "isRowBackgroundRepeat": {
+          "type": "boolean"
+        },
+        "isRowBackgroundFitIn": {
+          "type": "boolean"
+        },
+        "isRowBackgroundOverlay": {
+          "type": "boolean"
+        },
+        "rowBackgroundImage": {
+          "type": "string"
+        },
+        "isObjectBackgroundRepeat": {
+          "type": "boolean"
+        },
+        "isObjectBackgroundFitIn": {
+          "type": "boolean"
+        },
+        "isObjectBackgroundOverlay": {
+          "type": "boolean"
+        },
+        "objectBackgroundImage": {
+          "type": "string"
+        },
+        "useAddonImage": {
+          "type": "boolean"
+        },
+        "addonImgBorderStyle": {
+          "type": "string"
+        },
+        "addonImgBorderWidth": {
+          "type": "number"
+        },
+        "addonImageWidth": {
+          "type": "number"
+        },
+        "addonImageMarginTop": {
+          "type": "number"
+        },
+        "addonImageMarginBottom": {
+          "type": "number"
+        },
+        "addonImgBorderRadiusTopLeft": {
+          "type": "number"
+        },
+        "addonImgBorderRadiusTopRight": {
+          "type": "number"
+        },
+        "addonImgBorderRadiusBottomRight": {
+          "type": "number"
+        },
+        "addonImgBorderRadiusBottomLeft": {
+          "type": "number"
+        },
+        "addonImgBorderRadiusIsPixels": {
+          "type": "boolean"
+        },
+        "addonImgBorderIsOn": {
+          "type": "boolean"
+        },
+        "addonImgOverflowIsOn": {
+          "type": "boolean"
+        },
+        "addonImgBorderColor": {
+          "type": "string"
+        },
+        "addonImgObjectFillStyle": {
+          "type": "string"
+        },
+        "addonImgObjectFillIsOn": {
+          "type": "boolean"
+        },
+        "addonImageBoxWidth": {
+          "type": "number"
+        },
+        "addonImgObjectFillHeight": {
+          "type": "number"
+        },
+        "rowImgBorderStyle": {
+          "type": "string"
+        },
+        "rowImgBorderWidth": {
+          "type": "number"
+        },
+        "rowImageWidth": {
+          "type": "number"
+        },
+        "rowImageMarginTop": {
+          "type": "number"
+        },
+        "rowImageMarginBottom": {
+          "type": "number"
+        },
+        "rowImgBorderRadiusTopLeft": {
+          "type": "number"
+        },
+        "rowImgBorderRadiusTopRight": {
+          "type": "number"
+        },
+        "rowImgBorderRadiusBottomRight": {
+          "type": "number"
+        },
+        "rowImgBorderRadiusBottomLeft": {
+          "type": "number"
+        },
+        "rowImgBorderRadiusIsPixels": {
+          "type": "boolean"
+        },
+        "rowImgBorderIsOn": {
+          "type": "boolean"
+        },
+        "rowImgOverflowIsOn": {
+          "type": "boolean"
+        },
+        "rowImgBorderColor": {
+          "type": "string"
+        },
+        "rowImageBoxWidth": {
+          "type": "number"
+        },
+        "rowImgObjectFillStyle": {
+          "type": "string"
+        },
+        "rowImgObjectFillIsOn": {
+          "type": "boolean"
+        },
+        "rowImgObjectFillHeight": {
+          "type": "number"
+        },
+        "objectImgBorderStyle": {
+          "type": "string"
+        },
+        "objectImgBorderWidth": {
+          "type": "number"
+        },
+        "objectImageWidth": {
+          "type": "number"
+        },
+        "objectImageMarginTop": {
+          "type": "number"
+        },
+        "objectImageMarginBottom": {
+          "type": "number"
+        },
+        "objectImgBorderRadiusTopLeft": {
+          "type": "number"
+        },
+        "objectImgBorderRadiusTopRight": {
+          "type": "number"
+        },
+        "objectImgBorderRadiusBottomRight": {
+          "type": "number"
+        },
+        "objectImgBorderRadiusBottomLeft": {
+          "type": "number"
+        },
+        "objectImgBorderRadiusIsPixels": {
+          "type": "boolean"
+        },
+        "objectImgBorderIsOn": {
+          "type": "boolean"
+        },
+        "objectImgOverflowIsOn": {
+          "type": "boolean"
+        },
+        "objectImgBorderColor": {
+          "type": "string"
+        },
+        "objectImgObjectFillStyle": {
+          "type": "string"
+        },
+        "objectImgObjectFillIsOn": {
+          "type": "boolean"
+        },
+        "objectImageBoxWidth": {
+          "type": "number"
+        },
+        "objectImgObjectFillHeight": {
+          "type": "number"
+        },
+        "customRowTitle": {
+          "type": "boolean"
+        },
+        "rowTitle": {
+          "type": "string"
+        },
+        "customRowText": {
+          "type": "boolean"
+        },
+        "rowText": {
+          "type": "string"
+        },
+        "customObjectTitle": {
+          "type": "boolean"
+        },
+        "objectTitle": {
+          "type": "string"
+        },
+        "customObjectText": {
+          "type": "boolean"
+        },
+        "objectText": {
+          "type": "string"
+        },
+        "customAddonTitle": {
+          "type": "boolean"
+        },
+        "addonTitle": {
+          "type": "string"
+        },
+        "customAddonText": {
+          "type": "boolean"
+        },
+        "addonText": {
+          "type": "string"
+        },
+        "customScoreText": {
+          "type": "boolean"
+        },
+        "scoreText": {
+          "type": "string"
+        },
+        "rowTitleTextSize": {
+          "type": "number"
+        },
+        "rowTextTextSize": {
+          "type": "number"
+        },
+        "objectTitleTextSize": {
+          "type": "number"
+        },
+        "objectTextTextSize": {
+          "type": "number"
+        },
+        "addonTitleTextSize": {
+          "type": "number"
+        },
+        "addonTextTextSize": {
+          "type": "number"
+        },
+        "scoreTextSize": {
+          "type": "number"
+        },
+        "rowTitleColor": {
+          "type": "string"
+        },
+        "rowTextColor": {
+          "type": "string"
+        },
+        "objectTitleColor": {
+          "type": "string"
+        },
+        "objectTextColor": {
+          "type": "string"
+        },
+        "addonTitleColor": {
+          "type": "string"
+        },
+        "addonTextColor": {
+          "type": "string"
+        },
+        "scoreTextColor": {
+          "type": "string"
+        },
+        "rowTitleAlign": {
+          "type": "string"
+        },
+        "rowTextAlign": {
+          "type": "string"
+        },
+        "objectTitleAlign": {
+          "type": "string"
+        },
+        "objectTextAlign": {
+          "type": "string"
+        },
+        "addonTitleAlign": {
+          "type": "string"
+        },
+        "addonTextAlign": {
+          "type": "string"
+        },
+        "scoreTextAlign": {
+          "type": "string"
+        },
+        "selFilterBlurIsOn": {
+          "type": "boolean"
+        },
+        "selFilterBlur": {
+          "type": "number"
+        },
+        "selFilterBrightIsOn": {
+          "type": "boolean"
+        },
+        "selFilterBright": {
+          "type": "number"
+        },
+        "selFilterContIsOn": {
+          "type": "boolean"
+        },
+        "selFilterCont": {
+          "type": "number"
+        },
+        "selFilterGrayIsOn": {
+          "type": "boolean"
+        },
+        "selFilterGray": {
+          "type": "number"
+        },
+        "selFilterHueIsOn": {
+          "type": "boolean"
+        },
+        "selFilterHue": {
+          "type": "number"
+        },
+        "selFilterInvertIsOn": {
+          "type": "boolean"
+        },
+        "selFilterInvert": {
+          "type": "number"
+        },
+        "selFilterOpacIsOn": {
+          "type": "boolean"
+        },
+        "selFilterOpac": {
+          "type": "number"
+        },
+        "selFilterSaturIsOn": {
+          "type": "boolean"
+        },
+        "selFilterSatur": {
+          "type": "number"
+        },
+        "selFilterSepiaIsOn": {
+          "type": "boolean"
+        },
+        "selFilterSepia": {
+          "type": "number"
+        },
+        "selBgColorIsOn": {
+          "type": "boolean"
+        },
+        "selOverlayOnImage": {
+          "type": "boolean"
+        },
+        "selFilterBgColor": {
+          "type": "string"
+        },
+        "selBorderColorIsOn": {
+          "type": "boolean"
+        },
+        "selFilterBorderColor": {
+          "type": "string"
+        },
+        "selImgBorderColorIsOn": {
+          "type": "boolean"
+        },
+        "selFilterImgBorderColor": {
+          "type": "string"
+        },
+        "selCTitleColorIsOn": {
+          "type": "boolean"
+        },
+        "selFilterCTitleColor": {
+          "type": "string"
+        },
+        "selCTextColorIsOn": {
+          "type": "boolean"
+        },
+        "selFilterCTextColor": {
+          "type": "string"
+        },
+        "selATitleColorIsOn": {
+          "type": "boolean"
+        },
+        "selFilterATitleColor": {
+          "type": "string"
+        },
+        "selATextColorIsOn": {
+          "type": "boolean"
+        },
+        "selFilterATextColor": {
+          "type": "string"
+        },
+        "selScoreTextColorIsOn": {
+          "type": "boolean"
+        },
+        "selFilterSTextColor": {
+          "type": "string"
+        },
+        "selFilterVisibleIsOn": {
+          "type": "boolean"
+        },
+        "reqFilterBlurIsOn": {
+          "type": "boolean"
+        },
+        "reqFilterBlur": {
+          "type": "number"
+        },
+        "reqFilterBrightIsOn": {
+          "type": "boolean"
+        },
+        "reqFilterBright": {
+          "type": "number"
+        },
+        "reqFilterContIsOn": {
+          "type": "boolean"
+        },
+        "reqFilterCont": {
+          "type": "number"
+        },
+        "reqFilterGrayIsOn": {
+          "type": "boolean"
+        },
+        "reqFilterGray": {
+          "type": "number"
+        },
+        "reqFilterHueIsOn": {
+          "type": "boolean"
+        },
+        "reqFilterHue": {
+          "type": "number"
+        },
+        "reqFilterInvertIsOn": {
+          "type": "boolean"
+        },
+        "reqFilterInvert": {
+          "type": "number"
+        },
+        "reqFilterOpacIsOn": {
+          "type": "boolean"
+        },
+        "reqFilterOpac": {
+          "type": "number"
+        },
+        "reqFilterSaturIsOn": {
+          "type": "boolean"
+        },
+        "reqFilterSatur": {
+          "type": "number"
+        },
+        "reqFilterSepiaIsOn": {
+          "type": "boolean"
+        },
+        "reqFilterSepia": {
+          "type": "number"
+        },
+        "reqBgColorIsOn": {
+          "type": "boolean"
+        },
+        "reqOverlayOnImage": {
+          "type": "boolean"
+        },
+        "reqFilterBgColor": {
+          "type": "string"
+        },
+        "reqBorderColorIsOn": {
+          "type": "boolean"
+        },
+        "reqFilterBorderColor": {
+          "type": "string"
+        },
+        "reqImgBorderColorIsOn": {
+          "type": "boolean"
+        },
+        "reqFilterImgBorderColor": {
+          "type": "string"
+        },
+        "reqCTitleColorIsOn": {
+          "type": "boolean"
+        },
+        "reqFilterCTitleColor": {
+          "type": "string"
+        },
+        "reqCTextColorIsOn": {
+          "type": "boolean"
+        },
+        "reqFilterCTextColor": {
+          "type": "string"
+        },
+        "reqATitleColorIsOn": {
+          "type": "boolean"
+        },
+        "reqFilterATitleColor": {
+          "type": "string"
+        },
+        "reqATextColorIsOn": {
+          "type": "boolean"
+        },
+        "reqFilterATextColor": {
+          "type": "string"
+        },
+        "reqScoreTextColorIsOn": {
+          "type": "boolean"
+        },
+        "reqFilterSTextColor": {
+          "type": "string"
+        },
+        "reqFilterVisibleIsOn": {
+          "type": "boolean"
+        },
+        "unselFilterBlurIsOn": {
+          "type": "boolean"
+        },
+        "unselFilterBlur": {
+          "type": "number"
+        },
+        "unselFilterBrightIsOn": {
+          "type": "boolean"
+        },
+        "unselFilterBright": {
+          "type": "number"
+        },
+        "unselFilterContIsOn": {
+          "type": "boolean"
+        },
+        "unselFilterCont": {
+          "type": "number"
+        },
+        "unselFilterGrayIsOn": {
+          "type": "boolean"
+        },
+        "unselFilterGray": {
+          "type": "number"
+        },
+        "unselFilterHueIsOn": {
+          "type": "boolean"
+        },
+        "unselFilterHue": {
+          "type": "number"
+        },
+        "unselFilterInvertIsOn": {
+          "type": "boolean"
+        },
+        "unselFilterInvert": {
+          "type": "number"
+        },
+        "unselFilterOpacIsOn": {
+          "type": "boolean"
+        },
+        "unselFilterOpac": {
+          "type": "number"
+        },
+        "unselFilterSaturIsOn": {
+          "type": "boolean"
+        },
+        "unselFilterSatur": {
+          "type": "number"
+        },
+        "unselFilterSepiaIsOn": {
+          "type": "boolean"
+        },
+        "unselFilterSepia": {
+          "type": "number"
+        },
+        "unselFilterVisibleIsOn": {
+          "type": "boolean"
+        }
+      }
+    },
+    "Word": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "replaceText": {
+          "type": "string"
+        },
+        "category": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "id",
+        "replaceText"
+      ]
+    },
+    "Group": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "category": {
+          "type": "number"
+        },
+        "elements": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "rowElements": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "designGroups": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "elements",
+        "rowElements"
+      ]
+    },
+    "RowDesignGroup": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "activatedId": {
+          "type": "string"
+        },
+        "elements": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "backpackElements": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "groupElements": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "privateFilterIsOn": {
+          "type": "boolean"
+        },
+        "privateTextIsOn": {
+          "type": "boolean"
+        },
+        "privateObjectImageIsOn": {
+          "type": "boolean"
+        },
+        "privateObjectIsOn": {
+          "type": "boolean"
+        },
+        "privateRowImageIsOn": {
+          "type": "boolean"
+        },
+        "privateRowIsOn": {
+          "type": "boolean"
+        },
+        "privateAddonImageIsOn": {
+          "type": "boolean"
+        },
+        "privateAddonIsOn": {
+          "type": "boolean"
+        },
+        "privateBackgroundIsOn": {
+          "type": "boolean"
+        },
+        "category": {
+          "type": "number"
+        },
+        "styling": {
+          "$ref": "#/definitions/Styling"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "activatedId",
+        "elements",
+        "backpackElements",
+        "groupElements",
+        "styling"
+      ]
+    },
+    "ObjectDesignGroup": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "activatedId": {
+          "type": "string"
+        },
+        "elements": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "backpackElements": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "groupElements": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "privateFilterIsOn": {
+          "type": "boolean"
+        },
+        "privateTextIsOn": {
+          "type": "boolean"
+        },
+        "privateObjectImageIsOn": {
+          "type": "boolean"
+        },
+        "privateObjectIsOn": {
+          "type": "boolean"
+        },
+        "privateAddonImageIsOn": {
+          "type": "boolean"
+        },
+        "privateAddonIsOn": {
+          "type": "boolean"
+        },
+        "privateBackgroundIsOn": {
+          "type": "boolean"
+        },
+        "category": {
+          "type": "number"
+        },
+        "styling": {
+          "$ref": "#/definitions/Styling"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "activatedId",
+        "elements",
+        "backpackElements",
+        "groupElements",
+        "styling"
+      ]
+    },
+    "GlobalRequirement": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "category": {
+          "type": "number"
+        },
+        "requireds": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Requireds"
+          }
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "requireds"
+      ]
+    },
+    "SoundEffect": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "audio": {
+          "type": "string"
+        },
+        "volume": {
+          "type": "number"
+        },
+        "pitch": {
+          "type": "number"
+        },
+        "isDefault": {
+          "type": "boolean"
+        },
+        "onSelected": {
+          "type": "boolean"
+        },
+        "onDeselected": {
+          "type": "boolean"
+        },
+        "requireds": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Requireds"
+          }
+        },
+        "groups": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "audio",
+        "volume",
+        "pitch",
+        "isDefault",
+        "onSelected",
+        "onDeselected",
+        "requireds",
+        "groups"
+      ]
+    },
+    "Variable": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "isTrue": {
+          "type": "boolean"
+        },
+        "category": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "id",
+        "isTrue"
+      ]
+    },
+    "PointType": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "startingSum": {
+          "type": "number"
+        },
+        "initValue": {
+          "type": "number"
+        },
+        "activatedId": {
+          "type": "string"
+        },
+        "beforeText": {
+          "type": "string"
+        },
+        "afterText": {
+          "type": "string"
+        },
+        "belowZeroNotAllowed": {
+          "type": "boolean"
+        },
+        "isNotShownPointBar": {
+          "type": "boolean"
+        },
+        "isNotShownObjects": {
+          "type": "boolean"
+        },
+        "plussOrMinusAdded": {
+          "type": "boolean"
+        },
+        "plussOrMinusInverted": {
+          "type": "boolean"
+        },
+        "pointColorsIsOn": {
+          "type": "boolean"
+        },
+        "positiveColor": {
+          "type": "string"
+        },
+        "negativeColor": {
+          "type": "string"
+        },
+        "iconIsOn": {
+          "type": "boolean"
+        },
+        "useSeperatePosition": {
+          "type": "boolean"
+        },
+        "image": {
+          "type": "string"
+        },
+        "imageOnSide": {
+          "type": "boolean"
+        },
+        "imageSidePlacement": {
+          "type": "boolean"
+        },
+        "imageOnSideInChoice": {
+          "type": "boolean"
+        },
+        "imageSidePlacementInChoice": {
+          "type": "boolean"
+        },
+        "iconWidth": {
+          "type": "number"
+        },
+        "iconHeight": {
+          "type": "number"
+        },
+        "negativeIconIsOn": {
+          "type": "boolean"
+        },
+        "negativeImage": {
+          "type": "string"
+        },
+        "negativeImageOnSide": {
+          "type": "boolean"
+        },
+        "negativeImageSidePlacement": {
+          "type": "boolean"
+        },
+        "negativeImageOnSideInChoice": {
+          "type": "boolean"
+        },
+        "negativeImageSidePlacementInChoice": {
+          "type": "boolean"
+        },
+        "negativeIconWidth": {
+          "type": "number"
+        },
+        "negativeIconHeight": {
+          "type": "number"
+        },
+        "pointPrivateColorIsOn": {
+          "type": "boolean"
+        },
+        "privateColor": {
+          "type": "string"
+        },
+        "privateNegativeColor": {
+          "type": "string"
+        },
+        "imageIsURL": {
+          "type": "boolean"
+        },
+        "allowFloat": {
+          "type": "boolean"
+        },
+        "decimalPlaces": {
+          "type": "number"
+        },
+        "category": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "startingSum",
+        "initValue",
+        "activatedId",
+        "beforeText",
+        "afterText"
+      ]
+    },
+    "Category": {
+      "type": "object",
+      "properties": {
+        "idx": {
+          "type": "number"
+        },
+        "name": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "idx",
+        "name",
+        "type"
+      ]
+    },
+    "ViewerConfig": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "favicon": {
+          "type": "string"
+        },
+        "loadingType": {
+          "type": "string"
+        },
+        "loadingBgColor": {
+          "type": "string"
+        },
+        "loadingBgImage": {
+          "type": "string"
+        },
+        "loadingCircleColor": {
+          "type": "string"
+        },
+        "loadingTrackColor": {
+          "type": "string"
+        },
+        "loadingText": {
+          "type": "string"
+        },
+        "loadingTextColor": {
+          "type": "string"
+        },
+        "loadingTextFont": {
+          "type": "string"
+        },
+        "loadingTextShadow": {
+          "type": "string"
+        },
+        "useSeparateImages": {
+          "type": "boolean"
+        },
+        "useLocalViewer": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "title",
+        "favicon",
+        "loadingType",
+        "loadingBgColor",
+        "loadingBgImage",
+        "loadingCircleColor",
+        "loadingTrackColor",
+        "loadingText",
+        "loadingTextColor",
+        "loadingTextFont",
+        "loadingTextShadow",
+        "useSeparateImages",
+        "useLocalViewer"
+      ]
+    }
+  },
+  "$id": "https://github.com/Kz2g1ew-commits/ICCPlus-MCP/schema/iccplus-project.json",
+  "title": "ICC Plus project schema 2.9.28",
+  "description": "Generated from wahaha303/ICC-Plus-Svelte src/lib/store/types.ts.",
+  "x-iccplus-version": "2.9.28"
+}
