@@ -152,13 +152,13 @@ Local evidence:
 - Git repository initialized on `main`.
 - The complete implementation is committed with a clean working tree.
 - `origin` is configured as
-  `https://github.com/Kz2g1ew-commits/ICCPlus2-MCP.git`.
+  `https://github.com/Kz2g1ew-commits/ICCPlus-MCP.git`.
 - Local `main` tracks `origin/main`.
 
 External evidence:
 
 - The authenticated GitHub account is `Kz2g1ew-commits`.
-- [`Kz2g1ew-commits/ICCPlus2-MCP`](https://github.com/Kz2g1ew-commits/ICCPlus2-MCP)
+- [`Kz2g1ew-commits/ICCPlus-MCP`](https://github.com/Kz2g1ew-commits/ICCPlus-MCP)
   is public with `main` as its default branch.
 - The connected account has `ADMIN` access and the GitHub App reports push
   permission.

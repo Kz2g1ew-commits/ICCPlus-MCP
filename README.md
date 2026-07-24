@@ -57,8 +57,8 @@ agent
 ## Install and build
 
 ```bash
-git clone https://github.com/Kz2g1ew-commits/ICCPlus2-MCP.git
-cd ICCPlus2-MCP
+git clone https://github.com/Kz2g1ew-commits/ICCPlus-MCP.git
+cd ICCPlus-MCP
 npm ci
 npm run build
 ```
@@ -77,7 +77,7 @@ directory. Existing symlinks are resolved and cannot escape it.
 ```bash
 codex mcp add iccplus \
   --env ICCPLUS_WORKSPACE=/absolute/path/to/iccplus-workspace \
-  -- node /absolute/path/to/ICCPlus2-MCP/dist/index.js
+  -- node /absolute/path/to/ICCPlus-MCP/dist/index.js
 ```
 
 Verify with `codex mcp list`, then restart the client if it was already open.
@@ -86,7 +86,7 @@ The equivalent user or trusted-project `config.toml` entry is:
 ```toml
 [mcp_servers.iccplus]
 command = "node"
-args = ["/absolute/path/to/ICCPlus2-MCP/dist/index.js"]
+args = ["/absolute/path/to/ICCPlus-MCP/dist/index.js"]
 env = { ICCPLUS_WORKSPACE = "/absolute/path/to/iccplus-workspace" }
 startup_timeout_sec = 10
 tool_timeout_sec = 60
@@ -104,7 +104,7 @@ Use the client's local-server configuration with this command:
 ```json
 {
   "command": "node",
-  "args": ["/absolute/path/to/ICCPlus2-MCP/dist/index.js"],
+  "args": ["/absolute/path/to/ICCPlus-MCP/dist/index.js"],
   "env": {
     "ICCPLUS_WORKSPACE": "/absolute/path/to/iccplus-workspace"
   }
