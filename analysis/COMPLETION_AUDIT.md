@@ -38,7 +38,7 @@ npm run verify:upstream -- --source ../ICC-Plus-Svelte --deployment ../ICCPlus
 current checkouts, verifies both Git commits, and builds projects through the
 two official viewer templates.
 
-## 2. Cover every modeled feature without a hand-copied model
+## 2. Cover every modeled feature from upstream source
 
 Status: complete for the pinned release.
 
@@ -50,11 +50,11 @@ Evidence:
   compatibility/runtime declarations remain in the schema and are preserved.
 - All 59 types are assigned to one or more of 18 semantic feature families;
   the coverage test fails when an upstream type is unassigned.
-- Current defaults are statically evaluated from upstream `defaultApp`, not
-  duplicated as manually maintained constants.
+- Current defaults are statically evaluated directly from upstream
+  `defaultApp`.
 - Unknown fields survive open, mutation, normalization, save, and packaging.
-- RFC 6902 patching provides an escape hatch for rare or newly added fields
-  without adding one RPC per field.
+- RFC 6902 patching exposes rare or newly added fields without adding one RPC
+  per field.
 
 Boundary:
 
@@ -86,7 +86,7 @@ Evidence:
 - High-level mutations generate IDs, repair indices/parents/memberships,
   rewrite authored and persisted-runtime references, and preserve unknown data.
 
-## 4. Remain flexible and safe instead of relying on brittle special cases
+## 4. Remain flexible and safe across project shapes
 
 Status: complete for the implemented boundary.
 
@@ -106,10 +106,9 @@ Evidence:
   runtime discount/activation/template stacks, and global-requirement cycles
   have dedicated semantic handling where generic JSON behavior would be wrong.
 
-The unavoidable ICC Plus semantics (for example, which field points to a point
-versus a row) are explicit domain rules. They are centralized around the
-generated model and source evidence; the project shape itself is not maintained
-as a parallel hand-written schema.
+ICC Plus semantics (for example, which field points to a point versus a row)
+are explicit domain rules centralized around the generated model and source
+evidence.
 
 ## 5. Be attachable to agents as a real MCP server
 
@@ -164,7 +163,7 @@ External evidence:
   permission.
 - The GitHub commit SHA and root tree SHA were independently queried and
   matched the local Git objects.
-- The recursive GitHub tree was not truncated; its 41 blobs matched the 41
+- The recursive GitHub tree was not truncated; its 42 blobs matched the 42
   tracked local files.
 - README, package metadata, MCP server source, and this completion audit had
   matching local and remote blob SHAs.

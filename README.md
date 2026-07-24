@@ -1,11 +1,16 @@
 # ICCPlus MCP
 
+[English](README.md) | [한국어](README.ko.md)
+
 A schema-aware [Model Context Protocol](https://modelcontextprotocol.io/) server
 for creating, inspecting, editing, validating, and packaging
 [ICC Plus](https://github.com/wahaha303/ICCPlus) projects.
 
-The server gives an AI agent the complete ICC Plus project model instead of a
-small collection of hard-coded templates:
+> This project was created through vibe coding in collaboration with an AI
+> coding agent.
+
+The server gives an AI agent a complete ICC Plus project model generated and
+indexed directly from the upstream source:
 
 - the project schema and current defaults are generated from ICC Plus source;
 - every one of the 59 declared model types and 888 unique fields is discoverable;
@@ -37,7 +42,7 @@ The design deliberately has two layers:
 agent
   ├─ discover: capabilities, schema, resources, prompts
   ├─ author: create/update/move/duplicate/import entities
-  ├─ escape hatch: atomic JSON Patch for every schema field
+  ├─ complete field access: atomic JSON Patch for every schema field
   └─ verify: normalize, validate, evaluate, save, build viewer
                            │
                            ▼
@@ -234,7 +239,7 @@ The template's viewer JavaScript remains the runtime source of truth.
 
 ## Upstream synchronization
 
-The implementation avoids maintaining a hand-copied project model. Re-run the
+The project model is generated directly from upstream source. Re-run the
 analyzer against a checkout of
 [ICC-Plus-Svelte](https://github.com/wahaha303/ICC-Plus-Svelte):
 

@@ -270,8 +270,8 @@ Runtime precedence is:
 The corresponding `private*IsOn` switches choose which subsets override lower
 layers. Design-group activation may point to a selectable ID or global
 requirement ID. The MCP validates those links and makes all styling definitions
-available through schema/capability discovery; no separate hard-coded tool is
-needed for each CSS-shaped property.
+available through schema/capability discovery and share the same field-access
+workflow.
 
 ## Media
 
