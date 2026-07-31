@@ -28,6 +28,9 @@ describe('MCP integration', () => {
         'iccplus_close_project',
         'iccplus_create_entity',
         'iccplus_create_project',
+        'iccplus_css_analyze',
+        'iccplus_css_catalog',
+        'iccplus_css_set',
         'iccplus_delete_entity',
         'iccplus_duplicate_entity',
         'iccplus_evaluate_requirements',
@@ -50,6 +53,8 @@ describe('MCP integration', () => {
 
       const readOnly = new Set([
         'iccplus_capabilities',
+        'iccplus_css_analyze',
+        'iccplus_css_catalog',
         'iccplus_schema',
         'iccplus_open_project',
         'iccplus_list_projects',
@@ -61,6 +66,7 @@ describe('MCP integration', () => {
       ]);
       const revisioned = new Set([
         'iccplus_create_entity',
+        'iccplus_css_set',
         'iccplus_update_entity',
         'iccplus_duplicate_entity',
         'iccplus_move_entity',
@@ -76,6 +82,7 @@ describe('MCP integration', () => {
       ]);
       const dryRunnable = new Set([
         'iccplus_create_entity',
+        'iccplus_css_set',
         'iccplus_update_entity',
         'iccplus_duplicate_entity',
         'iccplus_move_entity',
@@ -111,7 +118,8 @@ describe('MCP integration', () => {
       const tools = await client.listTools();
       const resources = await client.listResources();
       const prompts = await client.listPrompts();
-      expect(tools.tools).toHaveLength(23);
+      expect(tools.tools).toHaveLength(26);
+      expect(resources.resources.map((resource) => resource.uri)).toContain('iccplus://css/catalog');
       expect(resources.resources.map((resource) => resource.uri)).toContain('iccplus://features');
       expect(resources.resources.map((resource) => resource.uri)).toContain('iccplus://deployment');
       expect(resources.resources.map((resource) => resource.uri)).toContain('iccplus://licenses');
@@ -128,7 +136,7 @@ describe('MCP integration', () => {
       }>;
       expect(matches.some((item) =>
         item.file.endsWith('/store/store.svelte.ts')
-        && item.line === 7052
+        && item.line === 7061
         && item.source.includes('export async function selectObject')
       )).toBe(true);
 
@@ -183,6 +191,46 @@ describe('MCP integration', () => {
       });
       expect(choice.isError).not.toBe(true);
 
+      const cssCatalog = await client.callTool({
+        name: 'iccplus_css_catalog',
+        arguments: { scope: 'project', project_id: projectId },
+      });
+      const cssTargets = (cssCatalog.structuredContent!.project as {
+        items: Array<{ selector: string }>;
+      }).items;
+      expect(cssTargets.map((item) => item.selector)).toEqual(
+        expect.arrayContaining(['.row-intro', '.choice-begin']),
+      );
+
+      const cssAnalysis = await client.callTool({
+        name: 'iccplus_css_analyze',
+        arguments: {
+          project_id: projectId,
+          css: '.choice-begin.choice-selected { outline: 3px solid gold !important; }',
+        },
+      });
+      expect((cssAnalysis.structuredContent!.analysis as { valid: boolean }).valid).toBe(true);
+
+      const rejectedCss = await client.callTool({
+        name: 'iccplus_css_set',
+        arguments: {
+          project_id: projectId,
+          css: '.choice-begin { color red; }',
+          expected_revision: 2,
+        },
+      });
+      expect(rejectedCss.isError).toBe(true);
+
+      const cssSet = await client.callTool({
+        name: 'iccplus_css_set',
+        arguments: {
+          project_id: projectId,
+          css: '.choice-begin.choice-selected { outline: 3px solid gold !important; }',
+          expected_revision: 2,
+        },
+      });
+      expect(cssSet.isError).not.toBe(true);
+
       const validation = await client.callTool({
         name: 'iccplus_validate',
         arguments: { project_id: projectId },
@@ -194,12 +242,13 @@ describe('MCP integration', () => {
         arguments: {
           project_id: projectId,
           path: 'project.json',
-          expected_revision: 2,
+          expected_revision: 3,
         },
       });
       expect(saved.isError).not.toBe(true);
       const project = JSON.parse(await readFile(join(root, 'project.json'), 'utf8'));
       expect(project.rows[0].objects[0].id).toBe('begin');
+      expect(project.customCSS).toContain('.choice-begin.choice-selected');
     } finally {
       await client.close();
       await server.close();

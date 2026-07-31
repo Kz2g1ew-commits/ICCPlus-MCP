@@ -12,7 +12,14 @@ import {
   featureCoverage,
   listFeatureFamilies,
 } from './catalog/features.js';
-import { cloneJson, isJsonObject } from './domain/json.js';
+import {
+  analyzeCustomCss,
+  cssCatalogMetadata,
+  customCssSummary,
+  getCssCatalog,
+  listProjectCssTargets,
+} from './domain/custom-css.js';
+import { asString, cloneJson, isJsonObject } from './domain/json.js';
 import { getAtPointer } from './domain/json-patch.js';
 import { ModelIndex } from './domain/model-index.js';
 import {
@@ -62,6 +69,8 @@ const EntityTypeSchema = z.enum([
   'category',
 ]);
 const ValidationPolicySchema = z.enum(['strict', 'no_new_errors', 'none']);
+const CssTargetKindSchema = z.enum(['dynamic', 'state', 'layout', 'viewer']);
+const CssWriteModeSchema = z.enum(['replace', 'append', 'prepend', 'clear']);
 const RevisionSchema = z.number().int().nonnegative().optional();
 
 function result(value: unknown): CallToolResult {
@@ -181,6 +190,7 @@ export function createIccPlusServer(options: IccPlusServerOptions = {}): {
         'Create or open a project, then pass project_id to all project tools.',
         'Read the current revision from status/query results and pass expected_revision to mutations.',
         'Prefer high-level entity tools for ordinary authoring and iccplus_patch for advanced or newly introduced fields.',
+        'Use iccplus_css_catalog, iccplus_css_analyze, and iccplus_css_set for project-aware Custom CSS authoring.',
         'Use dry_run for wide changes, validate before saving, and call iccplus_save_project explicitly.',
         'Unknown ICC Plus fields are intentionally preserved for forward compatibility.',
       ].join(' '),
@@ -191,7 +201,7 @@ export function createIccPlusServer(options: IccPlusServerOptions = {}): {
     'iccplus_capabilities',
     {
       title: 'Discover ICC Plus capabilities',
-      description: 'List feature families or return field, type, function-body, source-file, or deployment-artifact evidence extracted from ICC Plus.',
+      description: 'List feature families or return field, type, function-body, source-file, deployment-artifact, or Custom CSS evidence extracted from ICC Plus.',
       inputSchema: {
         topic: z.string().optional().describe('Feature id, field:<name>, type:<name>, function:<name>, source:<relative-path>, or deployment:<relative-path>. Omit to list all feature families.'),
         file: z.string().optional().describe('Optional relative-file filter for function:<name> when local names have multiple matches.'),
@@ -271,6 +281,166 @@ export function createIccPlusServer(options: IccPlusServerOptions = {}): {
       const feature = describeFeature(topic);
       if (!feature) throw new Error(`Unknown feature id: ${topic}`);
       return result(feature);
+    },
+  );
+
+  server.registerTool(
+    'iccplus_css_catalog',
+    {
+      title: 'Discover ICC Plus Custom CSS targets',
+      description: 'List official viewer classes with source evidence and project-specific escaped row, choice, and selectable-addon selectors.',
+      inputSchema: {
+        scope: z.enum(['official', 'project', 'all']).default('official'),
+        project_id: z.string().uuid().optional().describe('Required for project or all scope.'),
+        query: z.string().optional().describe('Filter selectors, descriptions, ids, titles, paths, or source files.'),
+        kind: CssTargetKindSchema.optional(),
+        offset: z.number().int().nonnegative().default(0),
+        limit: z.number().int().min(1).max(1000).default(100),
+      },
+      annotations: readOnlyAnnotations(),
+    },
+    async ({ scope, project_id, query, kind, offset, limit }) => {
+      if (scope !== 'official' && !project_id) {
+        throw new Error('project_id is required when scope is project or all.');
+      }
+      const needle = query?.toLocaleLowerCase();
+      const official = getCssCatalog().filter((entry) => {
+        if (kind && entry.kind !== kind) return false;
+        if (!needle) return true;
+        return [
+          entry.selector,
+          entry.description,
+          ...entry.sources.flatMap((source) => [source.file, String(source.line)]),
+        ].some((value) => value.toLocaleLowerCase().includes(needle));
+      });
+      let projectTargets = project_id
+        ? listProjectCssTargets(projects.get(project_id).data)
+        : [];
+      if (needle) {
+        projectTargets = projectTargets.filter((target) =>
+          [
+            target.selector,
+            target.entityType,
+            target.entityId,
+            target.title,
+            target.path,
+            ...target.variants,
+          ].some((value) => value.toLocaleLowerCase().includes(needle))
+        );
+      }
+      return result({
+        metadata: cssCatalogMetadata(),
+        scope,
+        official: scope === 'project'
+          ? null
+          : {
+              total: official.length,
+              offset,
+              limit,
+              items: official.slice(offset, offset + limit),
+            },
+        project: scope === 'official'
+          ? null
+          : {
+              project_id,
+              revision: project_id ? projects.get(project_id).revision : null,
+              total: projectTargets.length,
+              offset,
+              limit,
+              items: projectTargets.slice(offset, offset + limit),
+            },
+      });
+    },
+  );
+
+  server.registerTool(
+    'iccplus_css_analyze',
+    {
+      title: 'Analyze ICC Plus Custom CSS',
+      description: 'Statically analyze stored or candidate CSS for syntax, selector specificity, official classes, project ids, inline-style conflicts, and external assets.',
+      inputSchema: {
+        project_id: z.string().uuid().optional().describe('Adds project-aware target resolution; CSS is read from the project when css is omitted.'),
+        css: z.string().optional().describe('Candidate CSS. Omit to analyze the open project customCSS value.'),
+        include_rules: z.boolean().default(true),
+        max_diagnostics: z.number().int().min(1).max(10000).default(1000),
+      },
+      annotations: readOnlyAnnotations(),
+    },
+    async ({ project_id, css, include_rules, max_diagnostics }) => {
+      if (!project_id && css === undefined) throw new Error('Provide project_id or css.');
+      const session = project_id ? projects.get(project_id) : undefined;
+      const source = css === undefined ? asString(session?.data.customCSS) : css;
+      const analysis = analyzeCustomCss(source, session?.data);
+      return result({
+        project_id: project_id ?? null,
+        revision: session?.revision ?? null,
+        source: css === undefined ? 'project' : 'candidate',
+        analysis: {
+          ...analysis,
+          diagnostics: analysis.diagnostics.slice(0, max_diagnostics),
+          ...(include_rules ? {} : { ruleDetails: [] }),
+        },
+      });
+    },
+  );
+
+  server.registerTool(
+    'iccplus_css_set',
+    {
+      title: 'Set ICC Plus Custom CSS',
+      description: 'Replace, append, prepend, or clear the official project customCSS field with revision protection, dry-run support, and integrated validation.',
+      inputSchema: {
+        project_id: z.string().uuid(),
+        css: z.string().optional().describe('Required unless mode is clear.'),
+        mode: CssWriteModeSchema.default('replace'),
+        expected_revision: RevisionSchema,
+        dry_run: z.boolean().default(false),
+        validation_policy: ValidationPolicySchema.default('no_new_errors'),
+      },
+      annotations: mutationAnnotations(true),
+    },
+    async (args) => {
+      if (args.mode !== 'clear' && args.css === undefined) {
+        throw new Error('css is required unless mode is clear.');
+      }
+      const session = projects.get(args.project_id);
+      const previous = asString(session.data.customCSS);
+      const supplied = args.css ?? '';
+      const join = (left: string, right: string): string =>
+        left && right ? left + '\n\n' + right : left + right;
+      const next = args.mode === 'clear'
+        ? ''
+        : args.mode === 'append'
+          ? join(previous, supplied)
+          : args.mode === 'prepend'
+            ? join(supplied, previous)
+            : supplied;
+      const transaction = projects.transact(
+        args.project_id,
+        {
+          label: 'Set ICC Plus Custom CSS (' + args.mode + ')',
+          ...transactionOptions(args),
+        },
+        (draft) => {
+          draft.customCSS = next;
+          return {
+            mode: args.mode,
+            previousBytes: Buffer.byteLength(previous),
+            bytes: Buffer.byteLength(next),
+          };
+        },
+      );
+      return result({
+        project_id: args.project_id,
+        revision: transaction.revision,
+        dry_run: transaction.dryRun,
+        change: transaction.result,
+        analysis: {
+          ...analyzeCustomCss(next, transaction.project),
+          ruleDetails: [],
+        },
+        validation: transaction.validation,
+      });
     },
   );
 
@@ -362,7 +532,7 @@ export function createIccPlusServer(options: IccPlusServerOptions = {}): {
     'iccplus_project_status',
     {
       title: 'Inspect ICC Plus project status',
-      description: 'Return revision, dirty state, summary, validation counts, and optionally project JSON.',
+      description: 'Return revision, dirty state, summary, Custom CSS analysis, validation counts, and optionally project JSON.',
       inputSchema: {
         project_id: z.string().uuid(),
         include_project: z.boolean().default(false),
@@ -380,6 +550,7 @@ export function createIccPlusServer(options: IccPlusServerOptions = {}): {
         dirty: session.revision !== session.savedRevision,
         bytes: new ModelIndex(session.data).projectBytes(),
         summary: new ModelIndex(session.data).summary(),
+        custom_css: customCssSummary(session.data),
         validation: validateProject(session.data, { maxDiagnostics: 100 }),
         ...(include_project
           ? { project: include_embedded_assets ? session.data : redactEmbeddedAssets(session.data) }
@@ -650,6 +821,9 @@ export function createIccPlusServer(options: IccPlusServerOptions = {}): {
         revision: transaction.revision,
         dry_run: transaction.dryRun,
         changed_paths: transaction.result.changedPaths,
+        ...(transaction.result.changedPaths.some((path) => path === '/customCSS' || path.startsWith('/customCSS/'))
+          ? { custom_css: customCssSummary(transaction.project) }
+          : {}),
         validation: transaction.validation,
       });
     },
@@ -684,7 +858,7 @@ export function createIccPlusServer(options: IccPlusServerOptions = {}): {
     'iccplus_validate',
     {
       title: 'Validate ICC Plus project',
-      description: 'Run generated structural schema checks plus ids, references, requirements, memberships, cycles, and export invariants.',
+      description: 'Run generated structural schema checks plus ids, references, requirements, memberships, cycles, Custom CSS, and export invariants.',
       inputSchema: {
         project_id: z.string().uuid(),
         structural: z.boolean().default(true),
@@ -996,6 +1170,65 @@ export function createIccPlusServer(options: IccPlusServerOptions = {}): {
   );
 
   server.registerResource(
+    'iccplus-css-catalog',
+    'iccplus://css/catalog',
+    {
+      title: 'ICC Plus Custom CSS selector catalog',
+      description: 'Official viewer classes with source evidence, dynamic selector patterns, and inline-style risk.',
+      mimeType: 'application/json',
+    },
+    async (uri) => ({
+      contents: [{
+        uri: uri.href,
+        mimeType: 'application/json',
+        text: JSON.stringify({
+          metadata: cssCatalogMetadata(),
+          selectors: getCssCatalog(),
+        }, null, 2),
+      }],
+    }),
+  );
+
+  server.registerResource(
+    'iccplus-project-css',
+    new ResourceTemplate('iccplus://project/{projectId}/css', {
+      list: async () => ({
+        resources: projects.list().map((project) => ({
+          uri: 'iccplus://project/' + project.id + '/css',
+          name: 'ICC Plus CSS ' + project.id,
+          mimeType: 'application/json',
+        })),
+      }),
+      complete: {
+        projectId: () => projects.list().map((project) => project.id),
+      },
+    }),
+    {
+      title: 'Open ICC Plus project Custom CSS',
+      description: 'Stored Custom CSS, static analysis, and exact project selector targets for an open session.',
+      mimeType: 'application/json',
+    },
+    async (uri, variables) => {
+      const id = String(variables.projectId);
+      const session = projects.get(id);
+      const css = asString(session.data.customCSS);
+      return {
+        contents: [{
+          uri: uri.href,
+          mimeType: 'application/json',
+          text: JSON.stringify({
+            project_id: id,
+            revision: session.revision,
+            css,
+            analysis: analyzeCustomCss(css, session.data),
+            targets: listProjectCssTargets(session.data),
+          }, null, 2),
+        }],
+      };
+    },
+  );
+
+  server.registerResource(
     'iccplus-project-schema',
     'iccplus://schema/project',
     {
@@ -1122,6 +1355,7 @@ export function createIccPlusServer(options: IccPlusServerOptions = {}): {
             'Discover relevant feature families with iccplus_capabilities.',
             'Build points/groups/variables before requirements that reference them.',
             'Build rows before choices, and choices before scores/addons.',
+            'For advanced styling, discover exact targets with iccplus_css_catalog, analyze candidate CSS, then apply it with iccplus_css_set.',
             'Use expected_revision for every mutation, validate, dry-run normalization, then save.',
           ].join('\n'),
         },
@@ -1148,6 +1382,7 @@ export function createIccPlusServer(options: IccPlusServerOptions = {}): {
             `Audit ICC Plus project_id ${project_id}.`,
             'Inspect status and all entity families, run strict validation, and explain each error.',
             'Check points, requirements, group/design reciprocity, choice effect targets, media, and viewer export settings.',
+            'Analyze Custom CSS for unresolved project selectors, syntax errors, remote assets, and inline-style conflicts.',
             'Dry-run normalization before applying it. Revalidate and only then build or save.',
           ].join('\n'),
         },

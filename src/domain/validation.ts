@@ -1,5 +1,6 @@
 import { Ajv, type ErrorObject, type ValidateFunction } from 'ajv';
 import schemaJson from '../generated/iccplus.schema.json' with { type: 'json' };
+import { validateCustomCss } from './custom-css.js';
 import { asArray, asBoolean, asNumber, asObject, asObjectArray, asString, isJsonObject } from './json.js';
 import { ModelIndex } from './model-index.js';
 import type {
@@ -623,6 +624,7 @@ function validateSemantic(project: JsonObject): Diagnostic[] {
 
   validateMemberships(index, diagnostics);
   validateGlobalRequirementCycles(index, diagnostics);
+  diagnostics.push(...validateCustomCss(project));
 
   const viewerConfig = asObject(project.viewerConfig);
   if (

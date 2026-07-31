@@ -4211,7 +4211,7 @@
     }
   },
   "$id": "https://github.com/Kz2g1ew-commits/ICCPlus-MCP/schema/iccplus-project.json",
-  "title": "ICC Plus project schema 2.9.28",
+  "title": "ICC Plus project schema 2.9.29",
   "description": "Generated from wahaha303/ICC-Plus-Svelte src/lib/store/types.ts.",
-  "x-iccplus-version": "2.9.28"
+  "x-iccplus-version": "2.9.29"
 }

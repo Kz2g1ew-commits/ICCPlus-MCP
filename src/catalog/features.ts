@@ -146,6 +146,19 @@ export const FEATURE_FAMILIES: FeatureFamily[] = [
     ],
   },
   {
+    id: 'design.custom_css',
+    title: 'Advanced Custom CSS',
+    summary: 'Override official viewer styles through the project customCSS field using source-backed runtime classes and project-id selectors.',
+    typeNames: ['App'],
+    engineFunctions: ['applyCustomCSS'],
+    authoringNotes: [
+      'ICC Plus injects customCSS as style#customCSS in document.head by assigning textContent.',
+      'Dynamic targets include row-{id}, choice-{id}, and addon-{id}; ids may require CSS escaping.',
+      'Many viewer elements also receive inline styles, so narrowly targeted !important declarations may be required.',
+      'The MCP statically analyzes CSS but leaves computed-style and viewport confirmation to the official viewer.',
+    ],
+  },
+  {
     id: 'design.inheritance',
     title: 'Private styling and design groups',
     summary: 'Apply global styling, row/choice private styling, conditional design groups, group-linked design groups, and inheritance precedence.',

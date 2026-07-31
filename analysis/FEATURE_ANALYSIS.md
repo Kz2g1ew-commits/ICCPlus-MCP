@@ -1,4 +1,4 @@
-# ICC Plus v2.9.28 feature and mechanism analysis
+# ICC Plus v2.9.29 feature and mechanism analysis
 
 This document is the semantic companion to the generated
 [`CODEBASE_INVENTORY.md`](CODEBASE_INVENTORY.md). It describes what the source
@@ -8,7 +8,7 @@ does, how the model drives it, and how the MCP surface exposes it.
 
 The audit used the Svelte 5 source repository
 [`wahaha303/ICC-Plus-Svelte`](https://github.com/wahaha303/ICC-Plus-Svelte) at
-commit `5bbd87ccc012f1638e95cd984a946e523931a5a5` (`v2.9.28`), not only the
+commit `df33b5d554bda38adfa820395d794315afd6775c` (`v2.9.29`), not only the
 minified deployment bundle.
 
 The source analyzer retains every authored code/build/config/patch file from
@@ -18,26 +18,25 @@ artifact:
 | Measure | Result |
 | --- | ---: |
 | Audited authored files | 227 |
-| Exact audited source bytes | 3,270,833 |
+| Exact audited source bytes | 3,272,971 |
 | Declared model types | 59 |
 | Unique declared fields | 888 |
-| Fields referenced outside the type file | 885 |
+| Fields referenced outside the type file | 886 |
 | Store functions | 189 |
 | Exported store functions | 100 |
-| Named functions/methods across all source files | 1,404 |
+| Named functions/methods across all source files | 1,406 |
 | Exported named source functions | 246 |
-| Deployment files | 77 |
-| Deployment bytes | 27,257,467 |
+| Deployment files | 75 |
+| Deployment bytes | 24,492,438 |
 | Official viewer archive entries | 34 |
 | Upstream third-party packages with license metadata | 209 |
-| Feature families covering declared types | 18 |
+| Feature families covering declared types | 19 |
 | Uncovered declared types | 0 |
 
-The three fields not found outside the type source are compatibility/runtime
-shapes (`discountNum`, `imageIsURL`, and `imageIsUrl`). They remain in the
-schema and are preserved. The generated occurrence map in
-`src/generated/source-analysis.json` provides file-and-line evidence for all
-other fields.
+The two fields not found outside the type source are compatibility image URL
+spellings (`imageIsURL` and `imageIsUrl`). They remain in the schema and are
+preserved. The generated occurrence map in `src/generated/source-analysis.json`
+provides file-and-line evidence for all other fields.
 
 The main behavioral engine is
 `ICCPlus/src/lib/store/store.svelte.ts`; creator components configure that
@@ -152,6 +151,13 @@ MCP rewrites these safely when an ID changes and validates missing targets.
 Transient fields such as active discount stacks and calculated display values
 are viewer state. They are preserved when present but are not necessary for
 ordinary authoring.
+
+In v2.9.29 the official viewer began using the existing transient
+`Score.discountNum` field when a non-per-selection discount is applied to an
+already-active multi-select choice. It also waits for cross-choice discount
+propagation and uses exact applied-count equality while removing discounts.
+The MCP exposes and preserves that field and packages the corrected official
+viewer; interactive discount recalculation remains owned by the viewer runtime.
 
 ### Content and navigation effects
 
@@ -273,6 +279,24 @@ requirement ID. The MCP validates those links and makes all styling definitions
 available through schema/capability discovery and share the same field-access
 workflow.
 
+### Advanced Custom CSS
+
+The project-level `customCSS` field is a deliberate escape hatch beyond the
+structured styling model. ICC Plus applies it by assigning the text to
+`style#customCSS` in `document.head`. Official viewer markup exposes dynamic
+`row-{id}`, `row-{id}-bg`, `row-{id}-header`, `choice-{id}`, selectable
+`addon-{id}` classes, choice state classes, and stable viewer/layout classes.
+Many of those elements also have Svelte-generated inline `style` attributes.
+
+The MCP derives a selector catalog and line evidence from the pinned standalone
+viewer source, emits CSS-escaped selectors for entities in an open project,
+parses candidate or stored rules, computes selector specificity, resolves
+project targets, and diagnoses syntax errors, broad selectors, remote assets,
+dangerous legacy constructs, and likely inline-style collisions. Applying CSS
+uses the same revision, dry-run, undo, and validation policy as other project
+mutations. Browser-computed style and responsive rendering remain in the
+official viewer; the MCP adds no browser runtime.
+
 ## Media
 
 Projects may use:
@@ -312,7 +336,7 @@ Official template packaging follows the creator's format:
   hashes/deduplicates equal content, writes asset files, and rewrites references;
 - viewer title/loading/favicon/font/custom-CSS values are applied safely.
 
-Packaging was integration-tested against both official `v2.9.28` template
+Packaging was integration-tested against both official `v2.9.29` template
 archives from the deployment repository.
 
 ## MCP coverage model
