@@ -18,14 +18,16 @@ describe('generated upstream analysis', () => {
     expect(coverage.uncoveredTypes).toEqual([]);
     expect(coverage.coveredTypes).toBe(coverage.declaredTypes);
     expect(coverage.declaredTypes).toBe(59);
-    expect(coverage.declaredFields).toBe(888);
+    expect(coverage.declaredFields).toBe(893);
     expect(coverage.sourceFiles).toBe(227);
-    expect(coverage.sourceFunctions).toBe(1406);
-    expect(analysis.coverage.fieldsReferencedOutsideTypes).toBeGreaterThanOrEqual(886);
+    expect(coverage.sourceFunctions).toBe(1411);
+    expect(analysis.coverage.fieldsReferencedOutsideTypes).toBeGreaterThanOrEqual(891);
   });
 
   it('pins schema and defaults to the analyzed upstream release', () => {
-    expect(analysis.upstream.version).toBe('2.9.29');
+    expect(analysis.upstream.version).toBe('2.10.1');
+    expect(analysis.upstream.commit).toBe('b33bfb9b29e0a84a035a56d7e1827e42fe0f7000');
+    expect(analysis.upstream.deploymentCommit).toBe('623be8dbaae5499fc2f1320b85c70d25ebdb1d51');
     expect(defaultProject.version).toBe(analysis.upstream.version);
     expect(schema['x-iccplus-version']).toBe(analysis.upstream.version);
     expect(schema.definitions.App).toBeDefined();
@@ -33,6 +35,11 @@ describe('generated upstream analysis', () => {
     expect(schema.definitions.Requireds).toBeDefined();
     expect(schema.definitions.Styling).toBeDefined();
     expect(schema.definitions.Score.properties.discountNum).toBeDefined();
+    expect(schema.definitions.Score.properties.isNotRecalculateSelf).toBeDefined();
+    expect(schema.definitions.Choice.properties.isNotBuild).toBeDefined();
+    expect(schema.definitions.Choice.properties.showDebugTitle).toBeDefined();
+    expect(schema.definitions.Row.properties.preserveWidth).toBeDefined();
+    expect(schema.definitions.App.properties.hideRowMenu).toBeDefined();
     expect(analysis.fields.discountNum.filter((usage) =>
       usage.file.endsWith('/store/store.svelte.ts')
     )).toHaveLength(2);

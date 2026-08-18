@@ -19,9 +19,8 @@ import {
   getCssCatalog,
   listProjectCssTargets,
 } from './domain/custom-css.js';
-import { asString, cloneJson, isJsonObject } from './domain/json.js';
+import { asString, isJsonObject } from './domain/json.js';
 import { getAtPointer } from './domain/json-patch.js';
-import { ModelIndex } from './domain/model-index.js';
 import {
   duplicateEntity,
   exportEntityFragment,
@@ -73,29 +72,82 @@ const CssTargetKindSchema = z.enum(['dynamic', 'state', 'layout', 'viewer']);
 const CssWriteModeSchema = z.enum(['replace', 'append', 'prepend', 'clear']);
 const RevisionSchema = z.number().int().nonnegative().optional();
 
+const DEFAULT_DUPLICATED_TEXT_LIMIT_BYTES = 8 * 1024;
+
+function duplicatedTextLimit(): number {
+  const configured = process.env.ICCPLUS_DUPLICATED_TEXT_LIMIT_BYTES;
+  if (configured === undefined) return DEFAULT_DUPLICATED_TEXT_LIMIT_BYTES;
+  const parsed = Number(configured);
+  return Number.isFinite(parsed) && parsed >= -1
+    ? Math.floor(parsed)
+    : DEFAULT_DUPLICATED_TEXT_LIMIT_BYTES;
+}
+
+function fitsJsonTextBudget(value: unknown, maximum: number): boolean {
+  if (maximum < 0) return true;
+  let remaining = maximum;
+  const consume = (bytes: number): boolean => {
+    remaining -= bytes;
+    return remaining >= 0;
+  };
+  const visit = (current: unknown): boolean => {
+    if (typeof current === 'string') {
+      if (current.length > remaining) return false;
+      return consume(Buffer.byteLength(JSON.stringify(current)));
+    }
+    if (
+      current === null
+      || typeof current === 'number'
+      || typeof current === 'boolean'
+      || current === undefined
+    ) {
+      return consume(Buffer.byteLength(JSON.stringify(current) ?? 'null'));
+    }
+    if (Array.isArray(current)) {
+      if (!consume(2 + Math.max(0, current.length - 1))) return false;
+      return current.every(visit);
+    }
+    if (typeof current === 'object') {
+      const entries = Object.entries(current);
+      if (!consume(2 + Math.max(0, entries.length - 1))) return false;
+      return entries.every(([key, child]) =>
+        consume(Buffer.byteLength(JSON.stringify(key)) + 1) && visit(child)
+      );
+    }
+    return consume(Buffer.byteLength(JSON.stringify(String(current))));
+  };
+  return visit(value);
+}
+
 function result(value: unknown): CallToolResult {
   const structuredContent = isJsonObject(value)
     ? value
     : { data: value as JsonValue };
+  const textLimit = duplicatedTextLimit();
+  const text = fitsJsonTextBudget(value, textLimit)
+    ? JSON.stringify(value)
+    : JSON.stringify({
+        notice: 'Full result is available in structuredContent; duplicate text was omitted to reduce context usage.',
+        duplicate_text_limit_bytes: textLimit,
+      });
   return {
-    content: [{ type: 'text', text: JSON.stringify(value, null, 2) }],
+    content: [{ type: 'text', text }],
     structuredContent,
   };
 }
 
 function redactEmbeddedAssets<T extends JsonValue>(input: T): T {
-  const value = cloneJson(input);
   function visit(current: JsonValue): JsonValue {
     if (typeof current === 'string' && current.startsWith('data:')) {
       const comma = current.indexOf(',');
       const header = comma === -1 ? current : current.slice(0, comma);
-      const encoded = comma === -1 ? '' : current.slice(comma + 1);
+      const encodedLength = comma === -1 ? 0 : current.length - comma - 1;
       return {
         embedded: true,
         mediaType: header.slice(5).split(';')[0] || 'application/octet-stream',
         approximateBytes: current.includes(';base64,')
-          ? Math.floor(encoded.length * 0.75)
-          : Buffer.byteLength(encoded),
+          ? Math.floor(encodedLength * 0.75)
+          : Buffer.byteLength(comma === -1 ? '' : current.slice(comma + 1)),
       };
     }
     if (Array.isArray(current)) return current.map(visit);
@@ -104,7 +156,7 @@ function redactEmbeddedAssets<T extends JsonValue>(input: T): T {
     }
     return current;
   }
-  return visit(value) as T;
+  return visit(input) as T;
 }
 
 function entityOutput(entity: LocatedEntity, includeEmbeddedAssets: boolean): JsonObject {
@@ -191,6 +243,8 @@ export function createIccPlusServer(options: IccPlusServerOptions = {}): {
         'Read the current revision from status/query results and pass expected_revision to mutations.',
         'Prefer high-level entity tools for ordinary authoring and iccplus_patch for advanced or newly introduced fields.',
         'Use iccplus_css_catalog, iccplus_css_analyze, and iccplus_css_set for project-aware Custom CSS authoring.',
+        'Prefer iccplus_read_project for exact JSON Pointers instead of returning the complete project.',
+        'Keep embedded assets redacted unless an exact data URL is explicitly required.',
         'Use dry_run for wide changes, validate before saving, and call iccplus_save_project explicitly.',
         'Unknown ICC Plus fields are intentionally preserved for forward compatibility.',
       ].join(' '),
@@ -489,7 +543,7 @@ export function createIccPlusServer(options: IccPlusServerOptions = {}): {
         project_id: session.id,
         revision: session.revision,
         dirty: true,
-        summary: new ModelIndex(session.data).summary(),
+        summary: projects.index(session.id).summary(),
         validation: validateProject(session.data),
       });
     },
@@ -507,12 +561,13 @@ export function createIccPlusServer(options: IccPlusServerOptions = {}): {
       annotations: readOnlyAnnotations(),
     },
     async ({ path, normalize }) => {
-      const session = await projects.open(path, { normalize });
+      const opened = await projects.openHandle(path, { normalize });
+      const session = projects.get(opened.id);
       return result({
         project_id: session.id,
         path: session.path,
         revision: session.revision,
-        summary: new ModelIndex(session.data).summary(),
+        summary: projects.index(session.id).summary(),
         validation: validateProject(session.data),
       });
     },
@@ -535,26 +590,55 @@ export function createIccPlusServer(options: IccPlusServerOptions = {}): {
       description: 'Return revision, dirty state, summary, Custom CSS analysis, validation counts, and optionally project JSON.',
       inputSchema: {
         project_id: z.string().uuid(),
-        include_project: z.boolean().default(false),
-        include_embedded_assets: z.boolean().default(false),
+        include_project: z.boolean().default(false).describe('Return the complete project. Prefer iccplus_read_project with exact paths to keep responses small.'),
+        include_embedded_assets: z.boolean().default(false).describe('Return raw data URLs. Leave false unless their exact encoded contents are explicitly required.'),
       },
       annotations: readOnlyAnnotations(),
     },
     async ({ project_id, include_project, include_embedded_assets }) => {
       const session = projects.get(project_id);
+      const index = projects.index(project_id);
       return result({
         project_id,
         path: session.path ?? null,
         revision: session.revision,
         saved_revision: session.savedRevision,
         dirty: session.revision !== session.savedRevision,
-        bytes: new ModelIndex(session.data).projectBytes(),
-        summary: new ModelIndex(session.data).summary(),
+        bytes: index.projectBytes(),
+        summary: index.summary(),
         custom_css: customCssSummary(session.data),
         validation: validateProject(session.data, { maxDiagnostics: 100 }),
         ...(include_project
           ? { project: include_embedded_assets ? session.data : redactEmbeddedAssets(session.data) }
           : {}),
+      });
+    },
+  );
+
+  server.registerTool(
+    'iccplus_read_project',
+    {
+      title: 'Read exact ICC Plus project paths',
+      description: 'Read one or more RFC 6901 JSON Pointers without returning the complete project; preserves exact CSS, HTML, JS, and unknown fields while redacting embedded assets by default.',
+      inputSchema: {
+        project_id: z.string().uuid(),
+        paths: z.array(z.string()).min(1).max(100).describe('Exact JSON Pointers. Use an empty string for the root only when the complete project is truly required.'),
+        include_embedded_assets: z.boolean().default(false).describe('Return raw data URLs. Leave false unless their exact encoded contents are explicitly required.'),
+      },
+      annotations: readOnlyAnnotations(),
+    },
+    async ({ project_id, paths, include_embedded_assets }) => {
+      const session = projects.get(project_id);
+      return result({
+        project_id,
+        revision: session.revision,
+        items: paths.map((path) => {
+          const value = getAtPointer(session.data, path);
+          return {
+            path,
+            value: include_embedded_assets ? value : redactEmbeddedAssets(value),
+          };
+        }),
       });
     },
   );
@@ -571,14 +655,14 @@ export function createIccPlusServer(options: IccPlusServerOptions = {}): {
         query: z.string().optional(),
         offset: z.number().int().nonnegative().default(0),
         limit: z.number().int().min(1).max(1000).default(100),
-        include_values: z.boolean().default(true),
-        include_embedded_assets: z.boolean().default(false),
+        include_values: z.boolean().default(true).describe('Set false for a compact metadata-first search, then fetch values for exact ids.'),
+        include_embedded_assets: z.boolean().default(false).describe('Return raw data URLs. Leave false unless their exact encoded contents are explicitly required.'),
       },
       annotations: readOnlyAnnotations(),
     },
     async (args) => {
       const session = projects.get(args.project_id);
-      const index = new ModelIndex(session.data);
+      const index = projects.index(args.project_id);
       const found = index.search({
         ...(args.types ? { types: args.types as EntityType[] } : {}),
         ...(args.ids ? { ids: args.ids } : {}),
@@ -917,7 +1001,7 @@ export function createIccPlusServer(options: IccPlusServerOptions = {}): {
         project_id: z.string().uuid(),
         reference: z.string(),
         type: EntityTypeSchema.optional(),
-        include_embedded_assets: z.boolean().default(false),
+        include_embedded_assets: z.boolean().default(false).describe('Return raw data URLs. Leave false unless their exact encoded contents are explicitly required.'),
       },
       annotations: readOnlyAnnotations(),
     },
@@ -1145,7 +1229,7 @@ export function createIccPlusServer(options: IccPlusServerOptions = {}): {
         project_id,
         revision: session.revision,
         dirty: session.revision !== session.savedRevision,
-        summary: new ModelIndex(session.data).summary(),
+        summary: projects.index(project_id).summary(),
         validation: validateProject(session.data),
       });
     },
@@ -1325,7 +1409,7 @@ export function createIccPlusServer(options: IccPlusServerOptions = {}): {
           text: JSON.stringify({
             project_id: id,
             revision: session.revision,
-            summary: new ModelIndex(session.data).summary(),
+            summary: projects.index(id).summary(),
             validation: validateProject(session.data, { maxDiagnostics: 100 }),
           }, null, 2),
         }],

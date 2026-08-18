@@ -22,6 +22,38 @@ function stringIds(value: JsonValue | undefined): string[] {
     .filter((item): item is string => typeof item === 'string' && item !== '');
 }
 
+function versionBefore(version: string, target: string): boolean {
+  const parse = (value: string): number[] => {
+    const match = value.match(/\d+(?:\.\d+)*/)?.[0] ?? '0';
+    return match.split('.').map((part) => Number(part));
+  };
+  const left = parse(version);
+  const right = parse(target);
+  const length = Math.max(left.length, right.length);
+  for (let index = 0; index < length; index += 1) {
+    const difference = (left[index] ?? 0) - (right[index] ?? 0);
+    if (difference !== 0) return difference < 0;
+  }
+  return false;
+}
+
+function migrateScore(
+  score: JsonObject,
+  path: string,
+  migrateLegacyRecalculation: boolean,
+  changes: string[],
+): void {
+  migrateRequirements(score, path, changes);
+  if (
+    migrateLegacyRecalculation
+    && score.isNotRecalculatable === true
+    && score.isNotRecalculateSelf !== true
+  ) {
+    score.isNotRecalculateSelf = true;
+    changes.push(`Preserved pre-v2.10 score recalculation behavior at ${path}.`);
+  }
+}
+
 function migrateRequirement(requirement: JsonObject, path: string, changes: string[]): void {
   ensureArray(requirement, 'requireds', changes, path);
   ensureArray(requirement, 'orRequired', changes, path);
@@ -86,7 +118,12 @@ function assignMissingIds(project: JsonObject, changes: string[]): void {
   }
 }
 
-function normalizeRows(project: JsonObject, key: 'rows' | 'backpack', changes: string[]): void {
+function normalizeRows(
+  project: JsonObject,
+  key: 'rows' | 'backpack',
+  changes: string[],
+  migrateLegacyRecalculation: boolean,
+): void {
   const rows = asObjectArray(project[key]);
   for (let rowIndex = 0; rowIndex < rows.length; rowIndex += 1) {
     const row = rows[rowIndex]!;
@@ -119,7 +156,12 @@ function normalizeRows(project: JsonObject, key: 'rows' | 'backpack', changes: s
 
       for (let scoreIndex = 0; scoreIndex < asObjectArray(choice.scores).length; scoreIndex += 1) {
         const score = asObjectArray(choice.scores)[scoreIndex]!;
-        migrateRequirements(score, `${choicePath}/scores/${scoreIndex}`, changes);
+        migrateScore(
+          score,
+          `${choicePath}/scores/${scoreIndex}`,
+          migrateLegacyRecalculation,
+          changes,
+        );
       }
       for (let addonIndex = 0; addonIndex < asObjectArray(choice.addons).length; addonIndex += 1) {
         const addon = asObjectArray(choice.addons)[addonIndex]!;
@@ -133,9 +175,10 @@ function normalizeRows(project: JsonObject, key: 'rows' | 'backpack', changes: s
           ensureArray(addon, 'scores', changes, addonPath);
           ensureArray(addon, 'groups', changes, addonPath);
           for (let scoreIndex = 0; scoreIndex < asObjectArray(addon.scores).length; scoreIndex += 1) {
-            migrateRequirements(
+            migrateScore(
               asObjectArray(addon.scores)[scoreIndex]!,
               `${addonPath}/scores/${scoreIndex}`,
+              migrateLegacyRecalculation,
               changes,
             );
           }
@@ -296,6 +339,7 @@ export function normalizeProject(input: JsonObject): NormalizationResult {
   const project = cloneJson(input);
   const changes: string[] = [];
   const defaults = createDefaultProject();
+  const migrateLegacyRecalculation = versionBefore(asString(project.version), '2.10.0');
   for (const key of [
     'rows', 'backpack', 'pointTypes', 'variables', 'words', 'groups',
     'rowDesignGroups', 'objectDesignGroups', 'globalRequirements',
@@ -314,9 +358,13 @@ export function normalizeProject(input: JsonObject): NormalizationResult {
     project.viewerConfig = cloneJson(defaults.viewerConfig ?? {});
     changes.push('Initialized /viewerConfig from current ICC Plus defaults.');
   }
+  if (typeof project.hideRowMenu !== 'boolean') {
+    project.hideRowMenu = defaults.hideRowMenu === true;
+    changes.push('Initialized /hideRowMenu from ICC Plus v2.10+ defaults.');
+  }
 
-  normalizeRows(project, 'rows', changes);
-  normalizeRows(project, 'backpack', changes);
+  normalizeRows(project, 'rows', changes, migrateLegacyRecalculation);
+  normalizeRows(project, 'backpack', changes, migrateLegacyRecalculation);
   for (const key of ['globalRequirements', 'soundEffects']) {
     for (let index = 0; index < asObjectArray(project[key]).length; index += 1) {
       migrateRequirements(asObjectArray(project[key])[index]!, `/${key}/${index}`, changes);
@@ -330,8 +378,8 @@ export function normalizeProject(input: JsonObject): NormalizationResult {
   }
 
   assignMissingIds(project, changes);
-  normalizeRows(project, 'rows', changes);
-  normalizeRows(project, 'backpack', changes);
+  normalizeRows(project, 'rows', changes, migrateLegacyRecalculation);
+  normalizeRows(project, 'backpack', changes, migrateLegacyRecalculation);
   rebuildGroupMemberships(project, changes);
   rebuildDesignMemberships(project, changes);
   rebuildGroupDesignMemberships(project, changes);

@@ -467,6 +467,9 @@
         "minimizeTemplate": {
           "type": "boolean"
         },
+        "hideRowMenu": {
+          "type": "boolean"
+        },
         "viewerConfig": {
           "$ref": "#/definitions/ViewerConfig"
         }
@@ -526,6 +529,7 @@
         "hideBackpackBtn",
         "hideChoiceDT",
         "hideImages",
+        "hideRowMenu",
         "hideScoresUpdated",
         "importedChoicesIsOpen",
         "isEditModeOnAll",
@@ -800,6 +804,9 @@
         "overrideWidth": {
           "type": "boolean"
         },
+        "preserveWidth": {
+          "type": "boolean"
+        },
         "templateStack": {
           "type": "array",
           "items": {
@@ -1030,6 +1037,9 @@
         "isNotResult": {
           "type": "boolean"
         },
+        "isNotBuild": {
+          "type": "boolean"
+        },
         "isImageUpload": {
           "type": "boolean"
         },
@@ -1579,6 +1589,9 @@
         "deselectWhenNoAddon": {
           "type": "boolean"
         },
+        "showDebugTitle": {
+          "type": "boolean"
+        },
         "id": {
           "type": "string"
         },
@@ -1595,6 +1608,9 @@
           "type": "string"
         },
         "image": {
+          "type": "string"
+        },
+        "imageSourceTooltip": {
           "type": "string"
         },
         "template": {
@@ -1731,6 +1747,9 @@
         "image": {
           "type": "string"
         },
+        "imageSourceTooltip": {
+          "type": "string"
+        },
         "requireds": {
           "type": "array",
           "items": {
@@ -1824,6 +1843,9 @@
           "type": "boolean"
         },
         "isNotResult": {
+          "type": "boolean"
+        },
+        "isNotBuild": {
           "type": "boolean"
         },
         "isImageUpload": {
@@ -2375,6 +2397,9 @@
         "deselectWhenNoAddon": {
           "type": "boolean"
         },
+        "showDebugTitle": {
+          "type": "boolean"
+        },
         "id": {
           "type": "string"
         },
@@ -2388,6 +2413,9 @@
           "type": "number"
         },
         "image": {
+          "type": "string"
+        },
+        "imageSourceTooltip": {
           "type": "string"
         },
         "requireds": {
@@ -2503,6 +2531,9 @@
           "type": "boolean"
         },
         "isNotRecalculatable": {
+          "type": "boolean"
+        },
+        "isNotRecalculateSelf": {
           "type": "boolean"
         },
         "isNotDiscountable": {
@@ -4211,7 +4242,7 @@
     }
   },
   "$id": "https://github.com/Kz2g1ew-commits/ICCPlus-MCP/schema/iccplus-project.json",
-  "title": "ICC Plus project schema 2.9.29",
+  "title": "ICC Plus project schema 2.10.1",
   "description": "Generated from wahaha303/ICC-Plus-Svelte src/lib/store/types.ts.",
-  "x-iccplus-version": "2.9.29"
+  "x-iccplus-version": "2.10.1"
 }

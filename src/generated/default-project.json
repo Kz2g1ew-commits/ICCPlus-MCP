@@ -1,5 +1,5 @@
 {
-  "version": "2.9.29",
+  "version": "2.10.1",
   "isEditModeOnAll": true,
   "isPointerCursor": false,
   "importedChoicesIsOpen": true,
@@ -94,6 +94,7 @@
   "smallerScreenPx": 720,
   "enableHalfRow": false,
   "minimizeTemplate": true,
+  "hideRowMenu": false,
   "viewerConfig": {
     "title": "CYOA Plus 2",
     "favicon": "",

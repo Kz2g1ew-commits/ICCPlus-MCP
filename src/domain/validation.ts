@@ -650,7 +650,13 @@ export function validateProject(
 ): ValidationReport {
   const diagnostics: Diagnostic[] = [];
   if (options.structural !== false) {
-    structuralValidator(project);
+    // ICC Plus v2.10 added hideRowMenu as a required App field, while its
+    // loader intentionally supplies false for older project files. Validate
+    // against the same compatibility default without mutating authored data.
+    const structuralInput = Object.hasOwn(project, 'hideRowMenu')
+      ? project
+      : { ...project, hideRowMenu: false };
+    structuralValidator(structuralInput);
     diagnostics.push(...structuralDiagnostics(structuralValidator.errors));
   }
   diagnostics.push(...validateSemantic(project));

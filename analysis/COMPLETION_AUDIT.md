@@ -6,20 +6,20 @@ broader claim than that test covers.
 
 ## 1. Analyze the requested ICC Plus repository and all mechanisms
 
-Status: complete for pinned release `v2.9.29`.
+Status: complete for pinned release `v2.10.1`.
 
 Evidence:
 
 - Deployment repository `wahaha303/ICCPlus` is pinned to commit
-  `ddeb389f4bddfa7667f9dbae0f941625a90f4cc2`.
+  `623be8dbaae5499fc2f1320b85c70d25ebdb1d51`.
 - Its authoritative linked source repository `wahaha303/ICC-Plus-Svelte` is
-  pinned to commit `df33b5d554bda38adfa820395d794315afd6775c`.
+  pinned to commit `b33bfb9b29e0a84a035a56d7e1827e42fe0f7000`.
 - `src/generated/deployment-manifest.json` hashes all 75 deployment files and
   all 34 entries in the official web/local viewer archives.
 - `src/generated/source-analysis.json` retains exact, SHA-256-addressed content
   for all 227 authored source, standalone-viewer, build, configuration, style,
   and patch files.
-- The same evidence indexes 1,406 named functions/methods with exact file,
+- The same evidence indexes 1,411 named functions/methods with exact file,
   line span, signature, referenced model fields, and implementation body.
 - `analysis/CODEBASE_INVENTORY.md` is a generated human-readable function and
   component inventory.
@@ -45,10 +45,10 @@ Status: complete for the pinned release.
 Evidence:
 
 - TypeScript AST/schema generation covers all 59 declared types.
-- The generated model contains all 888 unique declared fields.
-- 886 fields are used by implementation code; the remaining two
+- The generated model contains all 893 unique declared fields.
+- 891 fields are used by implementation code; the remaining two
   compatibility/runtime declarations remain in the schema and are preserved.
-- All 59 types are assigned to one or more of 18 semantic feature families;
+- All 59 types are assigned to one or more of 19 semantic feature families;
   the coverage test fails when an upstream type is unassigned.
 - Current defaults are statically evaluated directly from upstream
   `defaultApp`.
@@ -70,7 +70,7 @@ Status: complete.
 
 Evidence:
 
-- 26 MCP tools cover discovery, schema, sessions, queries, high-level entity
+- 27 MCP tools cover discovery, schema, sessions, exact-path reads, queries, high-level entity
   authoring, generic patching, normalization, validation, requirement
   evaluation, Custom CSS catalog/analysis/application, fragments, assets,
   persistence, viewer builds, and history.
@@ -120,7 +120,7 @@ Evidence:
 
 - The package exposes `iccplus-mcp` and runs over standard stdio.
 - A spawned-process MCP smoke test initializes the built executable, lists all
-  26 tools, invokes capability discovery, and closes cleanly.
+  27 tools, invokes capability discovery, and closes cleanly.
 - An in-memory protocol integration test lists tools/resources/prompts and
   completes create-row-create-choice-validate-save.
 - `README.md` contains Codex CLI, `config.toml`, and generic stdio-host setup.
@@ -132,11 +132,11 @@ Status: complete.
 Last full local gate:
 
 ```text
-npm test                 8 files, 30 tests passed
+npm test                 8 files, 32 tests passed
 npm run check            passed
 npm run build            passed
-npm run test:stdio       26 tools, complete type coverage
-npm run verify:upstream  227 source files, 1,406 functions,
+npm run test:stdio       27 tools, complete type coverage
+npm run verify:upstream  227 source files, 1,411 functions,
                          75 deployment files, 34 archive entries,
                          official web/local viewer builds passed
 npm audit                0 vulnerabilities

@@ -24,8 +24,8 @@ const client = new Client({ name: 'iccplus-stdio-smoke', version: '1.0.0' });
 try {
   await client.connect(transport);
   const tools = await client.listTools();
-  if (tools.tools.length !== 26) {
-    throw new Error(`Expected 26 tools, received ${tools.tools.length}.`);
+  if (tools.tools.length !== 27) {
+    throw new Error(`Expected 27 tools, received ${tools.tools.length}.`);
   }
   const response = await client.callTool({
     name: 'iccplus_capabilities',
@@ -39,7 +39,7 @@ try {
   ) {
     throw new Error('Capability coverage is incomplete.');
   }
-  process.stdout.write('stdio MCP smoke test passed (26 tools, complete type coverage).\n');
+  process.stdout.write('stdio MCP smoke test passed (27 tools, complete type coverage).\n');
 } finally {
   await client.close();
   await rm(root, { recursive: true, force: true });

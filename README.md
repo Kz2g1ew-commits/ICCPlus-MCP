@@ -13,8 +13,8 @@ The server gives an AI agent a complete ICC Plus project model generated and
 indexed directly from the upstream source:
 
 - the project schema and current defaults are generated from ICC Plus source;
-- every one of the 59 declared model types and 888 unique fields is discoverable;
-- all 227 authored source/build/config/patch files and 1,406 named
+- every one of the 59 declared model types and 893 unique fields is discoverable;
+- all 227 authored source/build/config/patch files and 1,411 named
   functions/methods across the creator and standalone viewer are indexed with exact
   source, SHA-256 evidence, signatures, model-field usage, and line spans;
 - all 75 files in the requested deployment repository and 34 files inside its
@@ -24,10 +24,13 @@ indexed directly from the upstream source:
 - structural and semantic validation catches dangling references before save;
 - source-backed Custom CSS tools expose official viewer classes, resolve
   project selectors, and diagnose syntax/cascade risks before save;
+- ICC Plus v2.10 row-width preservation, build-form visibility/debug titles,
+  split score-recalculation controls, hidden row menus, and addon state CSS
+  classes are modeled and discoverable;
 - official web and local viewer archives can be built without opening the creator UI.
 
-Compatibility is currently generated from ICC Plus `v2.9.29`, source commit
-`df33b5d554bda38adfa820395d794315afd6775c`.
+Compatibility is currently generated from ICC Plus `v2.10.1`, source commit
+`b33bfb9b29e0a84a035a56d7e1827e42fe0f7000`.
 
 ## What this is
 
@@ -123,6 +126,9 @@ Optional environment:
 - `ICCPLUS_WORKSPACE`: filesystem boundary; defaults to the server process CWD.
 - `ICCPLUS_MAX_ASSET_BYTES`: maximum local asset size; defaults to 26,214,400
   bytes (25 MiB).
+- `ICCPLUS_DUPLICATED_TEXT_LIMIT_BYTES`: maximum size duplicated into the text
+  fallback of a tool result; defaults to 8,192 bytes. Larger exact results
+  remain available in `structuredContent`. Set `-1` for legacy unlimited text.
 
 ## Recommended agent workflow
 
@@ -162,6 +168,7 @@ Example user request:
 | `iccplus_open_project` | Open project JSON into an isolated session. |
 | `iccplus_list_projects` | List sessions, revisions, dirty state, and counts. |
 | `iccplus_project_status` | Inspect validation, size, content counts, and optional JSON. |
+| `iccplus_read_project` | Read exact JSON Pointers, including CSS/HTML/JS and unknown fields, with asset redaction by default. |
 | `iccplus_query` | Search all modeled entities by type, ID, or text. |
 | `iccplus_create_entity` | Create an entity with defaults, fresh IDs, and parent repair. |
 | `iccplus_update_entity` | Deep-merge/unset fields and optionally rewrite ID references. |
@@ -211,6 +218,8 @@ Entity tools cover `row`, `backpack_row`, `choice`, `addon`,
 - Existing files are not replaced unless `overwrite=true`.
 - Asset values are redacted from ordinary query output and reported by media
   type and approximate byte size.
+- Exact path reads avoid returning a complete project, and large tool results
+  are not duplicated into both text and structured output.
 - Unknown fields survive load, edit, normalization, and save for forward
   compatibility.
 
@@ -249,6 +258,11 @@ reports specificity and matched entities, and warns when a declaration is
 likely to lose to ICC Plus inline styles. `iccplus_css_set` persists the result
 through the same revisioned transaction and validation policy as other project
 mutations.
+
+For v2.10+, the catalog also covers `.row-bg-{rowId}`,
+`.row-header-{rowId}`, `.choice`, `.addon-selectable`, and the
+`.addon-enabled`, `.addon-disabled`, `.addon-selected`, and
+`.addon-unselected` state classes while retaining older row selector spellings.
 
 This is intentionally static analysis. Computed styles, responsive layout, and
 interaction-state rendering remain the responsibility of the official viewer;

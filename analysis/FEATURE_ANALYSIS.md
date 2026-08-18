@@ -1,4 +1,4 @@
-# ICC Plus v2.9.29 feature and mechanism analysis
+# ICC Plus v2.10.1 feature and mechanism analysis
 
 This document is the semantic companion to the generated
 [`CODEBASE_INVENTORY.md`](CODEBASE_INVENTORY.md). It describes what the source
@@ -8,7 +8,7 @@ does, how the model drives it, and how the MCP surface exposes it.
 
 The audit used the Svelte 5 source repository
 [`wahaha303/ICC-Plus-Svelte`](https://github.com/wahaha303/ICC-Plus-Svelte) at
-commit `df33b5d554bda38adfa820395d794315afd6775c` (`v2.9.29`), not only the
+commit `b33bfb9b29e0a84a035a56d7e1827e42fe0f7000` (`v2.10.1`), not only the
 minified deployment bundle.
 
 The source analyzer retains every authored code/build/config/patch file from
@@ -18,16 +18,16 @@ artifact:
 | Measure | Result |
 | --- | ---: |
 | Audited authored files | 227 |
-| Exact audited source bytes | 3,272,971 |
+| Exact audited source bytes | 3,310,217 |
 | Declared model types | 59 |
-| Unique declared fields | 888 |
-| Fields referenced outside the type file | 886 |
-| Store functions | 189 |
+| Unique declared fields | 893 |
+| Fields referenced outside the type file | 891 |
+| Store functions | 190 |
 | Exported store functions | 100 |
-| Named functions/methods across all source files | 1,406 |
+| Named functions/methods across all source files | 1,411 |
 | Exported named source functions | 246 |
 | Deployment files | 75 |
-| Deployment bytes | 24,492,438 |
+| Deployment bytes | 24,748,251 |
 | Official viewer archive entries | 34 |
 | Upstream third-party packages with license metadata | 209 |
 | Feature families covering declared types | 19 |
@@ -159,6 +159,14 @@ propagation and uses exact applied-count equality while removing discounts.
 The MCP exposes and preserves that field and packages the corrected official
 viewer; interactive discount recalculation remains owned by the viewer runtime.
 
+In v2.10 the score recalculation switch was split. `isNotRecalculateSelf`
+blocks recalculation triggered by the owning choice, while
+`isNotRecalculatable` now blocks recalculation triggered by other choices.
+Normalization copies the old all-purpose behavior to the new field for
+pre-v2.10 projects. The same release adds `preserveWidth`, `isNotBuild`,
+`showDebugTitle`, and `hideRowMenu`, plus condition-specific selectable-addon
+Custom CSS classes. v2.10.1 fixes the row-menu requirement interaction.
+
 ### Content and navigation effects
 
 - duplicate a row, with placement and optional reference suffixing;
@@ -284,8 +292,9 @@ workflow.
 The project-level `customCSS` field is a deliberate escape hatch beyond the
 structured styling model. ICC Plus applies it by assigning the text to
 `style#customCSS` in `document.head`. Official viewer markup exposes dynamic
-`row-{id}`, `row-{id}-bg`, `row-{id}-header`, `choice-{id}`, selectable
-`addon-{id}` classes, choice state classes, and stable viewer/layout classes.
+`row-{id}`, both old and v2.10 `row-bg-{id}`/`row-header-{id}` spellings,
+`choice-{id}`, selectable `addon-{id}` classes, choice and addon state classes,
+and stable viewer/layout classes.
 Many of those elements also have Svelte-generated inline `style` attributes.
 
 The MCP derives a selector catalog and line evidence from the pinned standalone
@@ -336,7 +345,7 @@ Official template packaging follows the creator's format:
   hashes/deduplicates equal content, writes asset files, and rewrites references;
 - viewer title/loading/favicon/font/custom-CSS values are applied safely.
 
-Packaging was integration-tested against both official `v2.9.29` template
+Packaging was integration-tested against both official `v2.10.1` template
 archives from the deployment repository.
 
 ## MCP coverage model
@@ -345,7 +354,7 @@ Coverage does not depend on one bespoke tool per ICC feature:
 
 | Need | MCP mechanism |
 | --- | --- |
-| Learn a feature | `iccplus_capabilities` with an 18-family catalog. |
+| Learn a feature | `iccplus_capabilities` with a 19-family catalog. |
 | Learn an exact field | `iccplus_capabilities` with `field:<name>` returns declarations and all source usages. |
 | Learn a model shape | `iccplus_schema` or `iccplus://schema/project`. |
 | Inspect an exact mechanism | `function:<name>` returns every matching implementation body with file/line and field evidence. |
@@ -358,7 +367,7 @@ Coverage does not depend on one bespoke tool per ICC feature:
 | Use files/media | Workspace-bounded open/save/assets/build tools. |
 | Recover/coordinate | Revisions, dry runs, atomic commit, undo/redo. |
 
-All 59 source-declared types belong to a feature family, and all 888 declared
+All 59 source-declared types belong to a feature family, and all 893 declared
 fields appear in the generated schema/discovery data. This provides complete
 model access while keeping the handwritten server small and adaptable.
 

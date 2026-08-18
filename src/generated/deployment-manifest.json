@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-07-30T11:46:22.793Z",
+  "generatedAt": "2026-08-18T15:23:56.007Z",
   "repository": "wahaha303/ICCPlus",
-  "version": "2.9.29",
-  "commit": "ddeb389f4bddfa7667f9dbae0f941625a90f4cc2",
-  "tag": "v2.9.29",
+  "version": "2.10.1",
+  "commit": "623be8dbaae5499fc2f1320b85c70d25ebdb1d51",
+  "tag": "v2.10.1",
   "coverage": {
     "files": 75,
-    "bytes": 24492438,
+    "bytes": 24748251,
     "archives": 2,
     "archiveEntries": 34
   },
@@ -78,8 +78,8 @@
     },
     {
       "path": "LocalViewer/js/app.js",
-      "bytes": 897994,
-      "sha256": "74dffa559ce943a436a06bc50f808e54511a523d6d9904aad1c6f110e0ffcbfe"
+      "bytes": 903156,
+      "sha256": "7f614f5acd7fe964f7b985e456f61ad80a74d824745e6d58e78aae8b501d9764"
     },
     {
       "path": "LocalViewer/js/polyfills.js",
@@ -237,9 +237,9 @@
       "sha256": "57820a6fafade73e0225a954873e2952d29e0da33140279c71df16a38e942893"
     },
     {
-      "path": "Viewer/js/app-legacy.B3P0eDca.js",
-      "bytes": 467770,
-      "sha256": "8da4a07bb4991382f478250f3a98dfc79c3247543f335f1aa6be6df708bdd924"
+      "path": "Viewer/js/app-legacy.BEkjgfkb.js",
+      "bytes": 474942,
+      "sha256": "7337d4d2fe6bece86ef214323eabbecac4eb55888e15de34e959a356a3e20b29"
     },
     {
       "path": "Viewer/js/app-legacy.D5yyI6pR.js",
@@ -252,9 +252,9 @@
       "sha256": "a31e0a9073721685295c8f8e7dcae7f6f65faf02d5c9f8b0b41ad064fde9a7c5"
     },
     {
-      "path": "Viewer/js/app.D_6iUgTU.js",
-      "bytes": 397699,
-      "sha256": "ab618839b248a60db87ba502402c1d152a2b969d4667a6eaf73f6c53c0717218"
+      "path": "Viewer/js/app.XOb7AZBX.js",
+      "bytes": 402911,
+      "sha256": "7a1da6c1c1ab307e4931d37f97c3504f442251bbfdc026162777fb1636be96c0"
     },
     {
       "path": "Viewer/js/chunk-vendors-legacy.NoCpmwbH.js",
@@ -269,7 +269,7 @@
     {
       "path": "Viewer/js/core.js",
       "bytes": 3555,
-      "sha256": "c9b73906a8d4ed9300985ac1403a369d1aa6dc8c8c80339fe922b1d77031d7ce"
+      "sha256": "731f923e1a4ce33f2f27e33b99d93fc59fb4ebe2f832733b8ab907a269aa2c48"
     },
     {
       "path": "Viewer/js/polyfills.js",
@@ -339,32 +339,32 @@
     {
       "path": "index.html",
       "bytes": 2671,
-      "sha256": "8be6363028a7992e0d57409d2a1e256221819452ff418fb4702e2b5a5e2a786d"
+      "sha256": "dc2e7131cddf1088054265f46c71fd4fef8f40729dfc2a4cb72ff35216b20fcd"
     },
     {
-      "path": "js/app-legacy.CcW_Oz59.js",
-      "bytes": 180255,
-      "sha256": "98968b9f682d966d14dd8e01868d7db80f261d2e9d670d1d6c2a55625d25b2df"
+      "path": "js/app-legacy.CuSjnwlB.js",
+      "bytes": 181255,
+      "sha256": "5a69f3039e2a8a38d09385981d6bb56c814fb42e62a459c461a59f271ea96f7f"
     },
     {
-      "path": "js/app-legacy.i1nM_6FH.js",
-      "bytes": 1466112,
-      "sha256": "6767b2ae78665d2a143a168c44ac32536cf5fa7a49a6d714fab0dfb734a10808"
+      "path": "js/app-legacy.kbHktaju.js",
+      "bytes": 1481298,
+      "sha256": "d1286d659a575ffd28d54c461c747f5c43239fcfdf82ecab9e0da3ee819ac5d7"
     },
     {
-      "path": "js/app.DkX7zARq.js",
-      "bytes": 1306271,
-      "sha256": "b1774583e2c5381a3c1e77dc97ddc3c08c6634d47769d3d5868ab6c71037210c"
+      "path": "js/app.DYY6HQ9u.js",
+      "bytes": 1318031,
+      "sha256": "dd42b7b1fde57fb90f835a5b77649f33e2c0fc20b6e6514157986b3926a6b302"
     },
     {
-      "path": "js/chunk-vendors-legacy.U0UR_UbC.js",
-      "bytes": 1305728,
-      "sha256": "88201628253c35c404a098030a680101a6d16716d81250f8207201bf746473e2"
+      "path": "js/chunk-vendors-legacy.BYiAaZQF.js",
+      "bytes": 1411721,
+      "sha256": "258d4739499f7578ec150da9c5a164c7668dc61253ac5cc3b3bede2ff93dea86"
     },
     {
-      "path": "js/chunk-vendors.Cr1kFZu-.js",
-      "bytes": 1179439,
-      "sha256": "ff6b75e6953b6ebe73c62ae34dee9e1d2459f782d30a77cf68f8f79ed41efd7e"
+      "path": "js/chunk-vendors.xWoRfEoN.js",
+      "bytes": 1279271,
+      "sha256": "bb113d592ca8bb10a1600456c6a8c22d4a9e0ed07e020a075af20caee631a539"
     },
     {
       "path": "js/polyfills.js",
@@ -373,8 +373,8 @@
     },
     {
       "path": "local_viewer.zip",
-      "bytes": 386199,
-      "sha256": "15ddebf5d9f640c54b4cc69be17e61b4604ba6da59ec12a8ef37ee0128219bd7"
+      "bytes": 387317,
+      "sha256": "e5afab85737660723f2f689e691e706377e202885d1024a504aad5744a9470b1"
     },
     {
       "path": "third-party-licenses.json",
@@ -383,8 +383,8 @@
     },
     {
       "path": "web_viewer.zip",
-      "bytes": 745549,
-      "sha256": "02faedc88034a7e710bdfc064ba1e50159eb557b1cbac147f356331ff5053db1"
+      "bytes": 748927,
+      "sha256": "e153e12fee104b4192770a68bfb40c1a8c9cc4c249925cf037edadda7cdad181"
     }
   ],
   "archives": [
@@ -448,8 +448,8 @@
         },
         {
           "path": "js/app.js",
-          "bytes": 897994,
-          "sha256": "74dffa559ce943a436a06bc50f808e54511a523d6d9904aad1c6f110e0ffcbfe"
+          "bytes": 903156,
+          "sha256": "7f614f5acd7fe964f7b985e456f61ad80a74d824745e6d58e78aae8b501d9764"
         },
         {
           "path": "js/polyfills.js",
@@ -527,9 +527,9 @@
           "sha256": "57820a6fafade73e0225a954873e2952d29e0da33140279c71df16a38e942893"
         },
         {
-          "path": "js/app-legacy.B3P0eDca.js",
-          "bytes": 467770,
-          "sha256": "8da4a07bb4991382f478250f3a98dfc79c3247543f335f1aa6be6df708bdd924"
+          "path": "js/app-legacy.BEkjgfkb.js",
+          "bytes": 474942,
+          "sha256": "7337d4d2fe6bece86ef214323eabbecac4eb55888e15de34e959a356a3e20b29"
         },
         {
           "path": "js/app-legacy.D5yyI6pR.js",
@@ -542,9 +542,9 @@
           "sha256": "a31e0a9073721685295c8f8e7dcae7f6f65faf02d5c9f8b0b41ad064fde9a7c5"
         },
         {
-          "path": "js/app.D_6iUgTU.js",
-          "bytes": 397699,
-          "sha256": "ab618839b248a60db87ba502402c1d152a2b969d4667a6eaf73f6c53c0717218"
+          "path": "js/app.XOb7AZBX.js",
+          "bytes": 402911,
+          "sha256": "7a1da6c1c1ab307e4931d37f97c3504f442251bbfdc026162777fb1636be96c0"
         },
         {
           "path": "js/chunk-vendors-legacy.NoCpmwbH.js",
@@ -559,7 +559,7 @@
         {
           "path": "js/core.js",
           "bytes": 3555,
-          "sha256": "c9b73906a8d4ed9300985ac1403a369d1aa6dc8c8c80339fe922b1d77031d7ce"
+          "sha256": "731f923e1a4ce33f2f27e33b99d93fc59fb4ebe2f832733b8ab907a269aa2c48"
         },
         {
           "path": "js/polyfills.js",

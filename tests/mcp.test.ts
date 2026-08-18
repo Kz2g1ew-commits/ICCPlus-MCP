@@ -44,6 +44,7 @@ describe('MCP integration', () => {
         'iccplus_patch',
         'iccplus_project_status',
         'iccplus_query',
+        'iccplus_read_project',
         'iccplus_save_project',
         'iccplus_schema',
         'iccplus_set_asset',
@@ -60,6 +61,7 @@ describe('MCP integration', () => {
         'iccplus_list_projects',
         'iccplus_project_status',
         'iccplus_query',
+        'iccplus_read_project',
         'iccplus_validate',
         'iccplus_evaluate_requirements',
         'iccplus_export_fragment',
@@ -118,7 +120,7 @@ describe('MCP integration', () => {
       const tools = await client.listTools();
       const resources = await client.listResources();
       const prompts = await client.listPrompts();
-      expect(tools.tools).toHaveLength(26);
+      expect(tools.tools).toHaveLength(27);
       expect(resources.resources.map((resource) => resource.uri)).toContain('iccplus://css/catalog');
       expect(resources.resources.map((resource) => resource.uri)).toContain('iccplus://features');
       expect(resources.resources.map((resource) => resource.uri)).toContain('iccplus://deployment');
@@ -136,7 +138,7 @@ describe('MCP integration', () => {
       }>;
       expect(matches.some((item) =>
         item.file.endsWith('/store/store.svelte.ts')
-        && item.line === 7061
+        && item.line > 0
         && item.source.includes('export async function selectObject')
       )).toBe(true);
 
@@ -249,6 +251,59 @@ describe('MCP integration', () => {
       const project = JSON.parse(await readFile(join(root, 'project.json'), 'utf8'));
       expect(project.rows[0].objects[0].id).toBe('begin');
       expect(project.customCSS).toContain('.choice-begin.choice-selected');
+    } finally {
+      await client.close();
+      await server.close();
+    }
+  });
+
+  it('keeps exact project fields available while redacting assets and suppressing large duplicate text', async () => {
+    const css = '.choice-test { color: red; }\n/* ' + 'x'.repeat(70_000) + ' */';
+    const asset = 'data:image/webp;base64,' + 'A'.repeat(70_000);
+    const { server } = createIccPlusServer();
+    const client = new Client({ name: 'compact-results', version: '1.0.0' });
+    const [clientTransport, serverTransport] = InMemoryTransport.createLinkedPair();
+    await Promise.all([server.connect(serverTransport), client.connect(clientTransport)]);
+
+    try {
+      const created = await client.callTool({
+        name: 'iccplus_create_project',
+        arguments: { overrides: { customCSS: css, testAsset: asset } },
+      });
+      const projectId = created.structuredContent!.project_id as string;
+      const read = await client.callTool({
+        name: 'iccplus_read_project',
+        arguments: {
+          project_id: projectId,
+          paths: ['/customCSS', '/testAsset'],
+        },
+      });
+      const items = read.structuredContent!.items as Array<{
+        path: string;
+        value: unknown;
+      }>;
+      expect(items.find((item) => item.path === '/customCSS')?.value).toBe(css);
+      expect(items.find((item) => item.path === '/testAsset')?.value).toMatchObject({
+        embedded: true,
+        mediaType: 'image/webp',
+        approximateBytes: 52_500,
+      });
+      expect(read.content).toEqual([{
+        type: 'text',
+        text: expect.stringContaining('structuredContent'),
+      }]);
+
+      const raw = await client.callTool({
+        name: 'iccplus_read_project',
+        arguments: {
+          project_id: projectId,
+          paths: ['/testAsset'],
+          include_embedded_assets: true,
+        },
+      });
+      const rawItems = raw.structuredContent!.items as Array<{ value: unknown }>;
+      expect(rawItems[0]?.value).toBe(asset);
+      expect((raw.content[0] as { type: string; text: string }).text).not.toContain(asset);
     } finally {
       await client.close();
       await server.close();

@@ -114,8 +114,24 @@ const CORE_TARGETS: Array<Omit<CssCatalogEntry, 'sources'>> = [
     description: 'The outer row background container.', inlineStyleRisk: true,
   },
   {
+    selector: '.row-bg', className: 'row-bg', kind: 'viewer', dynamic: false,
+    description: 'Every outer row background container.', inlineStyleRisk: true,
+  },
+  {
+    selector: '.row-bg-{rowId}', className: 'row-bg-{rowId}', kind: 'dynamic', dynamic: true,
+    description: 'The v2.10+ outer row background selector keyed by row id.', inlineStyleRisk: true,
+  },
+  {
     selector: '.row-{rowId}-header', className: 'row-{rowId}-header', kind: 'dynamic', dynamic: true,
     description: 'The row header/background element that contains its title and text.', inlineStyleRisk: true,
+  },
+  {
+    selector: '.row-header', className: 'row-header', kind: 'viewer', dynamic: false,
+    description: 'Every row header/background element.', inlineStyleRisk: true,
+  },
+  {
+    selector: '.row-header-{rowId}', className: 'row-header-{rowId}', kind: 'dynamic', dynamic: true,
+    description: 'The v2.10+ row header selector keyed by row id.', inlineStyleRisk: true,
   },
   {
     selector: '.row-button', className: 'row-button', kind: 'viewer', dynamic: false,
@@ -124,6 +140,10 @@ const CORE_TARGETS: Array<Omit<CssCatalogEntry, 'sources'>> = [
   {
     selector: '.choice-{choiceId}', className: 'choice-{choiceId}', kind: 'dynamic', dynamic: true,
     description: 'A selectable choice container. Replace {choiceId} with the choice id.', inlineStyleRisk: true,
+  },
+  {
+    selector: '.choice', className: 'choice', kind: 'viewer', dynamic: false,
+    description: 'Every choice container.', inlineStyleRisk: true,
   },
   {
     selector: '.choice-enabled', className: 'choice-enabled', kind: 'state', dynamic: false,
@@ -148,6 +168,26 @@ const CORE_TARGETS: Array<Omit<CssCatalogEntry, 'sources'>> = [
   {
     selector: '.addon-{addonId}', className: 'addon-{addonId}', kind: 'dynamic', dynamic: true,
     description: 'A selectable addon container. Replace {addonId} with its id.', inlineStyleRisk: true,
+  },
+  {
+    selector: '.addon-selectable', className: 'addon-selectable', kind: 'state', dynamic: false,
+    description: 'An addon that is independently selectable.', inlineStyleRisk: true,
+  },
+  {
+    selector: '.addon-enabled', className: 'addon-enabled', kind: 'state', dynamic: false,
+    description: 'An addon whose requirements currently pass.', inlineStyleRisk: true,
+  },
+  {
+    selector: '.addon-disabled', className: 'addon-disabled', kind: 'state', dynamic: false,
+    description: 'An addon whose requirements currently fail.', inlineStyleRisk: true,
+  },
+  {
+    selector: '.addon-selected', className: 'addon-selected', kind: 'state', dynamic: false,
+    description: 'A currently selected selectable addon.', inlineStyleRisk: true,
+  },
+  {
+    selector: '.addon-unselected', className: 'addon-unselected', kind: 'state', dynamic: false,
+    description: 'A currently unselected selectable addon.', inlineStyleRisk: true,
   },
   {
     selector: '.bg-overlay', className: 'bg-overlay', kind: 'state', dynamic: false,
@@ -176,13 +216,10 @@ function lineAt(source: string, offset: number): number {
 }
 
 function evidenceFor(className: string): CssSourceEvidence[] {
-  const needles = className.includes('{rowId}')
-    ? ['row-{row.id}']
-    : className.includes('{choiceId}')
-      ? ['choice-{choice.id}']
-      : className.includes('{addonId}')
-        ? ['addon-' + '$' + '{addon.id}']
-        : [className];
+  const needles = [className
+    .replaceAll('{rowId}', '{row.id}')
+    .replaceAll('{choiceId}', '{choice.id}')
+    .replaceAll('{addonId}', '$' + '{addon.id}')];
   const evidence: CssSourceEvidence[] = [];
   for (const component of sourceAnalysis.components) {
     if (!component.file.startsWith(VIEWER_PREFIX) || !component.file.endsWith('.svelte')) continue;
@@ -206,7 +243,7 @@ function normalizeDynamicClass(value: string): string {
 
 function kindForClass(className: string): CssTargetKind {
   if (className.includes('{')) return 'dynamic';
-  if (/^(?:choice-(?:enabled|disabled|selected|unselected)|bg-overlay|hidden|fullHeight)$/.test(className)) {
+  if (/^(?:(?:choice|addon)-(?:enabled|disabled|selected|unselected)|addon-selectable|bg-overlay|hidden|fullHeight)$/.test(className)) {
     return 'state';
   }
   if (/^(?:row$|col(?:-|$)|d-|[pm][trblxyse]?-\d|g[xy]?-|w-|h-|text-|align-|justify-|flex-|container)/.test(className)) {
@@ -332,7 +369,12 @@ export function listProjectCssTargets(project: JsonObject): ProjectCssTarget[] {
         entityId: entity.id,
         title: titleOf(entity.value),
         path: entity.path,
-        variants: ['.' + base + '-bg', '.' + base + '-header'],
+        variants: [
+          '.' + base + '-bg',
+          '.' + escapeCssIdentifier('row-bg-' + entity.id),
+          '.' + base + '-header',
+          '.' + escapeCssIdentifier('row-header-' + entity.id),
+        ],
       });
     }
   }
@@ -658,7 +700,15 @@ function projectTargetSets(project: JsonObject | undefined): CssTargetSets | und
 
 function catalogMatches(className: string): string[] {
   if (CATALOG_BY_CLASS.has(className)) return ['.' + className];
-  if (className.startsWith('row-')) return ['.row-{rowId}', '.row-{rowId}-bg', '.row-{rowId}-header'];
+  if (className.startsWith('row-')) {
+    return [
+      '.row-{rowId}',
+      '.row-{rowId}-bg',
+      '.row-bg-{rowId}',
+      '.row-{rowId}-header',
+      '.row-header-{rowId}',
+    ];
+  }
   if (className.startsWith('choice-')) return ['.choice-{choiceId}'];
   if (className.startsWith('addon-')) return ['.addon-{addonId}'];
   return [];
@@ -672,9 +722,21 @@ function resolveProjectClass(className: string, targets: ProjectCssTarget[]): Pr
         ? 'addon-' + target.entityId
         : 'row-' + target.entityId;
     return className === raw
-      || ((target.entityType === 'row' || target.entityType === 'backpack_row')
-        && (className === raw + '-bg' || className === raw + '-header'));
+      || target.variants.some((variant) => variant === '.' + escapeCssIdentifier(className));
   });
+}
+
+function rowClassCandidateIds(className: string): string[] {
+  const candidates: string[] = [];
+  if (className.startsWith('row-bg-')) candidates.push(className.slice('row-bg-'.length));
+  if (className.startsWith('row-header-')) candidates.push(className.slice('row-header-'.length));
+  if (className.startsWith('row-')) {
+    const id = className.slice('row-'.length);
+    candidates.push(id);
+    if (id.endsWith('-bg')) candidates.push(id.slice(0, -3));
+    if (id.endsWith('-header')) candidates.push(id.slice(0, -7));
+  }
+  return [...new Set(candidates.filter(Boolean))];
 }
 
 function validateProjectClass(
@@ -685,9 +747,7 @@ function validateProjectClass(
 ): void {
   if (!sets || CATALOG_BY_CLASS.has(className)) return;
   if (className.startsWith('row-')) {
-    const id = className.slice(4);
-    const variantId = id.replace(/-(?:bg|header)$/, '');
-    if (!sets.rows.has(id) && !sets.rows.has(variantId)) diagnostics.push(diagnostic(
+    if (!rowClassCandidateIds(className).some((id) => sets.rows.has(id))) diagnostics.push(diagnostic(
       'css.selector.unknown_row',
       'warning',
       'Line ' + line + ': .' + className + ' does not match a row id in this project.',

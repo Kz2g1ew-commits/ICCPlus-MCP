@@ -1,7 +1,36 @@
 import type { JsonObject, JsonValue } from './types.js';
 
 export function cloneJson<T extends JsonValue>(value: T): T {
-  return structuredClone(value);
+  // JSON primitives are immutable. Returning strings directly is especially
+  // important for projects containing large data URLs: structuredClone would
+  // duplicate their backing storage for every transaction snapshot.
+  if (!Array.isArray(value) && !isJsonObject(value)) return value;
+
+  type Container = JsonObject | JsonValue[];
+  const makeContainer = (source: Container): Container => Array.isArray(source) ? [] : {};
+  const setChild = (target: Container, key: string, child: JsonValue): void => {
+    if (Array.isArray(target)) target[Number(key)] = child;
+    else target[key] = child;
+  };
+  const root = makeContainer(value);
+  const pending: Array<{ source: Container; target: Container }> = [{
+    source: value,
+    target: root,
+  }];
+
+  while (pending.length > 0) {
+    const { source, target } = pending.pop()!;
+    for (const [key, child] of Object.entries(source)) {
+      if (Array.isArray(child) || isJsonObject(child)) {
+        const cloned = makeContainer(child);
+        setChild(target, key, cloned);
+        pending.push({ source: child, target: cloned });
+      } else {
+        setChild(target, key, child);
+      }
+    }
+  }
+  return root as T;
 }
 
 export function isJsonObject(value: unknown): value is JsonObject {
