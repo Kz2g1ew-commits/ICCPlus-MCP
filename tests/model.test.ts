@@ -210,6 +210,51 @@ describe('ICC Plus model operations', () => {
     expect(normalized.changes.length).toBeGreaterThan(0);
   });
 
+  it('migrates pre-v2.10 score recalculation semantics and new global defaults', () => {
+    const project = createDefaultProject();
+    insertEntity(project, { type: 'row', values: { id: 'legacy-row' } });
+    insertEntity(project, { type: 'choice', parent: 'legacy-row', values: { id: 'legacy-choice' } });
+    insertEntity(project, {
+      type: 'score',
+      parent: 'legacy-choice',
+      values: { idx: 'legacy-score', isNotRecalculatable: true },
+    });
+    insertEntity(project, {
+      type: 'selectable_addon',
+      parent: 'legacy-choice',
+      values: { id: 'legacy-addon' },
+    });
+    insertEntity(project, {
+      type: 'score',
+      parent: 'legacy-addon',
+      values: { idx: 'legacy-addon-score', isNotRecalculatable: true },
+    });
+
+    project.version = '2.9.29';
+    delete project.hideRowMenu;
+    const legacyIndex = new ModelIndex(project);
+    delete legacyIndex.one('legacy-score', 'score')!.value.isNotRecalculateSelf;
+    delete legacyIndex.one('legacy-addon-score', 'score')!.value.isNotRecalculateSelf;
+    expect(validateProject(project).diagnostics.some((item) =>
+      item.path === '/hideRowMenu'
+    )).toBe(false);
+
+    const normalized = normalizeProject(project);
+    const index = new ModelIndex(normalized.project);
+    expect(index.one('legacy-score', 'score')?.value).toMatchObject({
+      isNotRecalculatable: true,
+      isNotRecalculateSelf: true,
+    });
+    expect(index.one('legacy-addon-score', 'score')?.value).toMatchObject({
+      isNotRecalculatable: true,
+      isNotRecalculateSelf: true,
+    });
+    expect(normalized.project.hideRowMenu).toBe(false);
+    expect(normalized.changes).toEqual(expect.arrayContaining([
+      'Initialized /hideRowMenu from ICC Plus v2.10+ defaults.',
+    ]));
+  });
+
   it('merges and repairs group-to-design membership stored on either side', () => {
     const project = createDefaultProject();
     insertEntity(project, {

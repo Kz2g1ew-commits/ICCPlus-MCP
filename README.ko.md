@@ -12,20 +12,24 @@
 모델을 AI 에이전트에 제공합니다.
 
 - 프로젝트 스키마와 현재 기본값을 ICC Plus 소스에서 생성합니다.
-- 선언된 모델 타입 59개와 고유 필드 888개를 모두 탐색할 수 있습니다.
+- 선언된 모델 타입 59개와 고유 필드 893개를 모두 탐색할 수 있습니다.
 - 제작기와 독립 실행형 뷰어의 소스·빌드·설정·패치 파일 227개와 이름이
-  있는 함수 및 메서드 1,404개를 정확한 소스, SHA-256 근거, 시그니처,
+  있는 함수 및 메서드 1,411개를 정확한 소스, SHA-256 근거, 시그니처,
   모델 필드 사용 정보, 줄 범위와 함께 인덱싱합니다.
-- 배포 저장소의 파일 77개와 공식 뷰어 아카이브 내부 파일 34개의
+- 배포 저장소의 파일 75개와 공식 뷰어 아카이브 내부 파일 34개의
   바이트 수와 SHA-256 매니페스트를 제공합니다.
 - 상위 수준 도구가 ID, 순서, 부모 링크, 상호 멤버십을 보존합니다.
 - 범용 RFC 6902 패치로 새 필드와 사용 빈도가 낮은 필드에도 접근할 수
   있습니다.
 - 구조 및 의미 검증으로 저장 전에 끊어진 참조를 발견합니다.
+- 원본 기반 Custom CSS 도구로 공식 뷰어 클래스와 프로젝트별 셀렉터를
+  찾고 저장 전에 문법·캐스케이드 위험을 진단합니다.
+- ICC Plus v2.10의 행 너비 유지, 빌드 폼 표시·디버그 제목, 분리된 점수
+  재계산 제어, 행 메뉴 숨김, 애드온 상태 CSS 클래스를 지원합니다.
 - 제작기 UI를 열지 않고 공식 웹·로컬 뷰어 아카이브를 빌드할 수 있습니다.
 
-현재 호환성 기준은 ICC Plus `v2.9.28`, 소스 커밋
-`5bbd87ccc012f1638e95cd984a946e523931a5a5`입니다.
+현재 호환성 기준은 ICC Plus `v2.10.1`, 소스 커밋
+`b33bfb9b29e0a84a035a56d7e1827e42fe0f7000`입니다.
 
 ## 소개
 
@@ -123,6 +127,10 @@ Codex CLI, IDE 확장 프로그램, ChatGPT 데스크톱의 Codex 화면은 이 
   현재 작업 디렉터리입니다.
 - `ICCPLUS_MAX_ASSET_BYTES`: 로컬 에셋의 최대 크기입니다. 기본값은
   26,214,400바이트(25 MiB)입니다.
+- `ICCPLUS_DUPLICATED_TEXT_LIMIT_BYTES`: 도구 결과의 텍스트 대체 출력에
+  중복할 최대 크기입니다. 기본값은 8,192바이트이며, 그보다 큰 정확한
+  결과는 `structuredContent`에 유지됩니다. 기존처럼 제한 없이 텍스트로
+  중복하려면 `-1`을 사용합니다.
 
 ## 권장 에이전트 작업 흐름
 
@@ -133,9 +141,12 @@ Codex CLI, IDE 확장 프로그램, ChatGPT 데스크톱의 Codex 화면은 이 
 4. 행을 생성하고, 선택지를 생성한 다음 점수·애드온·요구사항을 생성합니다.
 5. 변경 도구에 `expected_revision`을 전달합니다. 넓은 범위의 변경은
    `dry_run`으로 먼저 확인합니다.
-6. `iccplus_validate`를 호출하고 필요한 경우
+6. 고급 스타일은 `iccplus_css_catalog`로 정확한 셀렉터를 찾고,
+   `iccplus_css_analyze`로 후보 CSS를 분석한 다음 `iccplus_css_set`으로
+   적용합니다.
+7. `iccplus_validate`를 호출하고 필요한 경우
    `iccplus_evaluate_requirements`도 호출합니다.
-7. 명시적으로 저장하거나 공식 뷰어 아카이브를 빌드합니다.
+8. 명시적으로 저장하거나 공식 뷰어 아카이브를 빌드합니다.
 
 에이전트는 함께 제공되는 `author-iccplus-project` 또는
 `audit-iccplus-project` 프롬프트를 요청할 수도 있습니다.
@@ -151,12 +162,16 @@ Codex CLI, IDE 확장 프로그램, ChatGPT 데스크톱의 Codex 화면은 이 
 
 | 도구 | 용도 |
 | --- | --- |
-| `iccplus_capabilities` | 기능군 18개, 타입·필드, 정확한 함수 본문, 소스 파일 인덱스, 배포 아티팩트를 탐색합니다. |
+| `iccplus_capabilities` | 기능군 19개, 타입·필드, 정확한 함수 본문, 소스 파일 인덱스, 배포 아티팩트를 탐색합니다. |
+| `iccplus_css_catalog` | 소스 근거가 있는 공식 뷰어 클래스와 정확한 프로젝트 ID 셀렉터를 나열합니다. |
+| `iccplus_css_analyze` | 저장된 CSS나 후보 CSS의 문법, 명시도, 대상 해석, 캐스케이드 충돌, 외부 에셋을 분석합니다. |
+| `iccplus_css_set` | 리비전·드라이런·검증 보호와 함께 Custom CSS를 교체·뒤에 추가·앞에 추가·초기화합니다. |
 | `iccplus_schema` | 스키마 요약, 개별 정의 또는 전체 생성 스키마를 읽습니다. |
 | `iccplus_create_project` | 현재 원본의 정확한 기본값으로 프로젝트를 시작합니다. |
 | `iccplus_open_project` | 프로젝트 JSON을 격리된 세션으로 엽니다. |
 | `iccplus_list_projects` | 세션, 리비전, 변경 상태, 개수를 나열합니다. |
 | `iccplus_project_status` | 검증 결과, 크기, 콘텐츠 개수와 선택적 JSON을 조회합니다. |
+| `iccplus_read_project` | 에셋은 기본적으로 가리면서 CSS·HTML·JS·알 수 없는 필드를 포함한 정확한 JSON Pointer를 읽습니다. |
 | `iccplus_query` | 타입, ID 또는 텍스트로 모델 엔티티 전체를 검색합니다. |
 | `iccplus_create_entity` | 기본값과 새 ID를 사용해 엔티티를 만들고 부모 관계를 복구합니다. |
 | `iccplus_update_entity` | 필드를 깊은 병합 또는 제거하고 선택적으로 ID 참조를 다시 씁니다. |
@@ -184,10 +199,12 @@ Codex CLI, IDE 확장 프로그램, ChatGPT 데스크톱의 Codex 화면은 이 
 
 | URI/이름 | 내용 |
 | --- | --- |
+| `iccplus://css/catalog` | 소스 근거가 포함된 공식 Custom CSS 셀렉터 카탈로그 |
 | `iccplus://schema/project` | 전체 생성 프로젝트 JSON 스키마 |
 | `iccplus://features` | 소스 기반 기능 카탈로그와 커버리지 개수 |
 | `iccplus://deployment` | 모든 배포 파일과 공식 뷰어 ZIP 항목의 SHA-256 매니페스트 |
 | `iccplus://licenses` | 원본 서드파티 패키지 209개의 UTF-8 정규화 메타데이터 |
+| `iccplus://project/{projectId}/css` | 저장 CSS, 정적 분석, 프로젝트별 정확한 셀렉터 |
 | `iccplus://project/{projectId}/summary` | 현재 리비전, 검증 결과, 엔티티 개수 |
 | `author-iccplus-project` | 안전한 생성 순서와 검증 작업 흐름 |
 | `audit-iccplus-project` | 전체 프로젝트 완성도 및 패키징 감사 |
@@ -205,6 +222,8 @@ Codex CLI, IDE 확장 프로그램, ChatGPT 데스크톱의 Codex 화면은 이 
 - `overwrite=true`가 아니면 기존 파일을 교체하지 않습니다.
 - 일반 조회 결과에서는 에셋 값을 가리고 미디어 유형과 대략적인 바이트
   크기만 보고합니다.
+- 정확한 경로 조회로 프로젝트 전체 반환을 피하며, 큰 결과를 텍스트와
+  구조화 출력 양쪽에 중복하지 않습니다.
 - 알 수 없는 필드도 불러오기, 편집, 정규화, 저장 과정에서 보존해 향후
   호환성을 유지합니다.
 
@@ -220,6 +239,8 @@ Codex CLI, IDE 확장 프로그램, ChatGPT 데스크톱의 Codex 화면은 이 
 - 중첩 요구사항, 임계값, 전역 요구사항 순환
 - 그룹과 디자인 그룹의 상호 멤버십
 - 호환되지 않는 뷰어 내보내기 모드
+- Custom CSS 문법, 위험한 레거시 구문, 해석되지 않는 ICC Plus ID
+  셀렉터, 전역 범위, 외부 에셋, 인라인 스타일 충돌 가능성
 - 포인트 정수·실수 및 초기화 불변 조건
 
 요구사항 평가기는 `id`(`/ON#N` 포함), `points`, `pointCompare`, `or`,
@@ -227,14 +248,38 @@ Codex CLI, IDE 확장 프로그램, ChatGPT 데스크톱의 Codex 화면은 이 
 연산자, 중첩 선행 조건을 구현합니다. 불리언 값만 반환하지 않고 설명
 가능한 추적 결과를 함께 제공합니다.
 
+## 고급 Custom CSS
+
+ICC Plus는 최상위 `customCSS` 필드에 CSS를 저장하고 공식 제작기와
+뷰어에서 `textContent`를 사용해 `style#customCSS`로 삽입합니다. MCP는
+고정된 독립 실행형 뷰어 마크업에서 `row-{id}`, `row-{id}-bg`,
+`row-{id}-header`, `choice-{id}`, 선택 상태 클래스, `addon`,
+선택 가능한 `addon-{id}` 등의 카탈로그를 추출합니다.
+
+`iccplus_css_catalog`는 열린 프로젝트의 모든 행·선택지·선택 가능 애드온
+ID를 CSS 이스케이프한 정확한 셀렉터로 반환합니다.
+`iccplus_css_analyze`는 중첩 규칙을 분석하고 명시도와 일치 엔티티를
+보고하며, 선언이 ICC Plus 인라인 스타일에 밀릴 가능성도 경고합니다.
+`iccplus_css_set`은 다른 프로젝트 변경과 같은 리비전 트랜잭션 및 검증
+정책으로 결과를 저장합니다.
+
+v2.10 이상에서는 기존 행 셀렉터와 함께 `.row-bg-{rowId}`,
+`.row-header-{rowId}`, `.choice`, `.addon-selectable`,
+`.addon-enabled`, `.addon-disabled`, `.addon-selected`,
+`.addon-unselected` 클래스도 카탈로그와 프로젝트 대상 분석에 포함합니다.
+
+이 기능은 의도적으로 정적 분석까지만 수행합니다. 계산된 스타일,
+반응형 레이아웃, 상호작용 상태의 실제 렌더링은 공식 뷰어가 담당하며,
+별도 브라우저 자동화 런타임이나 범용 웹 탐색 도구는 포함하지 않습니다.
+
 ## 뷰어 빌드
 
 `iccplus_build_viewer`는 작업공간 안의 공식 템플릿 ZIP을 받습니다.
 
 - 웹 모드는 `project.json`을 작성합니다.
 - 로컬 모드는 프로젝트를 `js/app.js`에 삽입합니다.
-- 로딩 제목, 텍스트, 색상, 파비콘, 배경, 글꼴, 사용자 CSS를
-  `viewerConfig`에서 적용합니다.
+- 로딩 제목, 텍스트, 색상, 파비콘, 배경, 글꼴과 프로젝트 Custom CSS를
+  패키징된 프로젝트에 보존합니다.
 - 선택적 이미지 분리는 전역 스타일, 행, 배낭 행, 디자인 그룹, 뷰어
   설정의 데이터 URL을 추출하며 같은 에셋은 하나로 합칩니다.
 

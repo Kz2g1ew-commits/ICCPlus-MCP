@@ -64,10 +64,22 @@ function sessionView(session: ProjectSession): ProjectSession {
   };
 }
 
+function sessionHandle(session: ProjectSession): Omit<ProjectSession, 'data' | 'history' | 'future'> {
+  return {
+    id: session.id,
+    ...(session.path ? { path: session.path } : {}),
+    revision: session.revision,
+    savedRevision: session.savedRevision,
+    createdAt: session.createdAt,
+    updatedAt: session.updatedAt,
+  };
+}
+
 export class ProjectStore {
   readonly workspaceRoot: string;
   readonly maxHistory: number;
   private readonly sessions = new Map<string, ProjectSession>();
+  private readonly indexes = new WeakMap<JsonObject, ModelIndex>();
 
   constructor(options: ProjectStoreOptions = {}) {
     const configuredRoot = resolve(options.workspaceRoot ?? process.env.ICCPLUS_WORKSPACE ?? process.cwd());
@@ -130,7 +142,7 @@ export class ProjectStore {
     return sessionView(session);
   }
 
-  async open(path: string, options: { normalize?: boolean } = {}): Promise<ProjectSession> {
+  private async load(path: string, options: { normalize?: boolean }): Promise<ProjectSession> {
     const absolute = await this.safePath(path, true);
     const metadata = await stat(absolute);
     if (!metadata.isFile()) throw new Error(`Project path is not a file: ${path}`);
@@ -139,7 +151,29 @@ export class ProjectStore {
     const data = options.normalize ? normalizeProject(parsed).project : parsed;
     const session = this.makeSession(data, absolute);
     if (options.normalize) session.savedRevision = -1;
+    return session;
+  }
+
+  async open(path: string, options: { normalize?: boolean } = {}): Promise<ProjectSession> {
+    const session = await this.load(path, options);
     return sessionView(session);
+  }
+
+  async openHandle(
+    path: string,
+    options: { normalize?: boolean } = {},
+  ): Promise<Omit<ProjectSession, 'data' | 'history' | 'future'>> {
+    return sessionHandle(await this.load(path, options));
+  }
+
+  index(id: string): ModelIndex {
+    const data = this.get(id).data;
+    let index = this.indexes.get(data);
+    if (!index) {
+      index = new ModelIndex(data);
+      this.indexes.set(data, index);
+    }
+    return index;
   }
 
   list(): Array<Omit<ProjectSession, 'data' | 'history' | 'future'> & {
@@ -154,7 +188,7 @@ export class ProjectStore {
       createdAt: session.createdAt,
       updatedAt: session.updatedAt,
       dirty: session.revision !== session.savedRevision,
-      summary: new ModelIndex(session.data).summary(),
+      summary: this.index(session.id).summary(),
     }));
   }
 

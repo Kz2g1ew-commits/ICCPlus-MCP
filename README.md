@@ -13,19 +13,24 @@ The server gives an AI agent a complete ICC Plus project model generated and
 indexed directly from the upstream source:
 
 - the project schema and current defaults are generated from ICC Plus source;
-- every one of the 59 declared model types and 888 unique fields is discoverable;
-- all 227 authored source/build/config/patch files and 1,404 named
+- every one of the 59 declared model types and 893 unique fields is discoverable;
+- all 227 authored source/build/config/patch files and 1,411 named
   functions/methods across the creator and standalone viewer are indexed with exact
   source, SHA-256 evidence, signatures, model-field usage, and line spans;
-- all 77 files in the requested deployment repository and 34 files inside its
+- all 75 files in the requested deployment repository and 34 files inside its
   official viewer archives have byte counts and SHA-256 manifests;
 - high-level tools preserve IDs, ordering, parent links, and reciprocal memberships;
 - generic RFC 6902 patching keeps new or uncommon upstream fields accessible;
 - structural and semantic validation catches dangling references before save;
+- source-backed Custom CSS tools expose official viewer classes, resolve
+  project selectors, and diagnose syntax/cascade risks before save;
+- ICC Plus v2.10 row-width preservation, build-form visibility/debug titles,
+  split score-recalculation controls, hidden row menus, and addon state CSS
+  classes are modeled and discoverable;
 - official web and local viewer archives can be built without opening the creator UI.
 
-Compatibility is currently generated from ICC Plus `v2.9.28`, source commit
-`5bbd87ccc012f1638e95cd984a946e523931a5a5`.
+Compatibility is currently generated from ICC Plus `v2.10.1`, source commit
+`b33bfb9b29e0a84a035a56d7e1827e42fe0f7000`.
 
 ## What this is
 
@@ -121,6 +126,9 @@ Optional environment:
 - `ICCPLUS_WORKSPACE`: filesystem boundary; defaults to the server process CWD.
 - `ICCPLUS_MAX_ASSET_BYTES`: maximum local asset size; defaults to 26,214,400
   bytes (25 MiB).
+- `ICCPLUS_DUPLICATED_TEXT_LIMIT_BYTES`: maximum size duplicated into the text
+  fallback of a tool result; defaults to 8,192 bytes. Larger exact results
+  remain available in `structuredContent`. Set `-1` for legacy unlimited text.
 
 ## Recommended agent workflow
 
@@ -130,9 +138,12 @@ Optional environment:
    designs, and global requirements.
 4. Create rows, then choices, then scores/addons/requirements.
 5. Pass `expected_revision` to mutations. Use `dry_run` for broad changes.
-6. Call `iccplus_validate` and, where useful,
+6. For advanced styling, discover exact selectors with
+   `iccplus_css_catalog`, analyze candidate CSS, then apply it with
+   `iccplus_css_set`.
+7. Call `iccplus_validate` and, where useful,
    `iccplus_evaluate_requirements`.
-7. Save explicitly or build an official viewer archive.
+8. Save explicitly or build an official viewer archive.
 
 An agent can also request the bundled `author-iccplus-project` or
 `audit-iccplus-project` prompt.
@@ -148,12 +159,16 @@ Example user request:
 
 | Tool | Purpose |
 | --- | --- |
-| `iccplus_capabilities` | Discover 18 feature families, a type/field, an exact function body, a source-file index, or a deployment artifact. |
+| `iccplus_capabilities` | Discover 19 feature families, a type/field, an exact function body, a source-file index, or a deployment artifact. |
+| `iccplus_css_catalog` | List source-backed official viewer classes and exact project-id selectors. |
+| `iccplus_css_analyze` | Analyze stored or candidate CSS syntax, specificity, target resolution, cascade conflicts, and external assets. |
+| `iccplus_css_set` | Replace, append, prepend, or clear project Custom CSS with revision, dry-run, and validation protection. |
 | `iccplus_schema` | Read the schema summary, one definition, or the complete generated schema. |
 | `iccplus_create_project` | Start from the exact current upstream defaults. |
 | `iccplus_open_project` | Open project JSON into an isolated session. |
 | `iccplus_list_projects` | List sessions, revisions, dirty state, and counts. |
 | `iccplus_project_status` | Inspect validation, size, content counts, and optional JSON. |
+| `iccplus_read_project` | Read exact JSON Pointers, including CSS/HTML/JS and unknown fields, with asset redaction by default. |
 | `iccplus_query` | Search all modeled entities by type, ID, or text. |
 | `iccplus_create_entity` | Create an entity with defaults, fresh IDs, and parent repair. |
 | `iccplus_update_entity` | Deep-merge/unset fields and optionally rewrite ID references. |
@@ -181,10 +196,12 @@ Entity tools cover `row`, `backpack_row`, `choice`, `addon`,
 
 | URI/name | Contents |
 | --- | --- |
+| `iccplus://css/catalog` | Official Custom CSS selector catalog with source evidence. |
 | `iccplus://schema/project` | Complete generated project JSON Schema. |
 | `iccplus://features` | Source-backed feature catalog and coverage counts. |
 | `iccplus://deployment` | SHA-256 manifest for all deployment files and official viewer ZIP entries. |
 | `iccplus://licenses` | UTF-8 normalized metadata for 209 upstream third-party packages. |
+| `iccplus://project/{projectId}/css` | Stored CSS, static analysis, and project-specific selectors. |
 | `iccplus://project/{projectId}/summary` | Live revision, validation, and entity counts. |
 | `author-iccplus-project` | Safe construction order and verification workflow. |
 | `audit-iccplus-project` | Full project completion and packaging audit. |
@@ -201,6 +218,8 @@ Entity tools cover `row`, `backpack_row`, `choice`, `addon`,
 - Existing files are not replaced unless `overwrite=true`.
 - Asset values are redacted from ordinary query output and reported by media
   type and approximate byte size.
+- Exact path reads avoid returning a complete project, and large tool results
+  are not duplicated into both text and structured output.
 - Unknown fields survive load, edit, normalization, and save for forward
   compatibility.
 
@@ -216,6 +235,8 @@ The validator combines the generated `App` schema with checks for:
 - nested requirements, thresholds, and global-requirement cycles;
 - group and design-group reciprocal memberships;
 - incompatible viewer export modes;
+- Custom CSS syntax, dangerous legacy constructs, unresolved ICC Plus ID
+  selectors, broad scope, external assets, and probable inline-style conflicts;
 - point integer/float and initialization invariants.
 
 The requirement evaluator implements `id` (including `/ON#N`), `points`,
@@ -223,14 +244,38 @@ The requirement evaluator implements `id` (including `/ON#N`), `points`,
 `word`, negation, operators, and nested prerequisites. It returns an
 explainable trace rather than only a boolean.
 
+## Advanced Custom CSS
+
+ICC Plus stores CSS in the top-level `customCSS` field and injects it as
+`style#customCSS` in the official creator/viewer using `textContent`. The MCP
+derives its catalog from the pinned standalone viewer markup, including
+`row-{id}`, `row-{id}-bg`, `row-{id}-header`, `choice-{id}`, choice state
+classes, `addon`, and selectable `addon-{id}`.
+
+`iccplus_css_catalog` can return CSS-escaped selectors for every open-project
+row, choice, and selectable addon. `iccplus_css_analyze` parses nested rules,
+reports specificity and matched entities, and warns when a declaration is
+likely to lose to ICC Plus inline styles. `iccplus_css_set` persists the result
+through the same revisioned transaction and validation policy as other project
+mutations.
+
+For v2.10+, the catalog also covers `.row-bg-{rowId}`,
+`.row-header-{rowId}`, `.choice`, `.addon-selectable`, and the
+`.addon-enabled`, `.addon-disabled`, `.addon-selected`, and
+`.addon-unselected` state classes while retaining older row selector spellings.
+
+This is intentionally static analysis. Computed styles, responsive layout, and
+interaction-state rendering remain the responsibility of the official viewer;
+no browser automation runtime or unrelated browsing tool is bundled.
+
 ## Viewer builds
 
 `iccplus_build_viewer` accepts an official template ZIP within the workspace.
 
 - Web mode writes `project.json`.
 - Local mode embeds the project in `js/app.js`.
-- Loading title, text, colors, favicon, background, fonts, and custom CSS are
-  applied from `viewerConfig`.
+- Loading title, text, colors, favicon, background, fonts, and project Custom
+  CSS are retained in the packaged project.
 - Optional image separation extracts data URLs from global styles, rows,
   backpack rows, design groups, and viewer settings; identical assets are
   deduplicated.

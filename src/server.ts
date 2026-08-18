@@ -12,9 +12,15 @@ import {
   featureCoverage,
   listFeatureFamilies,
 } from './catalog/features.js';
-import { cloneJson, isJsonObject } from './domain/json.js';
+import {
+  analyzeCustomCss,
+  cssCatalogMetadata,
+  customCssSummary,
+  getCssCatalog,
+  listProjectCssTargets,
+} from './domain/custom-css.js';
+import { asString, isJsonObject } from './domain/json.js';
 import { getAtPointer } from './domain/json-patch.js';
-import { ModelIndex } from './domain/model-index.js';
 import {
   duplicateEntity,
   exportEntityFragment,
@@ -62,31 +68,86 @@ const EntityTypeSchema = z.enum([
   'category',
 ]);
 const ValidationPolicySchema = z.enum(['strict', 'no_new_errors', 'none']);
+const CssTargetKindSchema = z.enum(['dynamic', 'state', 'layout', 'viewer']);
+const CssWriteModeSchema = z.enum(['replace', 'append', 'prepend', 'clear']);
 const RevisionSchema = z.number().int().nonnegative().optional();
+
+const DEFAULT_DUPLICATED_TEXT_LIMIT_BYTES = 8 * 1024;
+
+function duplicatedTextLimit(): number {
+  const configured = process.env.ICCPLUS_DUPLICATED_TEXT_LIMIT_BYTES;
+  if (configured === undefined) return DEFAULT_DUPLICATED_TEXT_LIMIT_BYTES;
+  const parsed = Number(configured);
+  return Number.isFinite(parsed) && parsed >= -1
+    ? Math.floor(parsed)
+    : DEFAULT_DUPLICATED_TEXT_LIMIT_BYTES;
+}
+
+function fitsJsonTextBudget(value: unknown, maximum: number): boolean {
+  if (maximum < 0) return true;
+  let remaining = maximum;
+  const consume = (bytes: number): boolean => {
+    remaining -= bytes;
+    return remaining >= 0;
+  };
+  const visit = (current: unknown): boolean => {
+    if (typeof current === 'string') {
+      if (current.length > remaining) return false;
+      return consume(Buffer.byteLength(JSON.stringify(current)));
+    }
+    if (
+      current === null
+      || typeof current === 'number'
+      || typeof current === 'boolean'
+      || current === undefined
+    ) {
+      return consume(Buffer.byteLength(JSON.stringify(current) ?? 'null'));
+    }
+    if (Array.isArray(current)) {
+      if (!consume(2 + Math.max(0, current.length - 1))) return false;
+      return current.every(visit);
+    }
+    if (typeof current === 'object') {
+      const entries = Object.entries(current);
+      if (!consume(2 + Math.max(0, entries.length - 1))) return false;
+      return entries.every(([key, child]) =>
+        consume(Buffer.byteLength(JSON.stringify(key)) + 1) && visit(child)
+      );
+    }
+    return consume(Buffer.byteLength(JSON.stringify(String(current))));
+  };
+  return visit(value);
+}
 
 function result(value: unknown): CallToolResult {
   const structuredContent = isJsonObject(value)
     ? value
     : { data: value as JsonValue };
+  const textLimit = duplicatedTextLimit();
+  const text = fitsJsonTextBudget(value, textLimit)
+    ? JSON.stringify(value)
+    : JSON.stringify({
+        notice: 'Full result is available in structuredContent; duplicate text was omitted to reduce context usage.',
+        duplicate_text_limit_bytes: textLimit,
+      });
   return {
-    content: [{ type: 'text', text: JSON.stringify(value, null, 2) }],
+    content: [{ type: 'text', text }],
     structuredContent,
   };
 }
 
 function redactEmbeddedAssets<T extends JsonValue>(input: T): T {
-  const value = cloneJson(input);
   function visit(current: JsonValue): JsonValue {
     if (typeof current === 'string' && current.startsWith('data:')) {
       const comma = current.indexOf(',');
       const header = comma === -1 ? current : current.slice(0, comma);
-      const encoded = comma === -1 ? '' : current.slice(comma + 1);
+      const encodedLength = comma === -1 ? 0 : current.length - comma - 1;
       return {
         embedded: true,
         mediaType: header.slice(5).split(';')[0] || 'application/octet-stream',
         approximateBytes: current.includes(';base64,')
-          ? Math.floor(encoded.length * 0.75)
-          : Buffer.byteLength(encoded),
+          ? Math.floor(encodedLength * 0.75)
+          : Buffer.byteLength(comma === -1 ? '' : current.slice(comma + 1)),
       };
     }
     if (Array.isArray(current)) return current.map(visit);
@@ -95,7 +156,7 @@ function redactEmbeddedAssets<T extends JsonValue>(input: T): T {
     }
     return current;
   }
-  return visit(value) as T;
+  return visit(input) as T;
 }
 
 function entityOutput(entity: LocatedEntity, includeEmbeddedAssets: boolean): JsonObject {
@@ -181,6 +242,9 @@ export function createIccPlusServer(options: IccPlusServerOptions = {}): {
         'Create or open a project, then pass project_id to all project tools.',
         'Read the current revision from status/query results and pass expected_revision to mutations.',
         'Prefer high-level entity tools for ordinary authoring and iccplus_patch for advanced or newly introduced fields.',
+        'Use iccplus_css_catalog, iccplus_css_analyze, and iccplus_css_set for project-aware Custom CSS authoring.',
+        'Prefer iccplus_read_project for exact JSON Pointers instead of returning the complete project.',
+        'Keep embedded assets redacted unless an exact data URL is explicitly required.',
         'Use dry_run for wide changes, validate before saving, and call iccplus_save_project explicitly.',
         'Unknown ICC Plus fields are intentionally preserved for forward compatibility.',
       ].join(' '),
@@ -191,7 +255,7 @@ export function createIccPlusServer(options: IccPlusServerOptions = {}): {
     'iccplus_capabilities',
     {
       title: 'Discover ICC Plus capabilities',
-      description: 'List feature families or return field, type, function-body, source-file, or deployment-artifact evidence extracted from ICC Plus.',
+      description: 'List feature families or return field, type, function-body, source-file, deployment-artifact, or Custom CSS evidence extracted from ICC Plus.',
       inputSchema: {
         topic: z.string().optional().describe('Feature id, field:<name>, type:<name>, function:<name>, source:<relative-path>, or deployment:<relative-path>. Omit to list all feature families.'),
         file: z.string().optional().describe('Optional relative-file filter for function:<name> when local names have multiple matches.'),
@@ -275,6 +339,166 @@ export function createIccPlusServer(options: IccPlusServerOptions = {}): {
   );
 
   server.registerTool(
+    'iccplus_css_catalog',
+    {
+      title: 'Discover ICC Plus Custom CSS targets',
+      description: 'List official viewer classes with source evidence and project-specific escaped row, choice, and selectable-addon selectors.',
+      inputSchema: {
+        scope: z.enum(['official', 'project', 'all']).default('official'),
+        project_id: z.string().uuid().optional().describe('Required for project or all scope.'),
+        query: z.string().optional().describe('Filter selectors, descriptions, ids, titles, paths, or source files.'),
+        kind: CssTargetKindSchema.optional(),
+        offset: z.number().int().nonnegative().default(0),
+        limit: z.number().int().min(1).max(1000).default(100),
+      },
+      annotations: readOnlyAnnotations(),
+    },
+    async ({ scope, project_id, query, kind, offset, limit }) => {
+      if (scope !== 'official' && !project_id) {
+        throw new Error('project_id is required when scope is project or all.');
+      }
+      const needle = query?.toLocaleLowerCase();
+      const official = getCssCatalog().filter((entry) => {
+        if (kind && entry.kind !== kind) return false;
+        if (!needle) return true;
+        return [
+          entry.selector,
+          entry.description,
+          ...entry.sources.flatMap((source) => [source.file, String(source.line)]),
+        ].some((value) => value.toLocaleLowerCase().includes(needle));
+      });
+      let projectTargets = project_id
+        ? listProjectCssTargets(projects.get(project_id).data)
+        : [];
+      if (needle) {
+        projectTargets = projectTargets.filter((target) =>
+          [
+            target.selector,
+            target.entityType,
+            target.entityId,
+            target.title,
+            target.path,
+            ...target.variants,
+          ].some((value) => value.toLocaleLowerCase().includes(needle))
+        );
+      }
+      return result({
+        metadata: cssCatalogMetadata(),
+        scope,
+        official: scope === 'project'
+          ? null
+          : {
+              total: official.length,
+              offset,
+              limit,
+              items: official.slice(offset, offset + limit),
+            },
+        project: scope === 'official'
+          ? null
+          : {
+              project_id,
+              revision: project_id ? projects.get(project_id).revision : null,
+              total: projectTargets.length,
+              offset,
+              limit,
+              items: projectTargets.slice(offset, offset + limit),
+            },
+      });
+    },
+  );
+
+  server.registerTool(
+    'iccplus_css_analyze',
+    {
+      title: 'Analyze ICC Plus Custom CSS',
+      description: 'Statically analyze stored or candidate CSS for syntax, selector specificity, official classes, project ids, inline-style conflicts, and external assets.',
+      inputSchema: {
+        project_id: z.string().uuid().optional().describe('Adds project-aware target resolution; CSS is read from the project when css is omitted.'),
+        css: z.string().optional().describe('Candidate CSS. Omit to analyze the open project customCSS value.'),
+        include_rules: z.boolean().default(true),
+        max_diagnostics: z.number().int().min(1).max(10000).default(1000),
+      },
+      annotations: readOnlyAnnotations(),
+    },
+    async ({ project_id, css, include_rules, max_diagnostics }) => {
+      if (!project_id && css === undefined) throw new Error('Provide project_id or css.');
+      const session = project_id ? projects.get(project_id) : undefined;
+      const source = css === undefined ? asString(session?.data.customCSS) : css;
+      const analysis = analyzeCustomCss(source, session?.data);
+      return result({
+        project_id: project_id ?? null,
+        revision: session?.revision ?? null,
+        source: css === undefined ? 'project' : 'candidate',
+        analysis: {
+          ...analysis,
+          diagnostics: analysis.diagnostics.slice(0, max_diagnostics),
+          ...(include_rules ? {} : { ruleDetails: [] }),
+        },
+      });
+    },
+  );
+
+  server.registerTool(
+    'iccplus_css_set',
+    {
+      title: 'Set ICC Plus Custom CSS',
+      description: 'Replace, append, prepend, or clear the official project customCSS field with revision protection, dry-run support, and integrated validation.',
+      inputSchema: {
+        project_id: z.string().uuid(),
+        css: z.string().optional().describe('Required unless mode is clear.'),
+        mode: CssWriteModeSchema.default('replace'),
+        expected_revision: RevisionSchema,
+        dry_run: z.boolean().default(false),
+        validation_policy: ValidationPolicySchema.default('no_new_errors'),
+      },
+      annotations: mutationAnnotations(true),
+    },
+    async (args) => {
+      if (args.mode !== 'clear' && args.css === undefined) {
+        throw new Error('css is required unless mode is clear.');
+      }
+      const session = projects.get(args.project_id);
+      const previous = asString(session.data.customCSS);
+      const supplied = args.css ?? '';
+      const join = (left: string, right: string): string =>
+        left && right ? left + '\n\n' + right : left + right;
+      const next = args.mode === 'clear'
+        ? ''
+        : args.mode === 'append'
+          ? join(previous, supplied)
+          : args.mode === 'prepend'
+            ? join(supplied, previous)
+            : supplied;
+      const transaction = projects.transact(
+        args.project_id,
+        {
+          label: 'Set ICC Plus Custom CSS (' + args.mode + ')',
+          ...transactionOptions(args),
+        },
+        (draft) => {
+          draft.customCSS = next;
+          return {
+            mode: args.mode,
+            previousBytes: Buffer.byteLength(previous),
+            bytes: Buffer.byteLength(next),
+          };
+        },
+      );
+      return result({
+        project_id: args.project_id,
+        revision: transaction.revision,
+        dry_run: transaction.dryRun,
+        change: transaction.result,
+        analysis: {
+          ...analyzeCustomCss(next, transaction.project),
+          ruleDetails: [],
+        },
+        validation: transaction.validation,
+      });
+    },
+  );
+
+  server.registerTool(
     'iccplus_schema',
     {
       title: 'Read ICC Plus project schema',
@@ -319,7 +543,7 @@ export function createIccPlusServer(options: IccPlusServerOptions = {}): {
         project_id: session.id,
         revision: session.revision,
         dirty: true,
-        summary: new ModelIndex(session.data).summary(),
+        summary: projects.index(session.id).summary(),
         validation: validateProject(session.data),
       });
     },
@@ -337,12 +561,13 @@ export function createIccPlusServer(options: IccPlusServerOptions = {}): {
       annotations: readOnlyAnnotations(),
     },
     async ({ path, normalize }) => {
-      const session = await projects.open(path, { normalize });
+      const opened = await projects.openHandle(path, { normalize });
+      const session = projects.get(opened.id);
       return result({
         project_id: session.id,
         path: session.path,
         revision: session.revision,
-        summary: new ModelIndex(session.data).summary(),
+        summary: projects.index(session.id).summary(),
         validation: validateProject(session.data),
       });
     },
@@ -362,28 +587,58 @@ export function createIccPlusServer(options: IccPlusServerOptions = {}): {
     'iccplus_project_status',
     {
       title: 'Inspect ICC Plus project status',
-      description: 'Return revision, dirty state, summary, validation counts, and optionally project JSON.',
+      description: 'Return revision, dirty state, summary, Custom CSS analysis, validation counts, and optionally project JSON.',
       inputSchema: {
         project_id: z.string().uuid(),
-        include_project: z.boolean().default(false),
-        include_embedded_assets: z.boolean().default(false),
+        include_project: z.boolean().default(false).describe('Return the complete project. Prefer iccplus_read_project with exact paths to keep responses small.'),
+        include_embedded_assets: z.boolean().default(false).describe('Return raw data URLs. Leave false unless their exact encoded contents are explicitly required.'),
       },
       annotations: readOnlyAnnotations(),
     },
     async ({ project_id, include_project, include_embedded_assets }) => {
       const session = projects.get(project_id);
+      const index = projects.index(project_id);
       return result({
         project_id,
         path: session.path ?? null,
         revision: session.revision,
         saved_revision: session.savedRevision,
         dirty: session.revision !== session.savedRevision,
-        bytes: new ModelIndex(session.data).projectBytes(),
-        summary: new ModelIndex(session.data).summary(),
+        bytes: index.projectBytes(),
+        summary: index.summary(),
+        custom_css: customCssSummary(session.data),
         validation: validateProject(session.data, { maxDiagnostics: 100 }),
         ...(include_project
           ? { project: include_embedded_assets ? session.data : redactEmbeddedAssets(session.data) }
           : {}),
+      });
+    },
+  );
+
+  server.registerTool(
+    'iccplus_read_project',
+    {
+      title: 'Read exact ICC Plus project paths',
+      description: 'Read one or more RFC 6901 JSON Pointers without returning the complete project; preserves exact CSS, HTML, JS, and unknown fields while redacting embedded assets by default.',
+      inputSchema: {
+        project_id: z.string().uuid(),
+        paths: z.array(z.string()).min(1).max(100).describe('Exact JSON Pointers. Use an empty string for the root only when the complete project is truly required.'),
+        include_embedded_assets: z.boolean().default(false).describe('Return raw data URLs. Leave false unless their exact encoded contents are explicitly required.'),
+      },
+      annotations: readOnlyAnnotations(),
+    },
+    async ({ project_id, paths, include_embedded_assets }) => {
+      const session = projects.get(project_id);
+      return result({
+        project_id,
+        revision: session.revision,
+        items: paths.map((path) => {
+          const value = getAtPointer(session.data, path);
+          return {
+            path,
+            value: include_embedded_assets ? value : redactEmbeddedAssets(value),
+          };
+        }),
       });
     },
   );
@@ -400,14 +655,14 @@ export function createIccPlusServer(options: IccPlusServerOptions = {}): {
         query: z.string().optional(),
         offset: z.number().int().nonnegative().default(0),
         limit: z.number().int().min(1).max(1000).default(100),
-        include_values: z.boolean().default(true),
-        include_embedded_assets: z.boolean().default(false),
+        include_values: z.boolean().default(true).describe('Set false for a compact metadata-first search, then fetch values for exact ids.'),
+        include_embedded_assets: z.boolean().default(false).describe('Return raw data URLs. Leave false unless their exact encoded contents are explicitly required.'),
       },
       annotations: readOnlyAnnotations(),
     },
     async (args) => {
       const session = projects.get(args.project_id);
-      const index = new ModelIndex(session.data);
+      const index = projects.index(args.project_id);
       const found = index.search({
         ...(args.types ? { types: args.types as EntityType[] } : {}),
         ...(args.ids ? { ids: args.ids } : {}),
@@ -650,6 +905,9 @@ export function createIccPlusServer(options: IccPlusServerOptions = {}): {
         revision: transaction.revision,
         dry_run: transaction.dryRun,
         changed_paths: transaction.result.changedPaths,
+        ...(transaction.result.changedPaths.some((path) => path === '/customCSS' || path.startsWith('/customCSS/'))
+          ? { custom_css: customCssSummary(transaction.project) }
+          : {}),
         validation: transaction.validation,
       });
     },
@@ -684,7 +942,7 @@ export function createIccPlusServer(options: IccPlusServerOptions = {}): {
     'iccplus_validate',
     {
       title: 'Validate ICC Plus project',
-      description: 'Run generated structural schema checks plus ids, references, requirements, memberships, cycles, and export invariants.',
+      description: 'Run generated structural schema checks plus ids, references, requirements, memberships, cycles, Custom CSS, and export invariants.',
       inputSchema: {
         project_id: z.string().uuid(),
         structural: z.boolean().default(true),
@@ -743,7 +1001,7 @@ export function createIccPlusServer(options: IccPlusServerOptions = {}): {
         project_id: z.string().uuid(),
         reference: z.string(),
         type: EntityTypeSchema.optional(),
-        include_embedded_assets: z.boolean().default(false),
+        include_embedded_assets: z.boolean().default(false).describe('Return raw data URLs. Leave false unless their exact encoded contents are explicitly required.'),
       },
       annotations: readOnlyAnnotations(),
     },
@@ -971,7 +1229,7 @@ export function createIccPlusServer(options: IccPlusServerOptions = {}): {
         project_id,
         revision: session.revision,
         dirty: session.revision !== session.savedRevision,
-        summary: new ModelIndex(session.data).summary(),
+        summary: projects.index(project_id).summary(),
         validation: validateProject(session.data),
       });
     },
@@ -992,6 +1250,65 @@ export function createIccPlusServer(options: IccPlusServerOptions = {}): {
     async ({ project_id, force, expected_revision }) => {
       projects.close(project_id, force, expected_revision);
       return result({ project_id, closed: true });
+    },
+  );
+
+  server.registerResource(
+    'iccplus-css-catalog',
+    'iccplus://css/catalog',
+    {
+      title: 'ICC Plus Custom CSS selector catalog',
+      description: 'Official viewer classes with source evidence, dynamic selector patterns, and inline-style risk.',
+      mimeType: 'application/json',
+    },
+    async (uri) => ({
+      contents: [{
+        uri: uri.href,
+        mimeType: 'application/json',
+        text: JSON.stringify({
+          metadata: cssCatalogMetadata(),
+          selectors: getCssCatalog(),
+        }, null, 2),
+      }],
+    }),
+  );
+
+  server.registerResource(
+    'iccplus-project-css',
+    new ResourceTemplate('iccplus://project/{projectId}/css', {
+      list: async () => ({
+        resources: projects.list().map((project) => ({
+          uri: 'iccplus://project/' + project.id + '/css',
+          name: 'ICC Plus CSS ' + project.id,
+          mimeType: 'application/json',
+        })),
+      }),
+      complete: {
+        projectId: () => projects.list().map((project) => project.id),
+      },
+    }),
+    {
+      title: 'Open ICC Plus project Custom CSS',
+      description: 'Stored Custom CSS, static analysis, and exact project selector targets for an open session.',
+      mimeType: 'application/json',
+    },
+    async (uri, variables) => {
+      const id = String(variables.projectId);
+      const session = projects.get(id);
+      const css = asString(session.data.customCSS);
+      return {
+        contents: [{
+          uri: uri.href,
+          mimeType: 'application/json',
+          text: JSON.stringify({
+            project_id: id,
+            revision: session.revision,
+            css,
+            analysis: analyzeCustomCss(css, session.data),
+            targets: listProjectCssTargets(session.data),
+          }, null, 2),
+        }],
+      };
     },
   );
 
@@ -1092,7 +1409,7 @@ export function createIccPlusServer(options: IccPlusServerOptions = {}): {
           text: JSON.stringify({
             project_id: id,
             revision: session.revision,
-            summary: new ModelIndex(session.data).summary(),
+            summary: projects.index(id).summary(),
             validation: validateProject(session.data, { maxDiagnostics: 100 }),
           }, null, 2),
         }],
@@ -1122,6 +1439,7 @@ export function createIccPlusServer(options: IccPlusServerOptions = {}): {
             'Discover relevant feature families with iccplus_capabilities.',
             'Build points/groups/variables before requirements that reference them.',
             'Build rows before choices, and choices before scores/addons.',
+            'For advanced styling, discover exact targets with iccplus_css_catalog, analyze candidate CSS, then apply it with iccplus_css_set.',
             'Use expected_revision for every mutation, validate, dry-run normalization, then save.',
           ].join('\n'),
         },
@@ -1148,6 +1466,7 @@ export function createIccPlusServer(options: IccPlusServerOptions = {}): {
             `Audit ICC Plus project_id ${project_id}.`,
             'Inspect status and all entity families, run strict validation, and explain each error.',
             'Check points, requirements, group/design reciprocity, choice effect targets, media, and viewer export settings.',
+            'Analyze Custom CSS for unresolved project selectors, syntax errors, remote assets, and inline-style conflicts.',
             'Dry-run normalization before applying it. Revalidate and only then build or save.',
           ].join('\n'),
         },

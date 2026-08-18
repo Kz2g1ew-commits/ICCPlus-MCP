@@ -34,6 +34,7 @@ export const FEATURE_FAMILIES: FeatureFamily[] = [
     authoringNotes: [
       'Row index is positional and must match its array index.',
       'allowedChoices=0 means unlimited.',
+      'preserveWidth keeps the configured choices-per-row width even below the normal responsive breakpoints.',
       'Backpack rows share the Row model and are distinguished by isBackpack and their container.',
     ],
   },
@@ -53,6 +54,7 @@ export const FEATURE_FAMILIES: FeatureFamily[] = [
       'Selectable addons are full selectable entities and require a unique id, scores, groups, and selection state.',
       'Every addon parentId must point to its containing choice.',
       'Choice index is positional and must match its row objects array index.',
+      'isNotBuild omits a choice from the build form; showDebugTitle prepends its debug title there.',
     ],
   },
   {
@@ -92,6 +94,7 @@ export const FEATURE_FAMILIES: FeatureFamily[] = [
       'initValue is the reset value; startingSum is the current build value.',
       'A score id references a point type and an empty id is allowed for display-only score text.',
       'Expression placeholders use point ids in braces and are evaluated when the choice is selected.',
+      'Since v2.10, isNotRecalculateSelf blocks recalculation caused by the owning choice while isNotRecalculatable blocks recalculation caused by other choices.',
     ],
   },
   {
@@ -143,6 +146,20 @@ export const FEATURE_FAMILIES: FeatureFamily[] = [
       'Group membership is stored on both the group and member; the MCP normalizer keeps both directions consistent.',
       'Category identity is the pair type+idx, not idx alone.',
       'Result rows can filter selected content through a group id.',
+    ],
+  },
+  {
+    id: 'design.custom_css',
+    title: 'Advanced Custom CSS',
+    summary: 'Override official viewer styles through the project customCSS field using source-backed runtime classes and project-id selectors.',
+    typeNames: ['App'],
+    engineFunctions: ['applyCustomCSS'],
+    authoringNotes: [
+      'ICC Plus injects customCSS as style#customCSS in document.head by assigning textContent.',
+      'Dynamic targets include row-{id}, choice-{id}, and addon-{id}; ids may require CSS escaping.',
+      'v2.10 adds row-bg-{id}, row-header-{id}, addon-selectable, and enabled/disabled/selected/unselected addon state classes.',
+      'Many viewer elements also receive inline styles, so narrowly targeted !important declarations may be required.',
+      'The MCP statically analyzes CSS but leaves computed-style and viewport confirmation to the official viewer.',
     ],
   },
   {
@@ -223,6 +240,7 @@ export const FEATURE_FAMILIES: FeatureFamily[] = [
       'Web viewer export writes project.json; local viewer export embeds data in js/app.js.',
       'Separate-image export deduplicates equal data URLs and rewrites project references.',
       'Build saves are keyed by CYOA link in the browser viewer.',
+      'hideRowMenu hides edit-mode row menus while row requirements are unmet.',
     ],
   },
   {

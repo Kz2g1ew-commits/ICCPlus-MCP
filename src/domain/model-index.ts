@@ -149,6 +149,8 @@ export class ModelIndex {
   readonly byId = new Map<string, LocatedEntity[]>();
   readonly byType = new Map<EntityType, LocatedEntity[]>();
   readonly pathMap = new Map<string, LocatedEntity>();
+  private cachedSummary?: ProjectSummary;
+  private cachedProjectBytes?: number;
 
   constructor(readonly project: JsonObject) {
     const entities: LocatedEntity[] = [];
@@ -242,6 +244,7 @@ export class ModelIndex {
   }
 
   summary(): ProjectSummary {
+    if (this.cachedSummary) return { ...this.cachedSummary };
     const count = (type: EntityType): number => this.byType.get(type)?.length ?? 0;
     let embeddedAssetBytes = 0;
     const stack: JsonValue[] = [this.project];
@@ -250,10 +253,10 @@ export class ModelIndex {
       if (typeof value === 'string' && value.startsWith('data:')) {
         const comma = value.indexOf(',');
         if (comma !== -1) {
-          const encoded = value.slice(comma + 1);
           if (value.includes(';base64,')) {
-            embeddedAssetBytes += Math.floor(encoded.length * 0.75);
+            embeddedAssetBytes += Math.floor((value.length - comma - 1) * 0.75);
           } else {
+            const encoded = value.slice(comma + 1);
             try {
               embeddedAssetBytes += Buffer.byteLength(decodeURIComponent(encoded));
             } catch {
@@ -268,7 +271,7 @@ export class ModelIndex {
       }
     }
 
-    return {
+    this.cachedSummary = {
       version: typeof this.project.version === 'string' ? this.project.version : null,
       rows: count('row'),
       backpackRows: count('backpack_row'),
@@ -288,10 +291,12 @@ export class ModelIndex {
       categories: count('category'),
       embeddedAssetBytes,
     };
+    return { ...this.cachedSummary };
   }
 
   projectBytes(): number {
-    return jsonByteLength(this.project);
+    this.cachedProjectBytes ??= jsonByteLength(this.project);
+    return this.cachedProjectBytes;
   }
 }
 
