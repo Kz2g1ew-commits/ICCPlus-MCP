@@ -47,8 +47,12 @@ import sourceAnalysis from './generated/source-analysis.json' with { type: 'json
 import thirdPartyLicenses from './generated/third-party-licenses.json' with { type: 'json' };
 
 const VERSION = '0.1.0';
-const JsonValueSchema = z.json();
-const JsonObjectSchema = z.record(z.string(), JsonValueSchema);
+// Free-form JSON arguments use open, non-recursive schemas on the wire.
+// z.json() emits a self-referencing schema that breaks LLM clients which
+// inline $refs, so these stay shallow here. Handlers validate shapes at
+// runtime instead (see patchOperation and the isJsonObject checks below).
+const AnyJsonSchema = z.unknown().describe('Any JSON value.');
+const AnyJsonObjectSchema = z.record(z.string(), z.unknown()).describe('Any JSON object.');
 const EntityTypeSchema = z.enum([
   'row',
   'backpack_row',
@@ -187,7 +191,7 @@ function transactionOptions(args: {
   };
 }
 
-function patchOperation(value: z.infer<typeof JsonValueSchema>): JsonPatchOperation {
+function patchOperation(value: unknown): JsonPatchOperation {
   if (!isJsonObject(value)) throw new Error('Each patch must be an object.');
   const op = value.op;
   const path = value.path;
@@ -532,7 +536,7 @@ export function createIccPlusServer(options: IccPlusServerOptions = {}): {
       title: 'Create ICC Plus project',
       description: 'Create an in-memory project from current upstream defaults. Nothing is written until save is called.',
       inputSchema: {
-        overrides: JsonObjectSchema.optional(),
+        overrides: AnyJsonObjectSchema.optional(),
         path: z.string().optional().describe('Optional future save path inside ICCPLUS_WORKSPACE.'),
       },
       annotations: mutationAnnotations(),
@@ -696,7 +700,7 @@ export function createIccPlusServer(options: IccPlusServerOptions = {}): {
         type: EntityTypeSchema,
         parent: z.string().optional().describe('Parent entity id or JSON Pointer for nested entities.'),
         position: z.number().int().nonnegative().optional(),
-        values: JsonObjectSchema.optional(),
+        values: AnyJsonObjectSchema.optional(),
         expected_revision: RevisionSchema,
         dry_run: z.boolean().default(false),
         validation_policy: ValidationPolicySchema.default('no_new_errors'),
@@ -737,7 +741,7 @@ export function createIccPlusServer(options: IccPlusServerOptions = {}): {
         project_id: z.string().uuid(),
         reference: z.string().describe('Entity id or exact JSON Pointer.'),
         type: EntityTypeSchema.optional(),
-        values: JsonObjectSchema,
+        values: AnyJsonObjectSchema,
         unset: z.array(z.string()).optional(),
         rewrite_id_references: z.boolean().default(false),
         expected_revision: RevisionSchema,
@@ -887,7 +891,7 @@ export function createIccPlusServer(options: IccPlusServerOptions = {}): {
       description: 'Atomically apply RFC 6902 JSON Patch operations for any current or future ICC Plus field.',
       inputSchema: {
         project_id: z.string().uuid(),
-        patches: z.array(JsonValueSchema).min(1),
+        patches: z.array(AnyJsonSchema).min(1),
         expected_revision: RevisionSchema,
         dry_run: z.boolean().default(false),
         validation_policy: ValidationPolicySchema.default('no_new_errors'),
@@ -971,7 +975,7 @@ export function createIccPlusServer(options: IccPlusServerOptions = {}): {
       inputSchema: {
         project_id: z.string().uuid(),
         entity: z.string().optional().describe('Entity id or JSON Pointer. Omit when requirements is supplied.'),
-        requirements: z.array(JsonObjectSchema).optional(),
+        requirements: z.array(AnyJsonObjectSchema).optional(),
         state: z.object({
           selected: z.record(z.string(), z.number().int().nonnegative()).optional(),
           points: z.record(z.string(), z.number()).optional(),
@@ -1027,7 +1031,7 @@ export function createIccPlusServer(options: IccPlusServerOptions = {}): {
       inputSchema: {
         project_id: z.string().uuid(),
         type: EntityTypeSchema,
-        value: JsonObjectSchema,
+        value: AnyJsonObjectSchema,
         parent: z.string().optional(),
         position: z.number().int().nonnegative().optional(),
         preserve_ids: z.boolean().default(false),
