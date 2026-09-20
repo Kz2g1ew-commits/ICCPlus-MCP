@@ -13,8 +13,8 @@ The server gives an AI agent a complete ICC Plus project model generated and
 indexed directly from the upstream source:
 
 - the project schema and current defaults are generated from ICC Plus source;
-- every one of the 59 declared model types and 893 unique fields is discoverable;
-- all 227 authored source/build/config/patch files and 1,411 named
+- every one of the 59 declared model types and 901 unique fields is discoverable;
+- all 227 authored source/build/config/patch files and 1,412 named
   functions/methods across the creator and standalone viewer are indexed with exact
   source, SHA-256 evidence, signatures, model-field usage, and line spans;
 - all 75 files in the requested deployment repository and 34 files inside its
@@ -29,8 +29,21 @@ indexed directly from the upstream source:
   classes are modeled and discoverable;
 - official web and local viewer archives can be built without opening the creator UI.
 
-Compatibility is currently generated from ICC Plus `v2.10.1`, source commit
-`b33bfb9b29e0a84a035a56d7e1827e42fe0f7000`.
+Compatibility is currently generated from ICC Plus `v2.10.6`, source commit
+`a420836248d32043ae45d03f1b93cdcb9e354663`.
+
+The v2.10.6 update adds point bar background images (`styling.barBackgroundImage`,
+`isBarBgRepeat`, `isBarBgFitIn`, `isBarBgOverlay`), negative colors/icons at zero
+(`treatZeroAsNegative`), and point-specific score text (`useScoreText`,
+`scoreBeforeText`, `scoreAfterText`). Creating a score or changing its point id
+copies enabled point-specific text unless explicit score text is supplied;
+existing scores keep their text when point settings change. JSON Patch remains
+an exact edit without this authoring convenience.
+
+For the upstream ZIP-loading, selection-export, discount-loop, and UI fixes,
+use the official v2.10.6 creator/viewer templates. Updating this MCP does not
+replace templates already stored in your workspace. See
+[the update review](analysis/UPDATE_2.10.6.md) for scope and validation.
 
 ## What this is
 

@@ -1,5 +1,5 @@
 {
-  "version": "2.10.1",
+  "version": "2.10.6",
   "isEditModeOnAll": true,
   "isPointerCursor": false,
   "importedChoicesIsOpen": true,
@@ -466,6 +466,10 @@
     "barPointNeg": "#FF0000FF",
     "barIconColor": "#0000008A",
     "barBackgroundColor": "#FFFFFFFF",
+    "barBacktroundImage": "",
+    "isBarBgRepeat": false,
+    "isBarBgFitIn": false,
+    "isBarBgOverlay": false,
     "useBackpackDesign": false,
     "backpackBgColor": "#FFFFFF",
     "isBackpackBgRepeat": false,

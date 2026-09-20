@@ -1,6 +1,6 @@
 import { randomBytes } from 'node:crypto';
 import defaultProjectJson from '../generated/default-project.json' with { type: 'json' };
-import { asBoolean, asNumber, asString, cloneJson, deepMerge } from './json.js';
+import { asBoolean, asNumber, asObjectArray, asString, cloneJson, deepMerge } from './json.js';
 import { ModelIndex, TOP_LEVEL_ENTITY_KEYS } from './model-index.js';
 import type { EntityType, JsonObject } from './types.js';
 
@@ -140,7 +140,16 @@ function addonFactory(project: JsonObject, selectable: boolean): JsonObject {
   return addon;
 }
 
-function scoreFactory(project: JsonObject): JsonObject {
+export function pointScoreText(project: JsonObject, pointId: string): JsonObject {
+  const point = asObjectArray(project.pointTypes).find((entry) => entry.id === pointId);
+  if (!pointId || point?.useScoreText !== true) return {};
+  return {
+    beforeText: asString(point.scoreBeforeText),
+    afterText: asString(point.scoreAfterText),
+  };
+}
+
+function scoreFactory(project: JsonObject, overrides: JsonObject): JsonObject {
   return {
     idx: generateEntityId(project, 'score'),
     id: '',
@@ -150,6 +159,7 @@ function scoreFactory(project: JsonObject): JsonObject {
     beforeText: asString(project.defaultBeforePoint, 'Cost:'),
     afterText: asString(project.defaultAfterPoint, 'points'),
     showScore: asBoolean(project.defaultUseShowScore, true),
+    ...pointScoreText(project, asString(overrides.id)),
   };
 }
 
@@ -289,7 +299,7 @@ export function createEntity(
       value = addonFactory(project, true);
       break;
     case 'score':
-      value = scoreFactory(project);
+      value = scoreFactory(project, overrides);
       break;
     case 'requirement':
       value = requirementFactory(project);

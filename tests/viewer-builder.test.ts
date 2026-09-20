@@ -20,6 +20,32 @@ async function template(local: boolean): Promise<Buffer> {
 }
 
 describe('viewer packaging', () => {
+  it('packages point bar images and preserves v2.10.6 settings and saved selections', async () => {
+    const image = 'data:image/png;base64,aGVsbG8=';
+    const project = createDefaultProject({
+      activated: ['selected/ON#2'],
+      styling: { barBackgroundImage: image, isBarBgRepeat: true, isBarBgOverlay: true },
+      viewerConfig: { loadingBgImage: image },
+    });
+    const built = await buildViewerArchive(await template(false), project, { separateImages: true });
+    const zip = await JSZip.loadAsync(built.archive);
+    const saved = JSON.parse(await zip.file('project.json')!.async('string'));
+    expect(saved.styling.barBackgroundImage).toBe('images/PointBarBg.png');
+    expect(await zip.file(saved.styling.barBackgroundImage)!.async('string')).toBe('hello');
+    expect(saved.viewerConfig.loadingBgImage).toBe(saved.styling.barBackgroundImage);
+    expect(built.separatedAssets).toBe(1);
+    expect(saved.styling).toMatchObject({ isBarBgRepeat: true, isBarBgOverlay: true });
+    expect(saved.activated).toEqual(['selected/ON#2']);
+    expect(project.styling).toMatchObject({ barBackgroundImage: image });
+
+    const inline = await buildViewerArchive(await template(false), project, { separateImages: false });
+    const inlineZip = await JSZip.loadAsync(inline.archive);
+    expect(JSON.parse(await inlineZip.file('project.json')!.async('string')).styling.barBackgroundImage).toBe(image);
+    const local = await buildViewerArchive(await template(true), project, { local: true });
+    const localZip = await JSZip.loadAsync(local.archive);
+    expect(await localZip.file('js/app.js')!.async('string')).toContain(`"barBackgroundImage":"${image}"`);
+  });
+
   it('builds a configured web viewer and deduplicates equal images', async () => {
     const image = 'data:image/png;base64,aGVsbG8=';
     const project = createDefaultProject({

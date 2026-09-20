@@ -2799,6 +2799,18 @@
         "barBackgroundColor": {
           "type": "string"
         },
+        "barBackgroundImage": {
+          "type": "string"
+        },
+        "isBarBgRepeat": {
+          "type": "boolean"
+        },
+        "isBarBgFitIn": {
+          "type": "boolean"
+        },
+        "isBarBgOverlay": {
+          "type": "boolean"
+        },
         "customMultiTextFont": {
           "type": "boolean"
         },
@@ -4139,6 +4151,9 @@
         "privateNegativeColor": {
           "type": "string"
         },
+        "treatZeroAsNegative": {
+          "type": "boolean"
+        },
         "imageIsURL": {
           "type": "boolean"
         },
@@ -4150,6 +4165,15 @@
         },
         "category": {
           "type": "number"
+        },
+        "useScoreText": {
+          "type": "boolean"
+        },
+        "scoreBeforeText": {
+          "type": "string"
+        },
+        "scoreAfterText": {
+          "type": "string"
         }
       },
       "required": [
@@ -4242,7 +4266,7 @@
     }
   },
   "$id": "https://github.com/Kz2g1ew-commits/ICCPlus-MCP/schema/iccplus-project.json",
-  "title": "ICC Plus project schema 2.10.1",
+  "title": "ICC Plus project schema 2.10.6",
   "description": "Generated from wahaha303/ICC-Plus-Svelte src/lib/store/types.ts.",
-  "x-iccplus-version": "2.10.1"
+  "x-iccplus-version": "2.10.6"
 }

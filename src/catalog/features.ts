@@ -92,6 +92,8 @@ export const FEATURE_FAMILIES: FeatureFamily[] = [
     engineFunctions: ['checkPointEnable', 'checkPoints', 'setScoreValue', 'selectUpdateScore'],
     authoringNotes: [
       'initValue is the reset value; startingSum is the current build value.',
+      'treatZeroAsNegative uses negative colors and icons at zero; it does not change point arithmetic.',
+      'Point beforeText/afterText support sanitized HTML in the point bar. useScoreText with scoreBeforeText/scoreAfterText supplies score text when creating a score or changing its point id; explicit score text wins. Existing scores are not retroactively changed.',
       'A score id references a point type and an empty id is allowed for display-only score text.',
       'Expression placeholders use point ids in braces and are evaluated when the choice is selected.',
       'Since v2.10, isNotRecalculateSelf blocks recalculation caused by the owning choice while isNotRecalculatable blocks recalculation caused by other choices.',
@@ -211,7 +213,11 @@ export const FEATURE_FAMILIES: FeatureFamily[] = [
     summary: 'Configure project/row/choice backgrounds, point bar layout and colors, and backpack dimensions and background.',
     typeNames: ['backgroundStyling', 'pointBarStyling', 'backpackStyling'],
     engineFunctions: [],
-    authoringNotes: ['Background image data URLs can be separated into viewer assets during packaging.'],
+    authoringNotes: [
+      'Background image data URLs, including styling.barBackgroundImage, can be separated into viewer assets during packaging.',
+      'Point bar backgrounds use barBackgroundImage, isBarBgRepeat, isBarBgFitIn, and isBarBgOverlay; repeat takes precedence over fit-in.',
+      'Upstream v2.10.6 defaults contain the unused typo barBacktroundImage. Author the declared/runtime field barBackgroundImage instead.',
+    ],
   },
   {
     id: 'media.audio',

@@ -18,16 +18,16 @@ describe('generated upstream analysis', () => {
     expect(coverage.uncoveredTypes).toEqual([]);
     expect(coverage.coveredTypes).toBe(coverage.declaredTypes);
     expect(coverage.declaredTypes).toBe(59);
-    expect(coverage.declaredFields).toBe(893);
+    expect(coverage.declaredFields).toBe(901);
     expect(coverage.sourceFiles).toBe(227);
-    expect(coverage.sourceFunctions).toBe(1411);
-    expect(analysis.coverage.fieldsReferencedOutsideTypes).toBeGreaterThanOrEqual(891);
+    expect(coverage.sourceFunctions).toBe(1412);
+    expect(analysis.coverage.fieldsReferencedOutsideTypes).toBeGreaterThanOrEqual(899);
   });
 
   it('pins schema and defaults to the analyzed upstream release', () => {
-    expect(analysis.upstream.version).toBe('2.10.1');
-    expect(analysis.upstream.commit).toBe('b33bfb9b29e0a84a035a56d7e1827e42fe0f7000');
-    expect(analysis.upstream.deploymentCommit).toBe('623be8dbaae5499fc2f1320b85c70d25ebdb1d51');
+    expect(analysis.upstream.version).toBe('2.10.6');
+    expect(analysis.upstream.commit).toBe('a420836248d32043ae45d03f1b93cdcb9e354663');
+    expect(analysis.upstream.deploymentCommit).toBe('fb8da84315bcebc245833297acd4a371559fe1a6');
     expect(defaultProject.version).toBe(analysis.upstream.version);
     expect(schema['x-iccplus-version']).toBe(analysis.upstream.version);
     expect(schema.definitions.App).toBeDefined();
