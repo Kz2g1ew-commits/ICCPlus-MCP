@@ -135,6 +135,7 @@ function separateViewerAssets(project: JsonObject, separator: AssetSeparator): v
 
 function separateAllImages(project: JsonObject, separator: AssetSeparator): void {
   separateStyle(asObject(project.styling), '', separator);
+  separateStyle(asObject(project.styling), '', separator, [['barBackgroundImage', 'PointBarBg']]);
   separateRows(asObjectArray(project.rows), '', separator);
   separateRows(asObjectArray(project.backpack), 'B', separator);
   for (let index = 0; index < asObjectArray(project.rowDesignGroups).length; index += 1) {

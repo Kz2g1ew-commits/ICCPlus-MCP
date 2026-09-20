@@ -12,6 +12,47 @@ import { ProjectStore } from '../src/domain/project-store.js';
 import { validateProject } from '../src/domain/validation.js';
 
 describe('ICC Plus model operations', () => {
+  it('supports v2.10.6 point styling and inherits score text only when assigning a point type', () => {
+    const project = createDefaultProject({ styling: {
+      barBackgroundImage: 'https://example.com/bar.png',
+      isBarBgRepeat: true, isBarBgFitIn: false, isBarBgOverlay: true,
+    } });
+    insertEntity(project, { type: 'point', values: {
+      id: 'gold', treatZeroAsNegative: true, useScoreText: true,
+      scoreBeforeText: '<b>Pay</b>', scoreAfterText: 'gold',
+    } });
+    insertEntity(project, { type: 'point', values: {
+      id: 'mana', useScoreText: true, scoreBeforeText: 'Spend', scoreAfterText: 'MP',
+    } });
+    insertEntity(project, { type: 'point', values: { id: 'plain' } });
+    insertEntity(project, { type: 'row', values: { id: 'shop' } });
+    insertEntity(project, { type: 'choice', parent: 'shop', values: { id: 'spell' } });
+    const score = insertEntity(project, {
+      type: 'score', parent: 'spell', values: { id: 'gold', idx: 'cost', value: 2 },
+    });
+    expect(score.entity.value).toMatchObject({ beforeText: '<b>Pay</b>', afterText: 'gold' });
+    updateEntity(project, { reference: 'gold', type: 'point', values: { scoreBeforeText: 'Changed' } });
+    expect(new ModelIndex(project).one('cost', 'score')?.value.beforeText).toBe('<b>Pay</b>');
+    const changed = updateEntity(project, {
+      reference: 'cost', type: 'score', values: { id: 'mana', beforeText: 'Custom' },
+    });
+    expect(changed.entity.value).toMatchObject({ beforeText: 'Custom', afterText: 'MP' });
+    const unchanged = updateEntity(project, {
+      reference: 'cost', type: 'score', values: { id: 'mana', value: 3 },
+    });
+    expect(unchanged.entity.value.beforeText).toBe('Custom');
+    const plain = updateEntity(project, { reference: 'cost', type: 'score', values: { id: 'plain' } });
+    expect(plain.entity.value).toMatchObject({ beforeText: 'Custom', afterText: 'MP' });
+    const explicit = insertEntity(project, {
+      type: 'score', parent: 'spell', values: { id: 'gold', beforeText: '', afterText: 'override' },
+    });
+    expect(explicit.entity.value).toMatchObject({ beforeText: '', afterText: 'override' });
+    expect(validateProject(project).valid).toBe(true);
+    expect(validateProject(createDefaultProject({ version: '2.10.1' })).valid).toBe(true);
+    updateEntity(project, { reference: 'gold', type: 'point', values: { treatZeroAsNegative: 'yes' } });
+    expect(validateProject(project).valid).toBe(false);
+  });
+
   it('creates a complete reference-safe authoring graph', () => {
     const project = createDefaultProject();
     insertEntity(project, { type: 'point', values: { id: 'gold', name: 'Gold' } });

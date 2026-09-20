@@ -1,5 +1,5 @@
 import { asString, cloneJson, deepMerge, isJsonObject } from './json.js';
-import { createEntity } from './factories.js';
+import { createEntity, pointScoreText } from './factories.js';
 import { getAtPointer } from './json-patch.js';
 import { ModelIndex, TOP_LEVEL_ENTITY_KEYS } from './model-index.js';
 import { normalizeProject } from './normalize.js';
@@ -267,6 +267,11 @@ export function updateEntity(
     ? actualIdentifier(entity.type, entity.value)
     : asString(entity.value[identifierKey]);
   const merged = deepMerge(entity.value, options.values);
+  if (entity.type === 'score' && typeof options.values.id === 'string' && options.values.id !== entity.value.id) {
+    for (const [key, value] of Object.entries(pointScoreText(project, options.values.id))) {
+      if (!Object.hasOwn(options.values, key)) merged[key] = value;
+    }
+  }
   for (const key of options.unset ?? []) delete merged[key];
   const newId = entity.type === 'category'
     ? actualIdentifier(entity.type, merged)

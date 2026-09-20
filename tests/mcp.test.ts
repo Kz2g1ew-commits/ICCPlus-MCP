@@ -21,6 +21,7 @@ describe('MCP integration', () => {
 
     try {
       const listed = await client.listTools();
+      expect(JSON.stringify(listed.tools.map((tool) => tool.inputSchema))).not.toContain('"$ref"');
       const byName = new Map(listed.tools.map((tool) => [tool.name, tool]));
       expect([...byName.keys()].sort()).toEqual([
         'iccplus_build_viewer',
