@@ -1031,6 +1031,9 @@
         "selectOnce": {
           "type": "boolean"
         },
+        "notDeselectedByReq": {
+          "type": "boolean"
+        },
         "notDeselectedByClean": {
           "type": "boolean"
         },
@@ -1837,6 +1840,9 @@
           "type": "boolean"
         },
         "selectOnce": {
+          "type": "boolean"
+        },
+        "notDeselectedByReq": {
           "type": "boolean"
         },
         "notDeselectedByClean": {
@@ -2658,6 +2664,9 @@
           "items": {
             "type": "number"
           }
+        },
+        "removeSpace": {
+          "type": "boolean"
         }
       },
       "required": [
@@ -4266,7 +4275,7 @@
     }
   },
   "$id": "https://github.com/Kz2g1ew-commits/ICCPlus-MCP/schema/iccplus-project.json",
-  "title": "ICC Plus project schema 2.10.6",
+  "title": "ICC Plus project schema 2.10.9",
   "description": "Generated from wahaha303/ICC-Plus-Svelte src/lib/store/types.ts.",
-  "x-iccplus-version": "2.10.6"
+  "x-iccplus-version": "2.10.9"
 }

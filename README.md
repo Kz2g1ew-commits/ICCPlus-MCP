@@ -13,8 +13,8 @@ The server gives an AI agent a complete ICC Plus project model generated and
 indexed directly from the upstream source:
 
 - the project schema and current defaults are generated from ICC Plus source;
-- every one of the 59 declared model types and 901 unique fields is discoverable;
-- all 227 authored source/build/config/patch files and 1,412 named
+- every one of the 59 declared model types and 903 unique fields is discoverable;
+- all 227 authored source/build/config/patch files and 1,422 named
   functions/methods across the creator and standalone viewer are indexed with exact
   source, SHA-256 evidence, signatures, model-field usage, and line spans;
 - all 75 files in the requested deployment repository and 34 files inside its
@@ -29,8 +29,8 @@ indexed directly from the upstream source:
   classes are modeled and discoverable;
 - official web and local viewer archives can be built without opening the creator UI.
 
-Compatibility is currently generated from ICC Plus `v2.10.6`, source commit
-`a420836248d32043ae45d03f1b93cdcb9e354663`.
+Compatibility is currently generated from ICC Plus `v2.10.9`, source commit
+`2573ebc29c6b48ccad8d0213a2582087af29f4d6`.
 
 The v2.10.6 update adds point bar background images (`styling.barBackgroundImage`,
 `isBarBgRepeat`, `isBarBgFitIn`, `isBarBgOverlay`), negative colors/icons at zero
@@ -40,10 +40,20 @@ copies enabled point-specific text unless explicit score text is supplied;
 existing scores keep their text when point settings change. JSON Patch remains
 an exact edit without this authoring convenience.
 
-For the upstream ZIP-loading, selection-export, discount-loop, and UI fixes,
-use the official v2.10.6 creator/viewer templates. Updating this MCP does not
-replace templates already stored in your workspace. See
-[the update review](analysis/UPDATE_2.10.6.md) for scope and validation.
+The v2.10.9 update adds `Score.removeSpace` (join score text without spaces)
+and `notDeselectedByReq` (a selected choice stays selected when its requirements
+stop passing or a row limit would replace it). Both are schema-validated and
+writable through the entity tools. Since v2.10.8, loading a versioned project no
+longer turns on `isNotShownObjects`/`isNotShownPointBar` from `activatedId`.
+In v2.10.9 viewers, a selected choice is styled `choice-enabled` even when its
+requirements fail, and `.addon` is the inner addon box rather than the width
+column.
+
+For upstream runtime fixes (row deselection, scroll-to-choice, delayed selection
+on build load, addon width effects, and the changes above), use the official
+v2.10.9 creator/viewer templates. Updating this MCP does not replace templates
+already stored in your workspace. See [the 2.10.9 update review](analysis/UPDATE_2.10.9.md)
+and [the 2.10.6 update review](analysis/UPDATE_2.10.6.md).
 
 ## What this is
 

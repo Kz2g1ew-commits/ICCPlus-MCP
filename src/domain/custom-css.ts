@@ -147,7 +147,7 @@ const CORE_TARGETS: Array<Omit<CssCatalogEntry, 'sources'>> = [
   },
   {
     selector: '.choice-enabled', className: 'choice-enabled', kind: 'state', dynamic: false,
-    description: 'A choice whose requirements currently pass.', inlineStyleRisk: true,
+    description: 'A choice whose requirements currently pass, or a selected choice (v2.10.9+).', inlineStyleRisk: true,
   },
   {
     selector: '.choice-disabled', className: 'choice-disabled', kind: 'state', dynamic: false,
@@ -163,7 +163,7 @@ const CORE_TARGETS: Array<Omit<CssCatalogEntry, 'sources'>> = [
   },
   {
     selector: '.addon', className: 'addon', kind: 'viewer', dynamic: false,
-    description: 'Every selectable and non-selectable addon container.', inlineStyleRisk: true,
+    description: 'Every selectable and non-selectable addon box. Since v2.10.9 the width column is an outer wrapper, so .addon no longer carries the col-* width class.', inlineStyleRisk: true,
   },
   {
     selector: '.addon-{addonId}', className: 'addon-{addonId}', kind: 'dynamic', dynamic: true,

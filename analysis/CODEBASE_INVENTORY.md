@@ -1,6 +1,6 @@
-# ICC Plus v2.10.6 codebase inventory
+# ICC Plus v2.10.9 codebase inventory
 
-This inventory is generated from commit `a420836248d32043ae45d03f1b93cdcb9e354663`.
+This inventory is generated from commit `2573ebc29c6b48ccad8d0213a2582087af29f4d6`.
 It is evidence for MCP model coverage; `src/generated/source-analysis.json` contains
 the field-level occurrence map and UI strings.
 
@@ -8,212 +8,213 @@ the field-level occurrence map and UI strings.
 
 - Audited authored code/text files: 227
 - Creator TypeScript/Svelte files: 119
-- Exact audited source bytes: 3322639
+- Exact audited source bytes: 3337779
 - Deployment files: 75
-- Deployment bytes: 24807525
+- Deployment bytes: 24828033
 - Upstream third-party packages with license metadata: 209
 - Declared model types: 59
-- Unique model fields: 901
-- Fields referenced by implementation code: 899
-- Store functions: 190
+- Unique model fields: 903
+- Fields referenced by implementation code: 901
+- Store functions: 191
 - Exported store functions: 100
-- Named source functions/methods: 1412
+- Named source functions/methods: 1422
 - Exported source functions: 246
 
 ## State engine functions
 
 | Function | Visibility | Async | Evidence |
 | --- | --- | --- | --- |
-| `getRows` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:867` |
-| `getChoices` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:870` |
-| `getBackpackRows` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:873` |
-| `getBackpackChoices` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:876` |
-| `getGroups` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:879` |
-| `getPointTypes` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:882` |
-| `getVariables` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:885` |
-| `getWords` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:888` |
-| `getGlobalRequirement` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:891` |
-| `getDesignGroups` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:894` |
-| `getSelectables` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:897` |
-| `getBackpackSelectables` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:900` |
-| `getSearchables` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:903` |
-| `getSoundEffects` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:906` |
-| `createCyoaPlusDB` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:911` |
-| `getOldDB` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:935` |
-| `getDB` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:943` |
-| `delay` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:1189` |
-| `autoSave` | public | yes | `ICCPlus/src/lib/store/store.svelte.ts:1201` |
-| `buildAutoSave` | public | yes | `ICCPlus/src/lib/store/store.svelte.ts:1250` |
-| `saveToSlot` | public | yes | `ICCPlus/src/lib/store/store.svelte.ts:1298` |
-| `deleteSlot` | public | yes | `ICCPlus/src/lib/store/store.svelte.ts:1321` |
-| `loadFromSlot` | public | yes | `ICCPlus/src/lib/store/store.svelte.ts:1344` |
-| `getOldAutoSave` | internal | yes | `ICCPlus/src/lib/store/store.svelte.ts:1354` |
-| `setOldSave` | internal | yes | `ICCPlus/src/lib/store/store.svelte.ts:1403` |
-| `initStoreSaves` | public | yes | `ICCPlus/src/lib/store/store.svelte.ts:1421` |
-| `initBuildSaves` | public | yes | `ICCPlus/src/lib/store/store.svelte.ts:1473` |
-| `getSelectedObjectId` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:1516` |
-| `getTimestamp` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:1595` |
-| `getPointTypeLabel` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:1606` |
-| `getChoiceLabel` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:1613` |
-| `getGroupLabel` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:1625` |
-| `getRowLabel` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:1632` |
-| `getGlobalReqLabel` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:1642` |
-| `getDesignLabel` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:1649` |
-| `getSfxLabel` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:1656` |
-| `getReqText` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:1663` |
-| `getChoiceTitle` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:1739` |
-| `checkInitId` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:1746` |
-| `generateId` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:1749` |
-| `objectWidthToNum` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:1765` |
-| `widthToNum` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:1782` |
-| `fixedWidth` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:1805` |
-| `checkWordChange` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:1823` |
-| `getCombinedRegex` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:1831` |
-| `replaceText` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:1838` |
-| `getStyling` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:1865` |
-| `checkDupId` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:1956` |
-| `checkPointEnable` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:1963` |
-| `checkActivated` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:1980` |
-| `getPriority` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:1989` |
-| `evaluateNode` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:2001` |
-| `checkReq` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:2017` |
-| `checkRequirements` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:2220` |
-| `wrapYoutubePlayer` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:2238` |
-| `wrapAudioPlayer` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:2276` |
-| `createAudioPlayer` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:2355` |
-| `retryAudioPlayer` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:2367` |
-| `bgmFadeIn` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:2377` |
-| `bgmPlay` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:2378` |
-| `playProc` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:2386` |
-| `bgmFadeOut` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:2497` |
-| `playBgm` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:2562` |
-| `loadYouTubeAPI` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:2639` |
-| `initYoutubePlayer` | public | yes | `ICCPlus/src/lib/store/store.svelte.ts:2651` |
-| `base64ToArrayBuffer` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:2680` |
-| `getCtx` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:2690` |
-| `initSfx` | public | yes | `ICCPlus/src/lib/store/store.svelte.ts:2694` |
-| `loadSfx` | public | yes | `ICCPlus/src/lib/store/store.svelte.ts:2707` |
-| `playSfx` | public | yes | `ICCPlus/src/lib/store/store.svelte.ts:2714` |
-| `playSfxOnSelect` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:2733` |
-| `playSfxOnDeselect` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:2764` |
-| `initStyling` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:2795` |
-| `calcStackDiscount` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:2828` |
-| `deleteDiscount` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:2838` |
-| `emptyDiscount` | internal | yes | `ICCPlus/src/lib/store/store.svelte.ts:2861` |
-| `fillDiscount` | internal | yes | `ICCPlus/src/lib/store/store.svelte.ts:2979` |
-| `deselectDiscount` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:3093` |
-| `selectDiscount` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:3245` |
-| `expDiscount` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:3386` |
-| `checkPoints` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:3403` |
-| `checkAddons` | internal | yes | `ICCPlus/src/lib/store/store.svelte.ts:3736` |
-| `setScoreValue` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:3767` |
-| `cleanActivated` | public | yes | `ICCPlus/src/lib/store/store.svelte.ts:3823` |
-| `deselectProc` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:3826` |
-| `clearProc` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:3851` |
-| `selectForceActivate` | internal | yes | `ICCPlus/src/lib/store/store.svelte.ts:4195` |
-| `deselectTempActivate` | internal | yes | `ICCPlus/src/lib/store/store.svelte.ts:4231` |
-| `deselectForceActivate` | internal | yes | `ICCPlus/src/lib/store/store.svelte.ts:4258` |
-| `selectForceRandomActivate` | internal | yes | `ICCPlus/src/lib/store/store.svelte.ts:4321` |
-| `removeCount` | internal | yes | `ICCPlus/src/lib/store/store.svelte.ts:4399` |
-| `addCount` | internal | yes | `ICCPlus/src/lib/store/store.svelte.ts:4456` |
-| `updateCount` | internal | yes | `ICCPlus/src/lib/store/store.svelte.ts:4524` |
-| `deselectUpdateScore` | internal | yes | `ICCPlus/src/lib/store/store.svelte.ts:4574` |
-| `selectUpdateScore` | public | yes | `ICCPlus/src/lib/store/store.svelte.ts:4996` |
-| `activateTempChoices` | public | yes | `ICCPlus/src/lib/store/store.svelte.ts:5452` |
-| `clearWordDialog` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:5493` |
-| `clearImgDialog` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:5504` |
-| `openWordDialog` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:5512` |
-| `openImgDialog` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:5536` |
-| `delayProc` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:5557` |
-| `deselectDiscountOther` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:5561` |
-| `selectDiscountOther` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:5606` |
-| `deselectCalculateScore` | internal | yes | `ICCPlus/src/lib/store/store.svelte.ts:5651` |
-| `selectCalculateScore` | internal | yes | `ICCPlus/src/lib/store/store.svelte.ts:5737` |
-| `deselectActivateOther` | internal | yes | `ICCPlus/src/lib/store/store.svelte.ts:5811` |
-| `selectActivateOther` | internal | yes | `ICCPlus/src/lib/store/store.svelte.ts:5894` |
-| `selectDeactivateOther` | internal | yes | `ICCPlus/src/lib/store/store.svelte.ts:5943` |
-| `deselectMissingReq` | internal | yes | `ICCPlus/src/lib/store/store.svelte.ts:6002` |
-| `deselectModifyPoint` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:6048` |
-| `selectModifyPoint` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:6218` |
-| `setVariables` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:6306` |
-| `addAllowedChoice` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:6329` |
-| `deselectEffectProc` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:6364` |
-| `selectEffectProc` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:6591` |
-| `deselectHideContent` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:6777` |
-| `selectHideContent` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:6823` |
-| `selectScroll` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:6870` |
-| `checkAddonDeselectable` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:6914` |
-| `checkDeselectable` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:6944` |
-| `checkSelectable` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:6953` |
-| `deselectObject` | public | yes | `ICCPlus/src/lib/store/store.svelte.ts:7051` |
-| `selectObject` | public | yes | `ICCPlus/src/lib/store/store.svelte.ts:7240` |
-| `selectedOneMore` | public | yes | `ICCPlus/src/lib/store/store.svelte.ts:7491` |
-| `selectedOneLess` | public | yes | `ICCPlus/src/lib/store/store.svelte.ts:7794` |
-| `updateScores` | internal | yes | `ICCPlus/src/lib/store/store.svelte.ts:8013` |
-| `selectObjectL` | internal | yes | `ICCPlus/src/lib/store/store.svelte.ts:8273` |
-| `selectedOneMoreL` | internal | yes | `ICCPlus/src/lib/store/store.svelte.ts:8562` |
-| `selectedOneLessL` | internal | yes | `ICCPlus/src/lib/store/store.svelte.ts:8872` |
-| `activateProc` | internal | yes | `ICCPlus/src/lib/store/store.svelte.ts:8924` |
-| `loadActivated` | public | yes | `ICCPlus/src/lib/store/store.svelte.ts:8975` |
-| `duplicateRow` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:8979` |
-| `getDataURL` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:9260` |
-| `isDataURL` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:9264` |
-| `removeNulls` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:9516` |
-| `initFilterStyling` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:9533` |
-| `initPrivateStyling` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:9554` |
-| `loadFromDisk` | public | yes | `ICCPlus/src/lib/store/store.svelte.ts:9704` |
-| `exportData` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:9796` |
-| `importRequirement` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:9819` |
-| `importChoice` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:9845` |
-| `importData` | public | yes | `ICCPlus/src/lib/store/store.svelte.ts:9930` |
-| `getMimeFromBlob` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:10345` |
-| `compareVersion` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:10355` |
-| `initializeApp` | public | yes | `ICCPlus/src/lib/store/store.svelte.ts:10380` |
-| `replaceFields` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:11352` |
-| `replaceImages` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:11365` |
-| `waitForImagesToLoad` | internal | yes | `ICCPlus/src/lib/store/store.svelte.ts:11444` |
-| `forceEagerImageLoading` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:11456` |
-| `copyComputedStyles` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:11466` |
-| `deepCopyStyles` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:11477` |
-| `waitForBorderImagesToLoad` | internal | yes | `ICCPlus/src/lib/store/store.svelte.ts:11487` |
-| `waitForRenderFrames` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:11510` |
-| `next` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:11513` |
-| `downloadAsImage` | public | yes | `ICCPlus/src/lib/store/store.svelte.ts:11520` |
-| `isMediaSupport` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:11669` |
-| `toggleTheme` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:11679` |
-| `setShortcut` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:11721` |
-| `applyTemplate` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:11739` |
-| `revertTemplate` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:11747` |
-| `applyWidth` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:11761` |
-| `revertWidth` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:11769` |
-| `getDate` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:11783` |
-| `scrollToLastRow` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:11794` |
-| `tryScroll` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:11799` |
-| `applyCustomCSS` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:11813` |
-| `hexToRgba` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:11832` |
-| `rgbToHex` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:11843` |
-| `toggleAltMenu` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:11854` |
-| `removeAnchor` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:11858` |
-| `pasteObject` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:11868` |
-| `clearClipboard` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:11998` |
-| `closestByClassPrefix` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:12031` |
-| `copyObject` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:12047` |
-| `copyScores` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:12066` |
-| `pasteScore` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:12083` |
-| `copyAddons` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:12098` |
-| `pasteAddon` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:12114` |
-| `copyRequireds` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:12157` |
-| `pasteRequired` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:12173` |
-| `copyGroups` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:12186` |
-| `pasteGroup` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:12201` |
-| `copyDesignGroups` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:12219` |
-| `pasteDesignGroup` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:12234` |
-| `choiceContext` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:12252` |
-| `requiredContext` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:12273` |
-| `scoreContext` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:12294` |
-| `addonContext` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:12315` |
-| `groupContext` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:12336` |
-| `dGroupContext` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:12353` |
+| `getRows` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:868` |
+| `getChoices` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:871` |
+| `getBackpackRows` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:874` |
+| `getBackpackChoices` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:877` |
+| `getGroups` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:880` |
+| `getPointTypes` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:883` |
+| `getVariables` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:886` |
+| `getWords` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:889` |
+| `getGlobalRequirement` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:892` |
+| `getDesignGroups` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:895` |
+| `getSelectables` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:898` |
+| `getBackpackSelectables` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:901` |
+| `getSearchables` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:904` |
+| `getSoundEffects` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:907` |
+| `createCyoaPlusDB` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:912` |
+| `getOldDB` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:936` |
+| `getDB` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:944` |
+| `delay` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:1190` |
+| `autoSave` | public | yes | `ICCPlus/src/lib/store/store.svelte.ts:1217` |
+| `buildAutoSave` | public | yes | `ICCPlus/src/lib/store/store.svelte.ts:1269` |
+| `saveToSlot` | public | yes | `ICCPlus/src/lib/store/store.svelte.ts:1317` |
+| `deleteSlot` | public | yes | `ICCPlus/src/lib/store/store.svelte.ts:1340` |
+| `loadFromSlot` | public | yes | `ICCPlus/src/lib/store/store.svelte.ts:1363` |
+| `getOldAutoSave` | internal | yes | `ICCPlus/src/lib/store/store.svelte.ts:1373` |
+| `setOldSave` | internal | yes | `ICCPlus/src/lib/store/store.svelte.ts:1422` |
+| `initStoreSaves` | public | yes | `ICCPlus/src/lib/store/store.svelte.ts:1440` |
+| `initBuildSaves` | public | yes | `ICCPlus/src/lib/store/store.svelte.ts:1492` |
+| `getSelectedObjectId` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:1535` |
+| `getTimestamp` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:1614` |
+| `getPointTypeLabel` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:1625` |
+| `getChoiceLabel` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:1632` |
+| `getGroupLabel` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:1644` |
+| `getRowLabel` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:1651` |
+| `getGlobalReqLabel` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:1661` |
+| `getDesignLabel` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:1668` |
+| `getSfxLabel` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:1675` |
+| `getReqText` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:1682` |
+| `getChoiceTitle` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:1758` |
+| `checkInitId` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:1765` |
+| `generateId` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:1768` |
+| `objectWidthToNum` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:1784` |
+| `widthToNum` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:1801` |
+| `fixedWidth` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:1824` |
+| `checkWordChange` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:1842` |
+| `getCombinedRegex` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:1850` |
+| `replaceText` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:1857` |
+| `getStyling` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:1884` |
+| `checkDupId` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:1975` |
+| `checkPointEnable` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:1982` |
+| `checkActivated` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:1999` |
+| `getPriority` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:2008` |
+| `evaluateNode` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:2020` |
+| `checkReq` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:2036` |
+| `checkRequirements` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:2239` |
+| `wrapYoutubePlayer` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:2257` |
+| `wrapAudioPlayer` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:2295` |
+| `createAudioPlayer` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:2374` |
+| `retryAudioPlayer` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:2386` |
+| `bgmFadeIn` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:2396` |
+| `bgmPlay` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:2397` |
+| `playProc` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:2405` |
+| `bgmFadeOut` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:2516` |
+| `playBgm` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:2581` |
+| `loadYouTubeAPI` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:2658` |
+| `initYoutubePlayer` | public | yes | `ICCPlus/src/lib/store/store.svelte.ts:2670` |
+| `base64ToArrayBuffer` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:2699` |
+| `getCtx` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:2709` |
+| `initSfx` | public | yes | `ICCPlus/src/lib/store/store.svelte.ts:2713` |
+| `loadSfx` | public | yes | `ICCPlus/src/lib/store/store.svelte.ts:2726` |
+| `playSfx` | public | yes | `ICCPlus/src/lib/store/store.svelte.ts:2733` |
+| `playSfxOnSelect` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:2752` |
+| `playSfxOnDeselect` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:2783` |
+| `initStyling` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:2814` |
+| `calcStackDiscount` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:2847` |
+| `deleteDiscount` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:2857` |
+| `emptyDiscount` | internal | yes | `ICCPlus/src/lib/store/store.svelte.ts:2880` |
+| `fillDiscount` | internal | yes | `ICCPlus/src/lib/store/store.svelte.ts:2998` |
+| `deselectDiscount` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:3112` |
+| `selectDiscount` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:3264` |
+| `expDiscount` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:3405` |
+| `checkPoints` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:3422` |
+| `checkAddons` | internal | yes | `ICCPlus/src/lib/store/store.svelte.ts:3755` |
+| `setScoreValue` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:3786` |
+| `cleanActivated` | public | yes | `ICCPlus/src/lib/store/store.svelte.ts:3842` |
+| `deselectProc` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:3845` |
+| `clearProc` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:3870` |
+| `selectForceActivate` | internal | yes | `ICCPlus/src/lib/store/store.svelte.ts:4215` |
+| `deselectTempActivate` | internal | yes | `ICCPlus/src/lib/store/store.svelte.ts:4251` |
+| `deselectForceActivate` | internal | yes | `ICCPlus/src/lib/store/store.svelte.ts:4278` |
+| `selectForceRandomActivate` | internal | yes | `ICCPlus/src/lib/store/store.svelte.ts:4341` |
+| `removeCount` | internal | yes | `ICCPlus/src/lib/store/store.svelte.ts:4419` |
+| `addCount` | internal | yes | `ICCPlus/src/lib/store/store.svelte.ts:4476` |
+| `updateCount` | internal | yes | `ICCPlus/src/lib/store/store.svelte.ts:4544` |
+| `deselectUpdateScore` | internal | yes | `ICCPlus/src/lib/store/store.svelte.ts:4594` |
+| `selectUpdateScore` | public | yes | `ICCPlus/src/lib/store/store.svelte.ts:5016` |
+| `activateTempChoices` | public | yes | `ICCPlus/src/lib/store/store.svelte.ts:5472` |
+| `clearWordDialog` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:5513` |
+| `clearImgDialog` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:5524` |
+| `openWordDialog` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:5532` |
+| `openImgDialog` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:5556` |
+| `delayProc` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:5577` |
+| `cancelDelayProc` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:5581` |
+| `deselectDiscountOther` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:5586` |
+| `selectDiscountOther` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:5631` |
+| `deselectCalculateScore` | internal | yes | `ICCPlus/src/lib/store/store.svelte.ts:5676` |
+| `selectCalculateScore` | internal | yes | `ICCPlus/src/lib/store/store.svelte.ts:5762` |
+| `deselectActivateOther` | internal | yes | `ICCPlus/src/lib/store/store.svelte.ts:5836` |
+| `selectActivateOther` | internal | yes | `ICCPlus/src/lib/store/store.svelte.ts:5919` |
+| `selectDeactivateOther` | internal | yes | `ICCPlus/src/lib/store/store.svelte.ts:5968` |
+| `deselectMissingReq` | internal | yes | `ICCPlus/src/lib/store/store.svelte.ts:6027` |
+| `deselectModifyPoint` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:6074` |
+| `selectModifyPoint` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:6244` |
+| `setVariables` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:6332` |
+| `addAllowedChoice` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:6355` |
+| `deselectEffectProc` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:6390` |
+| `selectEffectProc` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:6617` |
+| `deselectHideContent` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:6803` |
+| `selectHideContent` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:6849` |
+| `selectScroll` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:6896` |
+| `checkAddonDeselectable` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:6941` |
+| `checkDeselectable` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:6971` |
+| `checkSelectable` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:6980` |
+| `deselectObject` | public | yes | `ICCPlus/src/lib/store/store.svelte.ts:7078` |
+| `selectObject` | public | yes | `ICCPlus/src/lib/store/store.svelte.ts:7282` |
+| `selectedOneMore` | public | yes | `ICCPlus/src/lib/store/store.svelte.ts:7547` |
+| `selectedOneLess` | public | yes | `ICCPlus/src/lib/store/store.svelte.ts:7865` |
+| `updateScores` | internal | yes | `ICCPlus/src/lib/store/store.svelte.ts:8099` |
+| `selectObjectL` | internal | yes | `ICCPlus/src/lib/store/store.svelte.ts:8359` |
+| `selectedOneMoreL` | internal | yes | `ICCPlus/src/lib/store/store.svelte.ts:8648` |
+| `selectedOneLessL` | internal | yes | `ICCPlus/src/lib/store/store.svelte.ts:8958` |
+| `activateProc` | internal | yes | `ICCPlus/src/lib/store/store.svelte.ts:9010` |
+| `loadActivated` | public | yes | `ICCPlus/src/lib/store/store.svelte.ts:9061` |
+| `duplicateRow` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:9065` |
+| `getDataURL` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:9346` |
+| `isDataURL` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:9350` |
+| `removeNulls` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:9602` |
+| `initFilterStyling` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:9619` |
+| `initPrivateStyling` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:9640` |
+| `loadFromDisk` | public | yes | `ICCPlus/src/lib/store/store.svelte.ts:9790` |
+| `exportData` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:9882` |
+| `importRequirement` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:9905` |
+| `importChoice` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:9931` |
+| `importData` | public | yes | `ICCPlus/src/lib/store/store.svelte.ts:10016` |
+| `getMimeFromBlob` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:10431` |
+| `compareVersion` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:10441` |
+| `initializeApp` | public | yes | `ICCPlus/src/lib/store/store.svelte.ts:10466` |
+| `replaceFields` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:11440` |
+| `replaceImages` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:11453` |
+| `waitForImagesToLoad` | internal | yes | `ICCPlus/src/lib/store/store.svelte.ts:11532` |
+| `forceEagerImageLoading` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:11544` |
+| `copyComputedStyles` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:11554` |
+| `deepCopyStyles` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:11565` |
+| `waitForBorderImagesToLoad` | internal | yes | `ICCPlus/src/lib/store/store.svelte.ts:11575` |
+| `waitForRenderFrames` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:11598` |
+| `next` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:11601` |
+| `downloadAsImage` | public | yes | `ICCPlus/src/lib/store/store.svelte.ts:11608` |
+| `isMediaSupport` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:11757` |
+| `toggleTheme` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:11767` |
+| `setShortcut` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:11809` |
+| `applyTemplate` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:11827` |
+| `revertTemplate` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:11835` |
+| `applyWidth` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:11849` |
+| `revertWidth` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:11859` |
+| `getDate` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:11875` |
+| `scrollToLastRow` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:11886` |
+| `tryScroll` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:11891` |
+| `applyCustomCSS` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:11905` |
+| `hexToRgba` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:11924` |
+| `rgbToHex` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:11935` |
+| `toggleAltMenu` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:11946` |
+| `removeAnchor` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:11950` |
+| `pasteObject` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:11960` |
+| `clearClipboard` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:12090` |
+| `closestByClassPrefix` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:12123` |
+| `copyObject` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:12139` |
+| `copyScores` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:12158` |
+| `pasteScore` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:12175` |
+| `copyAddons` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:12190` |
+| `pasteAddon` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:12206` |
+| `copyRequireds` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:12249` |
+| `pasteRequired` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:12265` |
+| `copyGroups` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:12278` |
+| `pasteGroup` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:12293` |
+| `copyDesignGroups` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:12311` |
+| `pasteDesignGroup` | internal | no | `ICCPlus/src/lib/store/store.svelte.ts:12326` |
+| `choiceContext` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:12344` |
+| `requiredContext` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:12365` |
+| `scoreContext` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:12386` |
+| `addonContext` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:12407` |
+| `groupContext` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:12428` |
+| `dGroupContext` | public | no | `ICCPlus/src/lib/store/store.svelte.ts:12445` |
 
 ## All named source functions and methods
 
@@ -251,38 +252,38 @@ the field-level occurrence map and UI strings.
 | `saveProcess` | function | no | no | `ICCPlus/src/lib/creator/AppGlobalSettings.svelte:529` | 0 |
 | `importFont` | function | no | yes | `ICCPlus/src/lib/creator/AppGlobalSettings.svelte:536` | 8 |
 | `deleteFont` | function | no | no | `ICCPlus/src/lib/creator/AppGlobalSettings.svelte:614` | 3 |
-| `action` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:1978` | 0 |
-| `action` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:1982` | 0 |
-| `action` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:1986` | 3 |
-| `action` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:1990` | 0 |
-| `contextAction` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:1991` | 2 |
-| `action` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:1995` | 0 |
-| `action` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2000` | 0 |
-| `contextAction` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2001` | 1 |
-| `action` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2005` | 0 |
-| `contextAction` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2006` | 2 |
-| `action` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2010` | 4 |
-| `contextAction` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2011` | 1 |
-| `action` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2015` | 2 |
-| `contextAction` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2016` | 1 |
-| `changeObjectId` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2316` | 9 |
-| `createNewAddon` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2353` | 23 |
-| `createNewScore` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2371` | 14 |
-| `cloneObject` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2385` | 25 |
-| `deleteGroup` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2476` | 7 |
-| `deleteDesignGroup` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2487` | 5 |
-| `deleteObject` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2498` | 24 |
-| `deleteProc` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2499` | 19 |
-| `deleteAddon` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2572` | 6 |
-| `moveChoiceLeft` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2590` | 3 |
-| `moveChoiceRight` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2598` | 3 |
-| `setFilters` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2606` | 82 |
-| `objectWidthClass` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2719` | 8 |
-| `toggleAutoActive` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2742` | 16 |
-| `handleCounter` | function | no | yes | `ICCPlus/src/lib/creator/AppObject.svelte:2768` | 11 |
-| `activateObject` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2792` | 17 |
-| `toggleActive` | function | no | yes | `ICCPlus/src/lib/creator/AppObject.svelte:2829` | 9 |
-| `copyTooltip` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2854` | 5 |
+| `action` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2002` | 0 |
+| `action` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2006` | 0 |
+| `action` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2010` | 3 |
+| `action` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2014` | 0 |
+| `contextAction` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2015` | 2 |
+| `action` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2019` | 0 |
+| `action` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2024` | 0 |
+| `contextAction` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2025` | 1 |
+| `action` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2029` | 0 |
+| `contextAction` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2030` | 2 |
+| `action` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2034` | 4 |
+| `contextAction` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2035` | 1 |
+| `action` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2039` | 2 |
+| `contextAction` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2040` | 1 |
+| `changeObjectId` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2340` | 9 |
+| `createNewAddon` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2377` | 23 |
+| `createNewScore` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2395` | 14 |
+| `cloneObject` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2409` | 25 |
+| `deleteGroup` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2500` | 7 |
+| `deleteDesignGroup` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2511` | 5 |
+| `deleteObject` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2522` | 24 |
+| `deleteProc` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2523` | 19 |
+| `deleteAddon` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2596` | 6 |
+| `moveChoiceLeft` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2614` | 3 |
+| `moveChoiceRight` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2622` | 3 |
+| `setFilters` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2630` | 82 |
+| `objectWidthClass` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2743` | 8 |
+| `toggleAutoActive` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2766` | 16 |
+| `handleCounter` | function | no | yes | `ICCPlus/src/lib/creator/AppObject.svelte:2792` | 11 |
+| `activateObject` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2816` | 17 |
+| `toggleActive` | function | no | yes | `ICCPlus/src/lib/creator/AppObject.svelte:2853` | 9 |
+| `copyTooltip` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2878` | 5 |
 | `handleDndConsider` | function | no | no | `ICCPlus/src/lib/creator/AppObjectList.svelte:59` | 0 |
 | `handleDndFinalize` | function | no | no | `ICCPlus/src/lib/creator/AppObjectList.svelte:63` | 6 |
 | `scrollToObject` | function | no | no | `ICCPlus/src/lib/creator/AppObjectList.svelte:74` | 6 |
@@ -309,15 +310,16 @@ the field-level occurrence map and UI strings.
 | `action` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppRow.svelte:491` | 4 |
 | `contextAction` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppRow.svelte:492` | 0 |
 | `action` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppRow.svelte:496` | 2 |
-| `changeRowId` | function | no | no | `ICCPlus/src/lib/creator/AppRow.svelte:807` | 7 |
-| `createNewObject` | function | no | no | `ICCPlus/src/lib/creator/AppRow.svelte:838` | 29 |
-| `createNewObjects` | function | no | no | `ICCPlus/src/lib/creator/AppRow.svelte:873` | 0 |
-| `reqContext` | function | no | no | `ICCPlus/src/lib/creator/AppRow.svelte:879` | 11 |
-| `copyRequireds` | function | no | no | `ICCPlus/src/lib/creator/AppRow.svelte:899` | 8 |
-| `pasteRequired` | function | no | no | `ICCPlus/src/lib/creator/AppRow.svelte:915` | 6 |
-| `objectWidthClass` | function | no | no | `ICCPlus/src/lib/creator/AppRow.svelte:927` | 6 |
-| `buttonActivate` | function | no | no | `ICCPlus/src/lib/creator/AppRow.svelte:949` | 38 |
-| `copyTooltip` | function | no | no | `ICCPlus/src/lib/creator/AppRow.svelte:1096` | 5 |
+| `deselectAll` | function | no | yes | `ICCPlus/src/lib/creator/AppRow.svelte:781` | 7 |
+| `changeRowId` | function | no | no | `ICCPlus/src/lib/creator/AppRow.svelte:810` | 7 |
+| `createNewObject` | function | no | no | `ICCPlus/src/lib/creator/AppRow.svelte:841` | 29 |
+| `createNewObjects` | function | no | no | `ICCPlus/src/lib/creator/AppRow.svelte:876` | 0 |
+| `reqContext` | function | no | no | `ICCPlus/src/lib/creator/AppRow.svelte:882` | 11 |
+| `copyRequireds` | function | no | no | `ICCPlus/src/lib/creator/AppRow.svelte:902` | 8 |
+| `pasteRequired` | function | no | no | `ICCPlus/src/lib/creator/AppRow.svelte:918` | 6 |
+| `objectWidthClass` | function | no | no | `ICCPlus/src/lib/creator/AppRow.svelte:930` | 6 |
+| `buttonActivate` | function | no | no | `ICCPlus/src/lib/creator/AppRow.svelte:952` | 38 |
+| `copyTooltip` | function | no | no | `ICCPlus/src/lib/creator/AppRow.svelte:1099` | 5 |
 | `handleDndConsider` | function | no | no | `ICCPlus/src/lib/creator/AppRowList.svelte:64` | 0 |
 | `handleDndFinalize` | function | no | no | `ICCPlus/src/lib/creator/AppRowList.svelte:68` | 6 |
 | `scrollToRow` | function | no | no | `ICCPlus/src/lib/creator/AppRowList.svelte:79` | 7 |
@@ -467,8 +469,9 @@ the field-level occurrence map and UI strings.
 | `setRowElement` | function | no | no | `ICCPlus/src/lib/creator/Features/AppGroups.svelte:347` | 9 |
 | `getCategoryLabel` | function | no | no | `ICCPlus/src/lib/creator/Features/AppGroups.svelte:375` | 2 |
 | `swapCategory` | function | no | no | `ICCPlus/src/lib/creator/Features/AppGroups.svelte:383` | 8 |
-| `escapeCsv` | function | no | no | `ICCPlus/src/lib/creator/Features/AppIdSearch.svelte:58` | 0 |
-| `exportAsCsv` | function | no | no | `ICCPlus/src/lib/creator/Features/AppIdSearch.svelte:72` | 11 |
+| `escapeCsv` | function | no | no | `ICCPlus/src/lib/creator/Features/AppIdSearch.svelte:71` | 0 |
+| `exportAsCsv` | function | no | no | `ICCPlus/src/lib/creator/Features/AppIdSearch.svelte:85` | 13 |
+| `removeParagraph` | function | no | no | `ICCPlus/src/lib/creator/Features/AppIdSearch.svelte:124` | 0 |
 | `pointCount` | arrow | no | no | `ICCPlus/src/lib/creator/Features/AppPoints.svelte:235` | 0 |
 | `getScrollElement` | property-arrow | no | no | `ICCPlus/src/lib/creator/Features/AppPoints.svelte:239` | 0 |
 | `estimateSize` | property-arrow | no | no | `ICCPlus/src/lib/creator/Features/AppPoints.svelte:240` | 0 |
@@ -552,18 +555,18 @@ the field-level occurrence map and UI strings.
 | `moveWordDown` | function | no | no | `ICCPlus/src/lib/creator/Features/AppWords.svelte:199` | 3 |
 | `getCategoryLabel` | function | no | no | `ICCPlus/src/lib/creator/Features/AppWords.svelte:207` | 2 |
 | `swapCategory` | function | no | no | `ICCPlus/src/lib/creator/Features/AppWords.svelte:215` | 8 |
-| `addonWidthClass` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectAddon.svelte:2164` | 4 |
-| `copyAddon` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectAddon.svelte:2185` | 4 |
-| `moveAddonUp` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectAddon.svelte:2193` | 3 |
-| `moveAddonDown` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectAddon.svelte:2199` | 3 |
-| `copyTooltip` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectAddon.svelte:2205` | 4 |
-| `toggleSelectable` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectAddon.svelte:2217` | 11 |
-| `createNewScore` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectAddon.svelte:2244` | 13 |
-| `changeAddonId` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectAddon.svelte:2258` | 3 |
-| `deleteGroup` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectAddon.svelte:2271` | 6 |
-| `getRadius` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectAddon.svelte:2282` | 5 |
-| `handleCounter` | function | no | yes | `ICCPlus/src/lib/creator/Object/ObjectAddon.svelte:2322` | 12 |
-| `activateObject` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectAddon.svelte:2345` | 17 |
+| `addonWidthClass` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectAddon.svelte:2178` | 4 |
+| `copyAddon` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectAddon.svelte:2199` | 4 |
+| `moveAddonUp` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectAddon.svelte:2207` | 3 |
+| `moveAddonDown` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectAddon.svelte:2213` | 3 |
+| `copyTooltip` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectAddon.svelte:2219` | 4 |
+| `toggleSelectable` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectAddon.svelte:2231` | 11 |
+| `createNewScore` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectAddon.svelte:2258` | 13 |
+| `changeAddonId` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectAddon.svelte:2272` | 3 |
+| `deleteGroup` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectAddon.svelte:2285` | 6 |
+| `getRadius` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectAddon.svelte:2296` | 5 |
+| `handleCounter` | function | no | yes | `ICCPlus/src/lib/creator/Object/ObjectAddon.svelte:2336` | 12 |
+| `activateObject` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectAddon.svelte:2359` | 17 |
 | `getGroupLabel` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectDesignGroup.svelte:21` | 3 |
 | `setGroupElement` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectDesignGroup.svelte:29` | 4 |
 | `releaseGroupElement` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectDesignGroup.svelte:38` | 4 |
@@ -583,12 +586,12 @@ the field-level occurrence map and UI strings.
 | `deleteInnerReq` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectRequired.svelte:156` | 4 |
 | `moveReqLeft` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectRequired.svelte:163` | 3 |
 | `moveReqRight` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectRequired.svelte:169` | 3 |
-| `moveScoreDown` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectScore.svelte:502` | 2 |
-| `moveScoreUp` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectScore.svelte:508` | 2 |
-| `copyScore` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectScore.svelte:514` | 4 |
-| `getPointTypeLabel` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectScore.svelte:525` | 3 |
-| `isPointtypeActivated` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectScore.svelte:533` | 7 |
-| `changePointType` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectScore.svelte:556` | 6 |
+| `moveScoreDown` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectScore.svelte:514` | 2 |
+| `moveScoreUp` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectScore.svelte:520` | 2 |
+| `copyScore` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectScore.svelte:526` | 4 |
+| `getPointTypeLabel` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectScore.svelte:537` | 3 |
+| `isPointtypeActivated` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectScore.svelte:545` | 7 |
+| `changePointType` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectScore.svelte:568` | 6 |
 | `handlePanelActivate` | function | no | no | `ICCPlus/src/lib/custom/accordion/Accordion.svelte:99` | 1 |
 | `handlePanelOpening` | function | no | no | `ICCPlus/src/lib/custom/accordion/Accordion.svelte:122` | 2 |
 | `getElement` | function | yes | no | `ICCPlus/src/lib/custom/accordion/Accordion.svelte:141` | 1 |
@@ -604,21 +607,21 @@ the field-level occurrence map and UI strings.
 | `getElement` | function | yes | no | `ICCPlus/src/lib/custom/accordion/Panel.svelte:245` | 1 |
 | `performSearch` | function | no | yes | `ICCPlus/src/lib/custom/autocomplete/Autocomplete.svelte:482` | 2 |
 | `selectOption` | function | no | no | `ICCPlus/src/lib/custom/autocomplete/Autocomplete.svelte:511` | 4 |
-| `deselectOption` | function | no | no | `ICCPlus/src/lib/custom/autocomplete/Autocomplete.svelte:548` | 4 |
-| `toggleOption` | function | no | no | `ICCPlus/src/lib/custom/autocomplete/Autocomplete.svelte:573` | 2 |
-| `isInViewport` | function | no | no | `ICCPlus/src/lib/custom/autocomplete/Autocomplete.svelte:589` | 2 |
-| `getActiveMenuItems` | function | no | no | `ICCPlus/src/lib/custom/autocomplete/Autocomplete.svelte:601` | 1 |
-| `handleTextfieldKeydown` | function | no | no | `ICCPlus/src/lib/custom/autocomplete/Autocomplete.svelte:610` | 2 |
-| `handleElementBlur` | function | no | yes | `ICCPlus/src/lib/custom/autocomplete/Autocomplete.svelte:659` | 2 |
-| `isInputFocused` | function | no | no | `ICCPlus/src/lib/custom/autocomplete/Autocomplete.svelte:696` | 1 |
-| `focus` | function | yes | no | `ICCPlus/src/lib/custom/autocomplete/Autocomplete.svelte:707` | 2 |
-| `blur` | function | yes | no | `ICCPlus/src/lib/custom/autocomplete/Autocomplete.svelte:719` | 4 |
-| `getElement` | function | yes | no | `ICCPlus/src/lib/custom/autocomplete/Autocomplete.svelte:735` | 1 |
-| `isExpanded` | function | yes | no | `ICCPlus/src/lib/custom/autocomplete/Autocomplete.svelte:739` | 1 |
-| `selectAll` | function | no | no | `ICCPlus/src/lib/custom/autocomplete/Autocomplete.svelte:743` | 6 |
-| `selectProc` | function | no | no | `ICCPlus/src/lib/custom/autocomplete/Autocomplete.svelte:744` | 0 |
-| `handleScroll` | function | no | no | `ICCPlus/src/lib/custom/autocomplete/Autocomplete.svelte:774` | 0 |
-| `getLabel` | function | no | no | `ICCPlus/src/lib/custom/autocomplete/Autocomplete.svelte:781` | 0 |
+| `deselectOption` | function | no | no | `ICCPlus/src/lib/custom/autocomplete/Autocomplete.svelte:551` | 4 |
+| `toggleOption` | function | no | no | `ICCPlus/src/lib/custom/autocomplete/Autocomplete.svelte:576` | 2 |
+| `isInViewport` | function | no | no | `ICCPlus/src/lib/custom/autocomplete/Autocomplete.svelte:592` | 2 |
+| `getActiveMenuItems` | function | no | no | `ICCPlus/src/lib/custom/autocomplete/Autocomplete.svelte:604` | 1 |
+| `handleTextfieldKeydown` | function | no | no | `ICCPlus/src/lib/custom/autocomplete/Autocomplete.svelte:613` | 2 |
+| `handleElementBlur` | function | no | yes | `ICCPlus/src/lib/custom/autocomplete/Autocomplete.svelte:662` | 2 |
+| `isInputFocused` | function | no | no | `ICCPlus/src/lib/custom/autocomplete/Autocomplete.svelte:699` | 1 |
+| `focus` | function | yes | no | `ICCPlus/src/lib/custom/autocomplete/Autocomplete.svelte:710` | 2 |
+| `blur` | function | yes | no | `ICCPlus/src/lib/custom/autocomplete/Autocomplete.svelte:722` | 4 |
+| `getElement` | function | yes | no | `ICCPlus/src/lib/custom/autocomplete/Autocomplete.svelte:738` | 1 |
+| `isExpanded` | function | yes | no | `ICCPlus/src/lib/custom/autocomplete/Autocomplete.svelte:742` | 1 |
+| `selectAll` | function | no | no | `ICCPlus/src/lib/custom/autocomplete/Autocomplete.svelte:746` | 6 |
+| `selectProc` | function | no | no | `ICCPlus/src/lib/custom/autocomplete/Autocomplete.svelte:747` | 0 |
+| `handleScroll` | function | no | no | `ICCPlus/src/lib/custom/autocomplete/Autocomplete.svelte:777` | 0 |
+| `getLabel` | function | no | no | `ICCPlus/src/lib/custom/autocomplete/Autocomplete.svelte:784` | 0 |
 | `handleAutocompleteSelected` | function | no | no | `ICCPlus/src/lib/custom/chip-input/ChipInput.svelte:350` | 2 |
 | `handleInputKeydown` | function | no | no | `ICCPlus/src/lib/custom/chip-input/ChipInput.svelte:372` | 1 |
 | `handleAutocompleteFocusout` | function | no | no | `ICCPlus/src/lib/custom/chip-input/ChipInput.svelte:397` | 1 |
@@ -908,238 +911,241 @@ the field-level occurrence map and UI strings.
 | `clear` | property-arrow | no | no | `ICCPlus/src/lib/store/store.svelte.ts:788` | 1 |
 | `export` | property-arrow | no | no | `ICCPlus/src/lib/store/store.svelte.ts:789` | 1 |
 | `update` | arrow | no | no | `ICCPlus/src/lib/store/store.svelte.ts:827` | 0 |
-| `getRows` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:867` | 1 |
-| `getChoices` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:870` | 1 |
-| `getBackpackRows` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:873` | 1 |
-| `getBackpackChoices` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:876` | 1 |
-| `getGroups` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:879` | 1 |
-| `getPointTypes` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:882` | 1 |
-| `getVariables` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:885` | 1 |
-| `getWords` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:888` | 1 |
-| `getGlobalRequirement` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:891` | 1 |
-| `getDesignGroups` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:894` | 1 |
-| `getSelectables` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:897` | 1 |
-| `getBackpackSelectables` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:900` | 1 |
-| `getSearchables` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:903` | 1 |
-| `getSoundEffects` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:906` | 1 |
-| `createCyoaPlusDB` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:911` | 0 |
-| `getOldDB` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:935` | 0 |
-| `getDB` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:943` | 7 |
-| `delay` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:1189` | 0 |
-| `autoSave` | function | yes | yes | `ICCPlus/src/lib/store/store.svelte.ts:1201` | 11 |
-| `buildAutoSave` | function | yes | yes | `ICCPlus/src/lib/store/store.svelte.ts:1250` | 10 |
-| `saveToSlot` | function | yes | yes | `ICCPlus/src/lib/store/store.svelte.ts:1298` | 5 |
-| `deleteSlot` | function | yes | yes | `ICCPlus/src/lib/store/store.svelte.ts:1321` | 5 |
-| `loadFromSlot` | function | yes | yes | `ICCPlus/src/lib/store/store.svelte.ts:1344` | 1 |
-| `getOldAutoSave` | function | no | yes | `ICCPlus/src/lib/store/store.svelte.ts:1354` | 0 |
-| `setOldSave` | function | no | yes | `ICCPlus/src/lib/store/store.svelte.ts:1403` | 2 |
-| `initStoreSaves` | function | yes | yes | `ICCPlus/src/lib/store/store.svelte.ts:1421` | 8 |
-| `initBuildSaves` | function | yes | yes | `ICCPlus/src/lib/store/store.svelte.ts:1473` | 7 |
-| `getSelectedObjectId` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:1516` | 22 |
-| `getTimestamp` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:1595` | 1 |
-| `getPointTypeLabel` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:1606` | 3 |
-| `getChoiceLabel` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:1613` | 5 |
-| `getGroupLabel` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:1625` | 4 |
-| `getRowLabel` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:1632` | 5 |
-| `getGlobalReqLabel` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:1642` | 4 |
-| `getDesignLabel` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:1649` | 4 |
-| `getSfxLabel` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:1656` | 3 |
-| `getReqText` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:1663` | 17 |
-| `getChoiceTitle` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:1739` | 5 |
-| `checkInitId` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:1746` | 1 |
-| `generateId` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:1749` | 5 |
-| `objectWidthToNum` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:1765` | 1 |
-| `widthToNum` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:1782` | 1 |
-| `fixedWidth` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:1805` | 1 |
-| `checkWordChange` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:1823` | 4 |
-| `getCombinedRegex` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:1831` | 3 |
-| `replaceText` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:1838` | 14 |
-| `getStyling` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:1865` | 16 |
-| `checkDupId` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:1956` | 2 |
-| `checkPointEnable` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:1963` | 8 |
-| `checkActivated` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:1980` | 2 |
-| `getPriority` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:1989` | 2 |
-| `evaluateNode` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:2001` | 3 |
-| `checkReq` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:2017` | 33 |
-| `checkRequirements` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:2220` | 2 |
-| `wrapYoutubePlayer` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:2238` | 4 |
-| `load` | method | no | no | `ICCPlus/src/lib/store/store.svelte.ts:2241` | 1 |
-| `play` | property-arrow | no | no | `ICCPlus/src/lib/store/store.svelte.ts:2250` | 0 |
-| `pause` | property-arrow | no | no | `ICCPlus/src/lib/store/store.svelte.ts:2251` | 0 |
-| `stop` | property-arrow | no | no | `ICCPlus/src/lib/store/store.svelte.ts:2252` | 0 |
-| `mute` | property-arrow | no | no | `ICCPlus/src/lib/store/store.svelte.ts:2253` | 0 |
-| `unMute` | property-arrow | no | no | `ICCPlus/src/lib/store/store.svelte.ts:2254` | 0 |
-| `setVolume` | property-arrow | no | no | `ICCPlus/src/lib/store/store.svelte.ts:2256` | 0 |
-| `isPlaying` | property-arrow | no | no | `ICCPlus/src/lib/store/store.svelte.ts:2258` | 0 |
-| `isStopped` | property-arrow | no | no | `ICCPlus/src/lib/store/store.svelte.ts:2259` | 0 |
-| `isMuted` | property-arrow | no | no | `ICCPlus/src/lib/store/store.svelte.ts:2260` | 0 |
-| `seekTo` | property-arrow | no | no | `ICCPlus/src/lib/store/store.svelte.ts:2262` | 0 |
-| `getCurrentTime` | property-arrow | no | no | `ICCPlus/src/lib/store/store.svelte.ts:2267` | 0 |
-| `getDuration` | property-arrow | no | no | `ICCPlus/src/lib/store/store.svelte.ts:2268` | 0 |
-| `getPlayerState` | property-arrow | no | no | `ICCPlus/src/lib/store/store.svelte.ts:2269` | 0 |
-| `getTitle` | property-arrow | no | no | `ICCPlus/src/lib/store/store.svelte.ts:2271` | 1 |
-| `getId` | property-arrow | no | no | `ICCPlus/src/lib/store/store.svelte.ts:2273` | 0 |
-| `wrapAudioPlayer` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:2276` | 5 |
-| `load` | method | no | no | `ICCPlus/src/lib/store/store.svelte.ts:2297` | 1 |
-| `play` | property-arrow | no | no | `ICCPlus/src/lib/store/store.svelte.ts:2305` | 1 |
-| `pause` | property-arrow | no | no | `ICCPlus/src/lib/store/store.svelte.ts:2310` | 1 |
-| `stop` | property-arrow | no | no | `ICCPlus/src/lib/store/store.svelte.ts:2311` | 1 |
-| `mute` | property-arrow | no | no | `ICCPlus/src/lib/store/store.svelte.ts:2316` | 1 |
-| `unMute` | property-arrow | no | no | `ICCPlus/src/lib/store/store.svelte.ts:2320` | 1 |
-| `setVolume` | property-arrow | no | no | `ICCPlus/src/lib/store/store.svelte.ts:2325` | 2 |
-| `isPlaying` | property-arrow | no | no | `ICCPlus/src/lib/store/store.svelte.ts:2332` | 1 |
-| `isStopped` | property-arrow | no | no | `ICCPlus/src/lib/store/store.svelte.ts:2333` | 0 |
-| `isMuted` | property-arrow | no | no | `ICCPlus/src/lib/store/store.svelte.ts:2334` | 0 |
-| `seekTo` | property-arrow | no | no | `ICCPlus/src/lib/store/store.svelte.ts:2336` | 1 |
-| `getCurrentTime` | property-arrow | no | no | `ICCPlus/src/lib/store/store.svelte.ts:2347` | 1 |
-| `getDuration` | property-arrow | no | no | `ICCPlus/src/lib/store/store.svelte.ts:2348` | 1 |
-| `getPlayerState` | property-arrow | no | no | `ICCPlus/src/lib/store/store.svelte.ts:2349` | 1 |
-| `getTitle` | property-arrow | no | no | `ICCPlus/src/lib/store/store.svelte.ts:2351` | 1 |
-| `getId` | property-arrow | no | no | `ICCPlus/src/lib/store/store.svelte.ts:2352` | 1 |
-| `createAudioPlayer` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:2355` | 1 |
-| `retryAudioPlayer` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:2367` | 2 |
-| `bgmFadeIn` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:2377` | 20 |
-| `bgmPlay` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:2378` | 3 |
-| `playProc` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:2386` | 19 |
-| `bgmFadeOut` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:2497` | 12 |
-| `playBgm` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:2562` | 14 |
-| `loadYouTubeAPI` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:2639` | 1 |
-| `initYoutubePlayer` | function | yes | yes | `ICCPlus/src/lib/store/store.svelte.ts:2651` | 8 |
-| `onReady` | property-arrow | no | no | `ICCPlus/src/lib/store/store.svelte.ts:2659` | 6 |
-| `base64ToArrayBuffer` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:2680` | 0 |
-| `getCtx` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:2690` | 0 |
-| `initSfx` | function | yes | yes | `ICCPlus/src/lib/store/store.svelte.ts:2694` | 2 |
-| `loadSfx` | function | yes | yes | `ICCPlus/src/lib/store/store.svelte.ts:2707` | 2 |
-| `playSfx` | function | yes | yes | `ICCPlus/src/lib/store/store.svelte.ts:2714` | 5 |
-| `playSfxOnSelect` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:2733` | 11 |
-| `playSfxOnDeselect` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:2764` | 11 |
-| `initStyling` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:2795` | 71 |
-| `calcStackDiscount` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:2828` | 3 |
-| `deleteDiscount` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:2838` | 22 |
-| `emptyDiscount` | function | no | yes | `ICCPlus/src/lib/store/store.svelte.ts:2861` | 25 |
-| `fillDiscount` | function | no | yes | `ICCPlus/src/lib/store/store.svelte.ts:2979` | 17 |
-| `deselectDiscount` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:3093` | 26 |
-| `selectDiscount` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:3245` | 51 |
-| `expDiscount` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:3386` | 10 |
-| `checkPoints` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:3403` | 47 |
-| `checkAddons` | function | no | yes | `ICCPlus/src/lib/store/store.svelte.ts:3736` | 12 |
-| `setScoreValue` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:3767` | 15 |
-| `cleanActivated` | function | yes | yes | `ICCPlus/src/lib/store/store.svelte.ts:3823` | 104 |
-| `deselectProc` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:3826` | 16 |
-| `clearProc` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:3851` | 31 |
-| `selectForceActivate` | function | no | yes | `ICCPlus/src/lib/store/store.svelte.ts:4195` | 16 |
-| `deselectTempActivate` | function | no | yes | `ICCPlus/src/lib/store/store.svelte.ts:4231` | 7 |
-| `deselectForceActivate` | function | no | yes | `ICCPlus/src/lib/store/store.svelte.ts:4258` | 17 |
-| `selectForceRandomActivate` | function | no | yes | `ICCPlus/src/lib/store/store.svelte.ts:4321` | 18 |
-| `removeCount` | function | no | yes | `ICCPlus/src/lib/store/store.svelte.ts:4399` | 12 |
-| `addCount` | function | no | yes | `ICCPlus/src/lib/store/store.svelte.ts:4456` | 16 |
-| `updateCount` | function | no | yes | `ICCPlus/src/lib/store/store.svelte.ts:4524` | 14 |
-| `deselectUpdateScore` | function | no | yes | `ICCPlus/src/lib/store/store.svelte.ts:4574` | 46 |
-| `selectUpdateScore` | function | yes | yes | `ICCPlus/src/lib/store/store.svelte.ts:4996` | 50 |
-| `activateTempChoices` | function | yes | yes | `ICCPlus/src/lib/store/store.svelte.ts:5452` | 12 |
-| `clearWordDialog` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:5493` | 8 |
-| `clearImgDialog` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:5504` | 5 |
-| `openWordDialog` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:5512` | 9 |
-| `openImgDialog` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:5536` | 7 |
-| `delayProc` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:5557` | 0 |
-| `deselectDiscountOther` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:5561` | 11 |
-| `selectDiscountOther` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:5606` | 11 |
-| `deselectCalculateScore` | function | no | yes | `ICCPlus/src/lib/store/store.svelte.ts:5651` | 29 |
-| `selectCalculateScore` | function | no | yes | `ICCPlus/src/lib/store/store.svelte.ts:5737` | 23 |
-| `deselectActivateOther` | function | no | yes | `ICCPlus/src/lib/store/store.svelte.ts:5811` | 14 |
-| `selectActivateOther` | function | no | yes | `ICCPlus/src/lib/store/store.svelte.ts:5894` | 11 |
-| `selectDeactivateOther` | function | no | yes | `ICCPlus/src/lib/store/store.svelte.ts:5943` | 13 |
-| `deselectMissingReq` | function | no | yes | `ICCPlus/src/lib/store/store.svelte.ts:6002` | 13 |
-| `deselectModifyPoint` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:6048` | 16 |
-| `selectModifyPoint` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:6218` | 23 |
-| `setVariables` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:6306` | 8 |
-| `addAllowedChoice` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:6329` | 14 |
-| `deselectEffectProc` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:6364` | 47 |
-| `selectEffectProc` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:6591` | 48 |
-| `play` | arrow | no | no | `ICCPlus/src/lib/store/store.svelte.ts:6593` | 4 |
-| `deselectHideContent` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:6777` | 13 |
-| `selectHideContent` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:6823` | 14 |
-| `selectScroll` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:6870` | 14 |
-| `checkAddonDeselectable` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:6914` | 10 |
-| `checkDeselectable` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:6944` | 1 |
-| `checkSelectable` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:6953` | 32 |
-| `deselectObject` | function | yes | yes | `ICCPlus/src/lib/store/store.svelte.ts:7051` | 48 |
-| `deselectProcess` | arrow | no | yes | `ICCPlus/src/lib/store/store.svelte.ts:7070` | 31 |
-| `selectObject` | function | yes | yes | `ICCPlus/src/lib/store/store.svelte.ts:7240` | 64 |
-| `tmpAdd` | arrow | no | no | `ICCPlus/src/lib/store/store.svelte.ts:7244` | 6 |
-| `selectProcess` | arrow | no | yes | `ICCPlus/src/lib/store/store.svelte.ts:7340` | 33 |
-| `selectedOneMore` | function | yes | yes | `ICCPlus/src/lib/store/store.svelte.ts:7491` | 69 |
-| `tmpAdd` | arrow | no | no | `ICCPlus/src/lib/store/store.svelte.ts:7494` | 6 |
-| `selectProcess` | arrow | no | yes | `ICCPlus/src/lib/store/store.svelte.ts:7591` | 35 |
-| `selectedOneLess` | function | yes | yes | `ICCPlus/src/lib/store/store.svelte.ts:7794` | 50 |
-| `deselectProcess` | arrow | no | yes | `ICCPlus/src/lib/store/store.svelte.ts:7821` | 28 |
-| `updateScores` | function | no | yes | `ICCPlus/src/lib/store/store.svelte.ts:8013` | 37 |
-| `selectObjectL` | function | no | yes | `ICCPlus/src/lib/store/store.svelte.ts:8273` | 52 |
-| `selectedOneMoreL` | function | no | yes | `ICCPlus/src/lib/store/store.svelte.ts:8562` | 51 |
-| `selectedOneLessL` | function | no | yes | `ICCPlus/src/lib/store/store.svelte.ts:8872` | 21 |
-| `activateProc` | function | no | yes | `ICCPlus/src/lib/store/store.svelte.ts:8924` | 16 |
-| `loadActivated` | function | yes | yes | `ICCPlus/src/lib/store/store.svelte.ts:8975` | 1 |
-| `duplicateRow` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:8979` | 40 |
-| `getDataURL` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:9260` | 2 |
-| `isDataURL` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:9264` | 2 |
-| `removeNulls` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:9516` | 2 |
-| `initFilterStyling` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:9533` | 21 |
-| `initPrivateStyling` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:9554` | 16 |
-| `loadFromDisk` | function | yes | yes | `ICCPlus/src/lib/store/store.svelte.ts:9704` | 6 |
-| `exportData` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:9796` | 6 |
-| `importRequirement` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:9819` | 3 |
-| `importChoice` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:9845` | 7 |
-| `importData` | function | yes | yes | `ICCPlus/src/lib/store/store.svelte.ts:9930` | 37 |
-| `getMimeFromBlob` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:10345` | 1 |
-| `compareVersion` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:10355` | 0 |
-| `initializeApp` | function | yes | yes | `ICCPlus/src/lib/store/store.svelte.ts:10380` | 121 |
-| `replaceFields` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:11352` | 0 |
-| `replaceImages` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:11365` | 22 |
-| `waitForImagesToLoad` | function | no | yes | `ICCPlus/src/lib/store/store.svelte.ts:11444` | 0 |
-| `forceEagerImageLoading` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:11456` | 0 |
-| `copyComputedStyles` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:11466` | 0 |
-| `deepCopyStyles` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:11477` | 0 |
-| `waitForBorderImagesToLoad` | function | no | yes | `ICCPlus/src/lib/store/store.svelte.ts:11487` | 1 |
-| `waitForRenderFrames` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:11510` | 1 |
-| `next` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:11513` | 1 |
-| `downloadAsImage` | function | yes | yes | `ICCPlus/src/lib/store/store.svelte.ts:11520` | 21 |
-| `filter` | property-arrow | no | no | `ICCPlus/src/lib/store/store.svelte.ts:11602` | 2 |
-| `filter` | property-arrow | no | no | `ICCPlus/src/lib/store/store.svelte.ts:11631` | 2 |
-| `isMediaSupport` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:11669` | 1 |
-| `toggleTheme` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:11679` | 2 |
-| `setShortcut` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:11721` | 2 |
-| `applyTemplate` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:11739` | 6 |
-| `revertTemplate` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:11747` | 7 |
-| `applyWidth` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:11761` | 7 |
-| `revertWidth` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:11769` | 7 |
-| `getDate` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:11783` | 2 |
-| `scrollToLastRow` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:11794` | 2 |
-| `tryScroll` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:11799` | 1 |
-| `applyCustomCSS` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:11813` | 5 |
-| `hexToRgba` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:11832` | 1 |
-| `rgbToHex` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:11843` | 1 |
-| `toggleAltMenu` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:11854` | 2 |
-| `removeAnchor` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:11858` | 6 |
-| `pasteObject` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:11868` | 29 |
-| `clearClipboard` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:11998` | 12 |
-| `closestByClassPrefix` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:12031` | 1 |
-| `copyObject` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:12047` | 9 |
-| `copyScores` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:12066` | 7 |
-| `pasteScore` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:12083` | 7 |
-| `copyAddons` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:12098` | 6 |
-| `pasteAddon` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:12114` | 20 |
-| `copyRequireds` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:12157` | 8 |
-| `pasteRequired` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:12173` | 6 |
-| `copyGroups` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:12186` | 7 |
-| `pasteGroup` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:12201` | 9 |
-| `copyDesignGroups` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:12219` | 6 |
-| `pasteDesignGroup` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:12234` | 7 |
-| `choiceContext` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:12252` | 12 |
-| `requiredContext` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:12273` | 12 |
-| `scoreContext` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:12294` | 12 |
-| `addonContext` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:12315` | 11 |
-| `groupContext` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:12336` | 8 |
-| `dGroupContext` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:12353` | 7 |
+| `getRows` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:868` | 1 |
+| `getChoices` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:871` | 1 |
+| `getBackpackRows` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:874` | 1 |
+| `getBackpackChoices` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:877` | 1 |
+| `getGroups` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:880` | 1 |
+| `getPointTypes` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:883` | 1 |
+| `getVariables` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:886` | 1 |
+| `getWords` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:889` | 1 |
+| `getGlobalRequirement` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:892` | 1 |
+| `getDesignGroups` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:895` | 1 |
+| `getSelectables` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:898` | 1 |
+| `getBackpackSelectables` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:901` | 1 |
+| `getSearchables` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:904` | 1 |
+| `getSoundEffects` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:907` | 1 |
+| `createCyoaPlusDB` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:912` | 0 |
+| `getOldDB` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:936` | 0 |
+| `getDB` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:944` | 7 |
+| `delay` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:1190` | 0 |
+| `cleanup` | arrow | no | no | `ICCPlus/src/lib/store/store.svelte.ts:1199` | 0 |
+| `onAbort` | arrow | no | no | `ICCPlus/src/lib/store/store.svelte.ts:1204` | 0 |
+| `autoSave` | function | yes | yes | `ICCPlus/src/lib/store/store.svelte.ts:1217` | 11 |
+| `buildAutoSave` | function | yes | yes | `ICCPlus/src/lib/store/store.svelte.ts:1269` | 10 |
+| `saveToSlot` | function | yes | yes | `ICCPlus/src/lib/store/store.svelte.ts:1317` | 5 |
+| `deleteSlot` | function | yes | yes | `ICCPlus/src/lib/store/store.svelte.ts:1340` | 5 |
+| `loadFromSlot` | function | yes | yes | `ICCPlus/src/lib/store/store.svelte.ts:1363` | 1 |
+| `getOldAutoSave` | function | no | yes | `ICCPlus/src/lib/store/store.svelte.ts:1373` | 0 |
+| `setOldSave` | function | no | yes | `ICCPlus/src/lib/store/store.svelte.ts:1422` | 2 |
+| `initStoreSaves` | function | yes | yes | `ICCPlus/src/lib/store/store.svelte.ts:1440` | 8 |
+| `initBuildSaves` | function | yes | yes | `ICCPlus/src/lib/store/store.svelte.ts:1492` | 7 |
+| `getSelectedObjectId` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:1535` | 22 |
+| `getTimestamp` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:1614` | 1 |
+| `getPointTypeLabel` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:1625` | 3 |
+| `getChoiceLabel` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:1632` | 5 |
+| `getGroupLabel` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:1644` | 4 |
+| `getRowLabel` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:1651` | 5 |
+| `getGlobalReqLabel` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:1661` | 4 |
+| `getDesignLabel` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:1668` | 4 |
+| `getSfxLabel` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:1675` | 3 |
+| `getReqText` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:1682` | 17 |
+| `getChoiceTitle` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:1758` | 5 |
+| `checkInitId` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:1765` | 1 |
+| `generateId` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:1768` | 5 |
+| `objectWidthToNum` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:1784` | 1 |
+| `widthToNum` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:1801` | 1 |
+| `fixedWidth` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:1824` | 1 |
+| `checkWordChange` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:1842` | 4 |
+| `getCombinedRegex` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:1850` | 3 |
+| `replaceText` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:1857` | 14 |
+| `getStyling` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:1884` | 16 |
+| `checkDupId` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:1975` | 2 |
+| `checkPointEnable` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:1982` | 8 |
+| `checkActivated` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:1999` | 2 |
+| `getPriority` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:2008` | 2 |
+| `evaluateNode` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:2020` | 3 |
+| `checkReq` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:2036` | 33 |
+| `checkRequirements` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:2239` | 2 |
+| `wrapYoutubePlayer` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:2257` | 4 |
+| `load` | method | no | no | `ICCPlus/src/lib/store/store.svelte.ts:2260` | 1 |
+| `play` | property-arrow | no | no | `ICCPlus/src/lib/store/store.svelte.ts:2269` | 0 |
+| `pause` | property-arrow | no | no | `ICCPlus/src/lib/store/store.svelte.ts:2270` | 0 |
+| `stop` | property-arrow | no | no | `ICCPlus/src/lib/store/store.svelte.ts:2271` | 0 |
+| `mute` | property-arrow | no | no | `ICCPlus/src/lib/store/store.svelte.ts:2272` | 0 |
+| `unMute` | property-arrow | no | no | `ICCPlus/src/lib/store/store.svelte.ts:2273` | 0 |
+| `setVolume` | property-arrow | no | no | `ICCPlus/src/lib/store/store.svelte.ts:2275` | 0 |
+| `isPlaying` | property-arrow | no | no | `ICCPlus/src/lib/store/store.svelte.ts:2277` | 0 |
+| `isStopped` | property-arrow | no | no | `ICCPlus/src/lib/store/store.svelte.ts:2278` | 0 |
+| `isMuted` | property-arrow | no | no | `ICCPlus/src/lib/store/store.svelte.ts:2279` | 0 |
+| `seekTo` | property-arrow | no | no | `ICCPlus/src/lib/store/store.svelte.ts:2281` | 0 |
+| `getCurrentTime` | property-arrow | no | no | `ICCPlus/src/lib/store/store.svelte.ts:2286` | 0 |
+| `getDuration` | property-arrow | no | no | `ICCPlus/src/lib/store/store.svelte.ts:2287` | 0 |
+| `getPlayerState` | property-arrow | no | no | `ICCPlus/src/lib/store/store.svelte.ts:2288` | 0 |
+| `getTitle` | property-arrow | no | no | `ICCPlus/src/lib/store/store.svelte.ts:2290` | 1 |
+| `getId` | property-arrow | no | no | `ICCPlus/src/lib/store/store.svelte.ts:2292` | 0 |
+| `wrapAudioPlayer` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:2295` | 5 |
+| `load` | method | no | no | `ICCPlus/src/lib/store/store.svelte.ts:2316` | 1 |
+| `play` | property-arrow | no | no | `ICCPlus/src/lib/store/store.svelte.ts:2324` | 1 |
+| `pause` | property-arrow | no | no | `ICCPlus/src/lib/store/store.svelte.ts:2329` | 1 |
+| `stop` | property-arrow | no | no | `ICCPlus/src/lib/store/store.svelte.ts:2330` | 1 |
+| `mute` | property-arrow | no | no | `ICCPlus/src/lib/store/store.svelte.ts:2335` | 1 |
+| `unMute` | property-arrow | no | no | `ICCPlus/src/lib/store/store.svelte.ts:2339` | 1 |
+| `setVolume` | property-arrow | no | no | `ICCPlus/src/lib/store/store.svelte.ts:2344` | 2 |
+| `isPlaying` | property-arrow | no | no | `ICCPlus/src/lib/store/store.svelte.ts:2351` | 1 |
+| `isStopped` | property-arrow | no | no | `ICCPlus/src/lib/store/store.svelte.ts:2352` | 0 |
+| `isMuted` | property-arrow | no | no | `ICCPlus/src/lib/store/store.svelte.ts:2353` | 0 |
+| `seekTo` | property-arrow | no | no | `ICCPlus/src/lib/store/store.svelte.ts:2355` | 1 |
+| `getCurrentTime` | property-arrow | no | no | `ICCPlus/src/lib/store/store.svelte.ts:2366` | 1 |
+| `getDuration` | property-arrow | no | no | `ICCPlus/src/lib/store/store.svelte.ts:2367` | 1 |
+| `getPlayerState` | property-arrow | no | no | `ICCPlus/src/lib/store/store.svelte.ts:2368` | 1 |
+| `getTitle` | property-arrow | no | no | `ICCPlus/src/lib/store/store.svelte.ts:2370` | 1 |
+| `getId` | property-arrow | no | no | `ICCPlus/src/lib/store/store.svelte.ts:2371` | 1 |
+| `createAudioPlayer` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:2374` | 1 |
+| `retryAudioPlayer` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:2386` | 2 |
+| `bgmFadeIn` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:2396` | 20 |
+| `bgmPlay` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:2397` | 3 |
+| `playProc` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:2405` | 19 |
+| `bgmFadeOut` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:2516` | 12 |
+| `playBgm` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:2581` | 14 |
+| `loadYouTubeAPI` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:2658` | 1 |
+| `initYoutubePlayer` | function | yes | yes | `ICCPlus/src/lib/store/store.svelte.ts:2670` | 8 |
+| `onReady` | property-arrow | no | no | `ICCPlus/src/lib/store/store.svelte.ts:2678` | 6 |
+| `base64ToArrayBuffer` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:2699` | 0 |
+| `getCtx` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:2709` | 0 |
+| `initSfx` | function | yes | yes | `ICCPlus/src/lib/store/store.svelte.ts:2713` | 2 |
+| `loadSfx` | function | yes | yes | `ICCPlus/src/lib/store/store.svelte.ts:2726` | 2 |
+| `playSfx` | function | yes | yes | `ICCPlus/src/lib/store/store.svelte.ts:2733` | 5 |
+| `playSfxOnSelect` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:2752` | 11 |
+| `playSfxOnDeselect` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:2783` | 11 |
+| `initStyling` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:2814` | 71 |
+| `calcStackDiscount` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:2847` | 3 |
+| `deleteDiscount` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:2857` | 22 |
+| `emptyDiscount` | function | no | yes | `ICCPlus/src/lib/store/store.svelte.ts:2880` | 25 |
+| `fillDiscount` | function | no | yes | `ICCPlus/src/lib/store/store.svelte.ts:2998` | 17 |
+| `deselectDiscount` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:3112` | 26 |
+| `selectDiscount` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:3264` | 51 |
+| `expDiscount` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:3405` | 10 |
+| `checkPoints` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:3422` | 47 |
+| `checkAddons` | function | no | yes | `ICCPlus/src/lib/store/store.svelte.ts:3755` | 12 |
+| `setScoreValue` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:3786` | 15 |
+| `cleanActivated` | function | yes | yes | `ICCPlus/src/lib/store/store.svelte.ts:3842` | 104 |
+| `deselectProc` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:3845` | 16 |
+| `clearProc` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:3870` | 31 |
+| `selectForceActivate` | function | no | yes | `ICCPlus/src/lib/store/store.svelte.ts:4215` | 16 |
+| `deselectTempActivate` | function | no | yes | `ICCPlus/src/lib/store/store.svelte.ts:4251` | 7 |
+| `deselectForceActivate` | function | no | yes | `ICCPlus/src/lib/store/store.svelte.ts:4278` | 17 |
+| `selectForceRandomActivate` | function | no | yes | `ICCPlus/src/lib/store/store.svelte.ts:4341` | 18 |
+| `removeCount` | function | no | yes | `ICCPlus/src/lib/store/store.svelte.ts:4419` | 12 |
+| `addCount` | function | no | yes | `ICCPlus/src/lib/store/store.svelte.ts:4476` | 16 |
+| `updateCount` | function | no | yes | `ICCPlus/src/lib/store/store.svelte.ts:4544` | 14 |
+| `deselectUpdateScore` | function | no | yes | `ICCPlus/src/lib/store/store.svelte.ts:4594` | 46 |
+| `selectUpdateScore` | function | yes | yes | `ICCPlus/src/lib/store/store.svelte.ts:5016` | 50 |
+| `activateTempChoices` | function | yes | yes | `ICCPlus/src/lib/store/store.svelte.ts:5472` | 12 |
+| `clearWordDialog` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:5513` | 8 |
+| `clearImgDialog` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:5524` | 5 |
+| `openWordDialog` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:5532` | 9 |
+| `openImgDialog` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:5556` | 7 |
+| `delayProc` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:5577` | 0 |
+| `cancelDelayProc` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:5581` | 0 |
+| `deselectDiscountOther` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:5586` | 11 |
+| `selectDiscountOther` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:5631` | 11 |
+| `deselectCalculateScore` | function | no | yes | `ICCPlus/src/lib/store/store.svelte.ts:5676` | 29 |
+| `selectCalculateScore` | function | no | yes | `ICCPlus/src/lib/store/store.svelte.ts:5762` | 23 |
+| `deselectActivateOther` | function | no | yes | `ICCPlus/src/lib/store/store.svelte.ts:5836` | 14 |
+| `selectActivateOther` | function | no | yes | `ICCPlus/src/lib/store/store.svelte.ts:5919` | 11 |
+| `selectDeactivateOther` | function | no | yes | `ICCPlus/src/lib/store/store.svelte.ts:5968` | 13 |
+| `deselectMissingReq` | function | no | yes | `ICCPlus/src/lib/store/store.svelte.ts:6027` | 14 |
+| `deselectModifyPoint` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:6074` | 16 |
+| `selectModifyPoint` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:6244` | 23 |
+| `setVariables` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:6332` | 8 |
+| `addAllowedChoice` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:6355` | 14 |
+| `deselectEffectProc` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:6390` | 47 |
+| `selectEffectProc` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:6617` | 48 |
+| `play` | arrow | no | no | `ICCPlus/src/lib/store/store.svelte.ts:6619` | 4 |
+| `deselectHideContent` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:6803` | 13 |
+| `selectHideContent` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:6849` | 14 |
+| `selectScroll` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:6896` | 15 |
+| `checkAddonDeselectable` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:6941` | 10 |
+| `checkDeselectable` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:6971` | 1 |
+| `checkSelectable` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:6980` | 33 |
+| `deselectObject` | function | yes | yes | `ICCPlus/src/lib/store/store.svelte.ts:7078` | 49 |
+| `deselectProcess` | arrow | no | yes | `ICCPlus/src/lib/store/store.svelte.ts:7097` | 31 |
+| `selectObject` | function | yes | yes | `ICCPlus/src/lib/store/store.svelte.ts:7282` | 66 |
+| `tmpAdd` | arrow | no | no | `ICCPlus/src/lib/store/store.svelte.ts:7285` | 6 |
+| `selectProcess` | arrow | no | yes | `ICCPlus/src/lib/store/store.svelte.ts:7381` | 33 |
+| `selectedOneMore` | function | yes | yes | `ICCPlus/src/lib/store/store.svelte.ts:7547` | 71 |
+| `tmpAdd` | arrow | no | no | `ICCPlus/src/lib/store/store.svelte.ts:7550` | 6 |
+| `selectProcess` | arrow | no | yes | `ICCPlus/src/lib/store/store.svelte.ts:7647` | 35 |
+| `selectedOneLess` | function | yes | yes | `ICCPlus/src/lib/store/store.svelte.ts:7865` | 51 |
+| `deselectProcess` | arrow | no | yes | `ICCPlus/src/lib/store/store.svelte.ts:7892` | 28 |
+| `updateScores` | function | no | yes | `ICCPlus/src/lib/store/store.svelte.ts:8099` | 37 |
+| `selectObjectL` | function | no | yes | `ICCPlus/src/lib/store/store.svelte.ts:8359` | 52 |
+| `selectedOneMoreL` | function | no | yes | `ICCPlus/src/lib/store/store.svelte.ts:8648` | 51 |
+| `selectedOneLessL` | function | no | yes | `ICCPlus/src/lib/store/store.svelte.ts:8958` | 21 |
+| `activateProc` | function | no | yes | `ICCPlus/src/lib/store/store.svelte.ts:9010` | 16 |
+| `loadActivated` | function | yes | yes | `ICCPlus/src/lib/store/store.svelte.ts:9061` | 1 |
+| `duplicateRow` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:9065` | 40 |
+| `getDataURL` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:9346` | 2 |
+| `isDataURL` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:9350` | 2 |
+| `removeNulls` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:9602` | 2 |
+| `initFilterStyling` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:9619` | 21 |
+| `initPrivateStyling` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:9640` | 16 |
+| `loadFromDisk` | function | yes | yes | `ICCPlus/src/lib/store/store.svelte.ts:9790` | 6 |
+| `exportData` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:9882` | 6 |
+| `importRequirement` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:9905` | 3 |
+| `importChoice` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:9931` | 7 |
+| `importData` | function | yes | yes | `ICCPlus/src/lib/store/store.svelte.ts:10016` | 37 |
+| `getMimeFromBlob` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:10431` | 1 |
+| `compareVersion` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:10441` | 0 |
+| `initializeApp` | function | yes | yes | `ICCPlus/src/lib/store/store.svelte.ts:10466` | 121 |
+| `replaceFields` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:11440` | 0 |
+| `replaceImages` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:11453` | 22 |
+| `waitForImagesToLoad` | function | no | yes | `ICCPlus/src/lib/store/store.svelte.ts:11532` | 0 |
+| `forceEagerImageLoading` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:11544` | 0 |
+| `copyComputedStyles` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:11554` | 0 |
+| `deepCopyStyles` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:11565` | 0 |
+| `waitForBorderImagesToLoad` | function | no | yes | `ICCPlus/src/lib/store/store.svelte.ts:11575` | 1 |
+| `waitForRenderFrames` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:11598` | 1 |
+| `next` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:11601` | 1 |
+| `downloadAsImage` | function | yes | yes | `ICCPlus/src/lib/store/store.svelte.ts:11608` | 21 |
+| `filter` | property-arrow | no | no | `ICCPlus/src/lib/store/store.svelte.ts:11690` | 2 |
+| `filter` | property-arrow | no | no | `ICCPlus/src/lib/store/store.svelte.ts:11719` | 2 |
+| `isMediaSupport` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:11757` | 1 |
+| `toggleTheme` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:11767` | 2 |
+| `setShortcut` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:11809` | 2 |
+| `applyTemplate` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:11827` | 6 |
+| `revertTemplate` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:11835` | 7 |
+| `applyWidth` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:11849` | 9 |
+| `revertWidth` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:11859` | 9 |
+| `getDate` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:11875` | 2 |
+| `scrollToLastRow` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:11886` | 2 |
+| `tryScroll` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:11891` | 1 |
+| `applyCustomCSS` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:11905` | 5 |
+| `hexToRgba` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:11924` | 1 |
+| `rgbToHex` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:11935` | 1 |
+| `toggleAltMenu` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:11946` | 2 |
+| `removeAnchor` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:11950` | 6 |
+| `pasteObject` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:11960` | 29 |
+| `clearClipboard` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:12090` | 12 |
+| `closestByClassPrefix` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:12123` | 1 |
+| `copyObject` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:12139` | 9 |
+| `copyScores` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:12158` | 7 |
+| `pasteScore` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:12175` | 7 |
+| `copyAddons` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:12190` | 6 |
+| `pasteAddon` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:12206` | 20 |
+| `copyRequireds` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:12249` | 8 |
+| `pasteRequired` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:12265` | 6 |
+| `copyGroups` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:12278` | 7 |
+| `pasteGroup` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:12293` | 9 |
+| `copyDesignGroups` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:12311` | 6 |
+| `pasteDesignGroup` | function | no | no | `ICCPlus/src/lib/store/store.svelte.ts:12326` | 7 |
+| `choiceContext` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:12344` | 12 |
+| `requiredContext` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:12365` | 12 |
+| `scoreContext` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:12386` | 12 |
+| `addonContext` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:12407` | 11 |
+| `groupContext` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:12428` | 8 |
+| `dGroupContext` | function | yes | no | `ICCPlus/src/lib/store/store.svelte.ts:12445` | 7 |
 | `e` | function | no | no | `ICCPlus/src/lib/utils/canvas-size.esm.min.js:8` | 2 |
 | `i` | function | no | no | `ICCPlus/src/lib/utils/canvas-size.esm.min.js:8` | 1 |
 | `o` | function | no | no | `ICCPlus/src/lib/utils/canvas-size.esm.min.js:8` | 3 |
@@ -1159,8 +1165,9 @@ the field-level occurrence map and UI strings.
 | `activateObject` | function | no | no | `ICCPlus/src/lib/viewer/AppObject.svelte:690` | 17 |
 | `copyTooltip` | function | no | no | `ICCPlus/src/lib/viewer/AppObject.svelte:727` | 5 |
 | `renderIcon` | function | no | no | `ICCPlus/src/lib/viewer/AppPointBar.svelte:72` | 8 |
-| `buttonActivate` | function | no | no | `ICCPlus/src/lib/viewer/AppRow.svelte:398` | 38 |
-| `copyTooltip` | function | no | no | `ICCPlus/src/lib/viewer/AppRow.svelte:545` | 5 |
+| `deselectAll` | function | no | yes | `ICCPlus/src/lib/viewer/AppRow.svelte:372` | 7 |
+| `buttonActivate` | function | no | no | `ICCPlus/src/lib/viewer/AppRow.svelte:401` | 38 |
+| `copyTooltip` | function | no | no | `ICCPlus/src/lib/viewer/AppRow.svelte:548` | 5 |
 | `action` | property-arrow | no | no | `ICCPlus/src/lib/viewer/AppSaveLoad.svelte:138` | 0 |
 | `beforeClosed` | function | no | no | `ICCPlus/src/lib/viewer/AppSaveLoad.svelte:158` | 1 |
 | `loadApp` | function | no | yes | `ICCPlus/src/lib/viewer/AppSaveLoad.svelte:163` | 3 |
@@ -1207,21 +1214,21 @@ the field-level occurrence map and UI strings.
 | `loadProject` | function | no | yes | `ICCPlus_Viewer/src/App.svelte:103` | 8 |
 | `performSearch` | function | no | yes | `ICCPlus_Viewer/src/lib/custom/autocomplete/Autocomplete.svelte:482` | 2 |
 | `selectOption` | function | no | no | `ICCPlus_Viewer/src/lib/custom/autocomplete/Autocomplete.svelte:511` | 4 |
-| `deselectOption` | function | no | no | `ICCPlus_Viewer/src/lib/custom/autocomplete/Autocomplete.svelte:548` | 4 |
-| `toggleOption` | function | no | no | `ICCPlus_Viewer/src/lib/custom/autocomplete/Autocomplete.svelte:573` | 2 |
-| `isInViewport` | function | no | no | `ICCPlus_Viewer/src/lib/custom/autocomplete/Autocomplete.svelte:589` | 2 |
-| `getActiveMenuItems` | function | no | no | `ICCPlus_Viewer/src/lib/custom/autocomplete/Autocomplete.svelte:601` | 1 |
-| `handleTextfieldKeydown` | function | no | no | `ICCPlus_Viewer/src/lib/custom/autocomplete/Autocomplete.svelte:610` | 2 |
-| `handleElementBlur` | function | no | yes | `ICCPlus_Viewer/src/lib/custom/autocomplete/Autocomplete.svelte:659` | 2 |
-| `isInputFocused` | function | no | no | `ICCPlus_Viewer/src/lib/custom/autocomplete/Autocomplete.svelte:696` | 1 |
-| `focus` | function | yes | no | `ICCPlus_Viewer/src/lib/custom/autocomplete/Autocomplete.svelte:707` | 2 |
-| `blur` | function | yes | no | `ICCPlus_Viewer/src/lib/custom/autocomplete/Autocomplete.svelte:719` | 4 |
-| `getElement` | function | yes | no | `ICCPlus_Viewer/src/lib/custom/autocomplete/Autocomplete.svelte:735` | 1 |
-| `isExpanded` | function | yes | no | `ICCPlus_Viewer/src/lib/custom/autocomplete/Autocomplete.svelte:739` | 1 |
-| `selectAll` | function | no | no | `ICCPlus_Viewer/src/lib/custom/autocomplete/Autocomplete.svelte:743` | 6 |
-| `selectProc` | function | no | no | `ICCPlus_Viewer/src/lib/custom/autocomplete/Autocomplete.svelte:744` | 0 |
-| `handleScroll` | function | no | no | `ICCPlus_Viewer/src/lib/custom/autocomplete/Autocomplete.svelte:774` | 0 |
-| `getLabel` | function | no | no | `ICCPlus_Viewer/src/lib/custom/autocomplete/Autocomplete.svelte:781` | 0 |
+| `deselectOption` | function | no | no | `ICCPlus_Viewer/src/lib/custom/autocomplete/Autocomplete.svelte:551` | 4 |
+| `toggleOption` | function | no | no | `ICCPlus_Viewer/src/lib/custom/autocomplete/Autocomplete.svelte:576` | 2 |
+| `isInViewport` | function | no | no | `ICCPlus_Viewer/src/lib/custom/autocomplete/Autocomplete.svelte:592` | 2 |
+| `getActiveMenuItems` | function | no | no | `ICCPlus_Viewer/src/lib/custom/autocomplete/Autocomplete.svelte:604` | 1 |
+| `handleTextfieldKeydown` | function | no | no | `ICCPlus_Viewer/src/lib/custom/autocomplete/Autocomplete.svelte:613` | 2 |
+| `handleElementBlur` | function | no | yes | `ICCPlus_Viewer/src/lib/custom/autocomplete/Autocomplete.svelte:662` | 2 |
+| `isInputFocused` | function | no | no | `ICCPlus_Viewer/src/lib/custom/autocomplete/Autocomplete.svelte:699` | 1 |
+| `focus` | function | yes | no | `ICCPlus_Viewer/src/lib/custom/autocomplete/Autocomplete.svelte:710` | 2 |
+| `blur` | function | yes | no | `ICCPlus_Viewer/src/lib/custom/autocomplete/Autocomplete.svelte:722` | 4 |
+| `getElement` | function | yes | no | `ICCPlus_Viewer/src/lib/custom/autocomplete/Autocomplete.svelte:738` | 1 |
+| `isExpanded` | function | yes | no | `ICCPlus_Viewer/src/lib/custom/autocomplete/Autocomplete.svelte:742` | 1 |
+| `selectAll` | function | no | no | `ICCPlus_Viewer/src/lib/custom/autocomplete/Autocomplete.svelte:746` | 6 |
+| `selectProc` | function | no | no | `ICCPlus_Viewer/src/lib/custom/autocomplete/Autocomplete.svelte:747` | 0 |
+| `handleScroll` | function | no | no | `ICCPlus_Viewer/src/lib/custom/autocomplete/Autocomplete.svelte:777` | 0 |
+| `getLabel` | function | no | no | `ICCPlus_Viewer/src/lib/custom/autocomplete/Autocomplete.svelte:784` | 0 |
 | `setSelectedText` | function | no | no | `ICCPlus_Viewer/src/lib/custom/select/Option.svelte:57` | 0 |
 | `getElement` | function | yes | no | `ICCPlus_Viewer/src/lib/custom/select/Option.svelte:63` | 1 |
 | `uninitializedValue` | arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:286` | 0 |
@@ -1394,183 +1401,186 @@ the field-level occurrence map and UI strings.
 | `getEXIFOrientation` | function | no | no | `ICCPlus_Viewer/src/lib/store/PictureInput.svelte:482` | 0 |
 | `preloadImage` | function | no | no | `ICCPlus_Viewer/src/lib/store/PictureInput.svelte:514` | 4 |
 | `update` | arrow | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:804` | 0 |
-| `getSearchables` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:814` | 1 |
-| `getSoundEffects` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:817` | 1 |
-| `createCyoaPlusDB` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:822` | 0 |
-| `getOldDB` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:846` | 0 |
-| `getDB` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:854` | 7 |
-| `delay` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1097` | 0 |
-| `buildAutoSave` | function | yes | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1109` | 10 |
-| `saveToSlot` | function | yes | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1157` | 5 |
-| `deleteSlot` | function | yes | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1176` | 5 |
-| `loadFromSlot` | function | yes | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1195` | 1 |
-| `initBuildSaves` | function | yes | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1205` | 7 |
-| `getSelectedObjectId` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1248` | 22 |
-| `getTimestamp` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1327` | 1 |
-| `getChoiceLabel` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1338` | 5 |
-| `getReqText` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1350` | 17 |
-| `getChoiceTitle` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1426` | 5 |
-| `checkInitId` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1433` | 1 |
-| `generateId` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1436` | 5 |
-| `objectWidthToNum` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1452` | 1 |
-| `widthToNum` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1469` | 1 |
-| `fixedWidth` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1492` | 1 |
-| `checkWordChange` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1510` | 4 |
-| `getCombinedRegex` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1518` | 3 |
-| `replaceText` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1525` | 14 |
-| `getStyling` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1552` | 16 |
-| `checkDupId` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1643` | 2 |
-| `checkPointEnable` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1650` | 8 |
-| `checkActivated` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1667` | 2 |
-| `getPriority` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1676` | 2 |
-| `evaluateNode` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1688` | 3 |
-| `checkReq` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1704` | 33 |
-| `checkRequirements` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1907` | 2 |
-| `wrapYoutubePlayer` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1925` | 4 |
-| `load` | method | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1928` | 1 |
-| `play` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1937` | 0 |
-| `pause` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1938` | 0 |
-| `stop` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1939` | 0 |
-| `mute` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1940` | 0 |
-| `unMute` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1941` | 0 |
-| `setVolume` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1943` | 0 |
-| `isPlaying` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1945` | 0 |
-| `isStopped` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1946` | 0 |
-| `isMuted` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1947` | 0 |
-| `seekTo` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1949` | 0 |
-| `getCurrentTime` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1954` | 0 |
-| `getDuration` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1955` | 0 |
-| `getPlayerState` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1956` | 0 |
-| `getTitle` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1958` | 1 |
-| `getId` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1960` | 0 |
-| `wrapAudioPlayer` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1963` | 5 |
-| `load` | method | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1984` | 1 |
-| `play` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1992` | 1 |
-| `pause` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1997` | 1 |
-| `stop` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1998` | 1 |
-| `mute` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:2003` | 1 |
-| `unMute` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:2007` | 1 |
-| `setVolume` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:2012` | 2 |
-| `isPlaying` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:2019` | 1 |
-| `isStopped` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:2020` | 0 |
-| `isMuted` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:2021` | 0 |
-| `seekTo` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:2023` | 1 |
-| `getCurrentTime` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:2034` | 1 |
-| `getDuration` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:2035` | 1 |
-| `getPlayerState` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:2036` | 1 |
-| `getTitle` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:2038` | 1 |
-| `getId` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:2039` | 1 |
-| `createAudioPlayer` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:2042` | 1 |
-| `retryAudioPlayer` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:2054` | 2 |
-| `bgmFadeIn` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:2064` | 20 |
-| `bgmPlay` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:2065` | 3 |
-| `playProc` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:2073` | 19 |
-| `bgmFadeOut` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:2184` | 12 |
-| `playBgm` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:2249` | 14 |
-| `loadYouTubeAPI` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:2326` | 1 |
-| `initYoutubePlayer` | function | yes | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:2338` | 8 |
-| `onReady` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:2346` | 6 |
-| `base64ToArrayBuffer` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:2367` | 0 |
-| `getCtx` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:2377` | 0 |
-| `initSfx` | function | yes | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:2381` | 2 |
-| `loadSfx` | function | yes | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:2394` | 2 |
-| `playSfx` | function | yes | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:2401` | 5 |
-| `playSfxOnSelect` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:2420` | 11 |
-| `playSfxOnDeselect` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:2451` | 11 |
-| `initStyling` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:2482` | 71 |
-| `calcStackDiscount` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:2515` | 3 |
-| `deleteDiscount` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:2525` | 22 |
-| `emptyDiscount` | function | no | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:2548` | 25 |
-| `fillDiscount` | function | no | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:2666` | 17 |
-| `deselectDiscount` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:2780` | 26 |
-| `selectDiscount` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:2932` | 51 |
-| `expDiscount` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:3073` | 10 |
-| `checkPoints` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:3090` | 47 |
-| `checkAddons` | function | no | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:3423` | 12 |
-| `setScoreValue` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:3454` | 15 |
-| `cleanActivated` | function | yes | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:3510` | 104 |
-| `deselectProc` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:3513` | 16 |
-| `clearProc` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:3538` | 31 |
-| `selectForceActivate` | function | no | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:3882` | 16 |
-| `deselectTempActivate` | function | no | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:3918` | 7 |
-| `deselectForceActivate` | function | no | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:3945` | 17 |
-| `selectForceRandomActivate` | function | no | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:4008` | 18 |
-| `removeCount` | function | no | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:4086` | 12 |
-| `addCount` | function | no | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:4143` | 16 |
-| `updateCount` | function | no | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:4211` | 14 |
-| `deselectUpdateScore` | function | no | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:4261` | 46 |
-| `selectUpdateScore` | function | yes | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:4683` | 50 |
-| `activateTempChoices` | function | yes | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:5139` | 12 |
-| `clearWordDialog` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:5180` | 8 |
-| `clearImgDialog` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:5191` | 5 |
-| `openWordDialog` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:5199` | 9 |
-| `openImgDialog` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:5223` | 7 |
-| `delayProc` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:5244` | 0 |
-| `deselectDiscountOther` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:5248` | 11 |
-| `selectDiscountOther` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:5293` | 11 |
-| `deselectCalculateScore` | function | no | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:5338` | 29 |
-| `selectCalculateScore` | function | no | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:5424` | 23 |
-| `deselectActivateOther` | function | no | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:5498` | 14 |
-| `selectActivateOther` | function | no | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:5581` | 11 |
-| `selectDeactivateOther` | function | no | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:5630` | 13 |
-| `deselectMissingReq` | function | no | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:5689` | 13 |
-| `deselectModifyPoint` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:5735` | 16 |
-| `selectModifyPoint` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:5905` | 23 |
-| `setVariables` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:5993` | 8 |
-| `addAllowedChoice` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:6016` | 14 |
-| `deselectEffectProc` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:6051` | 47 |
-| `selectEffectProc` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:6278` | 48 |
-| `play` | arrow | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:6280` | 4 |
-| `deselectHideContent` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:6464` | 13 |
-| `selectHideContent` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:6510` | 14 |
-| `selectScroll` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:6557` | 14 |
-| `checkAddonDeselectable` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:6601` | 10 |
-| `checkDeselectable` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:6631` | 1 |
-| `checkSelectable` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:6640` | 32 |
-| `deselectObject` | function | yes | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:6738` | 48 |
-| `deselectProcess` | arrow | no | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:6757` | 31 |
-| `selectObject` | function | yes | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:6927` | 64 |
-| `tmpAdd` | arrow | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:6930` | 6 |
-| `selectProcess` | arrow | no | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:7026` | 33 |
-| `selectedOneMore` | function | yes | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:7177` | 69 |
-| `tmpAdd` | arrow | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:7180` | 6 |
-| `selectProcess` | arrow | no | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:7277` | 35 |
-| `selectedOneLess` | function | yes | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:7480` | 50 |
-| `deselectProcess` | arrow | no | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:7507` | 28 |
-| `updateScores` | function | no | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:7699` | 37 |
-| `selectObjectL` | function | no | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:7959` | 52 |
-| `selectedOneMoreL` | function | no | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:8248` | 51 |
-| `selectedOneLessL` | function | no | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:8558` | 21 |
-| `activateProc` | function | no | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:8610` | 16 |
-| `loadActivated` | function | yes | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:8661` | 1 |
-| `duplicateRow` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:8665` | 40 |
-| `getDataURL` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:8945` | 2 |
-| `isDataURL` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:8949` | 2 |
-| `isAvif` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:8953` | 2 |
-| `removeNulls` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:9208` | 2 |
-| `initFilterStyling` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:9225` | 21 |
-| `initPrivateStyling` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:9246` | 16 |
-| `compareVersion` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:9396` | 0 |
-| `initializeApp` | function | yes | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:9421` | 115 |
-| `waitForImagesToLoad` | function | no | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:10338` | 0 |
-| `forceEagerImageLoading` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:10349` | 0 |
-| `copyComputedStyles` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:10357` | 0 |
-| `deepCopyStyles` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:10367` | 0 |
-| `waitForBorderImagesToLoad` | function | no | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:10376` | 1 |
-| `waitForRenderFrames` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:10399` | 1 |
-| `next` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:10402` | 1 |
-| `downloadAsImage` | function | yes | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:10409` | 21 |
-| `filter` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:10491` | 2 |
-| `filter` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:10520` | 2 |
-| `isMediaSupport` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:10558` | 1 |
-| `toggleTheme` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:10568` | 2 |
-| `applyTemplate` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:10610` | 6 |
-| `revertTemplate` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:10618` | 7 |
-| `applyWidth` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:10632` | 7 |
-| `revertWidth` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:10640` | 7 |
-| `applyCustomCSS` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:10654` | 5 |
-| `hexToRgba` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:10673` | 1 |
-| `closestByClassPrefix` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:10684` | 1 |
+| `getSearchables` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:815` | 1 |
+| `getSoundEffects` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:818` | 1 |
+| `createCyoaPlusDB` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:823` | 0 |
+| `getOldDB` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:847` | 0 |
+| `getDB` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:855` | 7 |
+| `delay` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1098` | 0 |
+| `cleanup` | arrow | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1107` | 0 |
+| `onAbort` | arrow | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1112` | 0 |
+| `buildAutoSave` | function | yes | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1125` | 10 |
+| `saveToSlot` | function | yes | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1173` | 5 |
+| `deleteSlot` | function | yes | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1192` | 5 |
+| `loadFromSlot` | function | yes | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1211` | 1 |
+| `initBuildSaves` | function | yes | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1221` | 7 |
+| `getSelectedObjectId` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1264` | 22 |
+| `getTimestamp` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1343` | 1 |
+| `getChoiceLabel` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1354` | 5 |
+| `getReqText` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1366` | 17 |
+| `getChoiceTitle` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1442` | 5 |
+| `checkInitId` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1449` | 1 |
+| `generateId` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1452` | 5 |
+| `objectWidthToNum` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1468` | 1 |
+| `widthToNum` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1485` | 1 |
+| `fixedWidth` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1508` | 1 |
+| `checkWordChange` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1526` | 4 |
+| `getCombinedRegex` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1534` | 3 |
+| `replaceText` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1541` | 14 |
+| `getStyling` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1568` | 16 |
+| `checkDupId` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1659` | 2 |
+| `checkPointEnable` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1666` | 8 |
+| `checkActivated` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1683` | 2 |
+| `getPriority` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1692` | 2 |
+| `evaluateNode` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1704` | 3 |
+| `checkReq` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1720` | 33 |
+| `checkRequirements` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1923` | 2 |
+| `wrapYoutubePlayer` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1941` | 4 |
+| `load` | method | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1944` | 1 |
+| `play` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1953` | 0 |
+| `pause` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1954` | 0 |
+| `stop` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1955` | 0 |
+| `mute` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1956` | 0 |
+| `unMute` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1957` | 0 |
+| `setVolume` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1959` | 0 |
+| `isPlaying` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1961` | 0 |
+| `isStopped` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1962` | 0 |
+| `isMuted` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1963` | 0 |
+| `seekTo` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1965` | 0 |
+| `getCurrentTime` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1970` | 0 |
+| `getDuration` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1971` | 0 |
+| `getPlayerState` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1972` | 0 |
+| `getTitle` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1974` | 1 |
+| `getId` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1976` | 0 |
+| `wrapAudioPlayer` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:1979` | 5 |
+| `load` | method | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:2000` | 1 |
+| `play` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:2008` | 1 |
+| `pause` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:2013` | 1 |
+| `stop` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:2014` | 1 |
+| `mute` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:2019` | 1 |
+| `unMute` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:2023` | 1 |
+| `setVolume` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:2028` | 2 |
+| `isPlaying` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:2035` | 1 |
+| `isStopped` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:2036` | 0 |
+| `isMuted` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:2037` | 0 |
+| `seekTo` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:2039` | 1 |
+| `getCurrentTime` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:2050` | 1 |
+| `getDuration` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:2051` | 1 |
+| `getPlayerState` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:2052` | 1 |
+| `getTitle` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:2054` | 1 |
+| `getId` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:2055` | 1 |
+| `createAudioPlayer` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:2058` | 1 |
+| `retryAudioPlayer` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:2070` | 2 |
+| `bgmFadeIn` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:2080` | 20 |
+| `bgmPlay` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:2081` | 3 |
+| `playProc` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:2089` | 19 |
+| `bgmFadeOut` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:2200` | 12 |
+| `playBgm` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:2265` | 14 |
+| `loadYouTubeAPI` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:2342` | 1 |
+| `initYoutubePlayer` | function | yes | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:2354` | 8 |
+| `onReady` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:2362` | 6 |
+| `base64ToArrayBuffer` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:2383` | 0 |
+| `getCtx` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:2393` | 0 |
+| `initSfx` | function | yes | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:2397` | 2 |
+| `loadSfx` | function | yes | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:2410` | 2 |
+| `playSfx` | function | yes | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:2417` | 5 |
+| `playSfxOnSelect` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:2436` | 11 |
+| `playSfxOnDeselect` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:2467` | 11 |
+| `initStyling` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:2498` | 71 |
+| `calcStackDiscount` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:2531` | 3 |
+| `deleteDiscount` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:2541` | 22 |
+| `emptyDiscount` | function | no | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:2564` | 25 |
+| `fillDiscount` | function | no | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:2682` | 17 |
+| `deselectDiscount` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:2796` | 26 |
+| `selectDiscount` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:2948` | 51 |
+| `expDiscount` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:3089` | 10 |
+| `checkPoints` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:3106` | 47 |
+| `checkAddons` | function | no | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:3439` | 12 |
+| `setScoreValue` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:3470` | 15 |
+| `cleanActivated` | function | yes | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:3527` | 104 |
+| `deselectProc` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:3530` | 16 |
+| `clearProc` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:3555` | 31 |
+| `selectForceActivate` | function | no | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:3900` | 16 |
+| `deselectTempActivate` | function | no | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:3936` | 7 |
+| `deselectForceActivate` | function | no | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:3963` | 17 |
+| `selectForceRandomActivate` | function | no | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:4026` | 18 |
+| `removeCount` | function | no | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:4104` | 12 |
+| `addCount` | function | no | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:4161` | 16 |
+| `updateCount` | function | no | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:4229` | 14 |
+| `deselectUpdateScore` | function | no | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:4279` | 46 |
+| `selectUpdateScore` | function | yes | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:4701` | 50 |
+| `activateTempChoices` | function | yes | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:5157` | 12 |
+| `clearWordDialog` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:5198` | 8 |
+| `clearImgDialog` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:5209` | 5 |
+| `openWordDialog` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:5217` | 9 |
+| `openImgDialog` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:5241` | 7 |
+| `delayProc` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:5262` | 0 |
+| `cancelDelayProc` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:5266` | 0 |
+| `deselectDiscountOther` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:5271` | 11 |
+| `selectDiscountOther` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:5316` | 11 |
+| `deselectCalculateScore` | function | no | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:5361` | 29 |
+| `selectCalculateScore` | function | no | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:5447` | 23 |
+| `deselectActivateOther` | function | no | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:5521` | 14 |
+| `selectActivateOther` | function | no | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:5604` | 11 |
+| `selectDeactivateOther` | function | no | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:5653` | 13 |
+| `deselectMissingReq` | function | no | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:5712` | 14 |
+| `deselectModifyPoint` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:5759` | 16 |
+| `selectModifyPoint` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:5929` | 23 |
+| `setVariables` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:6017` | 8 |
+| `addAllowedChoice` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:6040` | 14 |
+| `deselectEffectProc` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:6075` | 47 |
+| `selectEffectProc` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:6302` | 48 |
+| `play` | arrow | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:6304` | 4 |
+| `deselectHideContent` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:6488` | 13 |
+| `selectHideContent` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:6534` | 14 |
+| `selectScroll` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:6581` | 15 |
+| `checkAddonDeselectable` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:6626` | 10 |
+| `checkDeselectable` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:6656` | 1 |
+| `checkSelectable` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:6665` | 33 |
+| `deselectObject` | function | yes | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:6763` | 49 |
+| `deselectProcess` | arrow | no | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:6782` | 31 |
+| `selectObject` | function | yes | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:6967` | 66 |
+| `tmpAdd` | arrow | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:6970` | 6 |
+| `selectProcess` | arrow | no | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:7066` | 33 |
+| `selectedOneMore` | function | yes | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:7232` | 71 |
+| `tmpAdd` | arrow | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:7235` | 6 |
+| `selectProcess` | arrow | no | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:7332` | 35 |
+| `selectedOneLess` | function | yes | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:7550` | 51 |
+| `deselectProcess` | arrow | no | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:7577` | 28 |
+| `updateScores` | function | no | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:7784` | 37 |
+| `selectObjectL` | function | no | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:8044` | 52 |
+| `selectedOneMoreL` | function | no | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:8333` | 51 |
+| `selectedOneLessL` | function | no | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:8643` | 21 |
+| `activateProc` | function | no | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:8695` | 16 |
+| `loadActivated` | function | yes | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:8746` | 1 |
+| `duplicateRow` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:8750` | 40 |
+| `getDataURL` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:9030` | 2 |
+| `isDataURL` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:9034` | 2 |
+| `isAvif` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:9038` | 2 |
+| `removeNulls` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:9293` | 2 |
+| `initFilterStyling` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:9310` | 21 |
+| `initPrivateStyling` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:9331` | 16 |
+| `compareVersion` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:9481` | 0 |
+| `initializeApp` | function | yes | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:9506` | 115 |
+| `waitForImagesToLoad` | function | no | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:10425` | 0 |
+| `forceEagerImageLoading` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:10436` | 0 |
+| `copyComputedStyles` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:10444` | 0 |
+| `deepCopyStyles` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:10454` | 0 |
+| `waitForBorderImagesToLoad` | function | no | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:10463` | 1 |
+| `waitForRenderFrames` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:10486` | 1 |
+| `next` | function | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:10489` | 1 |
+| `downloadAsImage` | function | yes | yes | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:10496` | 21 |
+| `filter` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:10578` | 2 |
+| `filter` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:10607` | 2 |
+| `isMediaSupport` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:10645` | 1 |
+| `toggleTheme` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:10655` | 2 |
+| `applyTemplate` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:10697` | 6 |
+| `revertTemplate` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:10705` | 7 |
+| `applyWidth` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:10719` | 9 |
+| `revertWidth` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:10729` | 9 |
+| `applyCustomCSS` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:10745` | 5 |
+| `hexToRgba` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:10764` | 1 |
+| `closestByClassPrefix` | function | yes | no | `ICCPlus_Viewer/src/lib/store/store.svelte.ts:10775` | 1 |
 | `e` | function | no | no | `ICCPlus_Viewer/src/lib/utils/canvas-size.esm.min.js:9` | 2 |
 | `i` | function | no | no | `ICCPlus_Viewer/src/lib/utils/canvas-size.esm.min.js:9` | 1 |
 | `o` | function | no | no | `ICCPlus_Viewer/src/lib/utils/canvas-size.esm.min.js:9` | 3 |
@@ -1591,8 +1601,9 @@ the field-level occurrence map and UI strings.
 | `activateObject` | function | no | no | `ICCPlus_Viewer/src/lib/viewer/AppObject.svelte:690` | 17 |
 | `copyTooltip` | function | no | no | `ICCPlus_Viewer/src/lib/viewer/AppObject.svelte:727` | 5 |
 | `renderIcon` | function | no | no | `ICCPlus_Viewer/src/lib/viewer/AppPointBar.svelte:72` | 8 |
-| `buttonActivate` | function | no | no | `ICCPlus_Viewer/src/lib/viewer/AppRow.svelte:398` | 38 |
-| `copyTooltip` | function | no | no | `ICCPlus_Viewer/src/lib/viewer/AppRow.svelte:545` | 5 |
+| `deselectAll` | function | no | yes | `ICCPlus_Viewer/src/lib/viewer/AppRow.svelte:372` | 7 |
+| `buttonActivate` | function | no | no | `ICCPlus_Viewer/src/lib/viewer/AppRow.svelte:401` | 38 |
+| `copyTooltip` | function | no | no | `ICCPlus_Viewer/src/lib/viewer/AppRow.svelte:548` | 5 |
 | `action` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/viewer/AppSaveLoad.svelte:138` | 0 |
 | `beforeClosed` | function | no | no | `ICCPlus_Viewer/src/lib/viewer/AppSaveLoad.svelte:158` | 1 |
 | `loadApp` | function | no | yes | `ICCPlus_Viewer/src/lib/viewer/AppSaveLoad.svelte:163` | 3 |
@@ -1644,13 +1655,13 @@ the field-level occurrence map and UI strings.
 | `ICCPlus/src/lib/creator/AppDesign.svelte` | 206 | 24 | 4 |
 | `ICCPlus/src/lib/creator/AppFeature.svelte` | 117 | 21 | 2 |
 | `ICCPlus/src/lib/creator/AppGlobalSettings.svelte` | 649 | 63 | 14 |
-| `ICCPlus/src/lib/creator/AppObject.svelte` | 2865 | 420 | 43 |
+| `ICCPlus/src/lib/creator/AppObject.svelte` | 2889 | 421 | 43 |
 | `ICCPlus/src/lib/creator/AppObjectList.svelte` | 89 | 15 | 2 |
 | `ICCPlus/src/lib/creator/AppObjectSettings.svelte` | 367 | 64 | 7 |
 | `ICCPlus/src/lib/creator/AppPointBar.svelte` | 79 | 34 | 0 |
 | `ICCPlus/src/lib/creator/AppProjectStats.svelte` | 210 | 13 | 2 |
 | `ICCPlus/src/lib/creator/AppRequirement.svelte` | 229 | 38 | 17 |
-| `ICCPlus/src/lib/creator/AppRow.svelte` | 1106 | 215 | 14 |
+| `ICCPlus/src/lib/creator/AppRow.svelte` | 1109 | 215 | 14 |
 | `ICCPlus/src/lib/creator/AppRowList.svelte` | 108 | 20 | 2 |
 | `ICCPlus/src/lib/creator/AppRowSettings.svelte` | 454 | 56 | 11 |
 | `ICCPlus/src/lib/creator/AppSaveLoad.svelte` | 754 | 58 | 7 |
@@ -1677,7 +1688,7 @@ the field-level occurrence map and UI strings.
 | `ICCPlus/src/lib/creator/Features/AppDesignGroups.svelte` | 433 | 38 | 6 |
 | `ICCPlus/src/lib/creator/Features/AppGlobalRequirements.svelte` | 319 | 29 | 8 |
 | `ICCPlus/src/lib/creator/Features/AppGroups.svelte` | 415 | 33 | 6 |
-| `ICCPlus/src/lib/creator/Features/AppIdSearch.svelte` | 100 | 12 | 3 |
+| `ICCPlus/src/lib/creator/Features/AppIdSearch.svelte` | 131 | 14 | 3 |
 | `ICCPlus/src/lib/creator/Features/AppPointSettings.svelte` | 258 | 35 | 5 |
 | `ICCPlus/src/lib/creator/Features/AppPoints.svelte` | 413 | 45 | 14 |
 | `ICCPlus/src/lib/creator/Features/AppPrivateDesign.svelte` | 237 | 38 | 4 |
@@ -1686,18 +1697,18 @@ the field-level occurrence map and UI strings.
 | `ICCPlus/src/lib/creator/Features/AppTemplates.svelte` | 1651 | 206 | 10 |
 | `ICCPlus/src/lib/creator/Features/AppVariables.svelte` | 247 | 24 | 6 |
 | `ICCPlus/src/lib/creator/Features/AppWords.svelte` | 247 | 24 | 6 |
-| `ICCPlus/src/lib/creator/Object/ObjectAddon.svelte` | 2377 | 399 | 38 |
+| `ICCPlus/src/lib/creator/Object/ObjectAddon.svelte` | 2391 | 399 | 38 |
 | `ICCPlus/src/lib/creator/Object/ObjectDesignGroup.svelte` | 48 | 9 | 1 |
 | `ICCPlus/src/lib/creator/Object/ObjectGroup.svelte` | 48 | 9 | 1 |
 | `ICCPlus/src/lib/creator/Object/ObjectInnerReq.svelte` | 267 | 32 | 10 |
 | `ICCPlus/src/lib/creator/Object/ObjectMultiChoice.svelte` | 149 | 34 | 0 |
 | `ICCPlus/src/lib/creator/Object/ObjectRequired.svelte` | 174 | 34 | 4 |
-| `ICCPlus/src/lib/creator/Object/ObjectScore.svelte` | 572 | 100 | 11 |
+| `ICCPlus/src/lib/creator/Object/ObjectScore.svelte` | 584 | 101 | 11 |
 | `ICCPlus/src/lib/creator/Object/ObjectSelectDialog.svelte` | 41 | 4 | 4 |
 | `ICCPlus/src/lib/custom/accordion/Accordion.svelte` | 145 | 5 | 0 |
 | `ICCPlus/src/lib/custom/accordion/Header.svelte` | 162 | 6 | 0 |
 | `ICCPlus/src/lib/custom/accordion/Panel.svelte` | 249 | 6 | 0 |
-| `ICCPlus/src/lib/custom/autocomplete/Autocomplete.svelte` | 785 | 24 | 0 |
+| `ICCPlus/src/lib/custom/autocomplete/Autocomplete.svelte` | 788 | 24 | 0 |
 | `ICCPlus/src/lib/custom/chip-input/ChipInput.svelte` | 450 | 10 | 0 |
 | `ICCPlus/src/lib/custom/select/Option.svelte` | 67 | 4 | 0 |
 | `ICCPlus/src/lib/custom/select/Select.svelte` | 832 | 21 | 0 |
@@ -1725,7 +1736,7 @@ the field-level occurrence map and UI strings.
 | `ICCPlus/src/lib/custom/textfield/icon/Icon.svelte` | 157 | 8 | 0 |
 | `ICCPlus/src/lib/custom/tooltip/Tooltip.svelte` | 48 | 6 | 0 |
 | `ICCPlus/src/lib/custom/tooltip/Wrapper.svelte` | 10 | 2 | 0 |
-| `ICCPlus/src/lib/information/InfoMain.svelte` | 1809 | 58 | 0 |
+| `ICCPlus/src/lib/information/InfoMain.svelte` | 1850 | 58 | 0 |
 | `ICCPlus/src/lib/information/InfoPanel.svelte` | 17 | 2 | 0 |
 | `ICCPlus/src/lib/store/CustomAutocomplete.svelte` | 54 | 4 | 0 |
 | `ICCPlus/src/lib/store/CustomChipInput.svelte` | 51 | 6 | 1 |
@@ -1736,7 +1747,7 @@ the field-level occurrence map and UI strings.
 | `ICCPlus/src/lib/viewer/AppGlobalSettings.svelte` | 296 | 38 | 7 |
 | `ICCPlus/src/lib/viewer/AppObject.svelte` | 738 | 238 | 0 |
 | `ICCPlus/src/lib/viewer/AppPointBar.svelte` | 79 | 34 | 0 |
-| `ICCPlus/src/lib/viewer/AppRow.svelte` | 555 | 160 | 0 |
+| `ICCPlus/src/lib/viewer/AppRow.svelte` | 558 | 160 | 0 |
 | `ICCPlus/src/lib/viewer/AppSaveLoad.svelte` | 225 | 22 | 3 |
 | `ICCPlus/src/lib/viewer/AppSearchForm.svelte` | 124 | 17 | 2 |
 | `ICCPlus/src/lib/viewer/DlgBackpack.svelte` | 79 | 24 | 2 |
@@ -1744,11 +1755,11 @@ the field-level occurrence map and UI strings.
 | `ICCPlus/src/lib/viewer/Object/ObjectAddon.svelte` | 742 | 252 | 0 |
 | `ICCPlus/src/lib/viewer/Object/ObjectMultiChoice.svelte` | 149 | 34 | 0 |
 | `ICCPlus/src/lib/viewer/Object/ObjectRequired.svelte` | 53 | 13 | 0 |
-| `ICCPlus/src/lib/viewer/Object/ObjectScore.svelte` | 285 | 83 | 0 |
+| `ICCPlus/src/lib/viewer/Object/ObjectScore.svelte` | 285 | 84 | 0 |
 | `ICCPlus/src/lib/viewer/Object/ObjectSelectDialog.svelte` | 41 | 4 | 4 |
 | `ICCPlus/src/lib/viewer/ViewerMain.svelte` | 460 | 73 | 7 |
 | `ICCPlus_Viewer/src/App.svelte` | 272 | 12 | 0 |
-| `ICCPlus_Viewer/src/lib/custom/autocomplete/Autocomplete.svelte` | 785 | 24 | 0 |
+| `ICCPlus_Viewer/src/lib/custom/autocomplete/Autocomplete.svelte` | 788 | 24 | 0 |
 | `ICCPlus_Viewer/src/lib/custom/select/Option.svelte` | 67 | 4 | 0 |
 | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte` | 832 | 21 | 0 |
 | `ICCPlus_Viewer/src/lib/custom/select/helper-text/HelperText.svelte` | 152 | 7 | 0 |
@@ -1770,7 +1781,7 @@ the field-level occurrence map and UI strings.
 | `ICCPlus_Viewer/src/lib/viewer/AppGlobalSettings.svelte` | 316 | 38 | 7 |
 | `ICCPlus_Viewer/src/lib/viewer/AppObject.svelte` | 738 | 238 | 0 |
 | `ICCPlus_Viewer/src/lib/viewer/AppPointBar.svelte` | 79 | 34 | 0 |
-| `ICCPlus_Viewer/src/lib/viewer/AppRow.svelte` | 555 | 160 | 0 |
+| `ICCPlus_Viewer/src/lib/viewer/AppRow.svelte` | 558 | 160 | 0 |
 | `ICCPlus_Viewer/src/lib/viewer/AppSaveLoad.svelte` | 225 | 22 | 3 |
 | `ICCPlus_Viewer/src/lib/viewer/AppSearchForm.svelte` | 124 | 17 | 2 |
 | `ICCPlus_Viewer/src/lib/viewer/DlgBackpack.svelte` | 79 | 24 | 2 |
@@ -1778,6 +1789,6 @@ the field-level occurrence map and UI strings.
 | `ICCPlus_Viewer/src/lib/viewer/Object/ObjectAddon.svelte` | 742 | 252 | 0 |
 | `ICCPlus_Viewer/src/lib/viewer/Object/ObjectMultiChoice.svelte` | 149 | 34 | 0 |
 | `ICCPlus_Viewer/src/lib/viewer/Object/ObjectRequired.svelte` | 53 | 13 | 0 |
-| `ICCPlus_Viewer/src/lib/viewer/Object/ObjectScore.svelte` | 285 | 83 | 0 |
+| `ICCPlus_Viewer/src/lib/viewer/Object/ObjectScore.svelte` | 285 | 84 | 0 |
 | `ICCPlus_Viewer/src/lib/viewer/Object/ObjectSelectDialog.svelte` | 41 | 4 | 4 |
 | `ICCPlus_Viewer/src/lib/viewer/ViewerMain.svelte` | 430 | 73 | 5 |

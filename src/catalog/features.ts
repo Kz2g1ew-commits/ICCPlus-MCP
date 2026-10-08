@@ -70,6 +70,8 @@ export const FEATURE_FAMILIES: FeatureFamily[] = [
       'The /ON#N suffix means at least N activations for multi-selectable entities.',
       'Activation effects can form cycles; validation reports cycles and dangling targets.',
       'Multiple-select scores maintain per-selection runtime state which should not be authored manually.',
+      'Since v2.10.9, notDeselectedByReq keeps a selected choice active when its requirements stop passing and when a row selection limit would otherwise replace it.',
+      'Since v2.10.9, loading a build cancels pending selection, deselection, and fade delays.',
     ],
   },
   {
@@ -82,6 +84,7 @@ export const FEATURE_FAMILIES: FeatureFamily[] = [
       'Requirements on the same container are ANDed.',
       'Nested requireds are prerequisites for their parent requirement.',
       'Global requirement references can reference other global requirements; cycles are invalid.',
+      'Since v2.10.9, a selected choice or addon is displayed as enabled even when its requirements fail.',
     ],
   },
   {
@@ -97,6 +100,8 @@ export const FEATURE_FAMILIES: FeatureFamily[] = [
       'A score id references a point type and an empty id is allowed for display-only score text.',
       'Expression placeholders use point ids in braces and are evaluated when the choice is selected.',
       'Since v2.10, isNotRecalculateSelf blocks recalculation caused by the owning choice while isNotRecalculatable blocks recalculation caused by other choices.',
+      'Since v2.10.7, score.removeSpace joins score beforeText, value, and afterText without spaces.',
+      'Since v2.10.8, isNotShownObjects and isNotShownPointBar are turned on from activatedId only for legacy projects without a version; versioned projects keep their stored values.',
     ],
   },
   {
@@ -124,6 +129,7 @@ export const FEATURE_FAMILIES: FeatureFamily[] = [
       'Effect target fields accept row, choice, and group ids as documented by their feature.',
       'Row duplication can suffix requirements and functions to avoid self-references.',
       'Template and width stacks are runtime state and are rebuilt from selected effects.',
+      'Since v2.10.8, width effects on selectable addons change addonWidth instead of objectWidth.',
     ],
   },
   {
@@ -216,7 +222,7 @@ export const FEATURE_FAMILIES: FeatureFamily[] = [
     authoringNotes: [
       'Background image data URLs, including styling.barBackgroundImage, can be separated into viewer assets during packaging.',
       'Point bar backgrounds use barBackgroundImage, isBarBgRepeat, isBarBgFitIn, and isBarBgOverlay; repeat takes precedence over fit-in.',
-      'Upstream v2.10.6 defaults contain the unused typo barBacktroundImage. Author the declared/runtime field barBackgroundImage instead.',
+      'Upstream defaults since v2.10.6 contain the unused typo barBacktroundImage. Author the declared/runtime field barBackgroundImage instead.',
     ],
   },
   {

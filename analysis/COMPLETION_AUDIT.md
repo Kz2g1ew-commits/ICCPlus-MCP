@@ -6,20 +6,20 @@ broader claim than that test covers.
 
 ## 1. Analyze the requested ICC Plus repository and all mechanisms
 
-Status: complete for pinned release `v2.10.6`.
+Status: complete for pinned release `v2.10.9`.
 
 Evidence:
 
 - Deployment repository `wahaha303/ICCPlus` is pinned to commit
-  `fb8da84315bcebc245833297acd4a371559fe1a6`.
+  `c403d66eaeb773c4ec7e4f6d2f6d172933fe45bc`.
 - Its authoritative linked source repository `wahaha303/ICC-Plus-Svelte` is
-  pinned to commit `a420836248d32043ae45d03f1b93cdcb9e354663`.
+  pinned to commit `2573ebc29c6b48ccad8d0213a2582087af29f4d6`.
 - `src/generated/deployment-manifest.json` hashes all 75 deployment files and
   all 34 entries in the official web/local viewer archives.
 - `src/generated/source-analysis.json` retains exact, SHA-256-addressed content
   for all 227 authored source, standalone-viewer, build, configuration, style,
   and patch files.
-- The same evidence indexes 1,412 named functions/methods with exact file,
+- The same evidence indexes 1,422 named functions/methods with exact file,
   line span, signature, referenced model fields, and implementation body.
 - `analysis/CODEBASE_INVENTORY.md` is a generated human-readable function and
   component inventory.
@@ -45,7 +45,7 @@ Status: complete for the pinned release.
 Evidence:
 
 - TypeScript AST/schema generation covers all 59 declared types.
-- The generated model contains all 901 unique declared fields.
+- The generated model contains all 903 unique declared fields.
 - 899 fields are used by implementation code; the remaining two
   compatibility/runtime declarations remain in the schema and are preserved.
 - All 59 types are assigned to one or more of 19 semantic feature families;
@@ -132,19 +132,19 @@ Status: complete.
 Last full local gate:
 
 ```text
-npm test                 8 files, 34 tests passed
+npm test                 8 files, 35 tests passed
 npm run check            passed
 npm run build            passed
 npm run test:stdio       27 tools, complete type coverage
-npm run verify:upstream  227 source files, 1,412 functions,
+npm run verify:upstream  227 source files, 1,422 functions,
                          75 deployment files, 34 archive entries,
                          official web/local viewer builds passed
-npm audit                0 vulnerabilities
+npm audit                4 dependency advisories (unchanged by this update; see UPDATE_2.10.9.md)
 npm pack --dry-run       package assembled successfully
 git diff --check         passed
 ```
 
 ## 7. Publication
 
-The v2.10.6 update is prepared locally. Remote publication status is reported
+The v2.10.9 update is prepared locally. Remote publication status is reported
 separately from these reproducible implementation and validation results.
