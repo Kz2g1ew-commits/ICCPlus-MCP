@@ -1,4 +1,4 @@
-# ICC Plus v2.10.6 feature and mechanism analysis
+# ICC Plus v2.10.9 feature and mechanism analysis
 
 This document is the semantic companion to the generated
 [`CODEBASE_INVENTORY.md`](CODEBASE_INVENTORY.md). It describes what the source
@@ -8,7 +8,7 @@ does, how the model drives it, and how the MCP surface exposes it.
 
 The audit used the Svelte 5 source repository
 [`wahaha303/ICC-Plus-Svelte`](https://github.com/wahaha303/ICC-Plus-Svelte) at
-commit `a420836248d32043ae45d03f1b93cdcb9e354663` (`v2.10.6`), not only the
+commit `2573ebc29c6b48ccad8d0213a2582087af29f4d6` (`v2.10.9`), not only the
 minified deployment bundle.
 
 The source analyzer retains every authored code/build/config/patch file from
@@ -20,11 +20,11 @@ artifact:
 | Audited authored files | 227 |
 | Exact audited source bytes | 3,322,639 |
 | Declared model types | 59 |
-| Unique declared fields | 901 |
+| Unique declared fields | 903 |
 | Fields referenced outside the type file | 899 |
 | Store functions | 190 |
 | Exported store functions | 100 |
-| Named functions/methods across all source files | 1,412 |
+| Named functions/methods across all source files | 1,422 |
 | Exported named source functions | 246 |
 | Deployment files | 75 |
 | Deployment bytes | 24,807,525 |
@@ -166,6 +166,14 @@ Normalization copies the old all-purpose behavior to the new field for
 pre-v2.10 projects. The same release adds `preserveWidth`, `isNotBuild`,
 `showDebugTitle`, and `hideRowMenu`, plus condition-specific selectable-addon
 Custom CSS classes. v2.10.1 fixes the row-menu requirement interaction.
+
+v2.10.7 adds `Score.removeSpace`. v2.10.8 applies width effects on selectable
+addons to `addonWidth` and stops migrating `isNotShownObjects`/
+`isNotShownPointBar` from `activatedId` for versioned projects. v2.10.9 adds
+`notDeselectedByReq`, which `deselectMissingReq` and the row-limit replacement
+loops in `selectObject`, `selectedOneMore`, and `checkSelectable` skip. It also
+treats selected entities as enabled for display, awaits row-level deselection,
+and cancels pending selection delays when a build is loaded.
 
 ### Content and navigation effects
 
@@ -345,7 +353,7 @@ Official template packaging follows the creator's format:
   hashes/deduplicates equal content, writes asset files, and rewrites references;
 - viewer title/loading/favicon/font/custom-CSS values are applied safely.
 
-Packaging was integration-tested against both official `v2.10.6` template
+Packaging was integration-tested against both official `v2.10.9` template
 archives from the deployment repository.
 
 ## MCP coverage model
@@ -367,7 +375,7 @@ Coverage does not depend on one bespoke tool per ICC feature:
 | Use files/media | Workspace-bounded open/save/assets/build tools. |
 | Recover/coordinate | Revisions, dry runs, atomic commit, undo/redo. |
 
-All 59 source-declared types belong to a feature family, and all 901 declared
+All 59 source-declared types belong to a feature family, and all 903 declared
 fields appear in the generated schema/discovery data. This provides complete
 model access while keeping the handwritten server small and adaptable.
 

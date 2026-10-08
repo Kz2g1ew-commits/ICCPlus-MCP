@@ -53,6 +53,23 @@ describe('ICC Plus model operations', () => {
     expect(validateProject(project).valid).toBe(false);
   });
 
+  it('accepts v2.10.7-v2.10.9 choice and score options', () => {
+    const project = createDefaultProject();
+    expect(project.version).toBe('2.10.9');
+    insertEntity(project, { type: 'point', values: { id: 'gold' } });
+    insertEntity(project, { type: 'row', values: { id: 'shop' } });
+    insertEntity(project, { type: 'choice', parent: 'shop', values: { id: 'keep', notDeselectedByReq: true } });
+    insertEntity(project, { type: 'score', parent: 'keep', values: { id: 'gold', idx: 'tight', removeSpace: true } });
+    expect(new ModelIndex(project).one('keep', 'choice')?.value.notDeselectedByReq).toBe(true);
+    expect(new ModelIndex(project).one('tight', 'score')?.value.removeSpace).toBe(true);
+    expect(validateProject(project).valid).toBe(true);
+    updateEntity(project, { reference: 'tight', type: 'score', values: { removeSpace: 'yes' } });
+    expect(validateProject(project).valid).toBe(false);
+    updateEntity(project, { reference: 'tight', type: 'score', values: { removeSpace: false } });
+    updateEntity(project, { reference: 'keep', type: 'choice', values: { notDeselectedByReq: 1 } });
+    expect(validateProject(project).valid).toBe(false);
+  });
+
   it('creates a complete reference-safe authoring graph', () => {
     const project = createDefaultProject();
     insertEntity(project, { type: 'point', values: { id: 'gold', name: 'Gold' } });
