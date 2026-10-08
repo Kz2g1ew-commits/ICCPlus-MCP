@@ -139,7 +139,7 @@ npm run test:stdio       27 tools, complete type coverage
 npm run verify:upstream  227 source files, 1,422 functions,
                          75 deployment files, 34 archive entries,
                          official web/local viewer builds passed
-npm audit                4 dependency advisories (unchanged by this update; see UPDATE_2.10.9.md)
+npm audit                0 vulnerabilities
 npm pack --dry-run       package assembled successfully
 git diff --check         passed
 ```

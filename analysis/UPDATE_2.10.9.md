@@ -46,10 +46,11 @@ pointing to the actual field `barBackgroundImage`.
   files and 34 archive entries; both official v2.10.9 viewer templates packaged.
 - `npm pack --dry-run` and `git diff --check` passed.
 
-`npm audit` reports four advisories in existing dependencies
-(`@modelcontextprotocol/sdk` 1.29.0, `brace-expansion`, `ip-address`,
-`proxy-addr`). They are unrelated to the ICC Plus update and were not changed
-here. The SDK fix requires 1.32.1, outside the pinned version.
+`@modelcontextprotocol/sdk` was updated from 1.29.0 to 1.32.1
+(GHSA-6qxp-vccf-f47h), and `npm audit fix` updated the transitive
+`brace-expansion`, `ip-address`, and `proxy-addr` packages within their
+ranges. `npm audit` reports zero vulnerabilities; all checks above were rerun
+after the dependency update.
 
 Browser interaction was reviewed in source, not exercised in an actual browser.
 Existing exported viewers and workspace template ZIPs must be replaced/rebuilt
