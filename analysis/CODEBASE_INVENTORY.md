@@ -1,6 +1,6 @@
-# ICC Plus v2.10.9 codebase inventory
+# ICC Plus v2.10.11 codebase inventory
 
-This inventory is generated from commit `2573ebc29c6b48ccad8d0213a2582087af29f4d6`.
+This inventory is generated from commit `28a178ad699a4a4cb16714025a6a10b609e50d93`.
 It is evidence for MCP model coverage; `src/generated/source-analysis.json` contains
 the field-level occurrence map and UI strings.
 
@@ -8,16 +8,16 @@ the field-level occurrence map and UI strings.
 
 - Audited authored code/text files: 227
 - Creator TypeScript/Svelte files: 119
-- Exact audited source bytes: 3337779
-- Deployment files: 75
-- Deployment bytes: 24828033
+- Exact audited source bytes: 3343622
+- Deployment files: 72
+- Deployment bytes: 24739809
 - Upstream third-party packages with license metadata: 209
 - Declared model types: 59
 - Unique model fields: 903
 - Fields referenced by implementation code: 901
 - Store functions: 191
 - Exported store functions: 100
-- Named source functions/methods: 1422
+- Named source functions/methods: 1423
 - Exported source functions: 246
 
 ## State engine functions
@@ -252,53 +252,54 @@ the field-level occurrence map and UI strings.
 | `saveProcess` | function | no | no | `ICCPlus/src/lib/creator/AppGlobalSettings.svelte:529` | 0 |
 | `importFont` | function | no | yes | `ICCPlus/src/lib/creator/AppGlobalSettings.svelte:536` | 8 |
 | `deleteFont` | function | no | no | `ICCPlus/src/lib/creator/AppGlobalSettings.svelte:614` | 3 |
-| `action` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2002` | 0 |
-| `action` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2006` | 0 |
-| `action` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2010` | 3 |
-| `action` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2014` | 0 |
-| `contextAction` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2015` | 2 |
-| `action` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2019` | 0 |
-| `action` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2024` | 0 |
-| `contextAction` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2025` | 1 |
-| `action` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2029` | 0 |
-| `contextAction` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2030` | 2 |
-| `action` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2034` | 4 |
-| `contextAction` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2035` | 1 |
-| `action` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2039` | 2 |
-| `contextAction` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2040` | 1 |
-| `changeObjectId` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2340` | 9 |
-| `createNewAddon` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2377` | 23 |
-| `createNewScore` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2395` | 14 |
-| `cloneObject` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2409` | 25 |
-| `deleteGroup` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2500` | 7 |
-| `deleteDesignGroup` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2511` | 5 |
-| `deleteObject` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2522` | 24 |
-| `deleteProc` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2523` | 19 |
-| `deleteAddon` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2596` | 6 |
-| `moveChoiceLeft` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2614` | 3 |
-| `moveChoiceRight` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2622` | 3 |
-| `setFilters` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2630` | 82 |
-| `objectWidthClass` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2743` | 8 |
-| `toggleAutoActive` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2766` | 16 |
-| `handleCounter` | function | no | yes | `ICCPlus/src/lib/creator/AppObject.svelte:2792` | 11 |
-| `activateObject` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2816` | 17 |
-| `toggleActive` | function | no | yes | `ICCPlus/src/lib/creator/AppObject.svelte:2853` | 9 |
-| `copyTooltip` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2878` | 5 |
+| `action` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2008` | 0 |
+| `action` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2012` | 0 |
+| `action` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2016` | 3 |
+| `action` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2020` | 0 |
+| `contextAction` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2021` | 2 |
+| `action` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2025` | 0 |
+| `action` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2030` | 0 |
+| `contextAction` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2031` | 1 |
+| `action` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2035` | 0 |
+| `contextAction` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2036` | 2 |
+| `action` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2040` | 4 |
+| `contextAction` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2041` | 1 |
+| `action` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2045` | 2 |
+| `contextAction` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2046` | 1 |
+| `changeObjectId` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2361` | 9 |
+| `createNewAddon` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2398` | 23 |
+| `createNewScore` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2416` | 14 |
+| `cloneObject` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2430` | 25 |
+| `deleteGroup` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2521` | 7 |
+| `deleteDesignGroup` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2532` | 5 |
+| `deleteObject` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2543` | 24 |
+| `deleteProc` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2544` | 19 |
+| `deleteAddon` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2617` | 6 |
+| `moveChoiceLeft` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2635` | 3 |
+| `moveChoiceRight` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2643` | 3 |
+| `setFilters` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2651` | 82 |
+| `objectWidthClass` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2764` | 8 |
+| `toggleAutoActive` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2787` | 16 |
+| `handleCounter` | function | no | yes | `ICCPlus/src/lib/creator/AppObject.svelte:2813` | 11 |
+| `activateObject` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2837` | 17 |
+| `toggleActive` | function | no | yes | `ICCPlus/src/lib/creator/AppObject.svelte:2874` | 9 |
+| `copyTooltip` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2899` | 5 |
 | `handleDndConsider` | function | no | no | `ICCPlus/src/lib/creator/AppObjectList.svelte:59` | 0 |
 | `handleDndFinalize` | function | no | no | `ICCPlus/src/lib/creator/AppObjectList.svelte:63` | 6 |
 | `scrollToObject` | function | no | no | `ICCPlus/src/lib/creator/AppObjectList.svelte:74` | 6 |
-| `action` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppObjectSettings.svelte:137` | 1 |
-| `action` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppObjectSettings.svelte:141` | 1 |
-| `action` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppObjectSettings.svelte:145` | 1 |
-| `action` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppObjectSettings.svelte:149` | 1 |
-| `action` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppObjectSettings.svelte:153` | 1 |
-| `action` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppObjectSettings.svelte:157` | 1 |
-| `action` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppObjectSettings.svelte:161` | 1 |
-| `action` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppObjectSettings.svelte:165` | 1 |
-| `removeInvalidStyles` | function | no | no | `ICCPlus/src/lib/creator/AppObjectSettings.svelte:218` | 11 |
-| `checkPrivateDesign` | function | no | no | `ICCPlus/src/lib/creator/AppObjectSettings.svelte:251` | 10 |
-| `exportDesign` | function | no | no | `ICCPlus/src/lib/creator/AppObjectSettings.svelte:262` | 4 |
-| `copyToAnotherRow` | function | no | no | `ICCPlus/src/lib/creator/AppObjectSettings.svelte:281` | 25 |
+| `action` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppObjectSettings.svelte:144` | 1 |
+| `action` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppObjectSettings.svelte:148` | 1 |
+| `action` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppObjectSettings.svelte:152` | 1 |
+| `action` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppObjectSettings.svelte:156` | 1 |
+| `action` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppObjectSettings.svelte:160` | 1 |
+| `action` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppObjectSettings.svelte:164` | 1 |
+| `action` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppObjectSettings.svelte:168` | 1 |
+| `action` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppObjectSettings.svelte:172` | 1 |
+| `removeInvalidStyles` | function | no | no | `ICCPlus/src/lib/creator/AppObjectSettings.svelte:225` | 11 |
+| `checkPrivateDesign` | function | no | no | `ICCPlus/src/lib/creator/AppObjectSettings.svelte:258` | 9 |
+| `exportDesign` | function | no | no | `ICCPlus/src/lib/creator/AppObjectSettings.svelte:269` | 3 |
+| `copyToAnotherRow` | function | no | no | `ICCPlus/src/lib/creator/AppObjectSettings.svelte:288` | 25 |
+| `cropChoice` | function | no | no | `ICCPlus/src/lib/creator/AppObjectSettings.svelte:375` | 6 |
 | `renderIcon` | function | no | no | `ICCPlus/src/lib/creator/AppPointBar.svelte:72` | 8 |
 | `beforeClose` | function | no | no | `ICCPlus/src/lib/creator/AppRequirement.svelte:150` | 1 |
 | `addNewRequired` | function | no | no | `ICCPlus/src/lib/creator/AppRequirement.svelte:155` | 25 |
@@ -352,8 +353,8 @@ the field-level occurrence map and UI strings.
 | `loadApp` | function | no | yes | `ICCPlus/src/lib/creator/AppSaveLoad.svelte:667` | 5 |
 | `loadAutoSave` | function | no | yes | `ICCPlus/src/lib/creator/AppSaveLoad.svelte:684` | 5 |
 | `saveToDisk` | function | no | no | `ICCPlus/src/lib/creator/AppSaveLoad.svelte:701` | 6 |
-| `saveApp` | function | no | no | `ICCPlus/src/lib/creator/AppSaveLoad.svelte:721` | 7 |
-| `removeSave` | function | no | no | `ICCPlus/src/lib/creator/AppSaveLoad.svelte:748` | 1 |
+| `saveApp` | function | no | no | `ICCPlus/src/lib/creator/AppSaveLoad.svelte:727` | 7 |
+| `removeSave` | function | no | no | `ICCPlus/src/lib/creator/AppSaveLoad.svelte:754` | 1 |
 | `getChoiceLabel` | function | no | no | `ICCPlus/src/lib/creator/AppSearchForm.svelte:111` | 2 |
 | `action` | property-arrow | no | no | `ICCPlus/src/lib/creator/CreatorMain.svelte:290` | 0 |
 | `action` | property-arrow | no | no | `ICCPlus/src/lib/creator/CreatorMain.svelte:296` | 1 |
@@ -555,18 +556,18 @@ the field-level occurrence map and UI strings.
 | `moveWordDown` | function | no | no | `ICCPlus/src/lib/creator/Features/AppWords.svelte:199` | 3 |
 | `getCategoryLabel` | function | no | no | `ICCPlus/src/lib/creator/Features/AppWords.svelte:207` | 2 |
 | `swapCategory` | function | no | no | `ICCPlus/src/lib/creator/Features/AppWords.svelte:215` | 8 |
-| `addonWidthClass` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectAddon.svelte:2178` | 4 |
-| `copyAddon` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectAddon.svelte:2199` | 4 |
-| `moveAddonUp` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectAddon.svelte:2207` | 3 |
-| `moveAddonDown` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectAddon.svelte:2213` | 3 |
-| `copyTooltip` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectAddon.svelte:2219` | 4 |
-| `toggleSelectable` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectAddon.svelte:2231` | 11 |
-| `createNewScore` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectAddon.svelte:2258` | 13 |
-| `changeAddonId` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectAddon.svelte:2272` | 3 |
-| `deleteGroup` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectAddon.svelte:2285` | 6 |
-| `getRadius` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectAddon.svelte:2296` | 5 |
-| `handleCounter` | function | no | yes | `ICCPlus/src/lib/creator/Object/ObjectAddon.svelte:2336` | 12 |
-| `activateObject` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectAddon.svelte:2359` | 17 |
+| `addonWidthClass` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectAddon.svelte:2187` | 4 |
+| `copyAddon` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectAddon.svelte:2208` | 4 |
+| `moveAddonUp` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectAddon.svelte:2216` | 3 |
+| `moveAddonDown` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectAddon.svelte:2222` | 3 |
+| `copyTooltip` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectAddon.svelte:2228` | 4 |
+| `toggleSelectable` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectAddon.svelte:2240` | 11 |
+| `createNewScore` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectAddon.svelte:2267` | 13 |
+| `changeAddonId` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectAddon.svelte:2281` | 3 |
+| `deleteGroup` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectAddon.svelte:2294` | 6 |
+| `getRadius` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectAddon.svelte:2305` | 5 |
+| `handleCounter` | function | no | yes | `ICCPlus/src/lib/creator/Object/ObjectAddon.svelte:2345` | 12 |
+| `activateObject` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectAddon.svelte:2368` | 17 |
 | `getGroupLabel` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectDesignGroup.svelte:21` | 3 |
 | `setGroupElement` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectDesignGroup.svelte:29` | 4 |
 | `releaseGroupElement` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectDesignGroup.svelte:38` | 4 |
@@ -1159,11 +1160,11 @@ the field-level occurrence map and UI strings.
 | `getSelectedObjectName` | function | no | no | `ICCPlus/src/lib/viewer/AppBuildForm.svelte:51` | 13 |
 | `saveProcess` | function | no | no | `ICCPlus/src/lib/viewer/AppGlobalSettings.svelte:279` | 0 |
 | `allowDeselectInBackpack` | function | no | no | `ICCPlus/src/lib/viewer/AppGlobalSettings.svelte:286` | 6 |
-| `setFilters` | function | no | no | `ICCPlus/src/lib/viewer/AppObject.svelte:530` | 82 |
-| `objectWidthClass` | function | no | no | `ICCPlus/src/lib/viewer/AppObject.svelte:643` | 8 |
-| `handleCounter` | function | no | yes | `ICCPlus/src/lib/viewer/AppObject.svelte:666` | 11 |
-| `activateObject` | function | no | no | `ICCPlus/src/lib/viewer/AppObject.svelte:690` | 17 |
-| `copyTooltip` | function | no | no | `ICCPlus/src/lib/viewer/AppObject.svelte:727` | 5 |
+| `setFilters` | function | no | no | `ICCPlus/src/lib/viewer/AppObject.svelte:551` | 82 |
+| `objectWidthClass` | function | no | no | `ICCPlus/src/lib/viewer/AppObject.svelte:664` | 8 |
+| `handleCounter` | function | no | yes | `ICCPlus/src/lib/viewer/AppObject.svelte:687` | 11 |
+| `activateObject` | function | no | no | `ICCPlus/src/lib/viewer/AppObject.svelte:711` | 17 |
+| `copyTooltip` | function | no | no | `ICCPlus/src/lib/viewer/AppObject.svelte:748` | 5 |
 | `renderIcon` | function | no | no | `ICCPlus/src/lib/viewer/AppPointBar.svelte:72` | 8 |
 | `deselectAll` | function | no | yes | `ICCPlus/src/lib/viewer/AppRow.svelte:372` | 7 |
 | `buttonActivate` | function | no | no | `ICCPlus/src/lib/viewer/AppRow.svelte:401` | 38 |
@@ -1178,11 +1179,11 @@ the field-level occurrence map and UI strings.
 | `removeSave` | function | no | no | `ICCPlus/src/lib/viewer/AppSaveLoad.svelte:219` | 1 |
 | `getChoiceLabel` | function | no | no | `ICCPlus/src/lib/viewer/AppSearchForm.svelte:111` | 2 |
 | `beforeClose` | function | no | no | `ICCPlus/src/lib/viewer/DlgCommon.svelte:59` | 1 |
-| `addonWidthClass` | function | no | no | `ICCPlus/src/lib/viewer/Object/ObjectAddon.svelte:614` | 4 |
-| `copyTooltip` | function | no | no | `ICCPlus/src/lib/viewer/Object/ObjectAddon.svelte:635` | 4 |
-| `getRadius` | function | no | no | `ICCPlus/src/lib/viewer/Object/ObjectAddon.svelte:647` | 5 |
-| `handleCounter` | function | no | yes | `ICCPlus/src/lib/viewer/Object/ObjectAddon.svelte:687` | 12 |
-| `activateObject` | function | no | no | `ICCPlus/src/lib/viewer/Object/ObjectAddon.svelte:710` | 17 |
+| `addonWidthClass` | function | no | no | `ICCPlus/src/lib/viewer/Object/ObjectAddon.svelte:615` | 4 |
+| `copyTooltip` | function | no | no | `ICCPlus/src/lib/viewer/Object/ObjectAddon.svelte:636` | 4 |
+| `getRadius` | function | no | no | `ICCPlus/src/lib/viewer/Object/ObjectAddon.svelte:648` | 5 |
+| `handleCounter` | function | no | yes | `ICCPlus/src/lib/viewer/Object/ObjectAddon.svelte:688` | 12 |
+| `activateObject` | function | no | no | `ICCPlus/src/lib/viewer/Object/ObjectAddon.svelte:711` | 17 |
 | `clickCounterPlus` | function | no | no | `ICCPlus/src/lib/viewer/Object/ObjectMultiChoice.svelte:95` | 0 |
 | `clickCounterMinus` | function | no | no | `ICCPlus/src/lib/viewer/Object/ObjectMultiChoice.svelte:99` | 0 |
 | `handleSliderUp` | function | no | yes | `ICCPlus/src/lib/viewer/Object/ObjectMultiChoice.svelte:103` | 1 |
@@ -1595,11 +1596,11 @@ the field-level occurrence map and UI strings.
 | `saveProcess` | function | no | no | `ICCPlus_Viewer/src/lib/viewer/AppGlobalSettings.svelte:279` | 0 |
 | `allowDeselectInBackpack` | function | no | no | `ICCPlus_Viewer/src/lib/viewer/AppGlobalSettings.svelte:286` | 6 |
 | `beforeClose` | function | no | no | `ICCPlus_Viewer/src/lib/viewer/AppGlobalSettings.svelte:297` | 13 |
-| `setFilters` | function | no | no | `ICCPlus_Viewer/src/lib/viewer/AppObject.svelte:530` | 82 |
-| `objectWidthClass` | function | no | no | `ICCPlus_Viewer/src/lib/viewer/AppObject.svelte:643` | 8 |
-| `handleCounter` | function | no | yes | `ICCPlus_Viewer/src/lib/viewer/AppObject.svelte:666` | 11 |
-| `activateObject` | function | no | no | `ICCPlus_Viewer/src/lib/viewer/AppObject.svelte:690` | 17 |
-| `copyTooltip` | function | no | no | `ICCPlus_Viewer/src/lib/viewer/AppObject.svelte:727` | 5 |
+| `setFilters` | function | no | no | `ICCPlus_Viewer/src/lib/viewer/AppObject.svelte:551` | 82 |
+| `objectWidthClass` | function | no | no | `ICCPlus_Viewer/src/lib/viewer/AppObject.svelte:664` | 8 |
+| `handleCounter` | function | no | yes | `ICCPlus_Viewer/src/lib/viewer/AppObject.svelte:687` | 11 |
+| `activateObject` | function | no | no | `ICCPlus_Viewer/src/lib/viewer/AppObject.svelte:711` | 17 |
+| `copyTooltip` | function | no | no | `ICCPlus_Viewer/src/lib/viewer/AppObject.svelte:748` | 5 |
 | `renderIcon` | function | no | no | `ICCPlus_Viewer/src/lib/viewer/AppPointBar.svelte:72` | 8 |
 | `deselectAll` | function | no | yes | `ICCPlus_Viewer/src/lib/viewer/AppRow.svelte:372` | 7 |
 | `buttonActivate` | function | no | no | `ICCPlus_Viewer/src/lib/viewer/AppRow.svelte:401` | 38 |
@@ -1614,11 +1615,11 @@ the field-level occurrence map and UI strings.
 | `removeSave` | function | no | no | `ICCPlus_Viewer/src/lib/viewer/AppSaveLoad.svelte:219` | 1 |
 | `getChoiceLabel` | function | no | no | `ICCPlus_Viewer/src/lib/viewer/AppSearchForm.svelte:111` | 2 |
 | `beforeClose` | function | no | no | `ICCPlus_Viewer/src/lib/viewer/DlgCommon.svelte:59` | 1 |
-| `addonWidthClass` | function | no | no | `ICCPlus_Viewer/src/lib/viewer/Object/ObjectAddon.svelte:614` | 4 |
-| `copyTooltip` | function | no | no | `ICCPlus_Viewer/src/lib/viewer/Object/ObjectAddon.svelte:635` | 4 |
-| `getRadius` | function | no | no | `ICCPlus_Viewer/src/lib/viewer/Object/ObjectAddon.svelte:647` | 5 |
-| `handleCounter` | function | no | yes | `ICCPlus_Viewer/src/lib/viewer/Object/ObjectAddon.svelte:687` | 12 |
-| `activateObject` | function | no | no | `ICCPlus_Viewer/src/lib/viewer/Object/ObjectAddon.svelte:710` | 17 |
+| `addonWidthClass` | function | no | no | `ICCPlus_Viewer/src/lib/viewer/Object/ObjectAddon.svelte:615` | 4 |
+| `copyTooltip` | function | no | no | `ICCPlus_Viewer/src/lib/viewer/Object/ObjectAddon.svelte:636` | 4 |
+| `getRadius` | function | no | no | `ICCPlus_Viewer/src/lib/viewer/Object/ObjectAddon.svelte:648` | 5 |
+| `handleCounter` | function | no | yes | `ICCPlus_Viewer/src/lib/viewer/Object/ObjectAddon.svelte:688` | 12 |
+| `activateObject` | function | no | no | `ICCPlus_Viewer/src/lib/viewer/Object/ObjectAddon.svelte:711` | 17 |
 | `clickCounterPlus` | function | no | no | `ICCPlus_Viewer/src/lib/viewer/Object/ObjectMultiChoice.svelte:95` | 0 |
 | `clickCounterMinus` | function | no | no | `ICCPlus_Viewer/src/lib/viewer/Object/ObjectMultiChoice.svelte:99` | 0 |
 | `handleSliderUp` | function | no | yes | `ICCPlus_Viewer/src/lib/viewer/Object/ObjectMultiChoice.svelte:103` | 1 |
@@ -1655,16 +1656,16 @@ the field-level occurrence map and UI strings.
 | `ICCPlus/src/lib/creator/AppDesign.svelte` | 206 | 24 | 4 |
 | `ICCPlus/src/lib/creator/AppFeature.svelte` | 117 | 21 | 2 |
 | `ICCPlus/src/lib/creator/AppGlobalSettings.svelte` | 649 | 63 | 14 |
-| `ICCPlus/src/lib/creator/AppObject.svelte` | 2889 | 421 | 43 |
+| `ICCPlus/src/lib/creator/AppObject.svelte` | 2910 | 421 | 43 |
 | `ICCPlus/src/lib/creator/AppObjectList.svelte` | 89 | 15 | 2 |
-| `ICCPlus/src/lib/creator/AppObjectSettings.svelte` | 367 | 64 | 7 |
+| `ICCPlus/src/lib/creator/AppObjectSettings.svelte` | 399 | 64 | 8 |
 | `ICCPlus/src/lib/creator/AppPointBar.svelte` | 79 | 34 | 0 |
 | `ICCPlus/src/lib/creator/AppProjectStats.svelte` | 210 | 13 | 2 |
 | `ICCPlus/src/lib/creator/AppRequirement.svelte` | 229 | 38 | 17 |
 | `ICCPlus/src/lib/creator/AppRow.svelte` | 1109 | 215 | 14 |
 | `ICCPlus/src/lib/creator/AppRowList.svelte` | 108 | 20 | 2 |
 | `ICCPlus/src/lib/creator/AppRowSettings.svelte` | 454 | 56 | 11 |
-| `ICCPlus/src/lib/creator/AppSaveLoad.svelte` | 754 | 58 | 7 |
+| `ICCPlus/src/lib/creator/AppSaveLoad.svelte` | 760 | 58 | 7 |
 | `ICCPlus/src/lib/creator/AppSearchForm.svelte` | 124 | 18 | 2 |
 | `ICCPlus/src/lib/creator/AppViewerConfig.svelte` | 195 | 26 | 6 |
 | `ICCPlus/src/lib/creator/CreatorMain.svelte` | 1062 | 138 | 6 |
@@ -1697,7 +1698,7 @@ the field-level occurrence map and UI strings.
 | `ICCPlus/src/lib/creator/Features/AppTemplates.svelte` | 1651 | 206 | 10 |
 | `ICCPlus/src/lib/creator/Features/AppVariables.svelte` | 247 | 24 | 6 |
 | `ICCPlus/src/lib/creator/Features/AppWords.svelte` | 247 | 24 | 6 |
-| `ICCPlus/src/lib/creator/Object/ObjectAddon.svelte` | 2391 | 399 | 38 |
+| `ICCPlus/src/lib/creator/Object/ObjectAddon.svelte` | 2400 | 400 | 38 |
 | `ICCPlus/src/lib/creator/Object/ObjectDesignGroup.svelte` | 48 | 9 | 1 |
 | `ICCPlus/src/lib/creator/Object/ObjectGroup.svelte` | 48 | 9 | 1 |
 | `ICCPlus/src/lib/creator/Object/ObjectInnerReq.svelte` | 267 | 32 | 10 |
@@ -1736,7 +1737,7 @@ the field-level occurrence map and UI strings.
 | `ICCPlus/src/lib/custom/textfield/icon/Icon.svelte` | 157 | 8 | 0 |
 | `ICCPlus/src/lib/custom/tooltip/Tooltip.svelte` | 48 | 6 | 0 |
 | `ICCPlus/src/lib/custom/tooltip/Wrapper.svelte` | 10 | 2 | 0 |
-| `ICCPlus/src/lib/information/InfoMain.svelte` | 1850 | 58 | 0 |
+| `ICCPlus/src/lib/information/InfoMain.svelte` | 1873 | 58 | 0 |
 | `ICCPlus/src/lib/information/InfoPanel.svelte` | 17 | 2 | 0 |
 | `ICCPlus/src/lib/store/CustomAutocomplete.svelte` | 54 | 4 | 0 |
 | `ICCPlus/src/lib/store/CustomChipInput.svelte` | 51 | 6 | 1 |
@@ -1745,14 +1746,14 @@ the field-level occurrence map and UI strings.
 | `ICCPlus/src/lib/store/Tiptap.svelte` | 702 | 14 | 17 |
 | `ICCPlus/src/lib/viewer/AppBuildForm.svelte` | 126 | 17 | 6 |
 | `ICCPlus/src/lib/viewer/AppGlobalSettings.svelte` | 296 | 38 | 7 |
-| `ICCPlus/src/lib/viewer/AppObject.svelte` | 738 | 238 | 0 |
+| `ICCPlus/src/lib/viewer/AppObject.svelte` | 759 | 240 | 0 |
 | `ICCPlus/src/lib/viewer/AppPointBar.svelte` | 79 | 34 | 0 |
 | `ICCPlus/src/lib/viewer/AppRow.svelte` | 558 | 160 | 0 |
 | `ICCPlus/src/lib/viewer/AppSaveLoad.svelte` | 225 | 22 | 3 |
 | `ICCPlus/src/lib/viewer/AppSearchForm.svelte` | 124 | 17 | 2 |
 | `ICCPlus/src/lib/viewer/DlgBackpack.svelte` | 79 | 24 | 2 |
 | `ICCPlus/src/lib/viewer/DlgCommon.svelte` | 68 | 11 | 3 |
-| `ICCPlus/src/lib/viewer/Object/ObjectAddon.svelte` | 742 | 252 | 0 |
+| `ICCPlus/src/lib/viewer/Object/ObjectAddon.svelte` | 743 | 252 | 0 |
 | `ICCPlus/src/lib/viewer/Object/ObjectMultiChoice.svelte` | 149 | 34 | 0 |
 | `ICCPlus/src/lib/viewer/Object/ObjectRequired.svelte` | 53 | 13 | 0 |
 | `ICCPlus/src/lib/viewer/Object/ObjectScore.svelte` | 285 | 84 | 0 |
@@ -1779,14 +1780,14 @@ the field-level occurrence map and UI strings.
 | `ICCPlus_Viewer/src/lib/store/PictureInput.svelte` | 567 | 14 | 0 |
 | `ICCPlus_Viewer/src/lib/viewer/AppBuildForm.svelte` | 126 | 17 | 6 |
 | `ICCPlus_Viewer/src/lib/viewer/AppGlobalSettings.svelte` | 316 | 38 | 7 |
-| `ICCPlus_Viewer/src/lib/viewer/AppObject.svelte` | 738 | 238 | 0 |
+| `ICCPlus_Viewer/src/lib/viewer/AppObject.svelte` | 759 | 240 | 0 |
 | `ICCPlus_Viewer/src/lib/viewer/AppPointBar.svelte` | 79 | 34 | 0 |
 | `ICCPlus_Viewer/src/lib/viewer/AppRow.svelte` | 558 | 160 | 0 |
 | `ICCPlus_Viewer/src/lib/viewer/AppSaveLoad.svelte` | 225 | 22 | 3 |
 | `ICCPlus_Viewer/src/lib/viewer/AppSearchForm.svelte` | 124 | 17 | 2 |
 | `ICCPlus_Viewer/src/lib/viewer/DlgBackpack.svelte` | 79 | 24 | 2 |
 | `ICCPlus_Viewer/src/lib/viewer/DlgCommon.svelte` | 68 | 11 | 3 |
-| `ICCPlus_Viewer/src/lib/viewer/Object/ObjectAddon.svelte` | 742 | 252 | 0 |
+| `ICCPlus_Viewer/src/lib/viewer/Object/ObjectAddon.svelte` | 743 | 252 | 0 |
 | `ICCPlus_Viewer/src/lib/viewer/Object/ObjectMultiChoice.svelte` | 149 | 34 | 0 |
 | `ICCPlus_Viewer/src/lib/viewer/Object/ObjectRequired.svelte` | 53 | 13 | 0 |
 | `ICCPlus_Viewer/src/lib/viewer/Object/ObjectScore.svelte` | 285 | 84 | 0 |

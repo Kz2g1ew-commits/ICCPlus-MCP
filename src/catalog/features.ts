@@ -55,6 +55,10 @@ export const FEATURE_FAMILIES: FeatureFamily[] = [
       'Every addon parentId must point to its containing choice.',
       'Choice index is positional and must match its row objects array index.',
       'isNotBuild omits a choice from the build form; showDebugTitle prepends its debug title there.',
+      'Selectable addons accept the choice flags isNotBuild, isNotResult, and isNotSearchable. Since v2.10.10, viewers hide a selectable addon in result rows when isNotResult is set and in search results when isNotSearchable is set; isNotBuild omits its title from the build form.',
+      'addonJustify accepts start, center, end, space-around, space-between, and since v2.10.11 fill. fill lays addons out like start without an align-content class.',
+      'Since v2.10.11, each addon box grows to fill its width column (the column is a flex column and .addon has flex-grow-1).',
+      'Moving a choice to another row keeps its id, like the v2.10.10 creator Copy and Delete action; use iccplus_move_entity.',
     ],
   },
   {

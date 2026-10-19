@@ -55,7 +55,7 @@ describe('ICC Plus model operations', () => {
 
   it('accepts v2.10.7-v2.10.9 choice and score options', () => {
     const project = createDefaultProject();
-    expect(project.version).toBe('2.10.9');
+    expect(project.version).toBe('2.10.11');
     insertEntity(project, { type: 'point', values: { id: 'gold' } });
     insertEntity(project, { type: 'row', values: { id: 'shop' } });
     insertEntity(project, { type: 'choice', parent: 'shop', values: { id: 'keep', notDeselectedByReq: true } });
@@ -67,6 +67,25 @@ describe('ICC Plus model operations', () => {
     expect(validateProject(project).valid).toBe(false);
     updateEntity(project, { reference: 'tight', type: 'score', values: { removeSpace: false } });
     updateEntity(project, { reference: 'keep', type: 'choice', values: { notDeselectedByReq: 1 } });
+    expect(validateProject(project).valid).toBe(false);
+  });
+
+  it('accepts v2.10.10-v2.10.11 addon options', () => {
+    const project = createDefaultProject();
+    insertEntity(project, { type: 'row', values: { id: 'shop' } });
+    insertEntity(project, { type: 'choice', parent: 'shop', values: { id: 'sword', addonJustify: 'fill' } });
+    insertEntity(project, {
+      type: 'selectable_addon',
+      parent: 'sword',
+      values: { id: 'edge', isNotBuild: true, isNotResult: true, isNotSearchable: true },
+    });
+    const addon = new ModelIndex(project).one('edge', 'selectable_addon')?.value;
+    expect(addon?.isNotBuild).toBe(true);
+    expect(addon?.isNotResult).toBe(true);
+    expect(addon?.isNotSearchable).toBe(true);
+    expect(new ModelIndex(project).one('sword', 'choice')?.value.addonJustify).toBe('fill');
+    expect(validateProject(project).valid).toBe(true);
+    updateEntity(project, { reference: 'edge', type: 'selectable_addon', values: { isNotBuild: 'yes' } });
     expect(validateProject(project).valid).toBe(false);
   });
 

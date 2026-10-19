@@ -163,7 +163,7 @@ const CORE_TARGETS: Array<Omit<CssCatalogEntry, 'sources'>> = [
   },
   {
     selector: '.addon', className: 'addon', kind: 'viewer', dynamic: false,
-    description: 'Every selectable and non-selectable addon box. Since v2.10.9 the width column is an outer wrapper, so .addon no longer carries the col-* width class.', inlineStyleRisk: true,
+    description: 'Every selectable and non-selectable addon box. Since v2.10.9 the width column is an outer wrapper, so .addon no longer carries the col-* width class. Since v2.10.11 the wrapper is a flex column and .addon has flex-grow-1, so the box stretches to fill it.', inlineStyleRisk: true,
   },
   {
     selector: '.addon-{addonId}', className: 'addon-{addonId}', kind: 'dynamic', dynamic: true,

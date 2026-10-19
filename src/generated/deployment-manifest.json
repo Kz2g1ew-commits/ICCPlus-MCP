@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-10-08T00:49:11.786Z",
+  "generatedAt": "2026-10-19T01:07:48.861Z",
   "repository": "wahaha303/ICCPlus",
-  "version": "2.10.9",
-  "commit": "c403d66eaeb773c4ec7e4f6d2f6d172933fe45bc",
-  "tag": "v2.10.9",
+  "version": "2.10.11",
+  "commit": "9afbad48628ad4c71e0a792ad3e5563412da7d53",
+  "tag": "v2.10.11",
   "coverage": {
-    "files": 75,
-    "bytes": 24828033,
+    "files": 72,
+    "bytes": 24739809,
     "archives": 2,
-    "archiveEntries": 34
+    "archiveEntries": 32
   },
   "files": [
     {
@@ -33,8 +33,8 @@
     },
     {
       "path": "LocalViewer/css/material-icons.css",
-      "bytes": 4354,
-      "sha256": "0b46d9694473cd09010622957461f0a71c0c70014df864cac6b8c9512fc9f51b"
+      "bytes": 4315,
+      "sha256": "d8b848c158ce88f91b9b771997c721ff726e9e61899743f79b168986988ddb1e"
     },
     {
       "path": "LocalViewer/css/roboto.css",
@@ -50,11 +50,6 @@
       "path": "LocalViewer/css/smui.css",
       "bytes": 509005,
       "sha256": "300b50e30ef0a7be31264602679d42bc24e6411b4e5688bc1712f6fbee96cd0d"
-    },
-    {
-      "path": "LocalViewer/fonts/mdi-subset.eot",
-      "bytes": 19394,
-      "sha256": "b26eb1f25240b22066fc9fafb90df067b87e744389db13e65f05bae2ea98966f"
     },
     {
       "path": "LocalViewer/fonts/mdi-subset.ttf",
@@ -78,8 +73,8 @@
     },
     {
       "path": "LocalViewer/js/app.js",
-      "bytes": 912440,
-      "sha256": "75307a549e25dcd3fa9aabd1f12fe4b201989a0d0a1706add84661f3a8e28431"
+      "bytes": 912908,
+      "sha256": "f8fc692de782fecb8e7c4062a9791b5a85bfb7cdd88bdf7ebfef613487ec8e4e"
     },
     {
       "path": "LocalViewer/js/polyfills.js",
@@ -193,8 +188,8 @@
     },
     {
       "path": "Viewer/css/material-icons.css",
-      "bytes": 4354,
-      "sha256": "0b46d9694473cd09010622957461f0a71c0c70014df864cac6b8c9512fc9f51b"
+      "bytes": 4315,
+      "sha256": "d8b848c158ce88f91b9b771997c721ff726e9e61899743f79b168986988ddb1e"
     },
     {
       "path": "Viewer/css/roboto.css",
@@ -210,11 +205,6 @@
       "path": "Viewer/css/smui.css",
       "bytes": 509005,
       "sha256": "300b50e30ef0a7be31264602679d42bc24e6411b4e5688bc1712f6fbee96cd0d"
-    },
-    {
-      "path": "Viewer/fonts/mdi-subset.eot",
-      "bytes": 19394,
-      "sha256": "b26eb1f25240b22066fc9fafb90df067b87e744389db13e65f05bae2ea98966f"
     },
     {
       "path": "Viewer/fonts/mdi-subset.ttf",
@@ -237,14 +227,14 @@
       "sha256": "57820a6fafade73e0225a954873e2952d29e0da33140279c71df16a38e942893"
     },
     {
+      "path": "Viewer/js/app-legacy.CEYBObUk.js",
+      "bytes": 479393,
+      "sha256": "2974f70c17b45e010be56084916d47ef2c6712ba593cbe8a56172ae3b18619f0"
+    },
+    {
       "path": "Viewer/js/app-legacy.D5yyI6pR.js",
       "bytes": 170114,
       "sha256": "a3acabe346908b8b91482aeee73611ce95492fb48606c8d236d54044fb4e1f59"
-    },
-    {
-      "path": "Viewer/js/app-legacy.FfzbfDhg.js",
-      "bytes": 478897,
-      "sha256": "f186848b842f10418f8d94f85d9f721f88d7a971c48044df992a02d0a7629d26"
     },
     {
       "path": "Viewer/js/app.CMYZYeZY.js",
@@ -252,9 +242,9 @@
       "sha256": "a31e0a9073721685295c8f8e7dcae7f6f65faf02d5c9f8b0b41ad064fde9a7c5"
     },
     {
-      "path": "Viewer/js/app.DlVojPcl.js",
-      "bytes": 405236,
-      "sha256": "29588c182167152bd3debb35d3ddde2cc3409b26f731634d9cc8e21fb7c1e9dd"
+      "path": "Viewer/js/app.Dg3RTrcT.js",
+      "bytes": 405695,
+      "sha256": "8e5f3805fcec9e19644da460a93d3052df4923675ecd7b1e2cdfe616a318ec58"
     },
     {
       "path": "Viewer/js/chunk-vendors-legacy.DQ3KBOGc.js",
@@ -269,7 +259,7 @@
     {
       "path": "Viewer/js/core.js",
       "bytes": 3555,
-      "sha256": "7182b2b3a0037332b3ee54d71a2ed43757a6e58a4e4107f751ce026e4ce96b84"
+      "sha256": "6ac3afb7b5134827233dfa7b0379d70701c0f3e4c15dbd3b4e26762df5d7e0d5"
     },
     {
       "path": "Viewer/js/polyfills.js",
@@ -293,8 +283,8 @@
     },
     {
       "path": "css/material-icons.css",
-      "bytes": 4354,
-      "sha256": "0b46d9694473cd09010622957461f0a71c0c70014df864cac6b8c9512fc9f51b"
+      "bytes": 4315,
+      "sha256": "d8b848c158ce88f91b9b771997c721ff726e9e61899743f79b168986988ddb1e"
     },
     {
       "path": "css/roboto.css",
@@ -317,11 +307,6 @@
       "sha256": "d89a9835d54b44c982a0c3fdb90f8415fa659b4a8cbb2ac9f605a28914f7dc36"
     },
     {
-      "path": "fonts/mdi-subset.eot",
-      "bytes": 19394,
-      "sha256": "b26eb1f25240b22066fc9fafb90df067b87e744389db13e65f05bae2ea98966f"
-    },
-    {
       "path": "fonts/mdi-subset.ttf",
       "bytes": 10148,
       "sha256": "027f8025c1f7294865d4f360e2684558c8e6d7df988b093fbcecfa02754fa17d"
@@ -339,12 +324,7 @@
     {
       "path": "index.html",
       "bytes": 2671,
-      "sha256": "337400fcf792b408ebe3afaf3083bfe12bfa903be9436c5c11e59a702fbf2b9b"
-    },
-    {
-      "path": "js/app-legacy.CrH6bWGK.js",
-      "bytes": 1496527,
-      "sha256": "d1d0050683f9a2e4db7c517e84080ad1d9c57bd3735e0d03be6491d8841653d4"
+      "sha256": "7a780418669262ead13e4fdb33bf824f7e144b3d78e1443cd861db59361506d6"
     },
     {
       "path": "js/app-legacy.CuSjnwlB.js",
@@ -352,9 +332,14 @@
       "sha256": "5a69f3039e2a8a38d09385981d6bb56c814fb42e62a459c461a59f271ea96f7f"
     },
     {
-      "path": "js/app.1eEkAt2_.js",
-      "bytes": 1330430,
-      "sha256": "4cbd06af8732231213b546746729946587454bbc9c3e461df2cdb9e1744629c1"
+      "path": "js/app-legacy.DjTw-Ytl.js",
+      "bytes": 1499610,
+      "sha256": "7cc394aa70a8540913741d753ad20042a586e287b38f287388c670329749dd7b"
+    },
+    {
+      "path": "js/app.Cy7Tp-jk.js",
+      "bytes": 1333414,
+      "sha256": "2cfc9fbd20bdf4c1e26353b939d6deebf06c08554e91aee02299ea4ee2fe04be"
     },
     {
       "path": "js/chunk-vendors-legacy.BEGMHEjd.js",
@@ -373,8 +358,8 @@
     },
     {
       "path": "local_viewer.zip",
-      "bytes": 389780,
-      "sha256": "da104ef5039bf4a3177bc682e9e74cc46cf20a90b7ed7ac8ba3cdef4e5c55064"
+      "bytes": 370985,
+      "sha256": "1347bf0ccf32ab0a5d6163d03a0778c69b724f8c6075807d5f13abffe8e9f86c"
     },
     {
       "path": "third-party-licenses.json",
@@ -383,8 +368,8 @@
     },
     {
       "path": "web_viewer.zip",
-      "bytes": 755300,
-      "sha256": "2f931f0a897d4e8841d6d12c941adaa2fced84f8e1cfb908486857d5c21ed2cc"
+      "bytes": 736680,
+      "sha256": "c8e1cd996f9f4a7ac60ec6f5ba3ac702d027e583b74eb4df4d5b159891c33b35"
     }
   ],
   "archives": [
@@ -403,8 +388,8 @@
         },
         {
           "path": "css/material-icons.css",
-          "bytes": 4592,
-          "sha256": "a0a85ec7ee43031b8240177da6f24a3fa0ad6002908c2452b8e89e0f59c81cf4"
+          "bytes": 4552,
+          "sha256": "9e396b36bc36d9668077437de0d988b25abb0ea4439f79e417a65b021e67a3f6"
         },
         {
           "path": "css/roboto.css",
@@ -420,11 +405,6 @@
           "path": "css/smui.css",
           "bytes": 509005,
           "sha256": "300b50e30ef0a7be31264602679d42bc24e6411b4e5688bc1712f6fbee96cd0d"
-        },
-        {
-          "path": "fonts/mdi-subset.eot",
-          "bytes": 19394,
-          "sha256": "b26eb1f25240b22066fc9fafb90df067b87e744389db13e65f05bae2ea98966f"
         },
         {
           "path": "fonts/mdi-subset.ttf",
@@ -448,8 +428,8 @@
         },
         {
           "path": "js/app.js",
-          "bytes": 912440,
-          "sha256": "75307a549e25dcd3fa9aabd1f12fe4b201989a0d0a1706add84661f3a8e28431"
+          "bytes": 912908,
+          "sha256": "f8fc692de782fecb8e7c4062a9791b5a85bfb7cdd88bdf7ebfef613487ec8e4e"
         },
         {
           "path": "js/polyfills.js",
@@ -483,8 +463,8 @@
         },
         {
           "path": "css/material-icons.css",
-          "bytes": 4592,
-          "sha256": "a0a85ec7ee43031b8240177da6f24a3fa0ad6002908c2452b8e89e0f59c81cf4"
+          "bytes": 4552,
+          "sha256": "9e396b36bc36d9668077437de0d988b25abb0ea4439f79e417a65b021e67a3f6"
         },
         {
           "path": "css/roboto.css",
@@ -500,11 +480,6 @@
           "path": "css/smui.css",
           "bytes": 509005,
           "sha256": "300b50e30ef0a7be31264602679d42bc24e6411b4e5688bc1712f6fbee96cd0d"
-        },
-        {
-          "path": "fonts/mdi-subset.eot",
-          "bytes": 19394,
-          "sha256": "b26eb1f25240b22066fc9fafb90df067b87e744389db13e65f05bae2ea98966f"
         },
         {
           "path": "fonts/mdi-subset.ttf",
@@ -527,14 +502,14 @@
           "sha256": "57820a6fafade73e0225a954873e2952d29e0da33140279c71df16a38e942893"
         },
         {
+          "path": "js/app-legacy.CEYBObUk.js",
+          "bytes": 479393,
+          "sha256": "2974f70c17b45e010be56084916d47ef2c6712ba593cbe8a56172ae3b18619f0"
+        },
+        {
           "path": "js/app-legacy.D5yyI6pR.js",
           "bytes": 170114,
           "sha256": "a3acabe346908b8b91482aeee73611ce95492fb48606c8d236d54044fb4e1f59"
-        },
-        {
-          "path": "js/app-legacy.FfzbfDhg.js",
-          "bytes": 478897,
-          "sha256": "f186848b842f10418f8d94f85d9f721f88d7a971c48044df992a02d0a7629d26"
         },
         {
           "path": "js/app.CMYZYeZY.js",
@@ -542,9 +517,9 @@
           "sha256": "a31e0a9073721685295c8f8e7dcae7f6f65faf02d5c9f8b0b41ad064fde9a7c5"
         },
         {
-          "path": "js/app.DlVojPcl.js",
-          "bytes": 405236,
-          "sha256": "29588c182167152bd3debb35d3ddde2cc3409b26f731634d9cc8e21fb7c1e9dd"
+          "path": "js/app.Dg3RTrcT.js",
+          "bytes": 405695,
+          "sha256": "8e5f3805fcec9e19644da460a93d3052df4923675ecd7b1e2cdfe616a318ec58"
         },
         {
           "path": "js/chunk-vendors-legacy.DQ3KBOGc.js",
@@ -559,7 +534,7 @@
         {
           "path": "js/core.js",
           "bytes": 3555,
-          "sha256": "7182b2b3a0037332b3ee54d71a2ed43757a6e58a4e4107f751ce026e4ce96b84"
+          "sha256": "6ac3afb7b5134827233dfa7b0379d70701c0f3e4c15dbd3b4e26762df5d7e0d5"
         },
         {
           "path": "js/polyfills.js",
