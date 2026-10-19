@@ -1,4 +1,4 @@
-# ICC Plus v2.10.9 feature and mechanism analysis
+# ICC Plus v2.10.11 feature and mechanism analysis
 
 This document is the semantic companion to the generated
 [`CODEBASE_INVENTORY.md`](CODEBASE_INVENTORY.md). It describes what the source
@@ -8,7 +8,7 @@ does, how the model drives it, and how the MCP surface exposes it.
 
 The audit used the Svelte 5 source repository
 [`wahaha303/ICC-Plus-Svelte`](https://github.com/wahaha303/ICC-Plus-Svelte) at
-commit `2573ebc29c6b48ccad8d0213a2582087af29f4d6` (`v2.10.9`), not only the
+commit `28a178ad699a4a4cb16714025a6a10b609e50d93` (`v2.10.11`), not only the
 minified deployment bundle.
 
 The source analyzer retains every authored code/build/config/patch file from
@@ -18,17 +18,17 @@ artifact:
 | Measure | Result |
 | --- | ---: |
 | Audited authored files | 227 |
-| Exact audited source bytes | 3,322,639 |
+| Exact audited source bytes | 3,343,622 |
 | Declared model types | 59 |
 | Unique declared fields | 903 |
-| Fields referenced outside the type file | 899 |
-| Store functions | 190 |
+| Fields referenced outside the type file | 901 |
+| Store functions | 191 |
 | Exported store functions | 100 |
-| Named functions/methods across all source files | 1,422 |
+| Named functions/methods across all source files | 1,423 |
 | Exported named source functions | 246 |
-| Deployment files | 75 |
-| Deployment bytes | 24,807,525 |
-| Official viewer archive entries | 34 |
+| Deployment files | 72 |
+| Deployment bytes | 24,739,809 |
+| Official viewer archive entries | 32 |
 | Upstream third-party packages with license metadata | 209 |
 | Feature families covering declared types | 19 |
 | Uncovered declared types | 0 |
@@ -174,6 +174,12 @@ addons to `addonWidth` and stops migrating `isNotShownObjects`/
 loops in `selectObject`, `selectedOneMore`, and `checkSelectable` skip. It also
 treats selected entities as enabled for display, awaits row-level deselection,
 and cancels pending selection delays when a build is loaded.
+
+v2.10.10 makes the viewer honor `isNotResult` and `isNotSearchable` on
+selectable addons and exposes `isNotBuild` for them in the creator. v2.10.11
+adds `addonJustify: "fill"`, which renders as `justify-start` without an
+`align-content--*` class, and makes each `.addon` box `flex-grow-1` inside a
+`d-column` width wrapper so it fills the column.
 
 ### Content and navigation effects
 
@@ -353,7 +359,7 @@ Official template packaging follows the creator's format:
   hashes/deduplicates equal content, writes asset files, and rewrites references;
 - viewer title/loading/favicon/font/custom-CSS values are applied safely.
 
-Packaging was integration-tested against both official `v2.10.9` template
+Packaging was integration-tested against both official `v2.10.11` template
 archives from the deployment repository.
 
 ## MCP coverage model
