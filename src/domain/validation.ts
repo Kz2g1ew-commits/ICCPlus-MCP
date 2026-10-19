@@ -18,7 +18,32 @@ const ajv = new Ajv({
   strict: false,
   verbose: false,
 });
-const structuralValidator: ValidateFunction = ajv.compile(schemaJson);
+// The generated Addon union is anyOf[NonSelectableAddon, SelectableAddon]. Ajv
+// reports every branch failure, so a bad field on a selectable addon surfaced
+// first as an isSelectable mismatch from the other branch. Validate the union
+// as if/then/else on its isSelectable discriminator so only the matching
+// branch reports errors.
+function discriminatedSchema(schema: typeof schemaJson): JsonObject {
+  const copy = structuredClone(schema) as unknown as JsonObject;
+  const definitions = asObject(copy.definitions);
+  const branches = asObjectArray(asObject(definitions?.Addon)?.anyOf).map((branch) => branch.$ref);
+  if (
+    !definitions
+    || branches.length !== 2
+    || branches[0] !== '#/definitions/NonSelectableAddon'
+    || branches[1] !== '#/definitions/SelectableAddon'
+  ) {
+    return copy;
+  }
+  definitions.Addon = {
+    if: { properties: { isSelectable: { const: true } }, required: ['isSelectable'] },
+    then: { $ref: '#/definitions/SelectableAddon' },
+    else: { $ref: '#/definitions/NonSelectableAddon' },
+  };
+  return copy;
+}
+
+const structuralValidator: ValidateFunction = ajv.compile(discriminatedSchema(schemaJson));
 
 function pointerJoin(path: string, property: string | number): string {
   const encoded = String(property).replaceAll('~', '~0').replaceAll('/', '~1');
@@ -36,7 +61,7 @@ function diagnostic(
 }
 
 function structuralDiagnostics(errors: ErrorObject[] | null | undefined): Diagnostic[] {
-  return (errors ?? []).map((error) => {
+  return (errors ?? []).filter((error) => error.keyword !== 'if').map((error) => {
     const missing = typeof error.params.missingProperty === 'string'
       ? pointerJoin(error.instancePath, error.params.missingProperty)
       : error.instancePath || '';

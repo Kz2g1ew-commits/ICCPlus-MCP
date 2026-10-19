@@ -86,7 +86,27 @@ describe('ICC Plus model operations', () => {
     expect(new ModelIndex(project).one('sword', 'choice')?.value.addonJustify).toBe('fill');
     expect(validateProject(project).valid).toBe(true);
     updateEntity(project, { reference: 'edge', type: 'selectable_addon', values: { isNotBuild: 'yes' } });
-    expect(validateProject(project).valid).toBe(false);
+    const report = validateProject(project);
+    expect(report.valid).toBe(false);
+    expect(report.diagnostics.filter((item) => item.severity === 'error')).toEqual([
+      expect.objectContaining({ code: 'schema.type', path: '/rows/0/objects/0/addons/0/isNotBuild' }),
+    ]);
+  });
+
+  it('reports addon schema errors against the matching addon kind', () => {
+    const project = createDefaultProject();
+    insertEntity(project, { type: 'row', values: { id: 'shop' } });
+    insertEntity(project, { type: 'choice', parent: 'shop', values: { id: 'sword' } });
+    insertEntity(project, { type: 'addon', parent: 'sword', values: { title: 'Plain' } });
+    expect(validateProject(project).valid).toBe(true);
+    updateEntity(project, { reference: '/rows/0/objects/0/addons/0', values: { template: 'big' } });
+    expect(validateProject(project).diagnostics.filter((item) => item.severity === 'error')).toEqual([
+      expect.objectContaining({ code: 'schema.type', path: '/rows/0/objects/0/addons/0/template' }),
+    ]);
+    updateEntity(project, { reference: '/rows/0/objects/0/addons/0', values: { template: 1, isSelectable: 'yes' } });
+    expect(validateProject(project).diagnostics.some((item) =>
+      item.severity === 'error' && item.path === '/rows/0/objects/0/addons/0/isSelectable'
+    )).toBe(true);
   });
 
   it('creates a complete reference-safe authoring graph', () => {
