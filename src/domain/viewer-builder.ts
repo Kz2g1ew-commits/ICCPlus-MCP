@@ -237,14 +237,63 @@ function configureLoadingCss(css: string, project: JsonObject): string {
   return css.replace(/:root\s*\{[\s\S]*?\}/, root);
 }
 
+// Returns the index just past the object literal that opens at `start`, skipping
+// string and template literal contents. Returns -1 when the braces never close.
+function objectLiteralEnd(source: string, start: number): number {
+  const stack: string[] = [];
+  let index = start;
+  while (index < source.length) {
+    const char = source[index];
+    const top = stack[stack.length - 1];
+    if (top === '"' || top === "'" || top === '`') {
+      if (char === '\\') {
+        index += 2;
+        continue;
+      }
+      if (char === top) stack.pop();
+      else if (top === '`' && char === '$' && source[index + 1] === '{') {
+        stack.push('${');
+        index += 1;
+      }
+    } else if (char === '"' || char === "'" || char === '`') {
+      stack.push(char);
+    } else if (char === '{') {
+      stack.push('{');
+    } else if (char === '}') {
+      stack.pop();
+      if (stack.length === 0) return index + 1;
+    }
+    index += 1;
+  }
+  return -1;
+}
+
+// Since v2.10.13 the upstream post-build step no longer finds the default project
+// (`app=x({version...})` became `hw=At({version...})` after the minifier change),
+// so templates ship without the marker comments. Fall back to the single
+// `name=fn({version:v,isEditModeOnAll:...})` state initializer.
+function replaceDefaultProjectLiteral(source: string, projectJson: string): string | undefined {
+  const pattern = /[A-Za-z_$][\w$]*=[A-Za-z_$][\w$]*\((?=\{version:[A-Za-z_$][\w$]*,isEditModeOnAll:)/g;
+  const [match, ...others] = [...source.matchAll(pattern)];
+  if (!match || others.length > 0) return undefined;
+  const start = match.index + match[0].length;
+  const end = objectLiteralEnd(source, start);
+  if (end < 0 || source[end] !== ')') return undefined;
+  return `${source.slice(0, start)}${projectJson}${source.slice(end)}`;
+}
+
 function embedLocalProject(source: string, projectJson: string): string {
   const marker = /(\n\/\*![\s\S]*?Delete and replace[\s\S]*?\*\/\n)(\{[\s\S]*?\})(\n\/\*! End \*\/)/;
-  if (!marker.test(source)) {
-    throw new Error('Local viewer js/app.js does not contain the ICC Plus project marker.');
+  if (marker.test(source)) {
+    return source.replace(marker, (_match, start: string, _project: string, end: string) =>
+      `${start}${projectJson}${end}`
+    );
   }
-  return source.replace(marker, (_match, start: string, _project: string, end: string) =>
-    `${start}${projectJson}${end}`
-  );
+  const replaced = replaceDefaultProjectLiteral(source, projectJson);
+  if (replaced === undefined) {
+    throw new Error('Local viewer js/app.js does not contain the ICC Plus project marker or a recognizable default project.');
+  }
+  return replaced;
 }
 
 export async function buildViewerArchive(

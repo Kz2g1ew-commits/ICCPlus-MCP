@@ -6,20 +6,20 @@ broader claim than that test covers.
 
 ## 1. Analyze the requested ICC Plus repository and all mechanisms
 
-Status: complete for pinned release `v2.10.11`.
+Status: complete for pinned release `v2.10.13`.
 
 Evidence:
 
 - Deployment repository `wahaha303/ICCPlus` is pinned to commit
-  `9afbad48628ad4c71e0a792ad3e5563412da7d53`.
+  `df51462ee94f424d3497e67f1b11d776442c1595`.
 - Its authoritative linked source repository `wahaha303/ICC-Plus-Svelte` is
-  pinned to commit `28a178ad699a4a4cb16714025a6a10b609e50d93`.
-- `src/generated/deployment-manifest.json` hashes all 72 deployment files and
-  all 32 entries in the official web/local viewer archives.
+  pinned to commit `464596a428f2327a2c549c9e802ca4f58c42c2be`.
+- `src/generated/deployment-manifest.json` hashes all 76 deployment files and
+  all 34 entries in the official web/local viewer archives.
 - `src/generated/source-analysis.json` retains exact, SHA-256-addressed content
-  for all 227 authored source, standalone-viewer, build, configuration, style,
+  for all 301 authored source, standalone-viewer, build, configuration, style,
   and patch files.
-- The same evidence indexes 1,423 named functions/methods with exact file,
+- The same evidence indexes 2,077 named functions/methods with exact file,
   line span, signature, referenced model fields, and implementation body.
 - `analysis/CODEBASE_INVENTORY.md` is a generated human-readable function and
   component inventory.
@@ -132,12 +132,12 @@ Status: complete.
 Last full local gate:
 
 ```text
-npm test                 8 files, 36 tests passed
+npm test                 8 files, 39 tests passed
 npm run check            passed
 npm run build            passed
 npm run test:stdio       27 tools, complete type coverage
-npm run verify:upstream  227 source files, 1,423 functions,
-                         72 deployment files, 32 archive entries,
+npm run verify:upstream  301 source files, 2,077 functions,
+                         76 deployment files, 34 archive entries,
                          official web/local viewer builds passed
 npm audit                0 vulnerabilities
 npm pack --dry-run       package assembled successfully
@@ -146,5 +146,5 @@ git diff --check         passed
 
 ## 7. Publication
 
-The v2.10.11 update is prepared locally. Remote publication status is reported
+The v2.10.13 update is prepared locally. Remote publication status is reported
 separately from these reproducible implementation and validation results.

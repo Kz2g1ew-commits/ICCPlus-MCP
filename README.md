@@ -14,10 +14,10 @@ indexed directly from the upstream source:
 
 - the project schema and current defaults are generated from ICC Plus source;
 - every one of the 59 declared model types and 903 unique fields is discoverable;
-- all 227 authored source/build/config/patch files and 1,423 named
+- all 301 authored source/build/config/patch files and 2,077 named
   functions/methods across the creator and standalone viewer are indexed with exact
   source, SHA-256 evidence, signatures, model-field usage, and line spans;
-- all 72 files in the requested deployment repository and 32 files inside its
+- all 76 files in the requested deployment repository and 34 files inside its
   official viewer archives have byte counts and SHA-256 manifests;
 - high-level tools preserve IDs, ordering, parent links, and reciprocal memberships;
 - generic RFC 6902 patching keeps new or uncommon upstream fields accessible;
@@ -29,8 +29,8 @@ indexed directly from the upstream source:
   classes are modeled and discoverable;
 - official web and local viewer archives can be built without opening the creator UI.
 
-Compatibility is currently generated from ICC Plus `v2.10.11`, source commit
-`28a178ad699a4a4cb16714025a6a10b609e50d93`.
+Compatibility is currently generated from ICC Plus `v2.10.13`, source commit
+`464596a428f2327a2c549c9e802ca4f58c42c2be`.
 
 The v2.10.6 update adds point bar background images (`styling.barBackgroundImage`,
 `isBarBgRepeat`, `isBarBgFitIn`, `isBarBgOverlay`), negative colors/icons at zero
@@ -54,10 +54,16 @@ grow to fill its width column. Since v2.10.10, viewers honor `isNotResult` and
 `isNotSearchable` on selectable addons, and the creator exposes `isNotBuild` for
 them. The schema did not change; these fields were already writable.
 
+v2.10.12 and v2.10.13 do not change the project model. The official v2.10.13
+local viewer template ships without the project marker comments, which breaks
+local viewer export in the upstream creator. The MCP embeds the project into the
+default project initializer instead, so local viewer builds keep working.
+
 For upstream runtime fixes (row deselection, scroll-to-choice, delayed selection
-on build load, addon width effects, selectable addon visibility, and the changes
-above), use the official v2.10.11 creator/viewer templates. Updating this MCP
-does not replace templates already stored in your workspace. See
+on build load, addon width effects, selectable addon visibility, unspaced text
+wrapping, and the changes above), use the official v2.10.13 creator/viewer
+templates. Updating this MCP does not replace templates already stored in your
+workspace. See [the 2.10.13 update review](analysis/UPDATE_2.10.13.md),
 [the 2.10.11 update review](analysis/UPDATE_2.10.11.md),
 [the 2.10.9 update review](analysis/UPDATE_2.10.9.md), and
 [the 2.10.6 update review](analysis/UPDATE_2.10.6.md).

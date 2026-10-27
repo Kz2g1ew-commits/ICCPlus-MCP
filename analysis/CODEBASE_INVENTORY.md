@@ -1,23 +1,23 @@
-# ICC Plus v2.10.11 codebase inventory
+# ICC Plus v2.10.13 codebase inventory
 
-This inventory is generated from commit `28a178ad699a4a4cb16714025a6a10b609e50d93`.
+This inventory is generated from commit `464596a428f2327a2c549c9e802ca4f58c42c2be`.
 It is evidence for MCP model coverage; `src/generated/source-analysis.json` contains
 the field-level occurrence map and UI strings.
 
 ## Coverage
 
-- Audited authored code/text files: 227
-- Creator TypeScript/Svelte files: 119
-- Exact audited source bytes: 3343622
-- Deployment files: 72
-- Deployment bytes: 24739809
+- Audited authored code/text files: 301
+- Creator TypeScript/Svelte files: 168
+- Exact audited source bytes: 3659489
+- Deployment files: 76
+- Deployment bytes: 25144842
 - Upstream third-party packages with license metadata: 209
 - Declared model types: 59
 - Unique model fields: 903
 - Fields referenced by implementation code: 901
 - Store functions: 191
 - Exported store functions: 100
-- Named source functions/methods: 1423
+- Named source functions/methods: 2077
 - Exported source functions: 246
 
 ## State engine functions
@@ -266,27 +266,27 @@ the field-level occurrence map and UI strings.
 | `contextAction` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2041` | 1 |
 | `action` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2045` | 2 |
 | `contextAction` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2046` | 1 |
-| `changeObjectId` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2361` | 9 |
-| `createNewAddon` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2398` | 23 |
-| `createNewScore` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2416` | 14 |
-| `cloneObject` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2430` | 25 |
-| `deleteGroup` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2521` | 7 |
-| `deleteDesignGroup` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2532` | 5 |
-| `deleteObject` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2543` | 24 |
-| `deleteProc` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2544` | 19 |
-| `deleteAddon` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2617` | 6 |
-| `moveChoiceLeft` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2635` | 3 |
-| `moveChoiceRight` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2643` | 3 |
-| `setFilters` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2651` | 82 |
-| `objectWidthClass` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2764` | 8 |
-| `toggleAutoActive` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2787` | 16 |
-| `handleCounter` | function | no | yes | `ICCPlus/src/lib/creator/AppObject.svelte:2813` | 11 |
-| `activateObject` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2837` | 17 |
-| `toggleActive` | function | no | yes | `ICCPlus/src/lib/creator/AppObject.svelte:2874` | 9 |
-| `copyTooltip` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2899` | 5 |
-| `handleDndConsider` | function | no | no | `ICCPlus/src/lib/creator/AppObjectList.svelte:59` | 0 |
-| `handleDndFinalize` | function | no | no | `ICCPlus/src/lib/creator/AppObjectList.svelte:63` | 6 |
-| `scrollToObject` | function | no | no | `ICCPlus/src/lib/creator/AppObjectList.svelte:74` | 6 |
+| `changeObjectId` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2363` | 9 |
+| `createNewAddon` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2400` | 23 |
+| `createNewScore` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2418` | 14 |
+| `cloneObject` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2432` | 25 |
+| `deleteGroup` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2523` | 7 |
+| `deleteDesignGroup` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2534` | 5 |
+| `deleteObject` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2545` | 24 |
+| `deleteProc` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2546` | 19 |
+| `deleteAddon` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2619` | 6 |
+| `moveChoiceLeft` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2637` | 3 |
+| `moveChoiceRight` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2645` | 3 |
+| `setFilters` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2653` | 82 |
+| `objectWidthClass` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2766` | 8 |
+| `toggleAutoActive` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2789` | 16 |
+| `handleCounter` | function | no | yes | `ICCPlus/src/lib/creator/AppObject.svelte:2815` | 11 |
+| `activateObject` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2839` | 17 |
+| `toggleActive` | function | no | yes | `ICCPlus/src/lib/creator/AppObject.svelte:2876` | 9 |
+| `copyTooltip` | function | no | no | `ICCPlus/src/lib/creator/AppObject.svelte:2901` | 5 |
+| `handleDndConsider` | function | no | no | `ICCPlus/src/lib/creator/AppObjectList.svelte:63` | 0 |
+| `handleDndFinalize` | function | no | no | `ICCPlus/src/lib/creator/AppObjectList.svelte:67` | 6 |
+| `scrollToObject` | function | no | no | `ICCPlus/src/lib/creator/AppObjectList.svelte:85` | 6 |
 | `action` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppObjectSettings.svelte:144` | 1 |
 | `action` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppObjectSettings.svelte:148` | 1 |
 | `action` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppObjectSettings.svelte:152` | 1 |
@@ -295,11 +295,11 @@ the field-level occurrence map and UI strings.
 | `action` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppObjectSettings.svelte:164` | 1 |
 | `action` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppObjectSettings.svelte:168` | 1 |
 | `action` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppObjectSettings.svelte:172` | 1 |
-| `removeInvalidStyles` | function | no | no | `ICCPlus/src/lib/creator/AppObjectSettings.svelte:225` | 11 |
-| `checkPrivateDesign` | function | no | no | `ICCPlus/src/lib/creator/AppObjectSettings.svelte:258` | 9 |
-| `exportDesign` | function | no | no | `ICCPlus/src/lib/creator/AppObjectSettings.svelte:269` | 3 |
-| `copyToAnotherRow` | function | no | no | `ICCPlus/src/lib/creator/AppObjectSettings.svelte:288` | 25 |
-| `cropChoice` | function | no | no | `ICCPlus/src/lib/creator/AppObjectSettings.svelte:375` | 6 |
+| `removeInvalidStyles` | function | no | no | `ICCPlus/src/lib/creator/AppObjectSettings.svelte:227` | 11 |
+| `checkPrivateDesign` | function | no | no | `ICCPlus/src/lib/creator/AppObjectSettings.svelte:260` | 9 |
+| `exportDesign` | function | no | no | `ICCPlus/src/lib/creator/AppObjectSettings.svelte:271` | 3 |
+| `copyToAnotherRow` | function | no | no | `ICCPlus/src/lib/creator/AppObjectSettings.svelte:290` | 25 |
+| `cropChoice` | function | no | no | `ICCPlus/src/lib/creator/AppObjectSettings.svelte:377` | 6 |
 | `renderIcon` | function | no | no | `ICCPlus/src/lib/creator/AppPointBar.svelte:72` | 8 |
 | `beforeClose` | function | no | no | `ICCPlus/src/lib/creator/AppRequirement.svelte:150` | 1 |
 | `addNewRequired` | function | no | no | `ICCPlus/src/lib/creator/AppRequirement.svelte:155` | 25 |
@@ -311,20 +311,20 @@ the field-level occurrence map and UI strings.
 | `action` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppRow.svelte:491` | 4 |
 | `contextAction` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppRow.svelte:492` | 0 |
 | `action` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppRow.svelte:496` | 2 |
-| `deselectAll` | function | no | yes | `ICCPlus/src/lib/creator/AppRow.svelte:781` | 7 |
-| `changeRowId` | function | no | no | `ICCPlus/src/lib/creator/AppRow.svelte:810` | 7 |
-| `createNewObject` | function | no | no | `ICCPlus/src/lib/creator/AppRow.svelte:841` | 29 |
-| `createNewObjects` | function | no | no | `ICCPlus/src/lib/creator/AppRow.svelte:876` | 0 |
-| `reqContext` | function | no | no | `ICCPlus/src/lib/creator/AppRow.svelte:882` | 11 |
-| `copyRequireds` | function | no | no | `ICCPlus/src/lib/creator/AppRow.svelte:902` | 8 |
-| `pasteRequired` | function | no | no | `ICCPlus/src/lib/creator/AppRow.svelte:918` | 6 |
-| `objectWidthClass` | function | no | no | `ICCPlus/src/lib/creator/AppRow.svelte:930` | 6 |
-| `buttonActivate` | function | no | no | `ICCPlus/src/lib/creator/AppRow.svelte:952` | 38 |
-| `copyTooltip` | function | no | no | `ICCPlus/src/lib/creator/AppRow.svelte:1099` | 5 |
-| `handleDndConsider` | function | no | no | `ICCPlus/src/lib/creator/AppRowList.svelte:64` | 0 |
-| `handleDndFinalize` | function | no | no | `ICCPlus/src/lib/creator/AppRowList.svelte:68` | 6 |
-| `scrollToRow` | function | no | no | `ICCPlus/src/lib/creator/AppRowList.svelte:79` | 7 |
-| `scrollToObject` | function | no | no | `ICCPlus/src/lib/creator/AppRowList.svelte:92` | 8 |
+| `deselectAll` | function | no | yes | `ICCPlus/src/lib/creator/AppRow.svelte:783` | 7 |
+| `changeRowId` | function | no | no | `ICCPlus/src/lib/creator/AppRow.svelte:812` | 7 |
+| `createNewObject` | function | no | no | `ICCPlus/src/lib/creator/AppRow.svelte:843` | 29 |
+| `createNewObjects` | function | no | no | `ICCPlus/src/lib/creator/AppRow.svelte:878` | 0 |
+| `reqContext` | function | no | no | `ICCPlus/src/lib/creator/AppRow.svelte:884` | 11 |
+| `copyRequireds` | function | no | no | `ICCPlus/src/lib/creator/AppRow.svelte:904` | 8 |
+| `pasteRequired` | function | no | no | `ICCPlus/src/lib/creator/AppRow.svelte:920` | 6 |
+| `objectWidthClass` | function | no | no | `ICCPlus/src/lib/creator/AppRow.svelte:932` | 6 |
+| `buttonActivate` | function | no | no | `ICCPlus/src/lib/creator/AppRow.svelte:954` | 38 |
+| `copyTooltip` | function | no | no | `ICCPlus/src/lib/creator/AppRow.svelte:1101` | 5 |
+| `handleDndConsider` | function | no | no | `ICCPlus/src/lib/creator/AppRowList.svelte:68` | 0 |
+| `handleDndFinalize` | function | no | no | `ICCPlus/src/lib/creator/AppRowList.svelte:72` | 6 |
+| `scrollToRow` | function | no | no | `ICCPlus/src/lib/creator/AppRowList.svelte:90` | 7 |
+| `scrollToObject` | function | no | no | `ICCPlus/src/lib/creator/AppRowList.svelte:103` | 8 |
 | `action` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppRowSettings.svelte:194` | 1 |
 | `action` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppRowSettings.svelte:198` | 1 |
 | `action` | property-arrow | no | no | `ICCPlus/src/lib/creator/AppRowSettings.svelte:202` | 1 |
@@ -556,18 +556,18 @@ the field-level occurrence map and UI strings.
 | `moveWordDown` | function | no | no | `ICCPlus/src/lib/creator/Features/AppWords.svelte:199` | 3 |
 | `getCategoryLabel` | function | no | no | `ICCPlus/src/lib/creator/Features/AppWords.svelte:207` | 2 |
 | `swapCategory` | function | no | no | `ICCPlus/src/lib/creator/Features/AppWords.svelte:215` | 8 |
-| `addonWidthClass` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectAddon.svelte:2187` | 4 |
-| `copyAddon` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectAddon.svelte:2208` | 4 |
-| `moveAddonUp` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectAddon.svelte:2216` | 3 |
-| `moveAddonDown` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectAddon.svelte:2222` | 3 |
-| `copyTooltip` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectAddon.svelte:2228` | 4 |
-| `toggleSelectable` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectAddon.svelte:2240` | 11 |
-| `createNewScore` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectAddon.svelte:2267` | 13 |
-| `changeAddonId` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectAddon.svelte:2281` | 3 |
-| `deleteGroup` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectAddon.svelte:2294` | 6 |
-| `getRadius` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectAddon.svelte:2305` | 5 |
-| `handleCounter` | function | no | yes | `ICCPlus/src/lib/creator/Object/ObjectAddon.svelte:2345` | 12 |
-| `activateObject` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectAddon.svelte:2368` | 17 |
+| `addonWidthClass` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectAddon.svelte:2188` | 4 |
+| `copyAddon` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectAddon.svelte:2209` | 4 |
+| `moveAddonUp` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectAddon.svelte:2217` | 3 |
+| `moveAddonDown` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectAddon.svelte:2223` | 3 |
+| `copyTooltip` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectAddon.svelte:2229` | 4 |
+| `toggleSelectable` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectAddon.svelte:2241` | 11 |
+| `createNewScore` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectAddon.svelte:2268` | 13 |
+| `changeAddonId` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectAddon.svelte:2282` | 3 |
+| `deleteGroup` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectAddon.svelte:2295` | 6 |
+| `getRadius` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectAddon.svelte:2306` | 5 |
+| `handleCounter` | function | no | yes | `ICCPlus/src/lib/creator/Object/ObjectAddon.svelte:2346` | 12 |
+| `activateObject` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectAddon.svelte:2369` | 17 |
 | `getGroupLabel` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectDesignGroup.svelte:21` | 3 |
 | `setGroupElement` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectDesignGroup.svelte:29` | 4 |
 | `releaseGroupElement` | function | no | no | `ICCPlus/src/lib/creator/Object/ObjectDesignGroup.svelte:38` | 4 |
@@ -633,68 +633,239 @@ the field-level occurrence map and UI strings.
 | `getElement` | function | yes | no | `ICCPlus/src/lib/custom/chip-input/ChipInput.svelte:446` | 1 |
 | `setSelectedText` | function | no | no | `ICCPlus/src/lib/custom/select/Option.svelte:57` | 0 |
 | `getElement` | function | yes | no | `ICCPlus/src/lib/custom/select/Option.svelte:63` | 1 |
-| `uninitializedValue` | arrow | no | no | `ICCPlus/src/lib/custom/select/Select.svelte:286` | 0 |
-| `isUninitializedValue` | function | no | no | `ICCPlus/src/lib/custom/select/Select.svelte:287` | 1 |
-| `setSelectedText` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/Select.svelte:626` | 1 |
-| `isSelectAnchorFocused` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/Select.svelte:629` | 0 |
-| `openMenu` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/Select.svelte:635` | 0 |
-| `closeMenu` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/Select.svelte:638` | 0 |
-| `getAnchorElement` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/Select.svelte:641` | 0 |
-| `setMenuAnchorElement` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/Select.svelte:642` | 1 |
-| `setMenuAnchorCorner` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/Select.svelte:645` | 1 |
-| `setMenuWrapFocus` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/Select.svelte:648` | 1 |
-| `getSelectedIndex` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/Select.svelte:651` | 0 |
-| `setSelectedIndex` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/Select.svelte:652` | 2 |
-| `focusMenuItemAtIndex` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/Select.svelte:658` | 1 |
-| `getMenuItemCount` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/Select.svelte:661` | 0 |
-| `getMenuItemValues` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/Select.svelte:662` | 0 |
-| `getMenuItemTextAtIndex` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/Select.svelte:663` | 1 |
-| `isTypeaheadInProgress` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/Select.svelte:664` | 0 |
-| `typeaheadMatchItem` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/Select.svelte:665` | 0 |
-| `setRippleCenter` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/Select.svelte:672` | 0 |
-| `activateBottomLine` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/Select.svelte:674` | 0 |
-| `deactivateBottomLine` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/Select.svelte:675` | 0 |
-| `notifyChange` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/Select.svelte:677` | 2 |
-| `hasOutline` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/Select.svelte:689` | 0 |
-| `notchOutline` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/Select.svelte:690` | 0 |
-| `closeOutline` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/Select.svelte:692` | 0 |
-| `hasLabel` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/Select.svelte:695` | 0 |
-| `floatLabel` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/Select.svelte:696` | 0 |
-| `getLabelWidth` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/Select.svelte:698` | 0 |
-| `setLabelRequired` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/Select.svelte:699` | 0 |
-| `hasClass` | function | no | no | `ICCPlus/src/lib/custom/select/Select.svelte:728` | 0 |
-| `addClass` | function | no | no | `ICCPlus/src/lib/custom/select/Select.svelte:734` | 0 |
-| `removeClass` | function | no | no | `ICCPlus/src/lib/custom/select/Select.svelte:740` | 0 |
-| `addStyle` | function | no | no | `ICCPlus/src/lib/custom/select/Select.svelte:746` | 2 |
-| `addMenuClass` | function | no | no | `ICCPlus/src/lib/custom/select/Select.svelte:756` | 0 |
-| `removeMenuClass` | function | no | no | `ICCPlus/src/lib/custom/select/Select.svelte:762` | 0 |
-| `getSelectAnchorAttr` | function | no | no | `ICCPlus/src/lib/custom/select/Select.svelte:768` | 1 |
-| `addSelectAnchorAttr` | function | no | no | `ICCPlus/src/lib/custom/select/Select.svelte:774` | 2 |
-| `removeSelectAnchorAttr` | function | no | no | `ICCPlus/src/lib/custom/select/Select.svelte:780` | 1 |
-| `getMenuItemValues` | function | no | no | `ICCPlus/src/lib/custom/select/Select.svelte:786` | 0 |
-| `getNormalizedXCoordinate` | function | no | no | `ICCPlus/src/lib/custom/select/Select.svelte:790` | 1 |
-| `isTouchEvent` | function | no | no | `ICCPlus/src/lib/custom/select/Select.svelte:802` | 0 |
-| `getUseDefaultValidation` | function | yes | no | `ICCPlus/src/lib/custom/select/Select.svelte:806` | 1 |
-| `setUseDefaultValidation` | function | yes | no | `ICCPlus/src/lib/custom/select/Select.svelte:816` | 1 |
-| `focus` | function | yes | no | `ICCPlus/src/lib/custom/select/Select.svelte:820` | 1 |
-| `layout` | function | yes | no | `ICCPlus/src/lib/custom/select/Select.svelte:824` | 1 |
-| `getElement` | function | yes | no | `ICCPlus/src/lib/custom/select/Select.svelte:828` | 1 |
-| `setContent` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/helper-text/HelperText.svelte:93` | 1 |
-| `hasClass` | function | no | no | `ICCPlus/src/lib/custom/select/helper-text/HelperText.svelte:112` | 0 |
-| `addClass` | function | no | no | `ICCPlus/src/lib/custom/select/helper-text/HelperText.svelte:118` | 0 |
-| `removeClass` | function | no | no | `ICCPlus/src/lib/custom/select/helper-text/HelperText.svelte:124` | 0 |
-| `getAttr` | function | no | no | `ICCPlus/src/lib/custom/select/helper-text/HelperText.svelte:130` | 1 |
-| `addAttr` | function | no | no | `ICCPlus/src/lib/custom/select/helper-text/HelperText.svelte:136` | 2 |
-| `removeAttr` | function | no | no | `ICCPlus/src/lib/custom/select/helper-text/HelperText.svelte:142` | 1 |
-| `getElement` | function | yes | no | `ICCPlus/src/lib/custom/select/helper-text/HelperText.svelte:148` | 1 |
-| `setContent` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/icon/Icon.svelte:88` | 1 |
-| `registerInteractionHandler` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/icon/Icon.svelte:91` | 0 |
-| `deregisterInteractionHandler` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/icon/Icon.svelte:93` | 0 |
-| `notifyIconAction` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/icon/Icon.svelte:95` | 0 |
-| `getAttr` | function | no | no | `ICCPlus/src/lib/custom/select/icon/Icon.svelte:112` | 1 |
-| `addAttr` | function | no | no | `ICCPlus/src/lib/custom/select/icon/Icon.svelte:118` | 2 |
-| `removeAttr` | function | no | no | `ICCPlus/src/lib/custom/select/icon/Icon.svelte:124` | 1 |
-| `getElement` | function | yes | no | `ICCPlus/src/lib/custom/select/icon/Icon.svelte:130` | 1 |
+| `uninitializedValue` | arrow | no | no | `ICCPlus/src/lib/custom/select/Select.svelte:289` | 0 |
+| `isUninitializedValue` | function | no | no | `ICCPlus/src/lib/custom/select/Select.svelte:290` | 1 |
+| `setSelectedText` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/Select.svelte:629` | 1 |
+| `isSelectAnchorFocused` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/Select.svelte:632` | 0 |
+| `openMenu` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/Select.svelte:638` | 0 |
+| `closeMenu` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/Select.svelte:641` | 0 |
+| `getAnchorElement` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/Select.svelte:644` | 0 |
+| `setMenuAnchorElement` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/Select.svelte:645` | 1 |
+| `setMenuAnchorCorner` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/Select.svelte:648` | 1 |
+| `setMenuWrapFocus` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/Select.svelte:651` | 1 |
+| `getSelectedIndex` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/Select.svelte:654` | 0 |
+| `setSelectedIndex` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/Select.svelte:655` | 2 |
+| `focusMenuItemAtIndex` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/Select.svelte:661` | 1 |
+| `getMenuItemCount` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/Select.svelte:664` | 0 |
+| `getMenuItemValues` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/Select.svelte:665` | 0 |
+| `getMenuItemTextAtIndex` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/Select.svelte:666` | 1 |
+| `isTypeaheadInProgress` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/Select.svelte:667` | 0 |
+| `typeaheadMatchItem` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/Select.svelte:668` | 0 |
+| `setRippleCenter` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/Select.svelte:675` | 0 |
+| `activateBottomLine` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/Select.svelte:677` | 0 |
+| `deactivateBottomLine` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/Select.svelte:678` | 0 |
+| `notifyChange` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/Select.svelte:680` | 2 |
+| `hasOutline` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/Select.svelte:692` | 0 |
+| `notchOutline` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/Select.svelte:693` | 0 |
+| `closeOutline` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/Select.svelte:695` | 0 |
+| `hasLabel` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/Select.svelte:698` | 0 |
+| `floatLabel` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/Select.svelte:699` | 0 |
+| `getLabelWidth` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/Select.svelte:701` | 0 |
+| `setLabelRequired` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/Select.svelte:702` | 0 |
+| `hasClass` | function | no | no | `ICCPlus/src/lib/custom/select/Select.svelte:732` | 0 |
+| `addClass` | function | no | no | `ICCPlus/src/lib/custom/select/Select.svelte:738` | 0 |
+| `removeClass` | function | no | no | `ICCPlus/src/lib/custom/select/Select.svelte:744` | 0 |
+| `addStyle` | function | no | no | `ICCPlus/src/lib/custom/select/Select.svelte:750` | 2 |
+| `addMenuClass` | function | no | no | `ICCPlus/src/lib/custom/select/Select.svelte:760` | 0 |
+| `removeMenuClass` | function | no | no | `ICCPlus/src/lib/custom/select/Select.svelte:766` | 0 |
+| `getSelectAnchorAttr` | function | no | no | `ICCPlus/src/lib/custom/select/Select.svelte:772` | 1 |
+| `addSelectAnchorAttr` | function | no | no | `ICCPlus/src/lib/custom/select/Select.svelte:778` | 2 |
+| `removeSelectAnchorAttr` | function | no | no | `ICCPlus/src/lib/custom/select/Select.svelte:784` | 1 |
+| `getMenuItemValues` | function | no | no | `ICCPlus/src/lib/custom/select/Select.svelte:790` | 0 |
+| `getNormalizedXCoordinate` | function | no | no | `ICCPlus/src/lib/custom/select/Select.svelte:794` | 1 |
+| `isTouchEvent` | function | no | no | `ICCPlus/src/lib/custom/select/Select.svelte:806` | 0 |
+| `getUseDefaultValidation` | function | yes | no | `ICCPlus/src/lib/custom/select/Select.svelte:810` | 1 |
+| `setUseDefaultValidation` | function | yes | no | `ICCPlus/src/lib/custom/select/Select.svelte:820` | 1 |
+| `focus` | function | yes | no | `ICCPlus/src/lib/custom/select/Select.svelte:824` | 1 |
+| `layout` | function | yes | no | `ICCPlus/src/lib/custom/select/Select.svelte:828` | 1 |
+| `getElement` | function | yes | no | `ICCPlus/src/lib/custom/select/Select.svelte:832` | 1 |
+| `setContent` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/helper-text/HelperText.svelte:94` | 1 |
+| `hasClass` | function | no | no | `ICCPlus/src/lib/custom/select/helper-text/HelperText.svelte:114` | 0 |
+| `addClass` | function | no | no | `ICCPlus/src/lib/custom/select/helper-text/HelperText.svelte:120` | 0 |
+| `removeClass` | function | no | no | `ICCPlus/src/lib/custom/select/helper-text/HelperText.svelte:126` | 0 |
+| `getAttr` | function | no | no | `ICCPlus/src/lib/custom/select/helper-text/HelperText.svelte:132` | 1 |
+| `addAttr` | function | no | no | `ICCPlus/src/lib/custom/select/helper-text/HelperText.svelte:138` | 2 |
+| `removeAttr` | function | no | no | `ICCPlus/src/lib/custom/select/helper-text/HelperText.svelte:144` | 1 |
+| `getElement` | function | yes | no | `ICCPlus/src/lib/custom/select/helper-text/HelperText.svelte:150` | 1 |
+| `attachTo` | method | no | no | `ICCPlus/src/lib/custom/select/helper-text/mdc/component.ts:37` | 0 |
+| `getDefaultFoundation` | method | no | no | `ICCPlus/src/lib/custom/select/helper-text/mdc/component.ts:46` | 2 |
+| `addClass` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/helper-text/mdc/component.ts:52` | 0 |
+| `removeClass` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/helper-text/mdc/component.ts:55` | 0 |
+| `hasClass` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/helper-text/mdc/component.ts:58` | 0 |
+| `getAttr` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/helper-text/mdc/component.ts:59` | 0 |
+| `setAttr` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/helper-text/mdc/component.ts:60` | 1 |
+| `removeAttr` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/helper-text/mdc/component.ts:63` | 0 |
+| `setContent` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/helper-text/mdc/component.ts:66` | 0 |
+| `addClass` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/helper-text/mdc/foundation.ts:46` | 0 |
+| `removeClass` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/helper-text/mdc/foundation.ts:47` | 0 |
+| `hasClass` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/helper-text/mdc/foundation.ts:48` | 0 |
+| `setAttr` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/helper-text/mdc/foundation.ts:49` | 0 |
+| `getAttr` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/helper-text/mdc/foundation.ts:50` | 0 |
+| `removeAttr` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/helper-text/mdc/foundation.ts:51` | 0 |
+| `setContent` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/helper-text/mdc/foundation.ts:52` | 0 |
+| `getId` | method | no | no | `ICCPlus/src/lib/custom/select/helper-text/mdc/foundation.ts:64` | 1 |
+| `isVisible` | method | no | no | `ICCPlus/src/lib/custom/select/helper-text/mdc/foundation.ts:71` | 0 |
+| `setContent` | method | no | no | `ICCPlus/src/lib/custom/select/helper-text/mdc/foundation.ts:78` | 0 |
+| `setValidation` | method | no | no | `ICCPlus/src/lib/custom/select/helper-text/mdc/foundation.ts:90` | 0 |
+| `setValidationMsgPersistent` | method | no | no | `ICCPlus/src/lib/custom/select/helper-text/mdc/foundation.ts:103` | 0 |
+| `getIsValidation` | method | no | no | `ICCPlus/src/lib/custom/select/helper-text/mdc/foundation.ts:118` | 0 |
+| `getIsValidationMsgPersistent` | method | no | no | `ICCPlus/src/lib/custom/select/helper-text/mdc/foundation.ts:126` | 0 |
+| `setValidity` | method | no | no | `ICCPlus/src/lib/custom/select/helper-text/mdc/foundation.ts:136` | 1 |
+| `showToScreenReader` | method | no | no | `ICCPlus/src/lib/custom/select/helper-text/mdc/foundation.ts:175` | 0 |
+| `hide` | method | no | no | `ICCPlus/src/lib/custom/select/helper-text/mdc/foundation.ts:182` | 0 |
+| `setContent` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/icon/Icon.svelte:89` | 1 |
+| `registerInteractionHandler` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/icon/Icon.svelte:92` | 0 |
+| `deregisterInteractionHandler` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/icon/Icon.svelte:94` | 0 |
+| `notifyIconAction` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/icon/Icon.svelte:96` | 0 |
+| `getAttr` | function | no | no | `ICCPlus/src/lib/custom/select/icon/Icon.svelte:114` | 1 |
+| `addAttr` | function | no | no | `ICCPlus/src/lib/custom/select/icon/Icon.svelte:120` | 2 |
+| `removeAttr` | function | no | no | `ICCPlus/src/lib/custom/select/icon/Icon.svelte:126` | 1 |
+| `getElement` | function | yes | no | `ICCPlus/src/lib/custom/select/icon/Icon.svelte:132` | 1 |
+| `attachTo` | method | no | no | `ICCPlus/src/lib/custom/select/icon/mdc/component.ts:37` | 0 |
+| `getDefaultFoundation` | method | no | no | `ICCPlus/src/lib/custom/select/icon/mdc/component.ts:46` | 2 |
+| `getAttr` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/icon/mdc/component.ts:52` | 0 |
+| `setAttr` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/icon/mdc/component.ts:53` | 1 |
+| `removeAttr` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/icon/mdc/component.ts:56` | 0 |
+| `setContent` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/icon/mdc/component.ts:59` | 0 |
+| `registerInteractionHandler` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/icon/mdc/component.ts:62` | 0 |
+| `deregisterInteractionHandler` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/icon/mdc/component.ts:65` | 0 |
+| `notifyIconAction` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/icon/mdc/component.ts:68` | 0 |
+| `getAttr` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/icon/mdc/foundation.ts:47` | 0 |
+| `setAttr` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/icon/mdc/foundation.ts:48` | 0 |
+| `removeAttr` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/icon/mdc/foundation.ts:49` | 0 |
+| `setContent` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/icon/mdc/foundation.ts:50` | 0 |
+| `registerInteractionHandler` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/icon/mdc/foundation.ts:51` | 0 |
+| `deregisterInteractionHandler` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/icon/mdc/foundation.ts:52` | 0 |
+| `notifyIconAction` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/icon/mdc/foundation.ts:53` | 0 |
+| `init` | method | no | no | `ICCPlus/src/lib/custom/select/icon/mdc/foundation.ts:71` | 0 |
+| `destroy` | method | no | no | `ICCPlus/src/lib/custom/select/icon/mdc/foundation.ts:82` | 0 |
+| `setDisabled` | method | no | no | `ICCPlus/src/lib/custom/select/icon/mdc/foundation.ts:91` | 0 |
+| `setAriaLabel` | method | no | no | `ICCPlus/src/lib/custom/select/icon/mdc/foundation.ts:105` | 0 |
+| `setContent` | method | no | no | `ICCPlus/src/lib/custom/select/icon/mdc/foundation.ts:109` | 0 |
+| `handleInteraction` | method | no | no | `ICCPlus/src/lib/custom/select/icon/mdc/foundation.ts:113` | 1 |
+| `attachTo` | method | no | no | `ICCPlus/src/lib/custom/select/mdc/component.ts:61` | 0 |
+| `initialize` | method | no | no | `ICCPlus/src/lib/custom/select/mdc/component.ts:91` | 1 |
+| `initialSyncWithDOM` | method | no | no | `ICCPlus/src/lib/custom/select/mdc/component.ts:162` | 4 |
+| `destroy` | method | no | no | `ICCPlus/src/lib/custom/select/mdc/component.ts:232` | 1 |
+| `setValue` | method | no | no | `ICCPlus/src/lib/custom/select/mdc/component.ts:279` | 2 |
+| `setSelectedIndex` | method | no | no | `ICCPlus/src/lib/custom/select/mdc/component.ts:291` | 0 |
+| `layout` | method | no | no | `ICCPlus/src/lib/custom/select/mdc/component.ts:370` | 0 |
+| `layoutOptions` | method | no | no | `ICCPlus/src/lib/custom/select/mdc/component.ts:378` | 1 |
+| `getDefaultFoundation` | method | no | no | `ICCPlus/src/lib/custom/select/mdc/component.ts:391` | 1 |
+| `menuSetup` | method | no | no | `ICCPlus/src/lib/custom/select/mdc/component.ts:407` | 0 |
+| `createRipple` | method | no | no | `ICCPlus/src/lib/custom/select/mdc/component.ts:419` | 1 |
+| `registerInteractionHandler` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/mdc/component.ts:426` | 0 |
+| `deregisterInteractionHandler` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/mdc/component.ts:429` | 0 |
+| `getSelectAdapterMethods` | method | no | no | `ICCPlus/src/lib/custom/select/mdc/component.ts:437` | 3 |
+| `getMenuItemAttr` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/mdc/component.ts:440` | 0 |
+| `setSelectedText` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/mdc/component.ts:442` | 2 |
+| `isSelectAnchorFocused` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/mdc/component.ts:455` | 0 |
+| `getSelectAnchorAttr` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/mdc/component.ts:456` | 0 |
+| `setSelectAnchorAttr` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/mdc/component.ts:458` | 1 |
+| `removeSelectAnchorAttr` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/mdc/component.ts:461` | 0 |
+| `addMenuClass` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/mdc/component.ts:464` | 0 |
+| `removeMenuClass` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/mdc/component.ts:467` | 0 |
+| `openMenu` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/mdc/component.ts:470` | 0 |
+| `closeMenu` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/mdc/component.ts:473` | 0 |
+| `getAnchorElement` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/mdc/component.ts:476` | 0 |
+| `setMenuAnchorElement` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/mdc/component.ts:478` | 0 |
+| `setMenuAnchorCorner` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/mdc/component.ts:481` | 0 |
+| `setMenuWrapFocus` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/mdc/component.ts:484` | 0 |
+| `getSelectedIndex` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/mdc/component.ts:487` | 1 |
+| `setSelectedIndex` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/mdc/component.ts:491` | 1 |
+| `focusMenuItemAtIndex` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/mdc/component.ts:494` | 1 |
+| `getMenuItemCount` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/mdc/component.ts:497` | 0 |
+| `getMenuItemValues` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/mdc/component.ts:499` | 0 |
+| `getMenuItemTextAtIndex` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/mdc/component.ts:500` | 1 |
+| `isTypeaheadInProgress` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/mdc/component.ts:502` | 0 |
+| `typeaheadMatchItem` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/mdc/component.ts:503` | 0 |
+| `getCommonAdapterMethods` | method | no | no | `ICCPlus/src/lib/custom/select/mdc/component.ts:509` | 2 |
+| `addClass` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/mdc/component.ts:512` | 0 |
+| `removeClass` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/mdc/component.ts:515` | 0 |
+| `hasClass` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/mdc/component.ts:518` | 0 |
+| `setRippleCenter` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/mdc/component.ts:519` | 0 |
+| `activateBottomLine` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/mdc/component.ts:522` | 0 |
+| `deactivateBottomLine` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/mdc/component.ts:525` | 0 |
+| `notifyChange` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/mdc/component.ts:528` | 2 |
+| `getOutlineAdapterMethods` | method | no | no | `ICCPlus/src/lib/custom/select/mdc/component.ts:544` | 0 |
+| `hasOutline` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/mdc/component.ts:547` | 0 |
+| `notchOutline` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/mdc/component.ts:548` | 0 |
+| `closeOutline` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/mdc/component.ts:551` | 0 |
+| `getLabelAdapterMethods` | method | no | no | `ICCPlus/src/lib/custom/select/mdc/component.ts:558` | 0 |
+| `hasLabel` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/mdc/component.ts:561` | 0 |
+| `floatLabel` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/mdc/component.ts:562` | 0 |
+| `getLabelWidth` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/mdc/component.ts:565` | 0 |
+| `setLabelRequired` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/mdc/component.ts:566` | 0 |
+| `getNormalizedXCoordinate` | method | no | no | `ICCPlus/src/lib/custom/select/mdc/component.ts:577` | 1 |
+| `isTouchEvent` | method | no | no | `ICCPlus/src/lib/custom/select/mdc/component.ts:585` | 0 |
+| `getFoundationMap` | method | no | no | `ICCPlus/src/lib/custom/select/mdc/component.ts:592` | 0 |
+| `addClass` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/mdc/foundation.ts:55` | 0 |
+| `removeClass` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/mdc/foundation.ts:56` | 0 |
+| `hasClass` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/mdc/foundation.ts:57` | 0 |
+| `activateBottomLine` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/mdc/foundation.ts:58` | 0 |
+| `deactivateBottomLine` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/mdc/foundation.ts:59` | 0 |
+| `getSelectedIndex` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/mdc/foundation.ts:60` | 0 |
+| `setSelectedIndex` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/mdc/foundation.ts:61` | 0 |
+| `hasLabel` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/mdc/foundation.ts:62` | 0 |
+| `floatLabel` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/mdc/foundation.ts:63` | 0 |
+| `getLabelWidth` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/mdc/foundation.ts:64` | 0 |
+| `setLabelRequired` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/mdc/foundation.ts:65` | 0 |
+| `hasOutline` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/mdc/foundation.ts:66` | 0 |
+| `notchOutline` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/mdc/foundation.ts:67` | 0 |
+| `closeOutline` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/mdc/foundation.ts:68` | 0 |
+| `setRippleCenter` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/mdc/foundation.ts:69` | 0 |
+| `notifyChange` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/mdc/foundation.ts:70` | 0 |
+| `setSelectedText` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/mdc/foundation.ts:71` | 0 |
+| `isSelectAnchorFocused` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/mdc/foundation.ts:72` | 0 |
+| `getSelectAnchorAttr` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/mdc/foundation.ts:73` | 0 |
+| `setSelectAnchorAttr` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/mdc/foundation.ts:74` | 0 |
+| `removeSelectAnchorAttr` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/mdc/foundation.ts:75` | 0 |
+| `addMenuClass` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/mdc/foundation.ts:76` | 0 |
+| `removeMenuClass` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/mdc/foundation.ts:77` | 0 |
+| `openMenu` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/mdc/foundation.ts:78` | 0 |
+| `closeMenu` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/mdc/foundation.ts:79` | 0 |
+| `getAnchorElement` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/mdc/foundation.ts:80` | 0 |
+| `setMenuAnchorElement` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/mdc/foundation.ts:81` | 0 |
+| `setMenuAnchorCorner` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/mdc/foundation.ts:82` | 0 |
+| `setMenuWrapFocus` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/mdc/foundation.ts:83` | 0 |
+| `focusMenuItemAtIndex` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/mdc/foundation.ts:84` | 0 |
+| `getMenuItemCount` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/mdc/foundation.ts:85` | 0 |
+| `getMenuItemValues` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/mdc/foundation.ts:86` | 0 |
+| `getMenuItemTextAtIndex` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/mdc/foundation.ts:87` | 0 |
+| `isTypeaheadInProgress` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/mdc/foundation.ts:88` | 0 |
+| `typeaheadMatchItem` | property-arrow | no | no | `ICCPlus/src/lib/custom/select/mdc/foundation.ts:89` | 0 |
+| `getSelectedIndex` | method | no | no | `ICCPlus/src/lib/custom/select/mdc/foundation.ts:135` | 0 |
+| `setSelectedIndex` | method | no | no | `ICCPlus/src/lib/custom/select/mdc/foundation.ts:139` | 1 |
+| `setValue` | method | no | no | `ICCPlus/src/lib/custom/select/mdc/foundation.ts:164` | 3 |
+| `getValue` | method | no | no | `ICCPlus/src/lib/custom/select/mdc/foundation.ts:169` | 1 |
+| `getDisabled` | method | no | no | `ICCPlus/src/lib/custom/select/mdc/foundation.ts:175` | 0 |
+| `setDisabled` | method | no | no | `ICCPlus/src/lib/custom/select/mdc/foundation.ts:179` | 0 |
+| `openMenu` | method | no | no | `ICCPlus/src/lib/custom/select/mdc/foundation.ts:204` | 0 |
+| `setHelperTextContent` | method | no | no | `ICCPlus/src/lib/custom/select/mdc/foundation.ts:214` | 0 |
+| `layout` | method | no | no | `ICCPlus/src/lib/custom/select/mdc/foundation.ts:224` | 0 |
+| `layoutOptions` | method | no | no | `ICCPlus/src/lib/custom/select/mdc/foundation.ts:241` | 0 |
+| `handleMenuOpened` | method | no | no | `ICCPlus/src/lib/custom/select/mdc/foundation.ts:251` | 0 |
+| `handleMenuClosing` | method | no | no | `ICCPlus/src/lib/custom/select/mdc/foundation.ts:263` | 0 |
+| `handleMenuClosed` | method | no | no | `ICCPlus/src/lib/custom/select/mdc/foundation.ts:267` | 1 |
+| `handleChange` | method | no | no | `ICCPlus/src/lib/custom/select/mdc/foundation.ts:280` | 0 |
+| `handleMenuItemAction` | method | no | no | `ICCPlus/src/lib/custom/select/mdc/foundation.ts:290` | 1 |
+| `handleFocus` | method | no | no | `ICCPlus/src/lib/custom/select/mdc/foundation.ts:297` | 0 |
+| `handleBlur` | method | no | no | `ICCPlus/src/lib/custom/select/mdc/foundation.ts:307` | 1 |
+| `handleClick` | method | no | no | `ICCPlus/src/lib/custom/select/mdc/foundation.ts:314` | 0 |
+| `handleKeydown` | method | no | no | `ICCPlus/src/lib/custom/select/mdc/foundation.ts:335` | 0 |
+| `notchOutline` | method | no | no | `ICCPlus/src/lib/custom/select/mdc/foundation.ts:374` | 0 |
+| `setLeadingIconAriaLabel` | method | no | no | `ICCPlus/src/lib/custom/select/mdc/foundation.ts:392` | 0 |
+| `setLeadingIconContent` | method | no | no | `ICCPlus/src/lib/custom/select/mdc/foundation.ts:401` | 0 |
+| `getUseDefaultValidation` | method | no | no | `ICCPlus/src/lib/custom/select/mdc/foundation.ts:407` | 0 |
+| `setUseDefaultValidation` | method | no | no | `ICCPlus/src/lib/custom/select/mdc/foundation.ts:411` | 0 |
+| `setValid` | method | no | no | `ICCPlus/src/lib/custom/select/mdc/foundation.ts:415` | 0 |
+| `isValid` | method | no | no | `ICCPlus/src/lib/custom/select/mdc/foundation.ts:432` | 3 |
+| `setRequired` | method | no | no | `ICCPlus/src/lib/custom/select/mdc/foundation.ts:450` | 1 |
+| `getRequired` | method | no | no | `ICCPlus/src/lib/custom/select/mdc/foundation.ts:460` | 1 |
+| `init` | method | no | no | `ICCPlus/src/lib/custom/select/mdc/foundation.ts:464` | 0 |
+| `blur` | method | no | no | `ICCPlus/src/lib/custom/select/mdc/foundation.ts:481` | 1 |
+| `syncHelperTextValidity` | method | no | no | `ICCPlus/src/lib/custom/select/mdc/foundation.ts:492` | 1 |
+| `setClickDebounceTimeout` | method | no | no | `ICCPlus/src/lib/custom/select/mdc/foundation.ts:523` | 0 |
 | `getComponents` | function | no | no | `ICCPlus/src/lib/custom/svelte-awesome-color-picker/components/ColorPicker.svelte:118` | 0 |
 | `getTexts` | function | no | no | `ICCPlus/src/lib/custom/svelte-awesome-color-picker/components/ColorPicker.svelte:125` | 0 |
 | `mousedown` | function | no | no | `ICCPlus/src/lib/custom/svelte-awesome-color-picker/components/ColorPicker.svelte:139` | 1 |
@@ -771,32 +942,187 @@ the field-level occurrence map and UI strings.
 | `closeOutline` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/Textfield.svelte:717` | 0 |
 | `hasOutline` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/Textfield.svelte:718` | 0 |
 | `notchOutline` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/Textfield.svelte:719` | 0 |
-| `hasClass` | function | no | no | `ICCPlus/src/lib/custom/textfield/Textfield.svelte:770` | 0 |
-| `addClass` | function | no | no | `ICCPlus/src/lib/custom/textfield/Textfield.svelte:776` | 0 |
-| `removeClass` | function | no | no | `ICCPlus/src/lib/custom/textfield/Textfield.svelte:782` | 0 |
-| `addStyle` | function | no | no | `ICCPlus/src/lib/custom/textfield/Textfield.svelte:788` | 2 |
-| `focus` | function | yes | no | `ICCPlus/src/lib/custom/textfield/Textfield.svelte:798` | 1 |
-| `blur` | function | yes | no | `ICCPlus/src/lib/custom/textfield/Textfield.svelte:802` | 2 |
-| `layout` | function | yes | no | `ICCPlus/src/lib/custom/textfield/Textfield.svelte:806` | 1 |
-| `getElement` | function | yes | no | `ICCPlus/src/lib/custom/textfield/Textfield.svelte:813` | 1 |
-| `setContent` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/character-counter/CharacterCounter.svelte:55` | 1 |
-| `getElement` | function | yes | no | `ICCPlus/src/lib/custom/textfield/character-counter/CharacterCounter.svelte:74` | 1 |
-| `setContent` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/helper-text/HelperText.svelte:93` | 1 |
-| `hasClass` | function | no | no | `ICCPlus/src/lib/custom/textfield/helper-text/HelperText.svelte:112` | 0 |
-| `addClass` | function | no | no | `ICCPlus/src/lib/custom/textfield/helper-text/HelperText.svelte:118` | 0 |
-| `removeClass` | function | no | no | `ICCPlus/src/lib/custom/textfield/helper-text/HelperText.svelte:124` | 0 |
-| `getAttr` | function | no | no | `ICCPlus/src/lib/custom/textfield/helper-text/HelperText.svelte:130` | 1 |
-| `addAttr` | function | no | no | `ICCPlus/src/lib/custom/textfield/helper-text/HelperText.svelte:136` | 2 |
-| `removeAttr` | function | no | no | `ICCPlus/src/lib/custom/textfield/helper-text/HelperText.svelte:142` | 1 |
-| `getElement` | function | yes | no | `ICCPlus/src/lib/custom/textfield/helper-text/HelperText.svelte:148` | 1 |
-| `setContent` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/icon/Icon.svelte:100` | 1 |
-| `registerInteractionHandler` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/icon/Icon.svelte:103` | 0 |
-| `deregisterInteractionHandler` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/icon/Icon.svelte:105` | 0 |
-| `notifyIconAction` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/icon/Icon.svelte:107` | 0 |
-| `getAttr` | function | no | no | `ICCPlus/src/lib/custom/textfield/icon/Icon.svelte:135` | 1 |
-| `addAttr` | function | no | no | `ICCPlus/src/lib/custom/textfield/icon/Icon.svelte:141` | 2 |
-| `removeAttr` | function | no | no | `ICCPlus/src/lib/custom/textfield/icon/Icon.svelte:147` | 1 |
-| `getElement` | function | yes | no | `ICCPlus/src/lib/custom/textfield/icon/Icon.svelte:153` | 1 |
+| `hasClass` | function | no | no | `ICCPlus/src/lib/custom/textfield/Textfield.svelte:771` | 0 |
+| `addClass` | function | no | no | `ICCPlus/src/lib/custom/textfield/Textfield.svelte:777` | 0 |
+| `removeClass` | function | no | no | `ICCPlus/src/lib/custom/textfield/Textfield.svelte:783` | 0 |
+| `addStyle` | function | no | no | `ICCPlus/src/lib/custom/textfield/Textfield.svelte:789` | 2 |
+| `focus` | function | yes | no | `ICCPlus/src/lib/custom/textfield/Textfield.svelte:799` | 1 |
+| `blur` | function | yes | no | `ICCPlus/src/lib/custom/textfield/Textfield.svelte:803` | 2 |
+| `layout` | function | yes | no | `ICCPlus/src/lib/custom/textfield/Textfield.svelte:807` | 1 |
+| `getElement` | function | yes | no | `ICCPlus/src/lib/custom/textfield/Textfield.svelte:814` | 1 |
+| `setContent` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/character-counter/CharacterCounter.svelte:56` | 1 |
+| `setCounterValue` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/character-counter/CharacterCounter.svelte:59` | 0 |
+| `getElement` | function | yes | no | `ICCPlus/src/lib/custom/textfield/character-counter/CharacterCounter.svelte:77` | 1 |
+| `attachTo` | method | no | no | `ICCPlus/src/lib/custom/textfield/character-counter/mdc/component.ts:37` | 0 |
+| `getDefaultFoundation` | method | no | no | `ICCPlus/src/lib/custom/textfield/character-counter/mdc/component.ts:46` | 1 |
+| `setContent` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/character-counter/mdc/component.ts:51` | 0 |
+| `setCounterValue` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/character-counter/mdc/component.ts:54` | 0 |
+| `setContent` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/character-counter/mdc/foundation.ts:45` | 0 |
+| `setCounterValue` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/character-counter/mdc/foundation.ts:46` | 0 |
+| `setCounterValue` | method | no | no | `ICCPlus/src/lib/custom/textfield/character-counter/mdc/foundation.ts:57` | 0 |
+| `setContent` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/helper-text/HelperText.svelte:94` | 1 |
+| `hasClass` | function | no | no | `ICCPlus/src/lib/custom/textfield/helper-text/HelperText.svelte:114` | 0 |
+| `addClass` | function | no | no | `ICCPlus/src/lib/custom/textfield/helper-text/HelperText.svelte:120` | 0 |
+| `removeClass` | function | no | no | `ICCPlus/src/lib/custom/textfield/helper-text/HelperText.svelte:126` | 0 |
+| `getAttr` | function | no | no | `ICCPlus/src/lib/custom/textfield/helper-text/HelperText.svelte:132` | 1 |
+| `addAttr` | function | no | no | `ICCPlus/src/lib/custom/textfield/helper-text/HelperText.svelte:138` | 2 |
+| `removeAttr` | function | no | no | `ICCPlus/src/lib/custom/textfield/helper-text/HelperText.svelte:144` | 1 |
+| `getElement` | function | yes | no | `ICCPlus/src/lib/custom/textfield/helper-text/HelperText.svelte:150` | 1 |
+| `attachTo` | method | no | no | `ICCPlus/src/lib/custom/textfield/helper-text/mdc/component.ts:37` | 0 |
+| `getDefaultFoundation` | method | no | no | `ICCPlus/src/lib/custom/textfield/helper-text/mdc/component.ts:46` | 2 |
+| `addClass` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/helper-text/mdc/component.ts:52` | 0 |
+| `removeClass` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/helper-text/mdc/component.ts:55` | 0 |
+| `hasClass` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/helper-text/mdc/component.ts:58` | 0 |
+| `getAttr` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/helper-text/mdc/component.ts:59` | 0 |
+| `setAttr` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/helper-text/mdc/component.ts:60` | 1 |
+| `removeAttr` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/helper-text/mdc/component.ts:63` | 0 |
+| `setContent` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/helper-text/mdc/component.ts:66` | 0 |
+| `addClass` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/helper-text/mdc/foundation.ts:46` | 0 |
+| `removeClass` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/helper-text/mdc/foundation.ts:47` | 0 |
+| `hasClass` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/helper-text/mdc/foundation.ts:48` | 0 |
+| `getAttr` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/helper-text/mdc/foundation.ts:49` | 0 |
+| `setAttr` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/helper-text/mdc/foundation.ts:50` | 0 |
+| `removeAttr` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/helper-text/mdc/foundation.ts:51` | 0 |
+| `setContent` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/helper-text/mdc/foundation.ts:52` | 0 |
+| `getId` | method | no | no | `ICCPlus/src/lib/custom/textfield/helper-text/mdc/foundation.ts:61` | 1 |
+| `isVisible` | method | no | no | `ICCPlus/src/lib/custom/textfield/helper-text/mdc/foundation.ts:65` | 0 |
+| `setContent` | method | no | no | `ICCPlus/src/lib/custom/textfield/helper-text/mdc/foundation.ts:72` | 0 |
+| `isPersistent` | method | no | no | `ICCPlus/src/lib/custom/textfield/helper-text/mdc/foundation.ts:76` | 0 |
+| `setPersistent` | method | no | no | `ICCPlus/src/lib/custom/textfield/helper-text/mdc/foundation.ts:83` | 0 |
+| `isValidation` | method | no | no | `ICCPlus/src/lib/custom/textfield/helper-text/mdc/foundation.ts:94` | 0 |
+| `setValidation` | method | no | no | `ICCPlus/src/lib/custom/textfield/helper-text/mdc/foundation.ts:102` | 0 |
+| `showToScreenReader` | method | no | no | `ICCPlus/src/lib/custom/textfield/helper-text/mdc/foundation.ts:113` | 0 |
+| `setValidity` | method | no | no | `ICCPlus/src/lib/custom/textfield/helper-text/mdc/foundation.ts:120` | 0 |
+| `hide` | method | no | no | `ICCPlus/src/lib/custom/textfield/helper-text/mdc/foundation.ts:151` | 0 |
+| `refreshAlertRole` | method | no | no | `ICCPlus/src/lib/custom/textfield/helper-text/mdc/foundation.ts:155` | 0 |
+| `setContent` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/icon/Icon.svelte:101` | 1 |
+| `registerInteractionHandler` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/icon/Icon.svelte:104` | 0 |
+| `deregisterInteractionHandler` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/icon/Icon.svelte:106` | 0 |
+| `notifyIconAction` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/icon/Icon.svelte:108` | 0 |
+| `getAttr` | function | no | no | `ICCPlus/src/lib/custom/textfield/icon/Icon.svelte:137` | 1 |
+| `addAttr` | function | no | no | `ICCPlus/src/lib/custom/textfield/icon/Icon.svelte:143` | 2 |
+| `removeAttr` | function | no | no | `ICCPlus/src/lib/custom/textfield/icon/Icon.svelte:149` | 1 |
+| `getElement` | function | yes | no | `ICCPlus/src/lib/custom/textfield/icon/Icon.svelte:155` | 1 |
+| `attachTo` | method | no | no | `ICCPlus/src/lib/custom/textfield/icon/mdc/component.ts:37` | 0 |
+| `getDefaultFoundation` | method | no | no | `ICCPlus/src/lib/custom/textfield/icon/mdc/component.ts:46` | 2 |
+| `getAttr` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/icon/mdc/component.ts:52` | 0 |
+| `setAttr` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/icon/mdc/component.ts:53` | 1 |
+| `removeAttr` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/icon/mdc/component.ts:56` | 0 |
+| `setContent` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/icon/mdc/component.ts:59` | 0 |
+| `registerInteractionHandler` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/icon/mdc/component.ts:62` | 0 |
+| `deregisterInteractionHandler` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/icon/mdc/component.ts:65` | 0 |
+| `notifyIconAction` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/icon/mdc/component.ts:68` | 0 |
+| `getAttr` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/icon/mdc/foundation.ts:51` | 0 |
+| `setAttr` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/icon/mdc/foundation.ts:52` | 0 |
+| `removeAttr` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/icon/mdc/foundation.ts:53` | 0 |
+| `setContent` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/icon/mdc/foundation.ts:54` | 0 |
+| `registerInteractionHandler` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/icon/mdc/foundation.ts:55` | 0 |
+| `deregisterInteractionHandler` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/icon/mdc/foundation.ts:56` | 0 |
+| `notifyIconAction` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/icon/mdc/foundation.ts:57` | 0 |
+| `init` | method | no | no | `ICCPlus/src/lib/custom/textfield/icon/mdc/foundation.ts:73` | 0 |
+| `destroy` | method | no | no | `ICCPlus/src/lib/custom/textfield/icon/mdc/foundation.ts:84` | 0 |
+| `setDisabled` | method | no | no | `ICCPlus/src/lib/custom/textfield/icon/mdc/foundation.ts:93` | 0 |
+| `setAriaLabel` | method | no | no | `ICCPlus/src/lib/custom/textfield/icon/mdc/foundation.ts:107` | 0 |
+| `setContent` | method | no | no | `ICCPlus/src/lib/custom/textfield/icon/mdc/foundation.ts:111` | 0 |
+| `handleInteraction` | method | no | no | `ICCPlus/src/lib/custom/textfield/icon/mdc/foundation.ts:115` | 1 |
+| `attachTo` | method | no | no | `ICCPlus/src/lib/custom/textfield/mdc/component.ts:72` | 0 |
+| `initialize` | method | no | no | `ICCPlus/src/lib/custom/textfield/mdc/component.ts:92` | 1 |
+| `destroy` | method | no | no | `ICCPlus/src/lib/custom/textfield/mdc/component.ts:176` | 0 |
+| `initialSyncWithDOM` | method | no | no | `ICCPlus/src/lib/custom/textfield/mdc/component.ts:208` | 0 |
+| `focus` | method | no | no | `ICCPlus/src/lib/custom/textfield/mdc/component.ts:407` | 0 |
+| `layout` | method | no | no | `ICCPlus/src/lib/custom/textfield/mdc/component.ts:414` | 0 |
+| `getDefaultFoundation` | method | no | no | `ICCPlus/src/lib/custom/textfield/mdc/component.ts:419` | 1 |
+| `getRootAdapterMethods` | method | no | no | `ICCPlus/src/lib/custom/textfield/mdc/component.ts:435` | 1 |
+| `addClass` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/mdc/component.ts:438` | 0 |
+| `removeClass` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/mdc/component.ts:441` | 0 |
+| `hasClass` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/mdc/component.ts:444` | 0 |
+| `registerTextFieldInteractionHandler` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/mdc/component.ts:445` | 0 |
+| `deregisterTextFieldInteractionHandler` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/mdc/component.ts:448` | 0 |
+| `registerValidationAttributeChangeHandler` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/mdc/component.ts:451` | 1 |
+| `getAttributesList` | arrow | no | no | `ICCPlus/src/lib/custom/textfield/mdc/component.ts:452` | 1 |
+| `deregisterValidationAttributeChangeHandler` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/mdc/component.ts:466` | 0 |
+| `getInputAdapterMethods` | method | no | no | `ICCPlus/src/lib/custom/textfield/mdc/component.ts:473` | 1 |
+| `getNativeInput` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/mdc/component.ts:476` | 0 |
+| `setInputAttr` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/mdc/component.ts:477` | 1 |
+| `removeInputAttr` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/mdc/component.ts:480` | 0 |
+| `isFocused` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/mdc/component.ts:483` | 0 |
+| `registerInputInteractionHandler` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/mdc/component.ts:484` | 0 |
+| `deregisterInputInteractionHandler` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/mdc/component.ts:487` | 0 |
+| `getLabelAdapterMethods` | method | no | no | `ICCPlus/src/lib/custom/textfield/mdc/component.ts:494` | 0 |
+| `floatLabel` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/mdc/component.ts:496` | 0 |
+| `getLabelWidth` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/mdc/component.ts:499` | 0 |
+| `hasLabel` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/mdc/component.ts:500` | 0 |
+| `shakeLabel` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/mdc/component.ts:501` | 0 |
+| `setLabelRequired` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/mdc/component.ts:504` | 0 |
+| `getLineRippleAdapterMethods` | method | no | no | `ICCPlus/src/lib/custom/textfield/mdc/component.ts:510` | 0 |
+| `activateLineRipple` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/mdc/component.ts:512` | 0 |
+| `deactivateLineRipple` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/mdc/component.ts:517` | 0 |
+| `setLineRippleTransformOrigin` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/mdc/component.ts:522` | 0 |
+| `getOutlineAdapterMethods` | method | no | no | `ICCPlus/src/lib/custom/textfield/mdc/component.ts:530` | 0 |
+| `closeOutline` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/mdc/component.ts:532` | 0 |
+| `hasOutline` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/mdc/component.ts:535` | 0 |
+| `notchOutline` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/mdc/component.ts:536` | 0 |
+| `getFoundationMap` | method | no | no | `ICCPlus/src/lib/custom/textfield/mdc/component.ts:545` | 0 |
+| `createRipple` | method | no | no | `ICCPlus/src/lib/custom/textfield/mdc/component.ts:562` | 1 |
+| `isSurfaceActive` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/mdc/component.ts:576` | 0 |
+| `registerInteractionHandler` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/mdc/component.ts:577` | 0 |
+| `deregisterInteractionHandler` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/mdc/component.ts:580` | 0 |
+| `addClass` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/mdc/foundation.ts:88` | 0 |
+| `removeClass` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/mdc/foundation.ts:89` | 0 |
+| `hasClass` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/mdc/foundation.ts:90` | 0 |
+| `setInputAttr` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/mdc/foundation.ts:91` | 0 |
+| `removeInputAttr` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/mdc/foundation.ts:92` | 0 |
+| `registerTextFieldInteractionHandler` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/mdc/foundation.ts:93` | 0 |
+| `deregisterTextFieldInteractionHandler` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/mdc/foundation.ts:94` | 0 |
+| `registerInputInteractionHandler` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/mdc/foundation.ts:95` | 0 |
+| `deregisterInputInteractionHandler` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/mdc/foundation.ts:96` | 0 |
+| `registerValidationAttributeChangeHandler` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/mdc/foundation.ts:97` | 0 |
+| `deregisterValidationAttributeChangeHandler` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/mdc/foundation.ts:99` | 0 |
+| `getNativeInput` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/mdc/foundation.ts:100` | 0 |
+| `isFocused` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/mdc/foundation.ts:101` | 0 |
+| `activateLineRipple` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/mdc/foundation.ts:102` | 0 |
+| `deactivateLineRipple` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/mdc/foundation.ts:103` | 0 |
+| `setLineRippleTransformOrigin` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/mdc/foundation.ts:104` | 0 |
+| `shakeLabel` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/mdc/foundation.ts:105` | 0 |
+| `floatLabel` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/mdc/foundation.ts:106` | 0 |
+| `setLabelRequired` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/mdc/foundation.ts:107` | 0 |
+| `hasLabel` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/mdc/foundation.ts:108` | 0 |
+| `getLabelWidth` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/mdc/foundation.ts:109` | 0 |
+| `hasOutline` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/mdc/foundation.ts:110` | 0 |
+| `notchOutline` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/mdc/foundation.ts:111` | 0 |
+| `closeOutline` | property-arrow | no | no | `ICCPlus/src/lib/custom/textfield/mdc/foundation.ts:112` | 0 |
+| `init` | method | no | no | `ICCPlus/src/lib/custom/textfield/mdc/foundation.ts:176` | 2 |
+| `destroy` | method | no | no | `ICCPlus/src/lib/custom/textfield/mdc/foundation.ts:217` | 1 |
+| `handleTextFieldInteraction` | method | no | no | `ICCPlus/src/lib/custom/textfield/mdc/foundation.ts:250` | 0 |
+| `handleValidationAttributeChange` | method | no | no | `ICCPlus/src/lib/custom/textfield/mdc/foundation.ts:261` | 1 |
+| `notchOutline` | method | no | no | `ICCPlus/src/lib/custom/textfield/mdc/foundation.ts:279` | 0 |
+| `activateFocus` | method | no | no | `ICCPlus/src/lib/custom/textfield/mdc/foundation.ts:295` | 0 |
+| `setTransformOrigin` | method | no | no | `ICCPlus/src/lib/custom/textfield/mdc/foundation.ts:319` | 1 |
+| `handleInput` | method | no | no | `ICCPlus/src/lib/custom/textfield/mdc/foundation.ts:337` | 0 |
+| `autoCompleteFocus` | method | no | no | `ICCPlus/src/lib/custom/textfield/mdc/foundation.ts:346` | 0 |
+| `deactivateFocus` | method | no | no | `ICCPlus/src/lib/custom/textfield/mdc/foundation.ts:355` | 0 |
+| `getValue` | method | no | no | `ICCPlus/src/lib/custom/textfield/mdc/foundation.ts:372` | 1 |
+| `setValue` | method | no | no | `ICCPlus/src/lib/custom/textfield/mdc/foundation.ts:379` | 2 |
+| `isValid` | method | no | no | `ICCPlus/src/lib/custom/textfield/mdc/foundation.ts:404` | 0 |
+| `setValid` | method | no | no | `ICCPlus/src/lib/custom/textfield/mdc/foundation.ts:411` | 0 |
+| `setValidateOnValueChange` | method | no | no | `ICCPlus/src/lib/custom/textfield/mdc/foundation.ts:425` | 0 |
+| `getValidateOnValueChange` | method | no | no | `ICCPlus/src/lib/custom/textfield/mdc/foundation.ts:433` | 0 |
+| `setUseNativeValidation` | method | no | no | `ICCPlus/src/lib/custom/textfield/mdc/foundation.ts:443` | 0 |
+| `isDisabled` | method | no | no | `ICCPlus/src/lib/custom/textfield/mdc/foundation.ts:447` | 0 |
+| `setDisabled` | method | no | no | `ICCPlus/src/lib/custom/textfield/mdc/foundation.ts:454` | 0 |
+| `setHelperTextContent` | method | no | no | `ICCPlus/src/lib/custom/textfield/mdc/foundation.ts:462` | 0 |
+| `setLeadingIconAriaLabel` | method | no | no | `ICCPlus/src/lib/custom/textfield/mdc/foundation.ts:471` | 0 |
+| `setLeadingIconContent` | method | no | no | `ICCPlus/src/lib/custom/textfield/mdc/foundation.ts:480` | 0 |
+| `setTrailingIconAriaLabel` | method | no | no | `ICCPlus/src/lib/custom/textfield/mdc/foundation.ts:489` | 0 |
+| `setTrailingIconContent` | method | no | no | `ICCPlus/src/lib/custom/textfield/mdc/foundation.ts:498` | 0 |
+| `setcharacterCounter` | method | no | no | `ICCPlus/src/lib/custom/textfield/mdc/foundation.ts:508` | 1 |
+| `isBadInput` | method | no | no | `ICCPlus/src/lib/custom/textfield/mdc/foundation.ts:527` | 0 |
+| `isNativeInputValid` | method | no | no | `ICCPlus/src/lib/custom/textfield/mdc/foundation.ts:535` | 0 |
+| `styleValidity` | method | no | no | `ICCPlus/src/lib/custom/textfield/mdc/foundation.ts:542` | 1 |
+| `styleFocused` | method | no | no | `ICCPlus/src/lib/custom/textfield/mdc/foundation.ts:573` | 0 |
+| `styleDisabled` | method | no | no | `ICCPlus/src/lib/custom/textfield/mdc/foundation.ts:585` | 0 |
+| `styleFloating` | method | no | no | `ICCPlus/src/lib/custom/textfield/mdc/foundation.ts:606` | 0 |
+| `getNativeInput` | method | no | no | `ICCPlus/src/lib/custom/textfield/mdc/foundation.ts:619` | 3 |
 | `tooltip` | function | yes | no | `ICCPlus/src/lib/custom/tooltip/store.svelte.ts:18` | 6 |
 | `show` | function | no | no | `ICCPlus/src/lib/custom/tooltip/store.svelte.ts:21` | 5 |
 | `hide` | function | no | no | `ICCPlus/src/lib/custom/tooltip/store.svelte.ts:41` | 0 |
@@ -1160,11 +1486,11 @@ the field-level occurrence map and UI strings.
 | `getSelectedObjectName` | function | no | no | `ICCPlus/src/lib/viewer/AppBuildForm.svelte:51` | 13 |
 | `saveProcess` | function | no | no | `ICCPlus/src/lib/viewer/AppGlobalSettings.svelte:279` | 0 |
 | `allowDeselectInBackpack` | function | no | no | `ICCPlus/src/lib/viewer/AppGlobalSettings.svelte:286` | 6 |
-| `setFilters` | function | no | no | `ICCPlus/src/lib/viewer/AppObject.svelte:551` | 82 |
-| `objectWidthClass` | function | no | no | `ICCPlus/src/lib/viewer/AppObject.svelte:664` | 8 |
-| `handleCounter` | function | no | yes | `ICCPlus/src/lib/viewer/AppObject.svelte:687` | 11 |
-| `activateObject` | function | no | no | `ICCPlus/src/lib/viewer/AppObject.svelte:711` | 17 |
-| `copyTooltip` | function | no | no | `ICCPlus/src/lib/viewer/AppObject.svelte:748` | 5 |
+| `setFilters` | function | no | no | `ICCPlus/src/lib/viewer/AppObject.svelte:552` | 82 |
+| `objectWidthClass` | function | no | no | `ICCPlus/src/lib/viewer/AppObject.svelte:665` | 8 |
+| `handleCounter` | function | no | yes | `ICCPlus/src/lib/viewer/AppObject.svelte:688` | 11 |
+| `activateObject` | function | no | no | `ICCPlus/src/lib/viewer/AppObject.svelte:712` | 17 |
+| `copyTooltip` | function | no | no | `ICCPlus/src/lib/viewer/AppObject.svelte:749` | 5 |
 | `renderIcon` | function | no | no | `ICCPlus/src/lib/viewer/AppPointBar.svelte:72` | 8 |
 | `deselectAll` | function | no | yes | `ICCPlus/src/lib/viewer/AppRow.svelte:372` | 7 |
 | `buttonActivate` | function | no | no | `ICCPlus/src/lib/viewer/AppRow.svelte:401` | 38 |
@@ -1179,11 +1505,11 @@ the field-level occurrence map and UI strings.
 | `removeSave` | function | no | no | `ICCPlus/src/lib/viewer/AppSaveLoad.svelte:219` | 1 |
 | `getChoiceLabel` | function | no | no | `ICCPlus/src/lib/viewer/AppSearchForm.svelte:111` | 2 |
 | `beforeClose` | function | no | no | `ICCPlus/src/lib/viewer/DlgCommon.svelte:59` | 1 |
-| `addonWidthClass` | function | no | no | `ICCPlus/src/lib/viewer/Object/ObjectAddon.svelte:615` | 4 |
-| `copyTooltip` | function | no | no | `ICCPlus/src/lib/viewer/Object/ObjectAddon.svelte:636` | 4 |
-| `getRadius` | function | no | no | `ICCPlus/src/lib/viewer/Object/ObjectAddon.svelte:648` | 5 |
-| `handleCounter` | function | no | yes | `ICCPlus/src/lib/viewer/Object/ObjectAddon.svelte:688` | 12 |
-| `activateObject` | function | no | no | `ICCPlus/src/lib/viewer/Object/ObjectAddon.svelte:711` | 17 |
+| `addonWidthClass` | function | no | no | `ICCPlus/src/lib/viewer/Object/ObjectAddon.svelte:616` | 4 |
+| `copyTooltip` | function | no | no | `ICCPlus/src/lib/viewer/Object/ObjectAddon.svelte:637` | 4 |
+| `getRadius` | function | no | no | `ICCPlus/src/lib/viewer/Object/ObjectAddon.svelte:649` | 5 |
+| `handleCounter` | function | no | yes | `ICCPlus/src/lib/viewer/Object/ObjectAddon.svelte:689` | 12 |
+| `activateObject` | function | no | no | `ICCPlus/src/lib/viewer/Object/ObjectAddon.svelte:712` | 17 |
 | `clickCounterPlus` | function | no | no | `ICCPlus/src/lib/viewer/Object/ObjectMultiChoice.svelte:95` | 0 |
 | `clickCounterMinus` | function | no | no | `ICCPlus/src/lib/viewer/Object/ObjectMultiChoice.svelte:99` | 0 |
 | `handleSliderUp` | function | no | yes | `ICCPlus/src/lib/viewer/Object/ObjectMultiChoice.svelte:103` | 1 |
@@ -1209,6 +1535,8 @@ the field-level occurrence map and UI strings.
 | `manualChunks` | method | no | no | `ICCPlus/vite.config.ts:44` | 1 |
 | `assetFileNames` | property-arrow | no | no | `ICCPlus/vite.config.ts:49` | 2 |
 | `replacer` | arrow | no | no | `ICCPlus_Viewer/add-comment.js:23` | 1 |
+| `getImportedChunks` | function | no | no | `ICCPlus_Viewer/build-core.js:19` | 0 |
+| `visit` | function | no | no | `ICCPlus_Viewer/build-core.js:23` | 0 |
 | `autoModeWatcher` | function | no | no | `ICCPlus_Viewer/src/App.svelte:27` | 1 |
 | `loadImagesSequentially` | function | no | yes | `ICCPlus_Viewer/src/App.svelte:61` | 0 |
 | `checkAvifSupport` | function | no | yes | `ICCPlus_Viewer/src/App.svelte:83` | 5 |
@@ -1232,68 +1560,239 @@ the field-level occurrence map and UI strings.
 | `getLabel` | function | no | no | `ICCPlus_Viewer/src/lib/custom/autocomplete/Autocomplete.svelte:784` | 0 |
 | `setSelectedText` | function | no | no | `ICCPlus_Viewer/src/lib/custom/select/Option.svelte:57` | 0 |
 | `getElement` | function | yes | no | `ICCPlus_Viewer/src/lib/custom/select/Option.svelte:63` | 1 |
-| `uninitializedValue` | arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:286` | 0 |
-| `isUninitializedValue` | function | no | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:287` | 1 |
-| `setSelectedText` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:626` | 1 |
-| `isSelectAnchorFocused` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:629` | 0 |
-| `openMenu` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:635` | 0 |
-| `closeMenu` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:638` | 0 |
-| `getAnchorElement` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:641` | 0 |
-| `setMenuAnchorElement` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:642` | 1 |
-| `setMenuAnchorCorner` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:645` | 1 |
-| `setMenuWrapFocus` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:648` | 1 |
-| `getSelectedIndex` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:651` | 0 |
-| `setSelectedIndex` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:652` | 2 |
-| `focusMenuItemAtIndex` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:658` | 1 |
-| `getMenuItemCount` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:661` | 0 |
-| `getMenuItemValues` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:662` | 0 |
-| `getMenuItemTextAtIndex` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:663` | 1 |
-| `isTypeaheadInProgress` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:664` | 0 |
-| `typeaheadMatchItem` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:665` | 0 |
-| `setRippleCenter` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:672` | 0 |
-| `activateBottomLine` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:674` | 0 |
-| `deactivateBottomLine` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:675` | 0 |
-| `notifyChange` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:677` | 2 |
-| `hasOutline` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:689` | 0 |
-| `notchOutline` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:690` | 0 |
-| `closeOutline` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:692` | 0 |
-| `hasLabel` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:695` | 0 |
-| `floatLabel` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:696` | 0 |
-| `getLabelWidth` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:698` | 0 |
-| `setLabelRequired` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:699` | 0 |
-| `hasClass` | function | no | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:728` | 0 |
-| `addClass` | function | no | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:734` | 0 |
-| `removeClass` | function | no | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:740` | 0 |
-| `addStyle` | function | no | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:746` | 2 |
-| `addMenuClass` | function | no | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:756` | 0 |
-| `removeMenuClass` | function | no | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:762` | 0 |
-| `getSelectAnchorAttr` | function | no | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:768` | 1 |
-| `addSelectAnchorAttr` | function | no | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:774` | 2 |
-| `removeSelectAnchorAttr` | function | no | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:780` | 1 |
-| `getMenuItemValues` | function | no | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:786` | 0 |
-| `getNormalizedXCoordinate` | function | no | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:790` | 1 |
-| `isTouchEvent` | function | no | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:802` | 0 |
-| `getUseDefaultValidation` | function | yes | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:806` | 1 |
-| `setUseDefaultValidation` | function | yes | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:816` | 1 |
-| `focus` | function | yes | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:820` | 1 |
-| `layout` | function | yes | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:824` | 1 |
-| `getElement` | function | yes | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:828` | 1 |
-| `setContent` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/helper-text/HelperText.svelte:93` | 1 |
-| `hasClass` | function | no | no | `ICCPlus_Viewer/src/lib/custom/select/helper-text/HelperText.svelte:112` | 0 |
-| `addClass` | function | no | no | `ICCPlus_Viewer/src/lib/custom/select/helper-text/HelperText.svelte:118` | 0 |
-| `removeClass` | function | no | no | `ICCPlus_Viewer/src/lib/custom/select/helper-text/HelperText.svelte:124` | 0 |
-| `getAttr` | function | no | no | `ICCPlus_Viewer/src/lib/custom/select/helper-text/HelperText.svelte:130` | 1 |
-| `addAttr` | function | no | no | `ICCPlus_Viewer/src/lib/custom/select/helper-text/HelperText.svelte:136` | 2 |
-| `removeAttr` | function | no | no | `ICCPlus_Viewer/src/lib/custom/select/helper-text/HelperText.svelte:142` | 1 |
-| `getElement` | function | yes | no | `ICCPlus_Viewer/src/lib/custom/select/helper-text/HelperText.svelte:148` | 1 |
-| `setContent` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/icon/Icon.svelte:88` | 1 |
-| `registerInteractionHandler` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/icon/Icon.svelte:91` | 0 |
-| `deregisterInteractionHandler` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/icon/Icon.svelte:93` | 0 |
-| `notifyIconAction` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/icon/Icon.svelte:95` | 0 |
-| `getAttr` | function | no | no | `ICCPlus_Viewer/src/lib/custom/select/icon/Icon.svelte:112` | 1 |
-| `addAttr` | function | no | no | `ICCPlus_Viewer/src/lib/custom/select/icon/Icon.svelte:118` | 2 |
-| `removeAttr` | function | no | no | `ICCPlus_Viewer/src/lib/custom/select/icon/Icon.svelte:124` | 1 |
-| `getElement` | function | yes | no | `ICCPlus_Viewer/src/lib/custom/select/icon/Icon.svelte:130` | 1 |
+| `uninitializedValue` | arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:289` | 0 |
+| `isUninitializedValue` | function | no | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:290` | 1 |
+| `setSelectedText` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:629` | 1 |
+| `isSelectAnchorFocused` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:632` | 0 |
+| `openMenu` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:638` | 0 |
+| `closeMenu` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:641` | 0 |
+| `getAnchorElement` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:644` | 0 |
+| `setMenuAnchorElement` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:645` | 1 |
+| `setMenuAnchorCorner` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:648` | 1 |
+| `setMenuWrapFocus` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:651` | 1 |
+| `getSelectedIndex` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:654` | 0 |
+| `setSelectedIndex` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:655` | 2 |
+| `focusMenuItemAtIndex` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:661` | 1 |
+| `getMenuItemCount` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:664` | 0 |
+| `getMenuItemValues` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:665` | 0 |
+| `getMenuItemTextAtIndex` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:666` | 1 |
+| `isTypeaheadInProgress` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:667` | 0 |
+| `typeaheadMatchItem` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:668` | 0 |
+| `setRippleCenter` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:675` | 0 |
+| `activateBottomLine` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:677` | 0 |
+| `deactivateBottomLine` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:678` | 0 |
+| `notifyChange` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:680` | 2 |
+| `hasOutline` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:692` | 0 |
+| `notchOutline` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:693` | 0 |
+| `closeOutline` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:695` | 0 |
+| `hasLabel` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:698` | 0 |
+| `floatLabel` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:699` | 0 |
+| `getLabelWidth` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:701` | 0 |
+| `setLabelRequired` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:702` | 0 |
+| `hasClass` | function | no | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:732` | 0 |
+| `addClass` | function | no | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:738` | 0 |
+| `removeClass` | function | no | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:744` | 0 |
+| `addStyle` | function | no | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:750` | 2 |
+| `addMenuClass` | function | no | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:760` | 0 |
+| `removeMenuClass` | function | no | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:766` | 0 |
+| `getSelectAnchorAttr` | function | no | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:772` | 1 |
+| `addSelectAnchorAttr` | function | no | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:778` | 2 |
+| `removeSelectAnchorAttr` | function | no | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:784` | 1 |
+| `getMenuItemValues` | function | no | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:790` | 0 |
+| `getNormalizedXCoordinate` | function | no | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:794` | 1 |
+| `isTouchEvent` | function | no | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:806` | 0 |
+| `getUseDefaultValidation` | function | yes | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:810` | 1 |
+| `setUseDefaultValidation` | function | yes | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:820` | 1 |
+| `focus` | function | yes | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:824` | 1 |
+| `layout` | function | yes | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:828` | 1 |
+| `getElement` | function | yes | no | `ICCPlus_Viewer/src/lib/custom/select/Select.svelte:832` | 1 |
+| `setContent` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/helper-text/HelperText.svelte:94` | 1 |
+| `hasClass` | function | no | no | `ICCPlus_Viewer/src/lib/custom/select/helper-text/HelperText.svelte:114` | 0 |
+| `addClass` | function | no | no | `ICCPlus_Viewer/src/lib/custom/select/helper-text/HelperText.svelte:120` | 0 |
+| `removeClass` | function | no | no | `ICCPlus_Viewer/src/lib/custom/select/helper-text/HelperText.svelte:126` | 0 |
+| `getAttr` | function | no | no | `ICCPlus_Viewer/src/lib/custom/select/helper-text/HelperText.svelte:132` | 1 |
+| `addAttr` | function | no | no | `ICCPlus_Viewer/src/lib/custom/select/helper-text/HelperText.svelte:138` | 2 |
+| `removeAttr` | function | no | no | `ICCPlus_Viewer/src/lib/custom/select/helper-text/HelperText.svelte:144` | 1 |
+| `getElement` | function | yes | no | `ICCPlus_Viewer/src/lib/custom/select/helper-text/HelperText.svelte:150` | 1 |
+| `attachTo` | method | no | no | `ICCPlus_Viewer/src/lib/custom/select/helper-text/mdc/component.ts:37` | 0 |
+| `getDefaultFoundation` | method | no | no | `ICCPlus_Viewer/src/lib/custom/select/helper-text/mdc/component.ts:46` | 2 |
+| `addClass` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/helper-text/mdc/component.ts:52` | 0 |
+| `removeClass` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/helper-text/mdc/component.ts:55` | 0 |
+| `hasClass` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/helper-text/mdc/component.ts:58` | 0 |
+| `getAttr` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/helper-text/mdc/component.ts:59` | 0 |
+| `setAttr` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/helper-text/mdc/component.ts:60` | 1 |
+| `removeAttr` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/helper-text/mdc/component.ts:63` | 0 |
+| `setContent` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/helper-text/mdc/component.ts:66` | 0 |
+| `addClass` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/helper-text/mdc/foundation.ts:46` | 0 |
+| `removeClass` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/helper-text/mdc/foundation.ts:47` | 0 |
+| `hasClass` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/helper-text/mdc/foundation.ts:48` | 0 |
+| `setAttr` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/helper-text/mdc/foundation.ts:49` | 0 |
+| `getAttr` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/helper-text/mdc/foundation.ts:50` | 0 |
+| `removeAttr` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/helper-text/mdc/foundation.ts:51` | 0 |
+| `setContent` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/helper-text/mdc/foundation.ts:52` | 0 |
+| `getId` | method | no | no | `ICCPlus_Viewer/src/lib/custom/select/helper-text/mdc/foundation.ts:64` | 1 |
+| `isVisible` | method | no | no | `ICCPlus_Viewer/src/lib/custom/select/helper-text/mdc/foundation.ts:71` | 0 |
+| `setContent` | method | no | no | `ICCPlus_Viewer/src/lib/custom/select/helper-text/mdc/foundation.ts:78` | 0 |
+| `setValidation` | method | no | no | `ICCPlus_Viewer/src/lib/custom/select/helper-text/mdc/foundation.ts:90` | 0 |
+| `setValidationMsgPersistent` | method | no | no | `ICCPlus_Viewer/src/lib/custom/select/helper-text/mdc/foundation.ts:103` | 0 |
+| `getIsValidation` | method | no | no | `ICCPlus_Viewer/src/lib/custom/select/helper-text/mdc/foundation.ts:118` | 0 |
+| `getIsValidationMsgPersistent` | method | no | no | `ICCPlus_Viewer/src/lib/custom/select/helper-text/mdc/foundation.ts:126` | 0 |
+| `setValidity` | method | no | no | `ICCPlus_Viewer/src/lib/custom/select/helper-text/mdc/foundation.ts:136` | 1 |
+| `showToScreenReader` | method | no | no | `ICCPlus_Viewer/src/lib/custom/select/helper-text/mdc/foundation.ts:175` | 0 |
+| `hide` | method | no | no | `ICCPlus_Viewer/src/lib/custom/select/helper-text/mdc/foundation.ts:182` | 0 |
+| `setContent` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/icon/Icon.svelte:89` | 1 |
+| `registerInteractionHandler` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/icon/Icon.svelte:92` | 0 |
+| `deregisterInteractionHandler` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/icon/Icon.svelte:94` | 0 |
+| `notifyIconAction` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/icon/Icon.svelte:96` | 0 |
+| `getAttr` | function | no | no | `ICCPlus_Viewer/src/lib/custom/select/icon/Icon.svelte:114` | 1 |
+| `addAttr` | function | no | no | `ICCPlus_Viewer/src/lib/custom/select/icon/Icon.svelte:120` | 2 |
+| `removeAttr` | function | no | no | `ICCPlus_Viewer/src/lib/custom/select/icon/Icon.svelte:126` | 1 |
+| `getElement` | function | yes | no | `ICCPlus_Viewer/src/lib/custom/select/icon/Icon.svelte:132` | 1 |
+| `attachTo` | method | no | no | `ICCPlus_Viewer/src/lib/custom/select/icon/mdc/component.ts:37` | 0 |
+| `getDefaultFoundation` | method | no | no | `ICCPlus_Viewer/src/lib/custom/select/icon/mdc/component.ts:46` | 2 |
+| `getAttr` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/icon/mdc/component.ts:52` | 0 |
+| `setAttr` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/icon/mdc/component.ts:53` | 1 |
+| `removeAttr` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/icon/mdc/component.ts:56` | 0 |
+| `setContent` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/icon/mdc/component.ts:59` | 0 |
+| `registerInteractionHandler` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/icon/mdc/component.ts:62` | 0 |
+| `deregisterInteractionHandler` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/icon/mdc/component.ts:65` | 0 |
+| `notifyIconAction` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/icon/mdc/component.ts:68` | 0 |
+| `getAttr` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/icon/mdc/foundation.ts:47` | 0 |
+| `setAttr` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/icon/mdc/foundation.ts:48` | 0 |
+| `removeAttr` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/icon/mdc/foundation.ts:49` | 0 |
+| `setContent` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/icon/mdc/foundation.ts:50` | 0 |
+| `registerInteractionHandler` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/icon/mdc/foundation.ts:51` | 0 |
+| `deregisterInteractionHandler` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/icon/mdc/foundation.ts:52` | 0 |
+| `notifyIconAction` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/icon/mdc/foundation.ts:53` | 0 |
+| `init` | method | no | no | `ICCPlus_Viewer/src/lib/custom/select/icon/mdc/foundation.ts:71` | 0 |
+| `destroy` | method | no | no | `ICCPlus_Viewer/src/lib/custom/select/icon/mdc/foundation.ts:82` | 0 |
+| `setDisabled` | method | no | no | `ICCPlus_Viewer/src/lib/custom/select/icon/mdc/foundation.ts:91` | 0 |
+| `setAriaLabel` | method | no | no | `ICCPlus_Viewer/src/lib/custom/select/icon/mdc/foundation.ts:105` | 0 |
+| `setContent` | method | no | no | `ICCPlus_Viewer/src/lib/custom/select/icon/mdc/foundation.ts:109` | 0 |
+| `handleInteraction` | method | no | no | `ICCPlus_Viewer/src/lib/custom/select/icon/mdc/foundation.ts:113` | 1 |
+| `attachTo` | method | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/component.ts:61` | 0 |
+| `initialize` | method | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/component.ts:91` | 1 |
+| `initialSyncWithDOM` | method | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/component.ts:162` | 4 |
+| `destroy` | method | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/component.ts:232` | 1 |
+| `setValue` | method | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/component.ts:279` | 2 |
+| `setSelectedIndex` | method | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/component.ts:291` | 0 |
+| `layout` | method | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/component.ts:370` | 0 |
+| `layoutOptions` | method | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/component.ts:378` | 1 |
+| `getDefaultFoundation` | method | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/component.ts:391` | 1 |
+| `menuSetup` | method | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/component.ts:407` | 0 |
+| `createRipple` | method | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/component.ts:419` | 1 |
+| `registerInteractionHandler` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/component.ts:426` | 0 |
+| `deregisterInteractionHandler` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/component.ts:429` | 0 |
+| `getSelectAdapterMethods` | method | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/component.ts:437` | 3 |
+| `getMenuItemAttr` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/component.ts:440` | 0 |
+| `setSelectedText` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/component.ts:442` | 2 |
+| `isSelectAnchorFocused` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/component.ts:455` | 0 |
+| `getSelectAnchorAttr` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/component.ts:456` | 0 |
+| `setSelectAnchorAttr` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/component.ts:458` | 1 |
+| `removeSelectAnchorAttr` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/component.ts:461` | 0 |
+| `addMenuClass` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/component.ts:464` | 0 |
+| `removeMenuClass` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/component.ts:467` | 0 |
+| `openMenu` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/component.ts:470` | 0 |
+| `closeMenu` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/component.ts:473` | 0 |
+| `getAnchorElement` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/component.ts:476` | 0 |
+| `setMenuAnchorElement` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/component.ts:478` | 0 |
+| `setMenuAnchorCorner` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/component.ts:481` | 0 |
+| `setMenuWrapFocus` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/component.ts:484` | 0 |
+| `getSelectedIndex` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/component.ts:487` | 1 |
+| `setSelectedIndex` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/component.ts:491` | 1 |
+| `focusMenuItemAtIndex` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/component.ts:494` | 1 |
+| `getMenuItemCount` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/component.ts:497` | 0 |
+| `getMenuItemValues` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/component.ts:499` | 0 |
+| `getMenuItemTextAtIndex` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/component.ts:500` | 1 |
+| `isTypeaheadInProgress` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/component.ts:502` | 0 |
+| `typeaheadMatchItem` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/component.ts:503` | 0 |
+| `getCommonAdapterMethods` | method | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/component.ts:509` | 2 |
+| `addClass` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/component.ts:512` | 0 |
+| `removeClass` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/component.ts:515` | 0 |
+| `hasClass` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/component.ts:518` | 0 |
+| `setRippleCenter` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/component.ts:519` | 0 |
+| `activateBottomLine` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/component.ts:522` | 0 |
+| `deactivateBottomLine` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/component.ts:525` | 0 |
+| `notifyChange` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/component.ts:528` | 2 |
+| `getOutlineAdapterMethods` | method | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/component.ts:544` | 0 |
+| `hasOutline` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/component.ts:547` | 0 |
+| `notchOutline` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/component.ts:548` | 0 |
+| `closeOutline` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/component.ts:551` | 0 |
+| `getLabelAdapterMethods` | method | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/component.ts:558` | 0 |
+| `hasLabel` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/component.ts:561` | 0 |
+| `floatLabel` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/component.ts:562` | 0 |
+| `getLabelWidth` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/component.ts:565` | 0 |
+| `setLabelRequired` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/component.ts:566` | 0 |
+| `getNormalizedXCoordinate` | method | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/component.ts:577` | 1 |
+| `isTouchEvent` | method | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/component.ts:585` | 0 |
+| `getFoundationMap` | method | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/component.ts:592` | 0 |
+| `addClass` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/foundation.ts:55` | 0 |
+| `removeClass` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/foundation.ts:56` | 0 |
+| `hasClass` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/foundation.ts:57` | 0 |
+| `activateBottomLine` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/foundation.ts:58` | 0 |
+| `deactivateBottomLine` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/foundation.ts:59` | 0 |
+| `getSelectedIndex` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/foundation.ts:60` | 0 |
+| `setSelectedIndex` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/foundation.ts:61` | 0 |
+| `hasLabel` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/foundation.ts:62` | 0 |
+| `floatLabel` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/foundation.ts:63` | 0 |
+| `getLabelWidth` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/foundation.ts:64` | 0 |
+| `setLabelRequired` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/foundation.ts:65` | 0 |
+| `hasOutline` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/foundation.ts:66` | 0 |
+| `notchOutline` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/foundation.ts:67` | 0 |
+| `closeOutline` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/foundation.ts:68` | 0 |
+| `setRippleCenter` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/foundation.ts:69` | 0 |
+| `notifyChange` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/foundation.ts:70` | 0 |
+| `setSelectedText` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/foundation.ts:71` | 0 |
+| `isSelectAnchorFocused` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/foundation.ts:72` | 0 |
+| `getSelectAnchorAttr` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/foundation.ts:73` | 0 |
+| `setSelectAnchorAttr` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/foundation.ts:74` | 0 |
+| `removeSelectAnchorAttr` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/foundation.ts:75` | 0 |
+| `addMenuClass` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/foundation.ts:76` | 0 |
+| `removeMenuClass` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/foundation.ts:77` | 0 |
+| `openMenu` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/foundation.ts:78` | 0 |
+| `closeMenu` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/foundation.ts:79` | 0 |
+| `getAnchorElement` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/foundation.ts:80` | 0 |
+| `setMenuAnchorElement` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/foundation.ts:81` | 0 |
+| `setMenuAnchorCorner` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/foundation.ts:82` | 0 |
+| `setMenuWrapFocus` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/foundation.ts:83` | 0 |
+| `focusMenuItemAtIndex` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/foundation.ts:84` | 0 |
+| `getMenuItemCount` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/foundation.ts:85` | 0 |
+| `getMenuItemValues` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/foundation.ts:86` | 0 |
+| `getMenuItemTextAtIndex` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/foundation.ts:87` | 0 |
+| `isTypeaheadInProgress` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/foundation.ts:88` | 0 |
+| `typeaheadMatchItem` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/foundation.ts:89` | 0 |
+| `getSelectedIndex` | method | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/foundation.ts:135` | 0 |
+| `setSelectedIndex` | method | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/foundation.ts:139` | 1 |
+| `setValue` | method | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/foundation.ts:164` | 3 |
+| `getValue` | method | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/foundation.ts:169` | 1 |
+| `getDisabled` | method | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/foundation.ts:175` | 0 |
+| `setDisabled` | method | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/foundation.ts:179` | 0 |
+| `openMenu` | method | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/foundation.ts:204` | 0 |
+| `setHelperTextContent` | method | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/foundation.ts:214` | 0 |
+| `layout` | method | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/foundation.ts:224` | 0 |
+| `layoutOptions` | method | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/foundation.ts:241` | 0 |
+| `handleMenuOpened` | method | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/foundation.ts:251` | 0 |
+| `handleMenuClosing` | method | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/foundation.ts:263` | 0 |
+| `handleMenuClosed` | method | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/foundation.ts:267` | 1 |
+| `handleChange` | method | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/foundation.ts:280` | 0 |
+| `handleMenuItemAction` | method | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/foundation.ts:290` | 1 |
+| `handleFocus` | method | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/foundation.ts:297` | 0 |
+| `handleBlur` | method | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/foundation.ts:307` | 1 |
+| `handleClick` | method | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/foundation.ts:314` | 0 |
+| `handleKeydown` | method | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/foundation.ts:335` | 0 |
+| `notchOutline` | method | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/foundation.ts:374` | 0 |
+| `setLeadingIconAriaLabel` | method | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/foundation.ts:392` | 0 |
+| `setLeadingIconContent` | method | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/foundation.ts:401` | 0 |
+| `getUseDefaultValidation` | method | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/foundation.ts:407` | 0 |
+| `setUseDefaultValidation` | method | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/foundation.ts:411` | 0 |
+| `setValid` | method | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/foundation.ts:415` | 0 |
+| `isValid` | method | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/foundation.ts:432` | 3 |
+| `setRequired` | method | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/foundation.ts:450` | 1 |
+| `getRequired` | method | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/foundation.ts:460` | 1 |
+| `init` | method | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/foundation.ts:464` | 0 |
+| `blur` | method | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/foundation.ts:481` | 1 |
+| `syncHelperTextValidity` | method | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/foundation.ts:492` | 1 |
+| `setClickDebounceTimeout` | method | no | no | `ICCPlus_Viewer/src/lib/custom/select/mdc/foundation.ts:523` | 0 |
 | `getElement` | function | yes | no | `ICCPlus_Viewer/src/lib/custom/textfield/HelperLine.svelte:30` | 1 |
 | `toNumber` | function | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/Input.svelte:122` | 1 |
 | `isInputEvent` | function | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/Input.svelte:129` | 1 |
@@ -1338,32 +1837,187 @@ the field-level occurrence map and UI strings.
 | `closeOutline` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/Textfield.svelte:717` | 0 |
 | `hasOutline` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/Textfield.svelte:718` | 0 |
 | `notchOutline` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/Textfield.svelte:719` | 0 |
-| `hasClass` | function | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/Textfield.svelte:770` | 0 |
-| `addClass` | function | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/Textfield.svelte:776` | 0 |
-| `removeClass` | function | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/Textfield.svelte:782` | 0 |
-| `addStyle` | function | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/Textfield.svelte:788` | 2 |
-| `focus` | function | yes | no | `ICCPlus_Viewer/src/lib/custom/textfield/Textfield.svelte:798` | 1 |
-| `blur` | function | yes | no | `ICCPlus_Viewer/src/lib/custom/textfield/Textfield.svelte:802` | 2 |
-| `layout` | function | yes | no | `ICCPlus_Viewer/src/lib/custom/textfield/Textfield.svelte:806` | 1 |
-| `getElement` | function | yes | no | `ICCPlus_Viewer/src/lib/custom/textfield/Textfield.svelte:813` | 1 |
-| `setContent` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/character-counter/CharacterCounter.svelte:55` | 1 |
-| `getElement` | function | yes | no | `ICCPlus_Viewer/src/lib/custom/textfield/character-counter/CharacterCounter.svelte:74` | 1 |
-| `setContent` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/helper-text/HelperText.svelte:93` | 1 |
-| `hasClass` | function | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/helper-text/HelperText.svelte:112` | 0 |
-| `addClass` | function | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/helper-text/HelperText.svelte:118` | 0 |
-| `removeClass` | function | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/helper-text/HelperText.svelte:124` | 0 |
-| `getAttr` | function | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/helper-text/HelperText.svelte:130` | 1 |
-| `addAttr` | function | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/helper-text/HelperText.svelte:136` | 2 |
-| `removeAttr` | function | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/helper-text/HelperText.svelte:142` | 1 |
-| `getElement` | function | yes | no | `ICCPlus_Viewer/src/lib/custom/textfield/helper-text/HelperText.svelte:148` | 1 |
-| `setContent` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/icon/Icon.svelte:100` | 1 |
-| `registerInteractionHandler` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/icon/Icon.svelte:103` | 0 |
-| `deregisterInteractionHandler` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/icon/Icon.svelte:105` | 0 |
-| `notifyIconAction` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/icon/Icon.svelte:107` | 0 |
-| `getAttr` | function | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/icon/Icon.svelte:135` | 1 |
-| `addAttr` | function | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/icon/Icon.svelte:141` | 2 |
-| `removeAttr` | function | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/icon/Icon.svelte:147` | 1 |
-| `getElement` | function | yes | no | `ICCPlus_Viewer/src/lib/custom/textfield/icon/Icon.svelte:153` | 1 |
+| `hasClass` | function | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/Textfield.svelte:771` | 0 |
+| `addClass` | function | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/Textfield.svelte:777` | 0 |
+| `removeClass` | function | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/Textfield.svelte:783` | 0 |
+| `addStyle` | function | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/Textfield.svelte:789` | 2 |
+| `focus` | function | yes | no | `ICCPlus_Viewer/src/lib/custom/textfield/Textfield.svelte:799` | 1 |
+| `blur` | function | yes | no | `ICCPlus_Viewer/src/lib/custom/textfield/Textfield.svelte:803` | 2 |
+| `layout` | function | yes | no | `ICCPlus_Viewer/src/lib/custom/textfield/Textfield.svelte:807` | 1 |
+| `getElement` | function | yes | no | `ICCPlus_Viewer/src/lib/custom/textfield/Textfield.svelte:814` | 1 |
+| `setContent` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/character-counter/CharacterCounter.svelte:56` | 1 |
+| `setCounterValue` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/character-counter/CharacterCounter.svelte:59` | 0 |
+| `getElement` | function | yes | no | `ICCPlus_Viewer/src/lib/custom/textfield/character-counter/CharacterCounter.svelte:77` | 1 |
+| `attachTo` | method | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/character-counter/mdc/component.ts:37` | 0 |
+| `getDefaultFoundation` | method | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/character-counter/mdc/component.ts:46` | 1 |
+| `setContent` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/character-counter/mdc/component.ts:51` | 0 |
+| `setCounterValue` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/character-counter/mdc/component.ts:54` | 0 |
+| `setContent` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/character-counter/mdc/foundation.ts:45` | 0 |
+| `setCounterValue` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/character-counter/mdc/foundation.ts:46` | 0 |
+| `setCounterValue` | method | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/character-counter/mdc/foundation.ts:57` | 0 |
+| `setContent` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/helper-text/HelperText.svelte:94` | 1 |
+| `hasClass` | function | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/helper-text/HelperText.svelte:114` | 0 |
+| `addClass` | function | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/helper-text/HelperText.svelte:120` | 0 |
+| `removeClass` | function | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/helper-text/HelperText.svelte:126` | 0 |
+| `getAttr` | function | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/helper-text/HelperText.svelte:132` | 1 |
+| `addAttr` | function | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/helper-text/HelperText.svelte:138` | 2 |
+| `removeAttr` | function | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/helper-text/HelperText.svelte:144` | 1 |
+| `getElement` | function | yes | no | `ICCPlus_Viewer/src/lib/custom/textfield/helper-text/HelperText.svelte:150` | 1 |
+| `attachTo` | method | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/helper-text/mdc/component.ts:37` | 0 |
+| `getDefaultFoundation` | method | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/helper-text/mdc/component.ts:46` | 2 |
+| `addClass` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/helper-text/mdc/component.ts:52` | 0 |
+| `removeClass` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/helper-text/mdc/component.ts:55` | 0 |
+| `hasClass` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/helper-text/mdc/component.ts:58` | 0 |
+| `getAttr` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/helper-text/mdc/component.ts:59` | 0 |
+| `setAttr` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/helper-text/mdc/component.ts:60` | 1 |
+| `removeAttr` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/helper-text/mdc/component.ts:63` | 0 |
+| `setContent` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/helper-text/mdc/component.ts:66` | 0 |
+| `addClass` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/helper-text/mdc/foundation.ts:46` | 0 |
+| `removeClass` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/helper-text/mdc/foundation.ts:47` | 0 |
+| `hasClass` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/helper-text/mdc/foundation.ts:48` | 0 |
+| `getAttr` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/helper-text/mdc/foundation.ts:49` | 0 |
+| `setAttr` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/helper-text/mdc/foundation.ts:50` | 0 |
+| `removeAttr` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/helper-text/mdc/foundation.ts:51` | 0 |
+| `setContent` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/helper-text/mdc/foundation.ts:52` | 0 |
+| `getId` | method | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/helper-text/mdc/foundation.ts:61` | 1 |
+| `isVisible` | method | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/helper-text/mdc/foundation.ts:65` | 0 |
+| `setContent` | method | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/helper-text/mdc/foundation.ts:72` | 0 |
+| `isPersistent` | method | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/helper-text/mdc/foundation.ts:76` | 0 |
+| `setPersistent` | method | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/helper-text/mdc/foundation.ts:83` | 0 |
+| `isValidation` | method | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/helper-text/mdc/foundation.ts:94` | 0 |
+| `setValidation` | method | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/helper-text/mdc/foundation.ts:102` | 0 |
+| `showToScreenReader` | method | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/helper-text/mdc/foundation.ts:113` | 0 |
+| `setValidity` | method | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/helper-text/mdc/foundation.ts:120` | 0 |
+| `hide` | method | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/helper-text/mdc/foundation.ts:151` | 0 |
+| `refreshAlertRole` | method | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/helper-text/mdc/foundation.ts:155` | 0 |
+| `setContent` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/icon/Icon.svelte:101` | 1 |
+| `registerInteractionHandler` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/icon/Icon.svelte:104` | 0 |
+| `deregisterInteractionHandler` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/icon/Icon.svelte:106` | 0 |
+| `notifyIconAction` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/icon/Icon.svelte:108` | 0 |
+| `getAttr` | function | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/icon/Icon.svelte:137` | 1 |
+| `addAttr` | function | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/icon/Icon.svelte:143` | 2 |
+| `removeAttr` | function | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/icon/Icon.svelte:149` | 1 |
+| `getElement` | function | yes | no | `ICCPlus_Viewer/src/lib/custom/textfield/icon/Icon.svelte:155` | 1 |
+| `attachTo` | method | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/icon/mdc/component.ts:37` | 0 |
+| `getDefaultFoundation` | method | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/icon/mdc/component.ts:46` | 2 |
+| `getAttr` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/icon/mdc/component.ts:52` | 0 |
+| `setAttr` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/icon/mdc/component.ts:53` | 1 |
+| `removeAttr` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/icon/mdc/component.ts:56` | 0 |
+| `setContent` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/icon/mdc/component.ts:59` | 0 |
+| `registerInteractionHandler` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/icon/mdc/component.ts:62` | 0 |
+| `deregisterInteractionHandler` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/icon/mdc/component.ts:65` | 0 |
+| `notifyIconAction` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/icon/mdc/component.ts:68` | 0 |
+| `getAttr` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/icon/mdc/foundation.ts:51` | 0 |
+| `setAttr` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/icon/mdc/foundation.ts:52` | 0 |
+| `removeAttr` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/icon/mdc/foundation.ts:53` | 0 |
+| `setContent` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/icon/mdc/foundation.ts:54` | 0 |
+| `registerInteractionHandler` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/icon/mdc/foundation.ts:55` | 0 |
+| `deregisterInteractionHandler` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/icon/mdc/foundation.ts:56` | 0 |
+| `notifyIconAction` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/icon/mdc/foundation.ts:57` | 0 |
+| `init` | method | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/icon/mdc/foundation.ts:73` | 0 |
+| `destroy` | method | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/icon/mdc/foundation.ts:84` | 0 |
+| `setDisabled` | method | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/icon/mdc/foundation.ts:93` | 0 |
+| `setAriaLabel` | method | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/icon/mdc/foundation.ts:107` | 0 |
+| `setContent` | method | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/icon/mdc/foundation.ts:111` | 0 |
+| `handleInteraction` | method | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/icon/mdc/foundation.ts:115` | 1 |
+| `attachTo` | method | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/component.ts:72` | 0 |
+| `initialize` | method | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/component.ts:92` | 1 |
+| `destroy` | method | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/component.ts:176` | 0 |
+| `initialSyncWithDOM` | method | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/component.ts:208` | 0 |
+| `focus` | method | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/component.ts:407` | 0 |
+| `layout` | method | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/component.ts:414` | 0 |
+| `getDefaultFoundation` | method | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/component.ts:419` | 1 |
+| `getRootAdapterMethods` | method | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/component.ts:435` | 1 |
+| `addClass` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/component.ts:438` | 0 |
+| `removeClass` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/component.ts:441` | 0 |
+| `hasClass` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/component.ts:444` | 0 |
+| `registerTextFieldInteractionHandler` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/component.ts:445` | 0 |
+| `deregisterTextFieldInteractionHandler` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/component.ts:448` | 0 |
+| `registerValidationAttributeChangeHandler` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/component.ts:451` | 1 |
+| `getAttributesList` | arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/component.ts:452` | 1 |
+| `deregisterValidationAttributeChangeHandler` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/component.ts:466` | 0 |
+| `getInputAdapterMethods` | method | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/component.ts:473` | 1 |
+| `getNativeInput` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/component.ts:476` | 0 |
+| `setInputAttr` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/component.ts:477` | 1 |
+| `removeInputAttr` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/component.ts:480` | 0 |
+| `isFocused` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/component.ts:483` | 0 |
+| `registerInputInteractionHandler` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/component.ts:484` | 0 |
+| `deregisterInputInteractionHandler` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/component.ts:487` | 0 |
+| `getLabelAdapterMethods` | method | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/component.ts:494` | 0 |
+| `floatLabel` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/component.ts:496` | 0 |
+| `getLabelWidth` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/component.ts:499` | 0 |
+| `hasLabel` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/component.ts:500` | 0 |
+| `shakeLabel` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/component.ts:501` | 0 |
+| `setLabelRequired` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/component.ts:504` | 0 |
+| `getLineRippleAdapterMethods` | method | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/component.ts:510` | 0 |
+| `activateLineRipple` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/component.ts:512` | 0 |
+| `deactivateLineRipple` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/component.ts:517` | 0 |
+| `setLineRippleTransformOrigin` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/component.ts:522` | 0 |
+| `getOutlineAdapterMethods` | method | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/component.ts:530` | 0 |
+| `closeOutline` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/component.ts:532` | 0 |
+| `hasOutline` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/component.ts:535` | 0 |
+| `notchOutline` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/component.ts:536` | 0 |
+| `getFoundationMap` | method | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/component.ts:545` | 0 |
+| `createRipple` | method | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/component.ts:562` | 1 |
+| `isSurfaceActive` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/component.ts:576` | 0 |
+| `registerInteractionHandler` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/component.ts:577` | 0 |
+| `deregisterInteractionHandler` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/component.ts:580` | 0 |
+| `addClass` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/foundation.ts:88` | 0 |
+| `removeClass` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/foundation.ts:89` | 0 |
+| `hasClass` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/foundation.ts:90` | 0 |
+| `setInputAttr` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/foundation.ts:91` | 0 |
+| `removeInputAttr` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/foundation.ts:92` | 0 |
+| `registerTextFieldInteractionHandler` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/foundation.ts:93` | 0 |
+| `deregisterTextFieldInteractionHandler` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/foundation.ts:94` | 0 |
+| `registerInputInteractionHandler` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/foundation.ts:95` | 0 |
+| `deregisterInputInteractionHandler` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/foundation.ts:96` | 0 |
+| `registerValidationAttributeChangeHandler` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/foundation.ts:97` | 0 |
+| `deregisterValidationAttributeChangeHandler` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/foundation.ts:99` | 0 |
+| `getNativeInput` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/foundation.ts:100` | 0 |
+| `isFocused` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/foundation.ts:101` | 0 |
+| `activateLineRipple` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/foundation.ts:102` | 0 |
+| `deactivateLineRipple` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/foundation.ts:103` | 0 |
+| `setLineRippleTransformOrigin` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/foundation.ts:104` | 0 |
+| `shakeLabel` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/foundation.ts:105` | 0 |
+| `floatLabel` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/foundation.ts:106` | 0 |
+| `setLabelRequired` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/foundation.ts:107` | 0 |
+| `hasLabel` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/foundation.ts:108` | 0 |
+| `getLabelWidth` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/foundation.ts:109` | 0 |
+| `hasOutline` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/foundation.ts:110` | 0 |
+| `notchOutline` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/foundation.ts:111` | 0 |
+| `closeOutline` | property-arrow | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/foundation.ts:112` | 0 |
+| `init` | method | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/foundation.ts:176` | 2 |
+| `destroy` | method | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/foundation.ts:217` | 1 |
+| `handleTextFieldInteraction` | method | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/foundation.ts:250` | 0 |
+| `handleValidationAttributeChange` | method | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/foundation.ts:261` | 1 |
+| `notchOutline` | method | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/foundation.ts:279` | 0 |
+| `activateFocus` | method | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/foundation.ts:295` | 0 |
+| `setTransformOrigin` | method | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/foundation.ts:319` | 1 |
+| `handleInput` | method | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/foundation.ts:337` | 0 |
+| `autoCompleteFocus` | method | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/foundation.ts:346` | 0 |
+| `deactivateFocus` | method | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/foundation.ts:355` | 0 |
+| `getValue` | method | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/foundation.ts:372` | 1 |
+| `setValue` | method | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/foundation.ts:379` | 2 |
+| `isValid` | method | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/foundation.ts:404` | 0 |
+| `setValid` | method | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/foundation.ts:411` | 0 |
+| `setValidateOnValueChange` | method | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/foundation.ts:425` | 0 |
+| `getValidateOnValueChange` | method | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/foundation.ts:433` | 0 |
+| `setUseNativeValidation` | method | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/foundation.ts:443` | 0 |
+| `isDisabled` | method | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/foundation.ts:447` | 0 |
+| `setDisabled` | method | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/foundation.ts:454` | 0 |
+| `setHelperTextContent` | method | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/foundation.ts:462` | 0 |
+| `setLeadingIconAriaLabel` | method | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/foundation.ts:471` | 0 |
+| `setLeadingIconContent` | method | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/foundation.ts:480` | 0 |
+| `setTrailingIconAriaLabel` | method | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/foundation.ts:489` | 0 |
+| `setTrailingIconContent` | method | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/foundation.ts:498` | 0 |
+| `setcharacterCounter` | method | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/foundation.ts:508` | 1 |
+| `isBadInput` | method | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/foundation.ts:527` | 0 |
+| `isNativeInputValid` | method | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/foundation.ts:535` | 0 |
+| `styleValidity` | method | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/foundation.ts:542` | 1 |
+| `styleFocused` | method | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/foundation.ts:573` | 0 |
+| `styleDisabled` | method | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/foundation.ts:585` | 0 |
+| `styleFloating` | method | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/foundation.ts:606` | 0 |
+| `getNativeInput` | method | no | no | `ICCPlus_Viewer/src/lib/custom/textfield/mdc/foundation.ts:619` | 3 |
 | `tooltip` | function | yes | no | `ICCPlus_Viewer/src/lib/custom/tooltip/store.svelte.ts:18` | 6 |
 | `show` | function | no | no | `ICCPlus_Viewer/src/lib/custom/tooltip/store.svelte.ts:21` | 5 |
 | `hide` | function | no | no | `ICCPlus_Viewer/src/lib/custom/tooltip/store.svelte.ts:41` | 0 |
@@ -1656,14 +2310,14 @@ the field-level occurrence map and UI strings.
 | `ICCPlus/src/lib/creator/AppDesign.svelte` | 206 | 24 | 4 |
 | `ICCPlus/src/lib/creator/AppFeature.svelte` | 117 | 21 | 2 |
 | `ICCPlus/src/lib/creator/AppGlobalSettings.svelte` | 649 | 63 | 14 |
-| `ICCPlus/src/lib/creator/AppObject.svelte` | 2910 | 421 | 43 |
-| `ICCPlus/src/lib/creator/AppObjectList.svelte` | 89 | 15 | 2 |
-| `ICCPlus/src/lib/creator/AppObjectSettings.svelte` | 399 | 64 | 8 |
+| `ICCPlus/src/lib/creator/AppObject.svelte` | 2912 | 421 | 43 |
+| `ICCPlus/src/lib/creator/AppObjectList.svelte` | 100 | 15 | 2 |
+| `ICCPlus/src/lib/creator/AppObjectSettings.svelte` | 401 | 64 | 8 |
 | `ICCPlus/src/lib/creator/AppPointBar.svelte` | 79 | 34 | 0 |
 | `ICCPlus/src/lib/creator/AppProjectStats.svelte` | 210 | 13 | 2 |
 | `ICCPlus/src/lib/creator/AppRequirement.svelte` | 229 | 38 | 17 |
-| `ICCPlus/src/lib/creator/AppRow.svelte` | 1109 | 215 | 14 |
-| `ICCPlus/src/lib/creator/AppRowList.svelte` | 108 | 20 | 2 |
+| `ICCPlus/src/lib/creator/AppRow.svelte` | 1111 | 215 | 14 |
+| `ICCPlus/src/lib/creator/AppRowList.svelte` | 119 | 20 | 2 |
 | `ICCPlus/src/lib/creator/AppRowSettings.svelte` | 454 | 56 | 11 |
 | `ICCPlus/src/lib/creator/AppSaveLoad.svelte` | 760 | 58 | 7 |
 | `ICCPlus/src/lib/creator/AppSearchForm.svelte` | 124 | 18 | 2 |
@@ -1698,7 +2352,7 @@ the field-level occurrence map and UI strings.
 | `ICCPlus/src/lib/creator/Features/AppTemplates.svelte` | 1651 | 206 | 10 |
 | `ICCPlus/src/lib/creator/Features/AppVariables.svelte` | 247 | 24 | 6 |
 | `ICCPlus/src/lib/creator/Features/AppWords.svelte` | 247 | 24 | 6 |
-| `ICCPlus/src/lib/creator/Object/ObjectAddon.svelte` | 2400 | 400 | 38 |
+| `ICCPlus/src/lib/creator/Object/ObjectAddon.svelte` | 2401 | 400 | 38 |
 | `ICCPlus/src/lib/creator/Object/ObjectDesignGroup.svelte` | 48 | 9 | 1 |
 | `ICCPlus/src/lib/creator/Object/ObjectGroup.svelte` | 48 | 9 | 1 |
 | `ICCPlus/src/lib/creator/Object/ObjectInnerReq.svelte` | 267 | 32 | 10 |
@@ -1712,9 +2366,9 @@ the field-level occurrence map and UI strings.
 | `ICCPlus/src/lib/custom/autocomplete/Autocomplete.svelte` | 788 | 24 | 0 |
 | `ICCPlus/src/lib/custom/chip-input/ChipInput.svelte` | 450 | 10 | 0 |
 | `ICCPlus/src/lib/custom/select/Option.svelte` | 67 | 4 | 0 |
-| `ICCPlus/src/lib/custom/select/Select.svelte` | 832 | 21 | 0 |
-| `ICCPlus/src/lib/custom/select/helper-text/HelperText.svelte` | 152 | 7 | 0 |
-| `ICCPlus/src/lib/custom/select/icon/Icon.svelte` | 134 | 7 | 0 |
+| `ICCPlus/src/lib/custom/select/Select.svelte` | 836 | 21 | 0 |
+| `ICCPlus/src/lib/custom/select/helper-text/HelperText.svelte` | 154 | 7 | 0 |
+| `ICCPlus/src/lib/custom/select/icon/Icon.svelte` | 136 | 7 | 0 |
 | `ICCPlus/src/lib/custom/svelte-awesome-color-picker/components/ColorPicker.svelte` | 513 | 15 | 1 |
 | `ICCPlus/src/lib/custom/svelte-awesome-color-picker/components/Picker.svelte` | 177 | 7 | 0 |
 | `ICCPlus/src/lib/custom/svelte-awesome-color-picker/components/variant/accessibility/A11yHorizontalWrapper.svelte` | 90 | 10 | 1 |
@@ -1731,13 +2385,13 @@ the field-level occurrence map and UI strings.
 | `ICCPlus/src/lib/custom/textfield/Prefix.svelte` | 34 | 3 | 0 |
 | `ICCPlus/src/lib/custom/textfield/Suffix.svelte` | 34 | 3 | 0 |
 | `ICCPlus/src/lib/custom/textfield/Textarea.svelte` | 123 | 7 | 0 |
-| `ICCPlus/src/lib/custom/textfield/Textfield.svelte` | 817 | 15 | 0 |
-| `ICCPlus/src/lib/custom/textfield/character-counter/CharacterCounter.svelte` | 78 | 5 | 0 |
-| `ICCPlus/src/lib/custom/textfield/helper-text/HelperText.svelte` | 152 | 7 | 0 |
-| `ICCPlus/src/lib/custom/textfield/icon/Icon.svelte` | 157 | 8 | 0 |
+| `ICCPlus/src/lib/custom/textfield/Textfield.svelte` | 818 | 15 | 0 |
+| `ICCPlus/src/lib/custom/textfield/character-counter/CharacterCounter.svelte` | 81 | 5 | 0 |
+| `ICCPlus/src/lib/custom/textfield/helper-text/HelperText.svelte` | 154 | 7 | 0 |
+| `ICCPlus/src/lib/custom/textfield/icon/Icon.svelte` | 159 | 8 | 0 |
 | `ICCPlus/src/lib/custom/tooltip/Tooltip.svelte` | 48 | 6 | 0 |
 | `ICCPlus/src/lib/custom/tooltip/Wrapper.svelte` | 10 | 2 | 0 |
-| `ICCPlus/src/lib/information/InfoMain.svelte` | 1873 | 58 | 0 |
+| `ICCPlus/src/lib/information/InfoMain.svelte` | 1888 | 58 | 0 |
 | `ICCPlus/src/lib/information/InfoPanel.svelte` | 17 | 2 | 0 |
 | `ICCPlus/src/lib/store/CustomAutocomplete.svelte` | 54 | 4 | 0 |
 | `ICCPlus/src/lib/store/CustomChipInput.svelte` | 51 | 6 | 1 |
@@ -1746,14 +2400,14 @@ the field-level occurrence map and UI strings.
 | `ICCPlus/src/lib/store/Tiptap.svelte` | 702 | 14 | 17 |
 | `ICCPlus/src/lib/viewer/AppBuildForm.svelte` | 126 | 17 | 6 |
 | `ICCPlus/src/lib/viewer/AppGlobalSettings.svelte` | 296 | 38 | 7 |
-| `ICCPlus/src/lib/viewer/AppObject.svelte` | 759 | 240 | 0 |
+| `ICCPlus/src/lib/viewer/AppObject.svelte` | 760 | 240 | 0 |
 | `ICCPlus/src/lib/viewer/AppPointBar.svelte` | 79 | 34 | 0 |
 | `ICCPlus/src/lib/viewer/AppRow.svelte` | 558 | 160 | 0 |
 | `ICCPlus/src/lib/viewer/AppSaveLoad.svelte` | 225 | 22 | 3 |
 | `ICCPlus/src/lib/viewer/AppSearchForm.svelte` | 124 | 17 | 2 |
 | `ICCPlus/src/lib/viewer/DlgBackpack.svelte` | 79 | 24 | 2 |
 | `ICCPlus/src/lib/viewer/DlgCommon.svelte` | 68 | 11 | 3 |
-| `ICCPlus/src/lib/viewer/Object/ObjectAddon.svelte` | 743 | 252 | 0 |
+| `ICCPlus/src/lib/viewer/Object/ObjectAddon.svelte` | 744 | 252 | 0 |
 | `ICCPlus/src/lib/viewer/Object/ObjectMultiChoice.svelte` | 149 | 34 | 0 |
 | `ICCPlus/src/lib/viewer/Object/ObjectRequired.svelte` | 53 | 13 | 0 |
 | `ICCPlus/src/lib/viewer/Object/ObjectScore.svelte` | 285 | 84 | 0 |
@@ -1762,18 +2416,18 @@ the field-level occurrence map and UI strings.
 | `ICCPlus_Viewer/src/App.svelte` | 272 | 12 | 0 |
 | `ICCPlus_Viewer/src/lib/custom/autocomplete/Autocomplete.svelte` | 788 | 24 | 0 |
 | `ICCPlus_Viewer/src/lib/custom/select/Option.svelte` | 67 | 4 | 0 |
-| `ICCPlus_Viewer/src/lib/custom/select/Select.svelte` | 832 | 21 | 0 |
-| `ICCPlus_Viewer/src/lib/custom/select/helper-text/HelperText.svelte` | 152 | 7 | 0 |
-| `ICCPlus_Viewer/src/lib/custom/select/icon/Icon.svelte` | 134 | 7 | 0 |
+| `ICCPlus_Viewer/src/lib/custom/select/Select.svelte` | 836 | 21 | 0 |
+| `ICCPlus_Viewer/src/lib/custom/select/helper-text/HelperText.svelte` | 154 | 7 | 0 |
+| `ICCPlus_Viewer/src/lib/custom/select/icon/Icon.svelte` | 136 | 7 | 0 |
 | `ICCPlus_Viewer/src/lib/custom/textfield/HelperLine.svelte` | 34 | 3 | 0 |
 | `ICCPlus_Viewer/src/lib/custom/textfield/Input.svelte` | 245 | 8 | 0 |
 | `ICCPlus_Viewer/src/lib/custom/textfield/Prefix.svelte` | 34 | 3 | 0 |
 | `ICCPlus_Viewer/src/lib/custom/textfield/Suffix.svelte` | 34 | 3 | 0 |
 | `ICCPlus_Viewer/src/lib/custom/textfield/Textarea.svelte` | 123 | 7 | 0 |
-| `ICCPlus_Viewer/src/lib/custom/textfield/Textfield.svelte` | 817 | 15 | 0 |
-| `ICCPlus_Viewer/src/lib/custom/textfield/character-counter/CharacterCounter.svelte` | 78 | 5 | 0 |
-| `ICCPlus_Viewer/src/lib/custom/textfield/helper-text/HelperText.svelte` | 152 | 7 | 0 |
-| `ICCPlus_Viewer/src/lib/custom/textfield/icon/Icon.svelte` | 157 | 8 | 0 |
+| `ICCPlus_Viewer/src/lib/custom/textfield/Textfield.svelte` | 818 | 15 | 0 |
+| `ICCPlus_Viewer/src/lib/custom/textfield/character-counter/CharacterCounter.svelte` | 81 | 5 | 0 |
+| `ICCPlus_Viewer/src/lib/custom/textfield/helper-text/HelperText.svelte` | 154 | 7 | 0 |
+| `ICCPlus_Viewer/src/lib/custom/textfield/icon/Icon.svelte` | 159 | 8 | 0 |
 | `ICCPlus_Viewer/src/lib/custom/tooltip/Tooltip.svelte` | 48 | 6 | 0 |
 | `ICCPlus_Viewer/src/lib/custom/tooltip/Wrapper.svelte` | 10 | 2 | 0 |
 | `ICCPlus_Viewer/src/lib/store/ImageUpload.svelte` | 454 | 18 | 14 |
