@@ -19,15 +19,15 @@ describe('generated upstream analysis', () => {
     expect(coverage.coveredTypes).toBe(coverage.declaredTypes);
     expect(coverage.declaredTypes).toBe(59);
     expect(coverage.declaredFields).toBe(903);
-    expect(coverage.sourceFiles).toBe(227);
-    expect(coverage.sourceFunctions).toBe(1423);
+    expect(coverage.sourceFiles).toBe(301);
+    expect(coverage.sourceFunctions).toBe(2074);
     expect(analysis.coverage.fieldsReferencedOutsideTypes).toBeGreaterThanOrEqual(901);
   });
 
   it('pins schema and defaults to the analyzed upstream release', () => {
-    expect(analysis.upstream.version).toBe('2.10.11');
-    expect(analysis.upstream.commit).toBe('28a178ad699a4a4cb16714025a6a10b609e50d93');
-    expect(analysis.upstream.deploymentCommit).toBe('9afbad48628ad4c71e0a792ad3e5563412da7d53');
+    expect(analysis.upstream.version).toBe('2.10.14');
+    expect(analysis.upstream.commit).toBe('21d340238fa16f4e66a61727f797d334b0486fda');
+    expect(analysis.upstream.deploymentCommit).toBe('55322bd4b5b33ed513ece775fa755211261384f3');
     expect(defaultProject.version).toBe(analysis.upstream.version);
     expect(schema['x-iccplus-version']).toBe(analysis.upstream.version);
     expect(schema.definitions.App).toBeDefined();
@@ -46,7 +46,7 @@ describe('generated upstream analysis', () => {
     expect(deployment.version).toBe(analysis.upstream.version);
     expect(deployment.commit).toBe(analysis.upstream.deploymentCommit);
     expect(deployment.files).toHaveLength(deployment.coverage.files);
-    expect(deployment.coverage.files).toBe(72);
+    expect(deployment.coverage.files).toBe(76);
     expect(deployment.archives.map((item) => item.path).sort()).toEqual([
       'local_viewer.zip',
       'web_viewer.zip',

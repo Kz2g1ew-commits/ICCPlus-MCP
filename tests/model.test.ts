@@ -55,7 +55,7 @@ describe('ICC Plus model operations', () => {
 
   it('accepts v2.10.7-v2.10.9 choice and score options', () => {
     const project = createDefaultProject();
-    expect(project.version).toBe('2.10.11');
+    expect(project.version).toBe('2.10.14');
     insertEntity(project, { type: 'point', values: { id: 'gold' } });
     insertEntity(project, { type: 'row', values: { id: 'shop' } });
     insertEntity(project, { type: 'choice', parent: 'shop', values: { id: 'keep', notDeselectedByReq: true } });

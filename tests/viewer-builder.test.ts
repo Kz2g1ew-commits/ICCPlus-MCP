@@ -3,7 +3,7 @@ import { describe, expect, it } from 'vitest';
 import { createDefaultProject } from '../src/domain/factories.js';
 import { buildViewerArchive } from '../src/domain/viewer-builder.js';
 
-async function template(local: boolean): Promise<Buffer> {
+async function template(local: boolean, appJs?: string): Promise<Buffer> {
   const zip = new JSZip();
   zip.file(
     'index.html',
@@ -13,7 +13,7 @@ async function template(local: boolean): Promise<Buffer> {
   if (local) {
     zip.file(
       'js/app.js',
-      'start\n/*! Delete and replace this part with your project if you are pasting it in. */\n{version:"old"}\n/*! End */\nend',
+      appJs ?? 'start\n/*! Delete and replace this part with your project if you are pasting it in. */\n{version:"old"}\n/*! End */\nend',
     );
   }
   return zip.generateAsync({ type: 'nodebuffer' });
@@ -83,5 +83,27 @@ describe('viewer packaging', () => {
     expect(zip.file('project.json')).toBeNull();
     expect(source).toContain('"title":"Offline"');
     expect(source).toContain('/*! End */');
+  });
+
+  it('embeds data in a v2.10.13 local viewer whose minified app.js has no marker', async () => {
+    const appJs = 'var pw={version:Qb,isEditModeOnAll:!0,rows:[]},'
+      + 'hw=At({version:Qb,isEditModeOnAll:!0,text:"}`${\\"",rows:[],styling:{a:{b:1}}}),z=1;';
+    const project = createDefaultProject({ viewerConfig: { title: 'Offline' } });
+    const built = await buildViewerArchive(await template(true, appJs), project, { local: true });
+    const source = await (await JSZip.loadAsync(built.archive)).file('js/app.js')!.async('string');
+
+    expect(source).toBe(
+      'var pw={version:Qb,isEditModeOnAll:!0,rows:[]},hw=At(' + JSON.stringify(project) + '),z=1;',
+    );
+    expect(() => new Function(source)).not.toThrow();
+  });
+
+  it('refuses a local viewer without a marker or a single default project', async () => {
+    const project = createDefaultProject();
+    await expect(buildViewerArchive(await template(true, 'var a=1;'), project, { local: true }))
+      .rejects.toThrow(/project marker/);
+    const twice = 'a=f({version:v,isEditModeOnAll:!0}),b=g({version:v,isEditModeOnAll:!0});';
+    await expect(buildViewerArchive(await template(true, twice), project, { local: true }))
+      .rejects.toThrow(/project marker/);
   });
 });

@@ -1,4 +1,4 @@
-# ICC Plus v2.10.11 feature and mechanism analysis
+# ICC Plus v2.10.14 feature and mechanism analysis
 
 This document is the semantic companion to the generated
 [`CODEBASE_INVENTORY.md`](CODEBASE_INVENTORY.md). It describes what the source
@@ -8,7 +8,7 @@ does, how the model drives it, and how the MCP surface exposes it.
 
 The audit used the Svelte 5 source repository
 [`wahaha303/ICC-Plus-Svelte`](https://github.com/wahaha303/ICC-Plus-Svelte) at
-commit `28a178ad699a4a4cb16714025a6a10b609e50d93` (`v2.10.11`), not only the
+commit `21d340238fa16f4e66a61727f797d334b0486fda` (`v2.10.14`), not only the
 minified deployment bundle.
 
 The source analyzer retains every authored code/build/config/patch file from
@@ -17,18 +17,18 @@ artifact:
 
 | Measure | Result |
 | --- | ---: |
-| Audited authored files | 227 |
-| Exact audited source bytes | 3,343,622 |
+| Audited authored files | 301 |
+| Exact audited source bytes | 3,659,489 |
 | Declared model types | 59 |
 | Unique declared fields | 903 |
 | Fields referenced outside the type file | 901 |
 | Store functions | 191 |
 | Exported store functions | 100 |
-| Named functions/methods across all source files | 1,423 |
+| Named functions/methods across all source files | 2,074 |
 | Exported named source functions | 246 |
-| Deployment files | 72 |
-| Deployment bytes | 24,739,809 |
-| Official viewer archive entries | 32 |
+| Deployment files | 76 |
+| Deployment bytes | 25,144,842 |
+| Official viewer archive entries | 34 |
 | Upstream third-party packages with license metadata | 209 |
 | Feature families covering declared types | 19 |
 | Uncovered declared types | 0 |
@@ -44,7 +44,7 @@ state, and viewer components render and execute it. Project defaults are
 initialized in the same store. This is why the MCP derives both schema and
 defaults from source rather than restating them.
 
-All 227 authored files are retained in the generated evidence with byte count and
+All 301 authored files are retained in the generated evidence with byte count and
 SHA-256 digest. Every named function, arrow/function-valued property, and
 method is indexed with its exact source span, signature, imports, referenced
 model fields, and body. `function:<name>` returns all matches (so
@@ -180,6 +180,17 @@ selectable addons and exposes `isNotBuild` for them in the creator. v2.10.11
 adds `addonJustify: "fill"`, which renders as `justify-start` without an
 `align-content--*` class, and makes each `.addon` box `flex-grow-1` inside a
 `d-column` width wrapper so it fills the column.
+
+v2.10.12 and v2.10.13 leave the model unchanged. They move the creator and viewer
+to SMUI 9 and Vite 8, vendor the custom text field, fix list drag lag and score
+point type selection, and make unspaced text wrap. With Vite 8 the viewer's
+post-build marker step no longer matches the minified default project, so the
+v2.10.13 local viewer template ships without the marker comments; local
+packaging falls back to the single default project initializer.
+v2.10.14 also leaves the model unchanged. It restores the local viewer marker
+(`main.ts` renames its `app` export to `svelteApp`, so the store's `app` keeps
+its name) and stops refunding the pre-discount points when a choice whose
+discount requires another choice is deselected.
 
 ### Content and navigation effects
 
@@ -359,7 +370,7 @@ Official template packaging follows the creator's format:
   hashes/deduplicates equal content, writes asset files, and rewrites references;
 - viewer title/loading/favicon/font/custom-CSS values are applied safely.
 
-Packaging was integration-tested against both official `v2.10.11` template
+Packaging was integration-tested against both official `v2.10.14` template
 archives from the deployment repository.
 
 ## MCP coverage model
