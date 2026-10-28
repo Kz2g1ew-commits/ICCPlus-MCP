@@ -268,10 +268,10 @@ function objectLiteralEnd(source: string, start: number): number {
   return -1;
 }
 
-// Since v2.10.13 the upstream post-build step no longer finds the default project
+// In v2.10.13 the upstream post-build step did not find the default project
 // (`app=x({version...})` became `hw=At({version...})` after the minifier change),
-// so templates ship without the marker comments. Fall back to the single
-// `name=fn({version:v,isEditModeOnAll:...})` state initializer.
+// so those templates shipped without the marker comments (restored in v2.10.14).
+// Fall back to the single `name=fn({version:v,isEditModeOnAll:...})` state initializer.
 function replaceDefaultProjectLiteral(source: string, projectJson: string): string | undefined {
   const pattern = /[A-Za-z_$][\w$]*=[A-Za-z_$][\w$]*\((?=\{version:[A-Za-z_$][\w$]*,isEditModeOnAll:)/g;
   const [match, ...others] = [...source.matchAll(pattern)];

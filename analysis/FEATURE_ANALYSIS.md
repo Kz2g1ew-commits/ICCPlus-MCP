@@ -1,4 +1,4 @@
-# ICC Plus v2.10.13 feature and mechanism analysis
+# ICC Plus v2.10.14 feature and mechanism analysis
 
 This document is the semantic companion to the generated
 [`CODEBASE_INVENTORY.md`](CODEBASE_INVENTORY.md). It describes what the source
@@ -8,7 +8,7 @@ does, how the model drives it, and how the MCP surface exposes it.
 
 The audit used the Svelte 5 source repository
 [`wahaha303/ICC-Plus-Svelte`](https://github.com/wahaha303/ICC-Plus-Svelte) at
-commit `464596a428f2327a2c549c9e802ca4f58c42c2be` (`v2.10.13`), not only the
+commit `21d340238fa16f4e66a61727f797d334b0486fda` (`v2.10.14`), not only the
 minified deployment bundle.
 
 The source analyzer retains every authored code/build/config/patch file from
@@ -24,7 +24,7 @@ artifact:
 | Fields referenced outside the type file | 901 |
 | Store functions | 191 |
 | Exported store functions | 100 |
-| Named functions/methods across all source files | 2,077 |
+| Named functions/methods across all source files | 2,074 |
 | Exported named source functions | 246 |
 | Deployment files | 76 |
 | Deployment bytes | 25,144,842 |
@@ -185,8 +185,12 @@ v2.10.12 and v2.10.13 leave the model unchanged. They move the creator and viewe
 to SMUI 9 and Vite 8, vendor the custom text field, fix list drag lag and score
 point type selection, and make unspaced text wrap. With Vite 8 the viewer's
 post-build marker step no longer matches the minified default project, so the
-local viewer template ships without the marker comments; local packaging falls
-back to the single default project initializer.
+v2.10.13 local viewer template ships without the marker comments; local
+packaging falls back to the single default project initializer.
+v2.10.14 also leaves the model unchanged. It restores the local viewer marker
+(`main.ts` renames its `app` export to `svelteApp`, so the store's `app` keeps
+its name) and stops refunding the pre-discount points when a choice whose
+discount requires another choice is deselected.
 
 ### Content and navigation effects
 
@@ -366,7 +370,7 @@ Official template packaging follows the creator's format:
   hashes/deduplicates equal content, writes asset files, and rewrites references;
 - viewer title/loading/favicon/font/custom-CSS values are applied safely.
 
-Packaging was integration-tested against both official `v2.10.13` template
+Packaging was integration-tested against both official `v2.10.14` template
 archives from the deployment repository.
 
 ## MCP coverage model
